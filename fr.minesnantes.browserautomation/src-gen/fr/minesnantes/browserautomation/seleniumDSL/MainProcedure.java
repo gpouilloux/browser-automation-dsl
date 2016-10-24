@@ -26,19 +26,19 @@ import org.eclipse.emf.ecore.EObject;
 public interface MainProcedure extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Instructions</b></em>' containment reference list.
-   * The list contents are of type {@link fr.minesnantes.browserautomation.seleniumDSL.Instruction}.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Instructions</b></em>' containment reference list.
+	 * The list contents are of type {@link fr.minesnantes.browserautomation.seleniumDSL.Instruction}.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Instructions</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Instructions</em>' containment reference list.
-   * @see fr.minesnantes.browserautomation.seleniumDSL.SeleniumDSLPackage#getMainProcedure_Instructions()
-   * @model containment="true"
-   * @generated
-   */
+	 * @return the value of the '<em>Instructions</em>' containment reference list.
+	 * @see fr.minesnantes.browserautomation.seleniumDSL.SeleniumDSLPackage#getMainProcedure_Instructions()
+	 * @model containment="true"
+	 * @generated
+	 */
   EList<Instruction> getInstructions();
 
 } // MainProcedure

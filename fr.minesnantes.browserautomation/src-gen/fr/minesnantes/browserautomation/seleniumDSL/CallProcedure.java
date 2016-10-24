@@ -25,45 +25,45 @@ import org.eclipse.emf.common.util.EList;
 public interface CallProcedure extends Instruction
 {
   /**
-   * Returns the value of the '<em><b>Procedure Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Procedure Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Procedure Name</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Procedure Name</em>' attribute.
-   * @see #setProcedureName(String)
-   * @see fr.minesnantes.browserautomation.seleniumDSL.SeleniumDSLPackage#getCallProcedure_ProcedureName()
-   * @model
-   * @generated
-   */
+	 * @return the value of the '<em>Procedure Name</em>' attribute.
+	 * @see #setProcedureName(String)
+	 * @see fr.minesnantes.browserautomation.seleniumDSL.SeleniumDSLPackage#getCallProcedure_ProcedureName()
+	 * @model
+	 * @generated
+	 */
   String getProcedureName();
 
   /**
-   * Sets the value of the '{@link fr.minesnantes.browserautomation.seleniumDSL.CallProcedure#getProcedureName <em>Procedure Name</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link fr.minesnantes.browserautomation.seleniumDSL.CallProcedure#getProcedureName <em>Procedure Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Procedure Name</em>' attribute.
-   * @see #getProcedureName()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Procedure Name</em>' attribute.
+	 * @see #getProcedureName()
+	 * @generated
+	 */
   void setProcedureName(String value);
 
   /**
-   * Returns the value of the '<em><b>Parameters</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.String}.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Parameters</b></em>' attribute list.
+	 * The list contents are of type {@link java.lang.String}.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Parameters</em>' attribute list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Parameters</em>' attribute list.
-   * @see fr.minesnantes.browserautomation.seleniumDSL.SeleniumDSLPackage#getCallProcedure_Parameters()
-   * @model unique="false"
-   * @generated
-   */
+	 * @return the value of the '<em>Parameters</em>' attribute list.
+	 * @see fr.minesnantes.browserautomation.seleniumDSL.SeleniumDSLPackage#getCallProcedure_Parameters()
+	 * @model unique="false"
+	 * @generated
+	 */
   EList<String> getParameters();
 
 } // CallProcedure

@@ -27,45 +27,45 @@ import org.eclipse.emf.ecore.EObject;
 public interface SeleniumTest extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Procedures</b></em>' containment reference list.
-   * The list contents are of type {@link fr.minesnantes.browserautomation.seleniumDSL.Procedure}.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Procedures</b></em>' containment reference list.
+	 * The list contents are of type {@link fr.minesnantes.browserautomation.seleniumDSL.Procedure}.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Procedures</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Procedures</em>' containment reference list.
-   * @see fr.minesnantes.browserautomation.seleniumDSL.SeleniumDSLPackage#getSeleniumTest_Procedures()
-   * @model containment="true"
-   * @generated
-   */
+	 * @return the value of the '<em>Procedures</em>' containment reference list.
+	 * @see fr.minesnantes.browserautomation.seleniumDSL.SeleniumDSLPackage#getSeleniumTest_Procedures()
+	 * @model containment="true"
+	 * @generated
+	 */
   EList<Procedure> getProcedures();
 
   /**
-   * Returns the value of the '<em><b>Main</b></em>' containment reference.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Main</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Main</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Main</em>' containment reference.
-   * @see #setMain(MainProcedure)
-   * @see fr.minesnantes.browserautomation.seleniumDSL.SeleniumDSLPackage#getSeleniumTest_Main()
-   * @model containment="true"
-   * @generated
-   */
+	 * @return the value of the '<em>Main</em>' containment reference.
+	 * @see #setMain(MainProcedure)
+	 * @see fr.minesnantes.browserautomation.seleniumDSL.SeleniumDSLPackage#getSeleniumTest_Main()
+	 * @model containment="true"
+	 * @generated
+	 */
   MainProcedure getMain();
 
   /**
-   * Sets the value of the '{@link fr.minesnantes.browserautomation.seleniumDSL.SeleniumTest#getMain <em>Main</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link fr.minesnantes.browserautomation.seleniumDSL.SeleniumTest#getMain <em>Main</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Main</em>' containment reference.
-   * @see #getMain()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Main</em>' containment reference.
+	 * @see #getMain()
+	 * @generated
+	 */
   void setMain(MainProcedure value);
 
 } // SeleniumTest

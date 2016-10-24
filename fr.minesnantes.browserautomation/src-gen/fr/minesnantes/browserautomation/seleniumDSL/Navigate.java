@@ -23,29 +23,29 @@ package fr.minesnantes.browserautomation.seleniumDSL;
 public interface Navigate extends Instruction
 {
   /**
-   * Returns the value of the '<em><b>Url</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Url</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Url</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Url</em>' attribute.
-   * @see #setUrl(String)
-   * @see fr.minesnantes.browserautomation.seleniumDSL.SeleniumDSLPackage#getNavigate_Url()
-   * @model
-   * @generated
-   */
+	 * @return the value of the '<em>Url</em>' attribute.
+	 * @see #setUrl(String)
+	 * @see fr.minesnantes.browserautomation.seleniumDSL.SeleniumDSLPackage#getNavigate_Url()
+	 * @model
+	 * @generated
+	 */
   String getUrl();
 
   /**
-   * Sets the value of the '{@link fr.minesnantes.browserautomation.seleniumDSL.Navigate#getUrl <em>Url</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link fr.minesnantes.browserautomation.seleniumDSL.Navigate#getUrl <em>Url</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Url</em>' attribute.
-   * @see #getUrl()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Url</em>' attribute.
+	 * @see #getUrl()
+	 * @generated
+	 */
   void setUrl(String value);
 
 } // Navigate
