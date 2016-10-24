@@ -1,0 +1,42 @@
+grammar fr.minesnantes.browserautomation.SeleniumDSL with org.eclipse.xtext.common.Terminals
+
+generate seleniumDSL "http://www.minesnantes.fr/browserautomation/SeleniumDSL"
+
+SeleniumTest:
+  procedures+=Procedure*
+  main = MainProcedure;
+
+Procedure: 'def' WS Name=IDENTIFIER'(' ?(Parameters+=IDENTIFIER+ (COMMA WS Parameters+=IDENTIFIER)*) '):' RETURN_LINE
+  instructions+=Instruction*;
+
+MainProcedure:{MainProcedure} 'def' WS 'main():' RETURN_LINE
+  instructions+=Instruction*;
+
+//Instruction is abstract
+Instruction: 
+    TAB(Click | Fill | Navigate | Assert | Read | CallProcedure)
+;
+
+Click: 'click' WS Name=STRING;
+
+Fill: 'fill' WS Name=STRING WS value=(STRING|IDENTIFIER);
+
+Navigate: 'navigate' WS url=(STRING|IDENTIFIER);
+
+Read: Variable=IDENTIFIER WS '=' WS 'read' WS Name=STRING;
+
+Assert:  'assert' (Search=STRING WS 'contains' WS Value=(STRING|IDENTIFIER) |
+                   Name=STRING WS 'equals' WS Value=(STRING|IDENTIFIER) |
+                   Name=STRING WS 'exists');
+
+CallProcedure: '^'ProcedureName=IDENTIFIER (WS Parameters+=(STRING|IDENTIFIER))*;
+
+terminal IDENTIFIER: '^'?('a'..'z'|'A'..'Z') ('a'..'z'|'A'..'Z'|'0'..'9')*;
+
+terminal WS: ' ';
+
+terminal COMMA: ',';
+
+terminal TAB: '\t';
+
+terminal RETURN_LINE: '\n';

@@ -1,0 +1,5 @@
+def main():
+  navigate_to('https://fr.wikipedia.org')
+  fill('search', 'Ecole des Mines de Nantes')
+  assert 'firstHeading' equals 'École nationale supérieure des mines de Nantes'
+  assert 'search' equals ''
