@@ -55,294 +55,296 @@ public class SeleniumDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.minesnantes.browserautomation.SeleniumDSL.Procedure");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cDefKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final RuleCall cWSTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
-		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cNameIDENTIFIERTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
-		private final Keyword cLeftParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final Assignment cParametersAssignment_4_0 = (Assignment)cGroup_4.eContents().get(0);
-		private final RuleCall cParametersIDENTIFIERTerminalRuleCall_4_0_0 = (RuleCall)cParametersAssignment_4_0.eContents().get(0);
-		private final Group cGroup_4_1 = (Group)cGroup_4.eContents().get(1);
-		private final RuleCall cCOMMATerminalRuleCall_4_1_0 = (RuleCall)cGroup_4_1.eContents().get(0);
-		private final RuleCall cWSTerminalRuleCall_4_1_1 = (RuleCall)cGroup_4_1.eContents().get(1);
-		private final Assignment cParametersAssignment_4_1_2 = (Assignment)cGroup_4_1.eContents().get(2);
-		private final RuleCall cParametersIDENTIFIERTerminalRuleCall_4_1_2_0 = (RuleCall)cParametersAssignment_4_1_2.eContents().get(0);
-		private final Keyword cRightParenthesisColonKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final RuleCall cRETURN_LINETerminalRuleCall_6 = (RuleCall)cGroup.eContents().get(6);
-		private final Assignment cInstructionsAssignment_7 = (Assignment)cGroup.eContents().get(7);
-		private final RuleCall cInstructionsInstructionParserRuleCall_7_0 = (RuleCall)cInstructionsAssignment_7.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDENTIFIERTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final Keyword cLeftParenthesisKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Group cGroup_2_1 = (Group)cGroup_2.eContents().get(1);
+		private final Assignment cParametersAssignment_2_1_0 = (Assignment)cGroup_2_1.eContents().get(0);
+		private final RuleCall cParametersIDENTIFIERTerminalRuleCall_2_1_0_0 = (RuleCall)cParametersAssignment_2_1_0.eContents().get(0);
+		private final Group cGroup_2_1_1 = (Group)cGroup_2_1.eContents().get(1);
+		private final RuleCall cCOMMATerminalRuleCall_2_1_1_0 = (RuleCall)cGroup_2_1_1.eContents().get(0);
+		private final Assignment cParametersAssignment_2_1_1_1 = (Assignment)cGroup_2_1_1.eContents().get(1);
+		private final RuleCall cParametersIDENTIFIERTerminalRuleCall_2_1_1_1_0 = (RuleCall)cParametersAssignment_2_1_1_1.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_2_2 = (Keyword)cGroup_2.eContents().get(2);
+		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cInstructionsAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cInstructionsInstructionParserRuleCall_4_0 = (RuleCall)cInstructionsAssignment_4.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//Procedure:
-		//	'def' WS Name=IDENTIFIER '('? (Parameters+=IDENTIFIER+ (COMMA WS Parameters+=IDENTIFIER)*) '):' RETURN_LINE
-		//	instructions+=Instruction*;
+		//	'def' Name=IDENTIFIER ('(' (Parameters+=IDENTIFIER (COMMA Parameters+=IDENTIFIER)*) ')')? '{'
+		//	instructions+=Instruction*
+		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'def' WS Name=IDENTIFIER '('? (Parameters+=IDENTIFIER+ (COMMA WS Parameters+=IDENTIFIER)*) '):' RETURN_LINE
-		//instructions+=Instruction*
+		//'def' Name=IDENTIFIER ('(' (Parameters+=IDENTIFIER (COMMA Parameters+=IDENTIFIER)*) ')')? '{' instructions+=Instruction*
+		//'}'
 		public Group getGroup() { return cGroup; }
 		
 		//'def'
 		public Keyword getDefKeyword_0() { return cDefKeyword_0; }
 		
-		//WS
-		public RuleCall getWSTerminalRuleCall_1() { return cWSTerminalRuleCall_1; }
-		
 		//Name=IDENTIFIER
-		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 		
 		//IDENTIFIER
-		public RuleCall getNameIDENTIFIERTerminalRuleCall_2_0() { return cNameIDENTIFIERTerminalRuleCall_2_0; }
+		public RuleCall getNameIDENTIFIERTerminalRuleCall_1_0() { return cNameIDENTIFIERTerminalRuleCall_1_0; }
 		
-		//'('?
-		public Keyword getLeftParenthesisKeyword_3() { return cLeftParenthesisKeyword_3; }
+		//('(' (Parameters+=IDENTIFIER (COMMA Parameters+=IDENTIFIER)*) ')')?
+		public Group getGroup_2() { return cGroup_2; }
 		
-		//(Parameters+=IDENTIFIER+ (COMMA WS Parameters+=IDENTIFIER)*)
-		public Group getGroup_4() { return cGroup_4; }
+		//'('
+		public Keyword getLeftParenthesisKeyword_2_0() { return cLeftParenthesisKeyword_2_0; }
 		
-		//Parameters+=IDENTIFIER+
-		public Assignment getParametersAssignment_4_0() { return cParametersAssignment_4_0; }
-		
-		//IDENTIFIER
-		public RuleCall getParametersIDENTIFIERTerminalRuleCall_4_0_0() { return cParametersIDENTIFIERTerminalRuleCall_4_0_0; }
-		
-		//(COMMA WS Parameters+=IDENTIFIER)*
-		public Group getGroup_4_1() { return cGroup_4_1; }
-		
-		//COMMA
-		public RuleCall getCOMMATerminalRuleCall_4_1_0() { return cCOMMATerminalRuleCall_4_1_0; }
-		
-		//WS
-		public RuleCall getWSTerminalRuleCall_4_1_1() { return cWSTerminalRuleCall_4_1_1; }
+		//(Parameters+=IDENTIFIER (COMMA Parameters+=IDENTIFIER)*)
+		public Group getGroup_2_1() { return cGroup_2_1; }
 		
 		//Parameters+=IDENTIFIER
-		public Assignment getParametersAssignment_4_1_2() { return cParametersAssignment_4_1_2; }
+		public Assignment getParametersAssignment_2_1_0() { return cParametersAssignment_2_1_0; }
 		
 		//IDENTIFIER
-		public RuleCall getParametersIDENTIFIERTerminalRuleCall_4_1_2_0() { return cParametersIDENTIFIERTerminalRuleCall_4_1_2_0; }
+		public RuleCall getParametersIDENTIFIERTerminalRuleCall_2_1_0_0() { return cParametersIDENTIFIERTerminalRuleCall_2_1_0_0; }
 		
-		//'):'
-		public Keyword getRightParenthesisColonKeyword_5() { return cRightParenthesisColonKeyword_5; }
+		//(COMMA Parameters+=IDENTIFIER)*
+		public Group getGroup_2_1_1() { return cGroup_2_1_1; }
 		
-		//RETURN_LINE
-		public RuleCall getRETURN_LINETerminalRuleCall_6() { return cRETURN_LINETerminalRuleCall_6; }
+		//COMMA
+		public RuleCall getCOMMATerminalRuleCall_2_1_1_0() { return cCOMMATerminalRuleCall_2_1_1_0; }
+		
+		//Parameters+=IDENTIFIER
+		public Assignment getParametersAssignment_2_1_1_1() { return cParametersAssignment_2_1_1_1; }
+		
+		//IDENTIFIER
+		public RuleCall getParametersIDENTIFIERTerminalRuleCall_2_1_1_1_0() { return cParametersIDENTIFIERTerminalRuleCall_2_1_1_1_0; }
+		
+		//')'
+		public Keyword getRightParenthesisKeyword_2_2() { return cRightParenthesisKeyword_2_2; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
 		
 		//instructions+=Instruction*
-		public Assignment getInstructionsAssignment_7() { return cInstructionsAssignment_7; }
+		public Assignment getInstructionsAssignment_4() { return cInstructionsAssignment_4; }
 		
 		//Instruction
-		public RuleCall getInstructionsInstructionParserRuleCall_7_0() { return cInstructionsInstructionParserRuleCall_7_0; }
+		public RuleCall getInstructionsInstructionParserRuleCall_4_0() { return cInstructionsInstructionParserRuleCall_4_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
 	}
 	public class MainProcedureElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.minesnantes.browserautomation.SeleniumDSL.MainProcedure");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cMainProcedureAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cDefKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final RuleCall cWSTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
-		private final Keyword cMainKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final RuleCall cRETURN_LINETerminalRuleCall_4 = (RuleCall)cGroup.eContents().get(4);
-		private final Assignment cInstructionsAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cInstructionsInstructionParserRuleCall_5_0 = (RuleCall)cInstructionsAssignment_5.eContents().get(0);
+		private final Keyword cMainKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cInstructionsAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cInstructionsInstructionParserRuleCall_4_0 = (RuleCall)cInstructionsAssignment_4.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//MainProcedure:
-		//	{MainProcedure} 'def' WS 'main():' RETURN_LINE
-		//	instructions+=Instruction*;
+		//	{MainProcedure} 'def'+ 'main'+ '{'
+		//	instructions+=Instruction*
+		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{MainProcedure} 'def' WS 'main():' RETURN_LINE instructions+=Instruction*
+		//{MainProcedure} 'def'+ 'main'+ '{' instructions+=Instruction* '}'
 		public Group getGroup() { return cGroup; }
 		
 		//{MainProcedure}
 		public Action getMainProcedureAction_0() { return cMainProcedureAction_0; }
 		
-		//'def'
+		//'def'+
 		public Keyword getDefKeyword_1() { return cDefKeyword_1; }
 		
-		//WS
-		public RuleCall getWSTerminalRuleCall_2() { return cWSTerminalRuleCall_2; }
+		//'main'+
+		public Keyword getMainKeyword_2() { return cMainKeyword_2; }
 		
-		//'main():'
-		public Keyword getMainKeyword_3() { return cMainKeyword_3; }
-		
-		//RETURN_LINE
-		public RuleCall getRETURN_LINETerminalRuleCall_4() { return cRETURN_LINETerminalRuleCall_4; }
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
 		
 		//instructions+=Instruction*
-		public Assignment getInstructionsAssignment_5() { return cInstructionsAssignment_5; }
+		public Assignment getInstructionsAssignment_4() { return cInstructionsAssignment_4; }
 		
 		//Instruction
-		public RuleCall getInstructionsInstructionParserRuleCall_5_0() { return cInstructionsInstructionParserRuleCall_5_0; }
+		public RuleCall getInstructionsInstructionParserRuleCall_4_0() { return cInstructionsInstructionParserRuleCall_4_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
 	}
 	public class InstructionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.minesnantes.browserautomation.SeleniumDSL.Instruction");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final RuleCall cTABTerminalRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
-		private final Alternatives cAlternatives_1 = (Alternatives)cGroup.eContents().get(1);
-		private final RuleCall cClickParserRuleCall_1_0 = (RuleCall)cAlternatives_1.eContents().get(0);
-		private final RuleCall cFillParserRuleCall_1_1 = (RuleCall)cAlternatives_1.eContents().get(1);
-		private final RuleCall cNavigateParserRuleCall_1_2 = (RuleCall)cAlternatives_1.eContents().get(2);
-		private final RuleCall cAssertParserRuleCall_1_3 = (RuleCall)cAlternatives_1.eContents().get(3);
-		private final RuleCall cReadParserRuleCall_1_4 = (RuleCall)cAlternatives_1.eContents().get(4);
-		private final RuleCall cCallProcedureParserRuleCall_1_5 = (RuleCall)cAlternatives_1.eContents().get(5);
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cClickParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cFillParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cSelectParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cNavigateParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		private final RuleCall cAssertParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
+		private final RuleCall cReadParserRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
+		private final RuleCall cCallProcedureParserRuleCall_6 = (RuleCall)cAlternatives.eContents().get(6);
 		
 		////Instruction is abstract
 		//Instruction:
-		//	TAB (Click | Fill | Navigate | Assert | Read | CallProcedure);
+		//	Click | Fill | Select | Navigate | Assert | Read | CallProcedure;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//TAB (Click | Fill | Navigate | Assert | Read | CallProcedure)
-		public Group getGroup() { return cGroup; }
-		
-		//TAB
-		public RuleCall getTABTerminalRuleCall_0() { return cTABTerminalRuleCall_0; }
-		
-		//(Click | Fill | Navigate | Assert | Read | CallProcedure)
-		public Alternatives getAlternatives_1() { return cAlternatives_1; }
+		//Click | Fill | Select | Navigate | Assert | Read | CallProcedure
+		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//Click
-		public RuleCall getClickParserRuleCall_1_0() { return cClickParserRuleCall_1_0; }
+		public RuleCall getClickParserRuleCall_0() { return cClickParserRuleCall_0; }
 		
 		//Fill
-		public RuleCall getFillParserRuleCall_1_1() { return cFillParserRuleCall_1_1; }
+		public RuleCall getFillParserRuleCall_1() { return cFillParserRuleCall_1; }
+		
+		//Select
+		public RuleCall getSelectParserRuleCall_2() { return cSelectParserRuleCall_2; }
 		
 		//Navigate
-		public RuleCall getNavigateParserRuleCall_1_2() { return cNavigateParserRuleCall_1_2; }
+		public RuleCall getNavigateParserRuleCall_3() { return cNavigateParserRuleCall_3; }
 		
 		//Assert
-		public RuleCall getAssertParserRuleCall_1_3() { return cAssertParserRuleCall_1_3; }
+		public RuleCall getAssertParserRuleCall_4() { return cAssertParserRuleCall_4; }
 		
 		//Read
-		public RuleCall getReadParserRuleCall_1_4() { return cReadParserRuleCall_1_4; }
+		public RuleCall getReadParserRuleCall_5() { return cReadParserRuleCall_5; }
 		
 		//CallProcedure
-		public RuleCall getCallProcedureParserRuleCall_1_5() { return cCallProcedureParserRuleCall_1_5; }
+		public RuleCall getCallProcedureParserRuleCall_6() { return cCallProcedureParserRuleCall_6; }
 	}
 	public class ClickElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.minesnantes.browserautomation.SeleniumDSL.Click");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cClickKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final RuleCall cWSTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
-		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cNameSTRINGTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameSTRINGTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		
 		//Click:
-		//	'click' WS Name=STRING;
+		//	'click' Name=STRING;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'click' WS Name=STRING
+		//'click' Name=STRING
 		public Group getGroup() { return cGroup; }
 		
 		//'click'
 		public Keyword getClickKeyword_0() { return cClickKeyword_0; }
 		
-		//WS
-		public RuleCall getWSTerminalRuleCall_1() { return cWSTerminalRuleCall_1; }
-		
 		//Name=STRING
-		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 		
 		//STRING
-		public RuleCall getNameSTRINGTerminalRuleCall_2_0() { return cNameSTRINGTerminalRuleCall_2_0; }
+		public RuleCall getNameSTRINGTerminalRuleCall_1_0() { return cNameSTRINGTerminalRuleCall_1_0; }
 	}
 	public class FillElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.minesnantes.browserautomation.SeleniumDSL.Fill");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cFillKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final RuleCall cWSTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
-		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cNameSTRINGTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
-		private final RuleCall cWSTerminalRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
-		private final Assignment cValueAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final Alternatives cValueAlternatives_4_0 = (Alternatives)cValueAssignment_4.eContents().get(0);
-		private final RuleCall cValueSTRINGTerminalRuleCall_4_0_0 = (RuleCall)cValueAlternatives_4_0.eContents().get(0);
-		private final RuleCall cValueIDENTIFIERTerminalRuleCall_4_0_1 = (RuleCall)cValueAlternatives_4_0.eContents().get(1);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameSTRINGTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Assignment cValueAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final Alternatives cValueAlternatives_2_0 = (Alternatives)cValueAssignment_2.eContents().get(0);
+		private final RuleCall cValueSTRINGTerminalRuleCall_2_0_0 = (RuleCall)cValueAlternatives_2_0.eContents().get(0);
+		private final RuleCall cValueIDENTIFIERTerminalRuleCall_2_0_1 = (RuleCall)cValueAlternatives_2_0.eContents().get(1);
 		
 		//Fill:
-		//	'fill' WS Name=STRING WS value=(STRING | IDENTIFIER);
+		//	'fill' Name=STRING value=(STRING | IDENTIFIER);
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'fill' WS Name=STRING WS value=(STRING | IDENTIFIER)
+		//'fill' Name=STRING value=(STRING | IDENTIFIER)
 		public Group getGroup() { return cGroup; }
 		
 		//'fill'
 		public Keyword getFillKeyword_0() { return cFillKeyword_0; }
 		
-		//WS
-		public RuleCall getWSTerminalRuleCall_1() { return cWSTerminalRuleCall_1; }
-		
 		//Name=STRING
-		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 		
 		//STRING
-		public RuleCall getNameSTRINGTerminalRuleCall_2_0() { return cNameSTRINGTerminalRuleCall_2_0; }
-		
-		//WS
-		public RuleCall getWSTerminalRuleCall_3() { return cWSTerminalRuleCall_3; }
+		public RuleCall getNameSTRINGTerminalRuleCall_1_0() { return cNameSTRINGTerminalRuleCall_1_0; }
 		
 		//value=(STRING | IDENTIFIER)
-		public Assignment getValueAssignment_4() { return cValueAssignment_4; }
+		public Assignment getValueAssignment_2() { return cValueAssignment_2; }
 		
 		//(STRING | IDENTIFIER)
-		public Alternatives getValueAlternatives_4_0() { return cValueAlternatives_4_0; }
+		public Alternatives getValueAlternatives_2_0() { return cValueAlternatives_2_0; }
 		
 		//STRING
-		public RuleCall getValueSTRINGTerminalRuleCall_4_0_0() { return cValueSTRINGTerminalRuleCall_4_0_0; }
+		public RuleCall getValueSTRINGTerminalRuleCall_2_0_0() { return cValueSTRINGTerminalRuleCall_2_0_0; }
 		
 		//IDENTIFIER
-		public RuleCall getValueIDENTIFIERTerminalRuleCall_4_0_1() { return cValueIDENTIFIERTerminalRuleCall_4_0_1; }
+		public RuleCall getValueIDENTIFIERTerminalRuleCall_2_0_1() { return cValueIDENTIFIERTerminalRuleCall_2_0_1; }
+	}
+	public class SelectElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.minesnantes.browserautomation.SeleniumDSL.Select");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cSelectKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameSTRINGTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		
+		//Select:
+		//	'select' Name=STRING;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'select' Name=STRING
+		public Group getGroup() { return cGroup; }
+		
+		//'select'
+		public Keyword getSelectKeyword_0() { return cSelectKeyword_0; }
+		
+		//Name=STRING
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		
+		//STRING
+		public RuleCall getNameSTRINGTerminalRuleCall_1_0() { return cNameSTRINGTerminalRuleCall_1_0; }
 	}
 	public class NavigateElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.minesnantes.browserautomation.SeleniumDSL.Navigate");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cNavigateKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final RuleCall cWSTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
-		private final Assignment cUrlAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final Alternatives cUrlAlternatives_2_0 = (Alternatives)cUrlAssignment_2.eContents().get(0);
-		private final RuleCall cUrlSTRINGTerminalRuleCall_2_0_0 = (RuleCall)cUrlAlternatives_2_0.eContents().get(0);
-		private final RuleCall cUrlIDENTIFIERTerminalRuleCall_2_0_1 = (RuleCall)cUrlAlternatives_2_0.eContents().get(1);
+		private final Assignment cUrlAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final Alternatives cUrlAlternatives_1_0 = (Alternatives)cUrlAssignment_1.eContents().get(0);
+		private final RuleCall cUrlSTRINGTerminalRuleCall_1_0_0 = (RuleCall)cUrlAlternatives_1_0.eContents().get(0);
+		private final RuleCall cUrlIDENTIFIERTerminalRuleCall_1_0_1 = (RuleCall)cUrlAlternatives_1_0.eContents().get(1);
 		
 		//Navigate:
-		//	'navigate' WS url=(STRING | IDENTIFIER);
+		//	'navigate' url=(STRING | IDENTIFIER);
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'navigate' WS url=(STRING | IDENTIFIER)
+		//'navigate' url=(STRING | IDENTIFIER)
 		public Group getGroup() { return cGroup; }
 		
 		//'navigate'
 		public Keyword getNavigateKeyword_0() { return cNavigateKeyword_0; }
 		
-		//WS
-		public RuleCall getWSTerminalRuleCall_1() { return cWSTerminalRuleCall_1; }
-		
 		//url=(STRING | IDENTIFIER)
-		public Assignment getUrlAssignment_2() { return cUrlAssignment_2; }
+		public Assignment getUrlAssignment_1() { return cUrlAssignment_1; }
 		
 		//(STRING | IDENTIFIER)
-		public Alternatives getUrlAlternatives_2_0() { return cUrlAlternatives_2_0; }
+		public Alternatives getUrlAlternatives_1_0() { return cUrlAlternatives_1_0; }
 		
 		//STRING
-		public RuleCall getUrlSTRINGTerminalRuleCall_2_0_0() { return cUrlSTRINGTerminalRuleCall_2_0_0; }
+		public RuleCall getUrlSTRINGTerminalRuleCall_1_0_0() { return cUrlSTRINGTerminalRuleCall_1_0_0; }
 		
 		//IDENTIFIER
-		public RuleCall getUrlIDENTIFIERTerminalRuleCall_2_0_1() { return cUrlIDENTIFIERTerminalRuleCall_2_0_1; }
+		public RuleCall getUrlIDENTIFIERTerminalRuleCall_1_0_1() { return cUrlIDENTIFIERTerminalRuleCall_1_0_1; }
 	}
 	public class ReadElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.minesnantes.browserautomation.SeleniumDSL.Read");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cVariableAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cVariableIDENTIFIERTerminalRuleCall_0_0 = (RuleCall)cVariableAssignment_0.eContents().get(0);
-		private final RuleCall cWSTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
-		private final Keyword cEqualsSignKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final RuleCall cWSTerminalRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
-		private final Keyword cReadKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final RuleCall cWSTerminalRuleCall_5 = (RuleCall)cGroup.eContents().get(5);
-		private final Assignment cNameAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final RuleCall cNameSTRINGTerminalRuleCall_6_0 = (RuleCall)cNameAssignment_6.eContents().get(0);
+		private final Keyword cEqualsSignKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cReadKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cNameAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cNameSTRINGTerminalRuleCall_3_0 = (RuleCall)cNameAssignment_3.eContents().get(0);
 		
 		//Read:
-		//	Variable=IDENTIFIER WS '=' WS 'read' WS Name=STRING;
+		//	Variable=IDENTIFIER '=' 'read' Name=STRING;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//Variable=IDENTIFIER WS '=' WS 'read' WS Name=STRING
+		//Variable=IDENTIFIER '=' 'read' Name=STRING
 		public Group getGroup() { return cGroup; }
 		
 		//Variable=IDENTIFIER
@@ -351,26 +353,17 @@ public class SeleniumDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//IDENTIFIER
 		public RuleCall getVariableIDENTIFIERTerminalRuleCall_0_0() { return cVariableIDENTIFIERTerminalRuleCall_0_0; }
 		
-		//WS
-		public RuleCall getWSTerminalRuleCall_1() { return cWSTerminalRuleCall_1; }
-		
 		//'='
-		public Keyword getEqualsSignKeyword_2() { return cEqualsSignKeyword_2; }
-		
-		//WS
-		public RuleCall getWSTerminalRuleCall_3() { return cWSTerminalRuleCall_3; }
+		public Keyword getEqualsSignKeyword_1() { return cEqualsSignKeyword_1; }
 		
 		//'read'
-		public Keyword getReadKeyword_4() { return cReadKeyword_4; }
-		
-		//WS
-		public RuleCall getWSTerminalRuleCall_5() { return cWSTerminalRuleCall_5; }
+		public Keyword getReadKeyword_2() { return cReadKeyword_2; }
 		
 		//Name=STRING
-		public Assignment getNameAssignment_6() { return cNameAssignment_6; }
+		public Assignment getNameAssignment_3() { return cNameAssignment_3; }
 		
 		//STRING
-		public RuleCall getNameSTRINGTerminalRuleCall_6_0() { return cNameSTRINGTerminalRuleCall_6_0; }
+		public RuleCall getNameSTRINGTerminalRuleCall_3_0() { return cNameSTRINGTerminalRuleCall_3_0; }
 	}
 	public class AssertElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.minesnantes.browserautomation.SeleniumDSL.Assert");
@@ -380,46 +373,41 @@ public class SeleniumDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup_1_0 = (Group)cAlternatives_1.eContents().get(0);
 		private final Assignment cSearchAssignment_1_0_0 = (Assignment)cGroup_1_0.eContents().get(0);
 		private final RuleCall cSearchSTRINGTerminalRuleCall_1_0_0_0 = (RuleCall)cSearchAssignment_1_0_0.eContents().get(0);
-		private final RuleCall cWSTerminalRuleCall_1_0_1 = (RuleCall)cGroup_1_0.eContents().get(1);
-		private final Keyword cContainsKeyword_1_0_2 = (Keyword)cGroup_1_0.eContents().get(2);
-		private final RuleCall cWSTerminalRuleCall_1_0_3 = (RuleCall)cGroup_1_0.eContents().get(3);
-		private final Assignment cValueAssignment_1_0_4 = (Assignment)cGroup_1_0.eContents().get(4);
-		private final Alternatives cValueAlternatives_1_0_4_0 = (Alternatives)cValueAssignment_1_0_4.eContents().get(0);
-		private final RuleCall cValueSTRINGTerminalRuleCall_1_0_4_0_0 = (RuleCall)cValueAlternatives_1_0_4_0.eContents().get(0);
-		private final RuleCall cValueIDENTIFIERTerminalRuleCall_1_0_4_0_1 = (RuleCall)cValueAlternatives_1_0_4_0.eContents().get(1);
+		private final Keyword cContainsKeyword_1_0_1 = (Keyword)cGroup_1_0.eContents().get(1);
+		private final Assignment cValueAssignment_1_0_2 = (Assignment)cGroup_1_0.eContents().get(2);
+		private final Alternatives cValueAlternatives_1_0_2_0 = (Alternatives)cValueAssignment_1_0_2.eContents().get(0);
+		private final RuleCall cValueSTRINGTerminalRuleCall_1_0_2_0_0 = (RuleCall)cValueAlternatives_1_0_2_0.eContents().get(0);
+		private final RuleCall cValueIDENTIFIERTerminalRuleCall_1_0_2_0_1 = (RuleCall)cValueAlternatives_1_0_2_0.eContents().get(1);
 		private final Group cGroup_1_1 = (Group)cAlternatives_1.eContents().get(1);
 		private final Assignment cNameAssignment_1_1_0 = (Assignment)cGroup_1_1.eContents().get(0);
 		private final RuleCall cNameSTRINGTerminalRuleCall_1_1_0_0 = (RuleCall)cNameAssignment_1_1_0.eContents().get(0);
-		private final RuleCall cWSTerminalRuleCall_1_1_1 = (RuleCall)cGroup_1_1.eContents().get(1);
-		private final Keyword cEqualsKeyword_1_1_2 = (Keyword)cGroup_1_1.eContents().get(2);
-		private final RuleCall cWSTerminalRuleCall_1_1_3 = (RuleCall)cGroup_1_1.eContents().get(3);
-		private final Assignment cValueAssignment_1_1_4 = (Assignment)cGroup_1_1.eContents().get(4);
-		private final Alternatives cValueAlternatives_1_1_4_0 = (Alternatives)cValueAssignment_1_1_4.eContents().get(0);
-		private final RuleCall cValueSTRINGTerminalRuleCall_1_1_4_0_0 = (RuleCall)cValueAlternatives_1_1_4_0.eContents().get(0);
-		private final RuleCall cValueIDENTIFIERTerminalRuleCall_1_1_4_0_1 = (RuleCall)cValueAlternatives_1_1_4_0.eContents().get(1);
+		private final Keyword cEqualsKeyword_1_1_1 = (Keyword)cGroup_1_1.eContents().get(1);
+		private final Assignment cValueAssignment_1_1_2 = (Assignment)cGroup_1_1.eContents().get(2);
+		private final Alternatives cValueAlternatives_1_1_2_0 = (Alternatives)cValueAssignment_1_1_2.eContents().get(0);
+		private final RuleCall cValueSTRINGTerminalRuleCall_1_1_2_0_0 = (RuleCall)cValueAlternatives_1_1_2_0.eContents().get(0);
+		private final RuleCall cValueIDENTIFIERTerminalRuleCall_1_1_2_0_1 = (RuleCall)cValueAlternatives_1_1_2_0.eContents().get(1);
 		private final Group cGroup_1_2 = (Group)cAlternatives_1.eContents().get(2);
 		private final Assignment cNameAssignment_1_2_0 = (Assignment)cGroup_1_2.eContents().get(0);
 		private final RuleCall cNameSTRINGTerminalRuleCall_1_2_0_0 = (RuleCall)cNameAssignment_1_2_0.eContents().get(0);
-		private final RuleCall cWSTerminalRuleCall_1_2_1 = (RuleCall)cGroup_1_2.eContents().get(1);
-		private final Keyword cExistsKeyword_1_2_2 = (Keyword)cGroup_1_2.eContents().get(2);
+		private final Keyword cExistsKeyword_1_2_1 = (Keyword)cGroup_1_2.eContents().get(1);
 		
 		//Assert:
-		//	'assert' (Search=STRING WS 'contains' WS Value=(STRING | IDENTIFIER) | Name=STRING WS 'equals' WS Value=(STRING |
-		//	IDENTIFIER) | Name=STRING WS 'exists');
+		//	'assert' (Search=STRING 'contains' Value=(STRING | IDENTIFIER) | Name=STRING 'equals' Value=(STRING | IDENTIFIER) |
+		//	Name=STRING 'exists');
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'assert' (Search=STRING WS 'contains' WS Value=(STRING | IDENTIFIER) | Name=STRING WS 'equals' WS Value=(STRING |
-		//IDENTIFIER) | Name=STRING WS 'exists')
+		//'assert' (Search=STRING 'contains' Value=(STRING | IDENTIFIER) | Name=STRING 'equals' Value=(STRING | IDENTIFIER) |
+		//Name=STRING 'exists')
 		public Group getGroup() { return cGroup; }
 		
 		//'assert'
 		public Keyword getAssertKeyword_0() { return cAssertKeyword_0; }
 		
-		//(Search=STRING WS 'contains' WS Value=(STRING | IDENTIFIER) | Name=STRING WS 'equals' WS Value=(STRING | IDENTIFIER) |
-		//Name=STRING WS 'exists')
+		//(Search=STRING 'contains' Value=(STRING | IDENTIFIER) | Name=STRING 'equals' Value=(STRING | IDENTIFIER) | Name=STRING
+		//'exists')
 		public Alternatives getAlternatives_1() { return cAlternatives_1; }
 		
-		//Search=STRING WS 'contains' WS Value=(STRING | IDENTIFIER)
+		//Search=STRING 'contains' Value=(STRING | IDENTIFIER)
 		public Group getGroup_1_0() { return cGroup_1_0; }
 		
 		//Search=STRING
@@ -428,28 +416,22 @@ public class SeleniumDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getSearchSTRINGTerminalRuleCall_1_0_0_0() { return cSearchSTRINGTerminalRuleCall_1_0_0_0; }
 		
-		//WS
-		public RuleCall getWSTerminalRuleCall_1_0_1() { return cWSTerminalRuleCall_1_0_1; }
-		
 		//'contains'
-		public Keyword getContainsKeyword_1_0_2() { return cContainsKeyword_1_0_2; }
-		
-		//WS
-		public RuleCall getWSTerminalRuleCall_1_0_3() { return cWSTerminalRuleCall_1_0_3; }
+		public Keyword getContainsKeyword_1_0_1() { return cContainsKeyword_1_0_1; }
 		
 		//Value=(STRING | IDENTIFIER)
-		public Assignment getValueAssignment_1_0_4() { return cValueAssignment_1_0_4; }
+		public Assignment getValueAssignment_1_0_2() { return cValueAssignment_1_0_2; }
 		
 		//(STRING | IDENTIFIER)
-		public Alternatives getValueAlternatives_1_0_4_0() { return cValueAlternatives_1_0_4_0; }
+		public Alternatives getValueAlternatives_1_0_2_0() { return cValueAlternatives_1_0_2_0; }
 		
 		//STRING
-		public RuleCall getValueSTRINGTerminalRuleCall_1_0_4_0_0() { return cValueSTRINGTerminalRuleCall_1_0_4_0_0; }
+		public RuleCall getValueSTRINGTerminalRuleCall_1_0_2_0_0() { return cValueSTRINGTerminalRuleCall_1_0_2_0_0; }
 		
 		//IDENTIFIER
-		public RuleCall getValueIDENTIFIERTerminalRuleCall_1_0_4_0_1() { return cValueIDENTIFIERTerminalRuleCall_1_0_4_0_1; }
+		public RuleCall getValueIDENTIFIERTerminalRuleCall_1_0_2_0_1() { return cValueIDENTIFIERTerminalRuleCall_1_0_2_0_1; }
 		
-		//Name=STRING WS 'equals' WS Value=(STRING | IDENTIFIER)
+		//Name=STRING 'equals' Value=(STRING | IDENTIFIER)
 		public Group getGroup_1_1() { return cGroup_1_1; }
 		
 		//Name=STRING
@@ -458,28 +440,22 @@ public class SeleniumDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getNameSTRINGTerminalRuleCall_1_1_0_0() { return cNameSTRINGTerminalRuleCall_1_1_0_0; }
 		
-		//WS
-		public RuleCall getWSTerminalRuleCall_1_1_1() { return cWSTerminalRuleCall_1_1_1; }
-		
 		//'equals'
-		public Keyword getEqualsKeyword_1_1_2() { return cEqualsKeyword_1_1_2; }
-		
-		//WS
-		public RuleCall getWSTerminalRuleCall_1_1_3() { return cWSTerminalRuleCall_1_1_3; }
+		public Keyword getEqualsKeyword_1_1_1() { return cEqualsKeyword_1_1_1; }
 		
 		//Value=(STRING | IDENTIFIER)
-		public Assignment getValueAssignment_1_1_4() { return cValueAssignment_1_1_4; }
+		public Assignment getValueAssignment_1_1_2() { return cValueAssignment_1_1_2; }
 		
 		//(STRING | IDENTIFIER)
-		public Alternatives getValueAlternatives_1_1_4_0() { return cValueAlternatives_1_1_4_0; }
+		public Alternatives getValueAlternatives_1_1_2_0() { return cValueAlternatives_1_1_2_0; }
 		
 		//STRING
-		public RuleCall getValueSTRINGTerminalRuleCall_1_1_4_0_0() { return cValueSTRINGTerminalRuleCall_1_1_4_0_0; }
+		public RuleCall getValueSTRINGTerminalRuleCall_1_1_2_0_0() { return cValueSTRINGTerminalRuleCall_1_1_2_0_0; }
 		
 		//IDENTIFIER
-		public RuleCall getValueIDENTIFIERTerminalRuleCall_1_1_4_0_1() { return cValueIDENTIFIERTerminalRuleCall_1_1_4_0_1; }
+		public RuleCall getValueIDENTIFIERTerminalRuleCall_1_1_2_0_1() { return cValueIDENTIFIERTerminalRuleCall_1_1_2_0_1; }
 		
-		//Name=STRING WS 'exists'
+		//Name=STRING 'exists'
 		public Group getGroup_1_2() { return cGroup_1_2; }
 		
 		//Name=STRING
@@ -488,58 +464,83 @@ public class SeleniumDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getNameSTRINGTerminalRuleCall_1_2_0_0() { return cNameSTRINGTerminalRuleCall_1_2_0_0; }
 		
-		//WS
-		public RuleCall getWSTerminalRuleCall_1_2_1() { return cWSTerminalRuleCall_1_2_1; }
-		
 		//'exists'
-		public Keyword getExistsKeyword_1_2_2() { return cExistsKeyword_1_2_2; }
+		public Keyword getExistsKeyword_1_2_1() { return cExistsKeyword_1_2_1; }
 	}
 	public class CallProcedureElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.minesnantes.browserautomation.SeleniumDSL.CallProcedure");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cCircumflexAccentKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cProcedureNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cProcedureNameIDENTIFIERTerminalRuleCall_1_0 = (RuleCall)cProcedureNameAssignment_1.eContents().get(0);
-		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final RuleCall cWSTerminalRuleCall_2_0 = (RuleCall)cGroup_2.eContents().get(0);
-		private final Assignment cParametersAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
-		private final Alternatives cParametersAlternatives_2_1_0 = (Alternatives)cParametersAssignment_2_1.eContents().get(0);
-		private final RuleCall cParametersSTRINGTerminalRuleCall_2_1_0_0 = (RuleCall)cParametersAlternatives_2_1_0.eContents().get(0);
-		private final RuleCall cParametersIDENTIFIERTerminalRuleCall_2_1_0_1 = (RuleCall)cParametersAlternatives_2_1_0.eContents().get(1);
+		private final Assignment cProcedureNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cProcedureNameIDENTIFIERTerminalRuleCall_0_0 = (RuleCall)cProcedureNameAssignment_0.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Keyword cLeftParenthesisKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final Group cGroup_1_1 = (Group)cGroup_1.eContents().get(1);
+		private final Assignment cParametersAssignment_1_1_0 = (Assignment)cGroup_1_1.eContents().get(0);
+		private final Alternatives cParametersAlternatives_1_1_0_0 = (Alternatives)cParametersAssignment_1_1_0.eContents().get(0);
+		private final RuleCall cParametersIDENTIFIERTerminalRuleCall_1_1_0_0_0 = (RuleCall)cParametersAlternatives_1_1_0_0.eContents().get(0);
+		private final RuleCall cParametersSTRINGTerminalRuleCall_1_1_0_0_1 = (RuleCall)cParametersAlternatives_1_1_0_0.eContents().get(1);
+		private final Group cGroup_1_1_1 = (Group)cGroup_1_1.eContents().get(1);
+		private final RuleCall cCOMMATerminalRuleCall_1_1_1_0 = (RuleCall)cGroup_1_1_1.eContents().get(0);
+		private final Assignment cParametersAssignment_1_1_1_1 = (Assignment)cGroup_1_1_1.eContents().get(1);
+		private final Alternatives cParametersAlternatives_1_1_1_1_0 = (Alternatives)cParametersAssignment_1_1_1_1.eContents().get(0);
+		private final RuleCall cParametersIDENTIFIERTerminalRuleCall_1_1_1_1_0_0 = (RuleCall)cParametersAlternatives_1_1_1_1_0.eContents().get(0);
+		private final RuleCall cParametersSTRINGTerminalRuleCall_1_1_1_1_0_1 = (RuleCall)cParametersAlternatives_1_1_1_1_0.eContents().get(1);
+		private final Keyword cRightParenthesisKeyword_1_2 = (Keyword)cGroup_1.eContents().get(2);
 		
 		//CallProcedure:
-		//	'^' ProcedureName=IDENTIFIER (WS Parameters+=(STRING | IDENTIFIER))*;
+		//	ProcedureName=IDENTIFIER ('(' (Parameters+=(IDENTIFIER | STRING) (COMMA Parameters+=(IDENTIFIER | STRING))*) ')')?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'^' ProcedureName=IDENTIFIER (WS Parameters+=(STRING | IDENTIFIER))*
+		//ProcedureName=IDENTIFIER ('(' (Parameters+=(IDENTIFIER | STRING) (COMMA Parameters+=(IDENTIFIER | STRING))*) ')')?
 		public Group getGroup() { return cGroup; }
 		
-		//'^'
-		public Keyword getCircumflexAccentKeyword_0() { return cCircumflexAccentKeyword_0; }
-		
 		//ProcedureName=IDENTIFIER
-		public Assignment getProcedureNameAssignment_1() { return cProcedureNameAssignment_1; }
+		public Assignment getProcedureNameAssignment_0() { return cProcedureNameAssignment_0; }
 		
 		//IDENTIFIER
-		public RuleCall getProcedureNameIDENTIFIERTerminalRuleCall_1_0() { return cProcedureNameIDENTIFIERTerminalRuleCall_1_0; }
+		public RuleCall getProcedureNameIDENTIFIERTerminalRuleCall_0_0() { return cProcedureNameIDENTIFIERTerminalRuleCall_0_0; }
 		
-		//(WS Parameters+=(STRING | IDENTIFIER))*
-		public Group getGroup_2() { return cGroup_2; }
+		//('(' (Parameters+=(IDENTIFIER | STRING) (COMMA Parameters+=(IDENTIFIER | STRING))*) ')')?
+		public Group getGroup_1() { return cGroup_1; }
 		
-		//WS
-		public RuleCall getWSTerminalRuleCall_2_0() { return cWSTerminalRuleCall_2_0; }
+		//'('
+		public Keyword getLeftParenthesisKeyword_1_0() { return cLeftParenthesisKeyword_1_0; }
 		
-		//Parameters+=(STRING | IDENTIFIER)
-		public Assignment getParametersAssignment_2_1() { return cParametersAssignment_2_1; }
+		//(Parameters+=(IDENTIFIER | STRING) (COMMA Parameters+=(IDENTIFIER | STRING))*)
+		public Group getGroup_1_1() { return cGroup_1_1; }
 		
-		//(STRING | IDENTIFIER)
-		public Alternatives getParametersAlternatives_2_1_0() { return cParametersAlternatives_2_1_0; }
+		//Parameters+=(IDENTIFIER | STRING)
+		public Assignment getParametersAssignment_1_1_0() { return cParametersAssignment_1_1_0; }
+		
+		//(IDENTIFIER | STRING)
+		public Alternatives getParametersAlternatives_1_1_0_0() { return cParametersAlternatives_1_1_0_0; }
+		
+		//IDENTIFIER
+		public RuleCall getParametersIDENTIFIERTerminalRuleCall_1_1_0_0_0() { return cParametersIDENTIFIERTerminalRuleCall_1_1_0_0_0; }
 		
 		//STRING
-		public RuleCall getParametersSTRINGTerminalRuleCall_2_1_0_0() { return cParametersSTRINGTerminalRuleCall_2_1_0_0; }
+		public RuleCall getParametersSTRINGTerminalRuleCall_1_1_0_0_1() { return cParametersSTRINGTerminalRuleCall_1_1_0_0_1; }
+		
+		//(COMMA Parameters+=(IDENTIFIER | STRING))*
+		public Group getGroup_1_1_1() { return cGroup_1_1_1; }
+		
+		//COMMA
+		public RuleCall getCOMMATerminalRuleCall_1_1_1_0() { return cCOMMATerminalRuleCall_1_1_1_0; }
+		
+		//Parameters+=(IDENTIFIER | STRING)
+		public Assignment getParametersAssignment_1_1_1_1() { return cParametersAssignment_1_1_1_1; }
+		
+		//(IDENTIFIER | STRING)
+		public Alternatives getParametersAlternatives_1_1_1_1_0() { return cParametersAlternatives_1_1_1_1_0; }
 		
 		//IDENTIFIER
-		public RuleCall getParametersIDENTIFIERTerminalRuleCall_2_1_0_1() { return cParametersIDENTIFIERTerminalRuleCall_2_1_0_1; }
+		public RuleCall getParametersIDENTIFIERTerminalRuleCall_1_1_1_1_0_0() { return cParametersIDENTIFIERTerminalRuleCall_1_1_1_1_0_0; }
+		
+		//STRING
+		public RuleCall getParametersSTRINGTerminalRuleCall_1_1_1_1_0_1() { return cParametersSTRINGTerminalRuleCall_1_1_1_1_0_1; }
+		
+		//')'
+		public Keyword getRightParenthesisKeyword_1_2() { return cRightParenthesisKeyword_1_2; }
 	}
 	
 	
@@ -549,15 +550,13 @@ public class SeleniumDSLGrammarAccess extends AbstractGrammarElementFinder {
 	private final InstructionElements pInstruction;
 	private final ClickElements pClick;
 	private final FillElements pFill;
+	private final SelectElements pSelect;
 	private final NavigateElements pNavigate;
 	private final ReadElements pRead;
 	private final AssertElements pAssert;
 	private final CallProcedureElements pCallProcedure;
 	private final TerminalRule tIDENTIFIER;
-	private final TerminalRule tWS;
 	private final TerminalRule tCOMMA;
-	private final TerminalRule tTAB;
-	private final TerminalRule tRETURN_LINE;
 	
 	private final Grammar grammar;
 	
@@ -574,15 +573,13 @@ public class SeleniumDSLGrammarAccess extends AbstractGrammarElementFinder {
 		this.pInstruction = new InstructionElements();
 		this.pClick = new ClickElements();
 		this.pFill = new FillElements();
+		this.pSelect = new SelectElements();
 		this.pNavigate = new NavigateElements();
 		this.pRead = new ReadElements();
 		this.pAssert = new AssertElements();
 		this.pCallProcedure = new CallProcedureElements();
 		this.tIDENTIFIER = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "fr.minesnantes.browserautomation.SeleniumDSL.IDENTIFIER");
-		this.tWS = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "fr.minesnantes.browserautomation.SeleniumDSL.WS");
 		this.tCOMMA = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "fr.minesnantes.browserautomation.SeleniumDSL.COMMA");
-		this.tTAB = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "fr.minesnantes.browserautomation.SeleniumDSL.TAB");
-		this.tRETURN_LINE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "fr.minesnantes.browserautomation.SeleniumDSL.RETURN_LINE");
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -624,8 +621,9 @@ public class SeleniumDSLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Procedure:
-	//	'def' WS Name=IDENTIFIER '('? (Parameters+=IDENTIFIER+ (COMMA WS Parameters+=IDENTIFIER)*) '):' RETURN_LINE
-	//	instructions+=Instruction*;
+	//	'def' Name=IDENTIFIER ('(' (Parameters+=IDENTIFIER (COMMA Parameters+=IDENTIFIER)*) ')')? '{'
+	//	instructions+=Instruction*
+	//	'}';
 	public ProcedureElements getProcedureAccess() {
 		return pProcedure;
 	}
@@ -635,8 +633,9 @@ public class SeleniumDSLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//MainProcedure:
-	//	{MainProcedure} 'def' WS 'main():' RETURN_LINE
-	//	instructions+=Instruction*;
+	//	{MainProcedure} 'def'+ 'main'+ '{'
+	//	instructions+=Instruction*
+	//	'}';
 	public MainProcedureElements getMainProcedureAccess() {
 		return pMainProcedure;
 	}
@@ -647,7 +646,7 @@ public class SeleniumDSLGrammarAccess extends AbstractGrammarElementFinder {
 	
 	////Instruction is abstract
 	//Instruction:
-	//	TAB (Click | Fill | Navigate | Assert | Read | CallProcedure);
+	//	Click | Fill | Select | Navigate | Assert | Read | CallProcedure;
 	public InstructionElements getInstructionAccess() {
 		return pInstruction;
 	}
@@ -657,7 +656,7 @@ public class SeleniumDSLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Click:
-	//	'click' WS Name=STRING;
+	//	'click' Name=STRING;
 	public ClickElements getClickAccess() {
 		return pClick;
 	}
@@ -667,7 +666,7 @@ public class SeleniumDSLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Fill:
-	//	'fill' WS Name=STRING WS value=(STRING | IDENTIFIER);
+	//	'fill' Name=STRING value=(STRING | IDENTIFIER);
 	public FillElements getFillAccess() {
 		return pFill;
 	}
@@ -676,8 +675,18 @@ public class SeleniumDSLGrammarAccess extends AbstractGrammarElementFinder {
 		return getFillAccess().getRule();
 	}
 	
+	//Select:
+	//	'select' Name=STRING;
+	public SelectElements getSelectAccess() {
+		return pSelect;
+	}
+	
+	public ParserRule getSelectRule() {
+		return getSelectAccess().getRule();
+	}
+	
 	//Navigate:
-	//	'navigate' WS url=(STRING | IDENTIFIER);
+	//	'navigate' url=(STRING | IDENTIFIER);
 	public NavigateElements getNavigateAccess() {
 		return pNavigate;
 	}
@@ -687,7 +696,7 @@ public class SeleniumDSLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Read:
-	//	Variable=IDENTIFIER WS '=' WS 'read' WS Name=STRING;
+	//	Variable=IDENTIFIER '=' 'read' Name=STRING;
 	public ReadElements getReadAccess() {
 		return pRead;
 	}
@@ -697,8 +706,8 @@ public class SeleniumDSLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Assert:
-	//	'assert' (Search=STRING WS 'contains' WS Value=(STRING | IDENTIFIER) | Name=STRING WS 'equals' WS Value=(STRING |
-	//	IDENTIFIER) | Name=STRING WS 'exists');
+	//	'assert' (Search=STRING 'contains' Value=(STRING | IDENTIFIER) | Name=STRING 'equals' Value=(STRING | IDENTIFIER) |
+	//	Name=STRING 'exists');
 	public AssertElements getAssertAccess() {
 		return pAssert;
 	}
@@ -708,7 +717,7 @@ public class SeleniumDSLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//CallProcedure:
-	//	'^' ProcedureName=IDENTIFIER (WS Parameters+=(STRING | IDENTIFIER))*;
+	//	ProcedureName=IDENTIFIER ('(' (Parameters+=(IDENTIFIER | STRING) (COMMA Parameters+=(IDENTIFIER | STRING))*) ')')?;
 	public CallProcedureElements getCallProcedureAccess() {
 		return pCallProcedure;
 	}
@@ -723,28 +732,10 @@ public class SeleniumDSLGrammarAccess extends AbstractGrammarElementFinder {
 		return tIDENTIFIER;
 	}
 	
-	//terminal WS:
-	//	' ';
-	public TerminalRule getWSRule() {
-		return tWS;
-	}
-	
 	//terminal COMMA:
 	//	',';
 	public TerminalRule getCOMMARule() {
 		return tCOMMA;
-	}
-	
-	//terminal TAB:
-	//	'\t';
-	public TerminalRule getTABRule() {
-		return tTAB;
-	}
-	
-	//terminal RETURN_LINE:
-	//	'\n';
-	public TerminalRule getRETURN_LINERule() {
-		return tRETURN_LINE;
 	}
 	
 	//terminal ID:
@@ -776,6 +767,12 @@ public class SeleniumDSLGrammarAccess extends AbstractGrammarElementFinder {
 	//	'//' !('\n' | '\r')* ('\r'? '\n')?;
 	public TerminalRule getSL_COMMENTRule() {
 		return gaTerminals.getSL_COMMENTRule();
+	}
+	
+	//terminal WS:
+	//	' ' | '\t' | '\r' | '\n'+;
+	public TerminalRule getWSRule() {
+		return gaTerminals.getWSRule();
 	}
 	
 	//terminal ANY_OTHER:

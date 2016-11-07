@@ -1,13 +1,18 @@
-def login(username, password):
-  click('Log in')
-  click('Cliquez ici ou sur le logo C\'zam pour vous identifier')
-  fill('username', username)
-  fill('password', password)
-  select('warn')
-  click('Connexion')
+def login(username, password) {
+  click 'Log in'
+  click 'Cliquez ici ou sur le logo C\'zam pour vous identifier'
+  fill 'username' username
+  fill 'password' password
+  select 'warn'
+  click 'Connexion'
   assert 'Connecté sous le nom' contains 'Massimo Tisi'
+}
 
-def main():
-  navigate_to('http://campus.mines-nantes.fr')
-  login('gpouil4', '123654')
-  
+def navigateToCampus {
+    navigate 'http://campus.mines-nantes.fr'
+}
+
+def main {
+  navigateToCampus
+  login('gpouil14', '123456')
+}

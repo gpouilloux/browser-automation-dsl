@@ -26,6 +26,9 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SeleniumDSL.ecore#//Fill/Name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SeleniumDSL.ecore#//Fill/value"/>
     </genClasses>
+    <genClasses ecoreClass="SeleniumDSL.ecore#//Select">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SeleniumDSL.ecore#//Select/Name"/>
+    </genClasses>
     <genClasses ecoreClass="SeleniumDSL.ecore#//Navigate">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SeleniumDSL.ecore#//Navigate/url"/>
     </genClasses>

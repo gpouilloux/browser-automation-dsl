@@ -12,6 +12,7 @@ import fr.minesnantes.browserautomation.seleniumDSL.MainProcedure;
 import fr.minesnantes.browserautomation.seleniumDSL.Navigate;
 import fr.minesnantes.browserautomation.seleniumDSL.Procedure;
 import fr.minesnantes.browserautomation.seleniumDSL.Read;
+import fr.minesnantes.browserautomation.seleniumDSL.Select;
 import fr.minesnantes.browserautomation.seleniumDSL.SeleniumDSLPackage;
 import fr.minesnantes.browserautomation.seleniumDSL.SeleniumTest;
 import fr.minesnantes.browserautomation.services.SeleniumDSLGrammarAccess;
@@ -64,6 +65,9 @@ public class SeleniumDSLSemanticSequencer extends AbstractDelegatingSemanticSequ
 			case SeleniumDSLPackage.READ:
 				sequence_Read(context, (Read) semanticObject); 
 				return; 
+			case SeleniumDSLPackage.SELECT:
+				sequence_Select(context, (Select) semanticObject); 
+				return; 
 			case SeleniumDSLPackage.SELENIUM_TEST:
 				sequence_SeleniumTest(context, (SeleniumTest) semanticObject); 
 				return; 
@@ -91,7 +95,10 @@ public class SeleniumDSLSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *     CallProcedure returns CallProcedure
 	 *
 	 * Constraint:
-	 *     (ProcedureName=IDENTIFIER (Parameters+=STRING | Parameters+=IDENTIFIER)*)
+	 *     (
+	 *         ProcedureName=IDENTIFIER 
+	 *         ((Parameters+=IDENTIFIER | Parameters+=STRING) Parameters+=IDENTIFIER? (Parameters+=STRING? Parameters+=IDENTIFIER?)*)?
+	 *     )
 	 */
 	protected void sequence_CallProcedure(ISerializationContext context, CallProcedure semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -112,7 +119,7 @@ public class SeleniumDSLSemanticSequencer extends AbstractDelegatingSemanticSequ
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SeleniumDSLPackage.Literals.CLICK__NAME));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getClickAccess().getNameSTRINGTerminalRuleCall_2_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getClickAccess().getNameSTRINGTerminalRuleCall_1_0(), semanticObject.getName());
 		feeder.finish();
 	}
 	
@@ -160,7 +167,7 @@ public class SeleniumDSLSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *     Procedure returns Procedure
 	 *
 	 * Constraint:
-	 *     (Name=IDENTIFIER Parameters+=IDENTIFIER+ Parameters+=IDENTIFIER* instructions+=Instruction*)
+	 *     (Name=IDENTIFIER (Parameters+=IDENTIFIER Parameters+=IDENTIFIER*)? instructions+=Instruction*)
 	 */
 	protected void sequence_Procedure(ISerializationContext context, Procedure semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -184,7 +191,26 @@ public class SeleniumDSLSemanticSequencer extends AbstractDelegatingSemanticSequ
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getReadAccess().getVariableIDENTIFIERTerminalRuleCall_0_0(), semanticObject.getVariable());
-		feeder.accept(grammarAccess.getReadAccess().getNameSTRINGTerminalRuleCall_6_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getReadAccess().getNameSTRINGTerminalRuleCall_3_0(), semanticObject.getName());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Instruction returns Select
+	 *     Select returns Select
+	 *
+	 * Constraint:
+	 *     Name=STRING
+	 */
+	protected void sequence_Select(ISerializationContext context, Select semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SeleniumDSLPackage.Literals.SELECT__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SeleniumDSLPackage.Literals.SELECT__NAME));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getSelectAccess().getNameSTRINGTerminalRuleCall_1_0(), semanticObject.getName());
 		feeder.finish();
 	}
 	

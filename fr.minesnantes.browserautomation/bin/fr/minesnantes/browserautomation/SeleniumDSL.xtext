@@ -6,37 +6,35 @@ SeleniumTest:
   procedures+=Procedure*
   main = MainProcedure;
 
-Procedure: 'def' WS Name=IDENTIFIER'(' ?(Parameters+=IDENTIFIER+ (COMMA WS Parameters+=IDENTIFIER)*) '):' RETURN_LINE
-  instructions+=Instruction*;
+Procedure: 'def' Name=IDENTIFIER ('(' (Parameters+=IDENTIFIER (COMMA Parameters+=IDENTIFIER)*) ')')? '{'
+  instructions+=Instruction*
+ '}';
 
-MainProcedure:{MainProcedure} 'def' WS 'main():' RETURN_LINE
-  instructions+=Instruction*;
+MainProcedure:{MainProcedure} 'def' + 'main' + '{'
+  instructions+=Instruction*
+  '}';
 
 //Instruction is abstract
 Instruction: 
-    TAB(Click | Fill | Navigate | Assert | Read | CallProcedure)
+  (Click | Fill | Select | Navigate | Assert | Read | CallProcedure)
 ;
 
-Click: 'click' WS Name=STRING;
+Click: 'click' Name=STRING;
 
-Fill: 'fill' WS Name=STRING WS value=(STRING|IDENTIFIER);
+Fill: 'fill' Name=STRING value=(STRING|IDENTIFIER);
 
-Navigate: 'navigate' WS url=(STRING|IDENTIFIER);
+Select: 'select' Name=STRING;
 
-Read: Variable=IDENTIFIER WS '=' WS 'read' WS Name=STRING;
+Navigate: 'navigate' url=(STRING|IDENTIFIER);
 
-Assert:  'assert' (Search=STRING WS 'contains' WS Value=(STRING|IDENTIFIER) |
-                   Name=STRING WS 'equals' WS Value=(STRING|IDENTIFIER) |
-                   Name=STRING WS 'exists');
+Read: Variable=IDENTIFIER '=' 'read' Name=STRING;
 
-CallProcedure: '^'ProcedureName=IDENTIFIER (WS Parameters+=(STRING|IDENTIFIER))*;
+Assert:  'assert' (Search=STRING 'contains' Value=(STRING|IDENTIFIER) |
+                   Name=STRING 'equals' Value=(STRING|IDENTIFIER) |
+                   Name=STRING 'exists');
+
+CallProcedure: ProcedureName=IDENTIFIER ('(' (Parameters+=(IDENTIFIER|STRING) (COMMA Parameters+=(IDENTIFIER|STRING))*) ')')?;
 
 terminal IDENTIFIER: '^'?('a'..'z'|'A'..'Z') ('a'..'z'|'A'..'Z'|'0'..'9')*;
 
-terminal WS: ' ';
-
 terminal COMMA: ',';
-
-terminal TAB: '\t';
-
-terminal RETURN_LINE: '\n';

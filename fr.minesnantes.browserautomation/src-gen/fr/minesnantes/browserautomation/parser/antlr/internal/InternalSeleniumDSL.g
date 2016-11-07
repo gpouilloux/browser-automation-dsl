@@ -137,15 +137,11 @@ ruleProcedure returns [EObject current=null]
 		{
 			newLeafNode(otherlv_0, grammarAccess.getProcedureAccess().getDefKeyword_0());
 		}
-		this_WS_1=RULE_WS
-		{
-			newLeafNode(this_WS_1, grammarAccess.getProcedureAccess().getWSTerminalRuleCall_1());
-		}
 		(
 			(
-				lv_Name_2_0=RULE_IDENTIFIER
+				lv_Name_1_0=RULE_IDENTIFIER
 				{
-					newLeafNode(lv_Name_2_0, grammarAccess.getProcedureAccess().getNameIDENTIFIERTerminalRuleCall_2_0());
+					newLeafNode(lv_Name_1_0, grammarAccess.getProcedureAccess().getNameIDENTIFIERTerminalRuleCall_1_0());
 				}
 				{
 					if ($current==null) {
@@ -154,50 +150,22 @@ ruleProcedure returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"Name",
-						lv_Name_2_0,
+						lv_Name_1_0,
 						"fr.minesnantes.browserautomation.SeleniumDSL.IDENTIFIER");
 				}
 			)
 		)
 		(
-			otherlv_3='('
+			otherlv_2='('
 			{
-				newLeafNode(otherlv_3, grammarAccess.getProcedureAccess().getLeftParenthesisKeyword_3());
+				newLeafNode(otherlv_2, grammarAccess.getProcedureAccess().getLeftParenthesisKeyword_2_0());
 			}
-		)?
-		(
 			(
-				(
-					lv_Parameters_4_0=RULE_IDENTIFIER
-					{
-						newLeafNode(lv_Parameters_4_0, grammarAccess.getProcedureAccess().getParametersIDENTIFIERTerminalRuleCall_4_0_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getProcedureRule());
-						}
-						addWithLastConsumed(
-							$current,
-							"Parameters",
-							lv_Parameters_4_0,
-							"fr.minesnantes.browserautomation.SeleniumDSL.IDENTIFIER");
-					}
-				)
-			)+
-			(
-				this_COMMA_5=RULE_COMMA
-				{
-					newLeafNode(this_COMMA_5, grammarAccess.getProcedureAccess().getCOMMATerminalRuleCall_4_1_0());
-				}
-				this_WS_6=RULE_WS
-				{
-					newLeafNode(this_WS_6, grammarAccess.getProcedureAccess().getWSTerminalRuleCall_4_1_1());
-				}
 				(
 					(
-						lv_Parameters_7_0=RULE_IDENTIFIER
+						lv_Parameters_3_0=RULE_IDENTIFIER
 						{
-							newLeafNode(lv_Parameters_7_0, grammarAccess.getProcedureAccess().getParametersIDENTIFIERTerminalRuleCall_4_1_2_0());
+							newLeafNode(lv_Parameters_3_0, grammarAccess.getProcedureAccess().getParametersIDENTIFIERTerminalRuleCall_2_1_0_0());
 						}
 						{
 							if ($current==null) {
@@ -206,27 +174,51 @@ ruleProcedure returns [EObject current=null]
 							addWithLastConsumed(
 								$current,
 								"Parameters",
-								lv_Parameters_7_0,
+								lv_Parameters_3_0,
 								"fr.minesnantes.browserautomation.SeleniumDSL.IDENTIFIER");
 						}
 					)
 				)
-			)*
-		)
-		otherlv_8='):'
+				(
+					this_COMMA_4=RULE_COMMA
+					{
+						newLeafNode(this_COMMA_4, grammarAccess.getProcedureAccess().getCOMMATerminalRuleCall_2_1_1_0());
+					}
+					(
+						(
+							lv_Parameters_5_0=RULE_IDENTIFIER
+							{
+								newLeafNode(lv_Parameters_5_0, grammarAccess.getProcedureAccess().getParametersIDENTIFIERTerminalRuleCall_2_1_1_1_0());
+							}
+							{
+								if ($current==null) {
+									$current = createModelElement(grammarAccess.getProcedureRule());
+								}
+								addWithLastConsumed(
+									$current,
+									"Parameters",
+									lv_Parameters_5_0,
+									"fr.minesnantes.browserautomation.SeleniumDSL.IDENTIFIER");
+							}
+						)
+					)
+				)*
+			)
+			otherlv_6=')'
+			{
+				newLeafNode(otherlv_6, grammarAccess.getProcedureAccess().getRightParenthesisKeyword_2_2());
+			}
+		)?
+		otherlv_7='{'
 		{
-			newLeafNode(otherlv_8, grammarAccess.getProcedureAccess().getRightParenthesisColonKeyword_5());
-		}
-		this_RETURN_LINE_9=RULE_RETURN_LINE
-		{
-			newLeafNode(this_RETURN_LINE_9, grammarAccess.getProcedureAccess().getRETURN_LINETerminalRuleCall_6());
+			newLeafNode(otherlv_7, grammarAccess.getProcedureAccess().getLeftCurlyBracketKeyword_3());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getProcedureAccess().getInstructionsInstructionParserRuleCall_7_0());
+					newCompositeNode(grammarAccess.getProcedureAccess().getInstructionsInstructionParserRuleCall_4_0());
 				}
-				lv_instructions_10_0=ruleInstruction
+				lv_instructions_8_0=ruleInstruction
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getProcedureRule());
@@ -234,12 +226,16 @@ ruleProcedure returns [EObject current=null]
 					add(
 						$current,
 						"instructions",
-						lv_instructions_10_0,
+						lv_instructions_8_0,
 						"fr.minesnantes.browserautomation.SeleniumDSL.Instruction");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)*
+		otherlv_9='}'
+		{
+			newLeafNode(otherlv_9, grammarAccess.getProcedureAccess().getRightCurlyBracketKeyword_5());
+		}
 	)
 ;
 
@@ -266,28 +262,28 @@ ruleMainProcedure returns [EObject current=null]
 					$current);
 			}
 		)
-		otherlv_1='def'
+		(
+			otherlv_1='def'
+			{
+				newLeafNode(otherlv_1, grammarAccess.getMainProcedureAccess().getDefKeyword_1());
+			}
+		)+
+		(
+			otherlv_2='main'
+			{
+				newLeafNode(otherlv_2, grammarAccess.getMainProcedureAccess().getMainKeyword_2());
+			}
+		)+
+		otherlv_3='{'
 		{
-			newLeafNode(otherlv_1, grammarAccess.getMainProcedureAccess().getDefKeyword_1());
-		}
-		this_WS_2=RULE_WS
-		{
-			newLeafNode(this_WS_2, grammarAccess.getMainProcedureAccess().getWSTerminalRuleCall_2());
-		}
-		otherlv_3='main():'
-		{
-			newLeafNode(otherlv_3, grammarAccess.getMainProcedureAccess().getMainKeyword_3());
-		}
-		this_RETURN_LINE_4=RULE_RETURN_LINE
-		{
-			newLeafNode(this_RETURN_LINE_4, grammarAccess.getMainProcedureAccess().getRETURN_LINETerminalRuleCall_4());
+			newLeafNode(otherlv_3, grammarAccess.getMainProcedureAccess().getLeftCurlyBracketKeyword_3());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getMainProcedureAccess().getInstructionsInstructionParserRuleCall_5_0());
+					newCompositeNode(grammarAccess.getMainProcedureAccess().getInstructionsInstructionParserRuleCall_4_0());
 				}
-				lv_instructions_5_0=ruleInstruction
+				lv_instructions_4_0=ruleInstruction
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getMainProcedureRule());
@@ -295,12 +291,16 @@ ruleMainProcedure returns [EObject current=null]
 					add(
 						$current,
 						"instructions",
-						lv_instructions_5_0,
+						lv_instructions_4_0,
 						"fr.minesnantes.browserautomation.SeleniumDSL.Instruction");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)*
+		otherlv_5='}'
+		{
+			newLeafNode(otherlv_5, grammarAccess.getMainProcedureAccess().getRightCurlyBracketKeyword_5());
+		}
 	)
 ;
 
@@ -320,65 +320,68 @@ ruleInstruction returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		this_TAB_0=RULE_TAB
 		{
-			newLeafNode(this_TAB_0, grammarAccess.getInstructionAccess().getTABTerminalRuleCall_0());
+			newCompositeNode(grammarAccess.getInstructionAccess().getClickParserRuleCall_0());
 		}
-		(
-			{
-				newCompositeNode(grammarAccess.getInstructionAccess().getClickParserRuleCall_1_0());
-			}
-			this_Click_1=ruleClick
-			{
-				$current = $this_Click_1.current;
-				afterParserOrEnumRuleCall();
-			}
-			    |
-			{
-				newCompositeNode(grammarAccess.getInstructionAccess().getFillParserRuleCall_1_1());
-			}
-			this_Fill_2=ruleFill
-			{
-				$current = $this_Fill_2.current;
-				afterParserOrEnumRuleCall();
-			}
-			    |
-			{
-				newCompositeNode(grammarAccess.getInstructionAccess().getNavigateParserRuleCall_1_2());
-			}
-			this_Navigate_3=ruleNavigate
-			{
-				$current = $this_Navigate_3.current;
-				afterParserOrEnumRuleCall();
-			}
-			    |
-			{
-				newCompositeNode(grammarAccess.getInstructionAccess().getAssertParserRuleCall_1_3());
-			}
-			this_Assert_4=ruleAssert
-			{
-				$current = $this_Assert_4.current;
-				afterParserOrEnumRuleCall();
-			}
-			    |
-			{
-				newCompositeNode(grammarAccess.getInstructionAccess().getReadParserRuleCall_1_4());
-			}
-			this_Read_5=ruleRead
-			{
-				$current = $this_Read_5.current;
-				afterParserOrEnumRuleCall();
-			}
-			    |
-			{
-				newCompositeNode(grammarAccess.getInstructionAccess().getCallProcedureParserRuleCall_1_5());
-			}
-			this_CallProcedure_6=ruleCallProcedure
-			{
-				$current = $this_CallProcedure_6.current;
-				afterParserOrEnumRuleCall();
-			}
-		)
+		this_Click_0=ruleClick
+		{
+			$current = $this_Click_0.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getInstructionAccess().getFillParserRuleCall_1());
+		}
+		this_Fill_1=ruleFill
+		{
+			$current = $this_Fill_1.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getInstructionAccess().getSelectParserRuleCall_2());
+		}
+		this_Select_2=ruleSelect
+		{
+			$current = $this_Select_2.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getInstructionAccess().getNavigateParserRuleCall_3());
+		}
+		this_Navigate_3=ruleNavigate
+		{
+			$current = $this_Navigate_3.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getInstructionAccess().getAssertParserRuleCall_4());
+		}
+		this_Assert_4=ruleAssert
+		{
+			$current = $this_Assert_4.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getInstructionAccess().getReadParserRuleCall_5());
+		}
+		this_Read_5=ruleRead
+		{
+			$current = $this_Read_5.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getInstructionAccess().getCallProcedureParserRuleCall_6());
+		}
+		this_CallProcedure_6=ruleCallProcedure
+		{
+			$current = $this_CallProcedure_6.current;
+			afterParserOrEnumRuleCall();
+		}
 	)
 ;
 
@@ -402,15 +405,11 @@ ruleClick returns [EObject current=null]
 		{
 			newLeafNode(otherlv_0, grammarAccess.getClickAccess().getClickKeyword_0());
 		}
-		this_WS_1=RULE_WS
-		{
-			newLeafNode(this_WS_1, grammarAccess.getClickAccess().getWSTerminalRuleCall_1());
-		}
 		(
 			(
-				lv_Name_2_0=RULE_STRING
+				lv_Name_1_0=RULE_STRING
 				{
-					newLeafNode(lv_Name_2_0, grammarAccess.getClickAccess().getNameSTRINGTerminalRuleCall_2_0());
+					newLeafNode(lv_Name_1_0, grammarAccess.getClickAccess().getNameSTRINGTerminalRuleCall_1_0());
 				}
 				{
 					if ($current==null) {
@@ -419,7 +418,7 @@ ruleClick returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"Name",
-						lv_Name_2_0,
+						lv_Name_1_0,
 						"org.eclipse.xtext.common.Terminals.STRING");
 				}
 			)
@@ -447,15 +446,11 @@ ruleFill returns [EObject current=null]
 		{
 			newLeafNode(otherlv_0, grammarAccess.getFillAccess().getFillKeyword_0());
 		}
-		this_WS_1=RULE_WS
-		{
-			newLeafNode(this_WS_1, grammarAccess.getFillAccess().getWSTerminalRuleCall_1());
-		}
 		(
 			(
-				lv_Name_2_0=RULE_STRING
+				lv_Name_1_0=RULE_STRING
 				{
-					newLeafNode(lv_Name_2_0, grammarAccess.getFillAccess().getNameSTRINGTerminalRuleCall_2_0());
+					newLeafNode(lv_Name_1_0, grammarAccess.getFillAccess().getNameSTRINGTerminalRuleCall_1_0());
 				}
 				{
 					if ($current==null) {
@@ -464,21 +459,17 @@ ruleFill returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"Name",
-						lv_Name_2_0,
+						lv_Name_1_0,
 						"org.eclipse.xtext.common.Terminals.STRING");
 				}
 			)
 		)
-		this_WS_3=RULE_WS
-		{
-			newLeafNode(this_WS_3, grammarAccess.getFillAccess().getWSTerminalRuleCall_3());
-		}
 		(
 			(
 				(
-					lv_value_4_1=RULE_STRING
+					lv_value_2_1=RULE_STRING
 					{
-						newLeafNode(lv_value_4_1, grammarAccess.getFillAccess().getValueSTRINGTerminalRuleCall_4_0_0());
+						newLeafNode(lv_value_2_1, grammarAccess.getFillAccess().getValueSTRINGTerminalRuleCall_2_0_0());
 					}
 					{
 						if ($current==null) {
@@ -487,13 +478,13 @@ ruleFill returns [EObject current=null]
 						setWithLastConsumed(
 							$current,
 							"value",
-							lv_value_4_1,
+							lv_value_2_1,
 							"org.eclipse.xtext.common.Terminals.STRING");
 					}
 					    |
-					lv_value_4_2=RULE_IDENTIFIER
+					lv_value_2_2=RULE_IDENTIFIER
 					{
-						newLeafNode(lv_value_4_2, grammarAccess.getFillAccess().getValueIDENTIFIERTerminalRuleCall_4_0_1());
+						newLeafNode(lv_value_2_2, grammarAccess.getFillAccess().getValueIDENTIFIERTerminalRuleCall_2_0_1());
 					}
 					{
 						if ($current==null) {
@@ -502,10 +493,51 @@ ruleFill returns [EObject current=null]
 						setWithLastConsumed(
 							$current,
 							"value",
-							lv_value_4_2,
+							lv_value_2_2,
 							"fr.minesnantes.browserautomation.SeleniumDSL.IDENTIFIER");
 					}
 				)
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleSelect
+entryRuleSelect returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getSelectRule()); }
+	iv_ruleSelect=ruleSelect
+	{ $current=$iv_ruleSelect.current; }
+	EOF;
+
+// Rule Select
+ruleSelect returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='select'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getSelectAccess().getSelectKeyword_0());
+		}
+		(
+			(
+				lv_Name_1_0=RULE_STRING
+				{
+					newLeafNode(lv_Name_1_0, grammarAccess.getSelectAccess().getNameSTRINGTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getSelectRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"Name",
+						lv_Name_1_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
 			)
 		)
 	)
@@ -531,16 +563,12 @@ ruleNavigate returns [EObject current=null]
 		{
 			newLeafNode(otherlv_0, grammarAccess.getNavigateAccess().getNavigateKeyword_0());
 		}
-		this_WS_1=RULE_WS
-		{
-			newLeafNode(this_WS_1, grammarAccess.getNavigateAccess().getWSTerminalRuleCall_1());
-		}
 		(
 			(
 				(
-					lv_url_2_1=RULE_STRING
+					lv_url_1_1=RULE_STRING
 					{
-						newLeafNode(lv_url_2_1, grammarAccess.getNavigateAccess().getUrlSTRINGTerminalRuleCall_2_0_0());
+						newLeafNode(lv_url_1_1, grammarAccess.getNavigateAccess().getUrlSTRINGTerminalRuleCall_1_0_0());
 					}
 					{
 						if ($current==null) {
@@ -549,13 +577,13 @@ ruleNavigate returns [EObject current=null]
 						setWithLastConsumed(
 							$current,
 							"url",
-							lv_url_2_1,
+							lv_url_1_1,
 							"org.eclipse.xtext.common.Terminals.STRING");
 					}
 					    |
-					lv_url_2_2=RULE_IDENTIFIER
+					lv_url_1_2=RULE_IDENTIFIER
 					{
-						newLeafNode(lv_url_2_2, grammarAccess.getNavigateAccess().getUrlIDENTIFIERTerminalRuleCall_2_0_1());
+						newLeafNode(lv_url_1_2, grammarAccess.getNavigateAccess().getUrlIDENTIFIERTerminalRuleCall_1_0_1());
 					}
 					{
 						if ($current==null) {
@@ -564,7 +592,7 @@ ruleNavigate returns [EObject current=null]
 						setWithLastConsumed(
 							$current,
 							"url",
-							lv_url_2_2,
+							lv_url_1_2,
 							"fr.minesnantes.browserautomation.SeleniumDSL.IDENTIFIER");
 					}
 				)
@@ -607,31 +635,19 @@ ruleRead returns [EObject current=null]
 				}
 			)
 		)
-		this_WS_1=RULE_WS
+		otherlv_1='='
 		{
-			newLeafNode(this_WS_1, grammarAccess.getReadAccess().getWSTerminalRuleCall_1());
+			newLeafNode(otherlv_1, grammarAccess.getReadAccess().getEqualsSignKeyword_1());
 		}
-		otherlv_2='='
+		otherlv_2='read'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getReadAccess().getEqualsSignKeyword_2());
-		}
-		this_WS_3=RULE_WS
-		{
-			newLeafNode(this_WS_3, grammarAccess.getReadAccess().getWSTerminalRuleCall_3());
-		}
-		otherlv_4='read'
-		{
-			newLeafNode(otherlv_4, grammarAccess.getReadAccess().getReadKeyword_4());
-		}
-		this_WS_5=RULE_WS
-		{
-			newLeafNode(this_WS_5, grammarAccess.getReadAccess().getWSTerminalRuleCall_5());
+			newLeafNode(otherlv_2, grammarAccess.getReadAccess().getReadKeyword_2());
 		}
 		(
 			(
-				lv_Name_6_0=RULE_STRING
+				lv_Name_3_0=RULE_STRING
 				{
-					newLeafNode(lv_Name_6_0, grammarAccess.getReadAccess().getNameSTRINGTerminalRuleCall_6_0());
+					newLeafNode(lv_Name_3_0, grammarAccess.getReadAccess().getNameSTRINGTerminalRuleCall_3_0());
 				}
 				{
 					if ($current==null) {
@@ -640,7 +656,7 @@ ruleRead returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"Name",
-						lv_Name_6_0,
+						lv_Name_3_0,
 						"org.eclipse.xtext.common.Terminals.STRING");
 				}
 			)
@@ -688,24 +704,16 @@ ruleAssert returns [EObject current=null]
 						}
 					)
 				)
-				this_WS_2=RULE_WS
+				otherlv_2='contains'
 				{
-					newLeafNode(this_WS_2, grammarAccess.getAssertAccess().getWSTerminalRuleCall_1_0_1());
-				}
-				otherlv_3='contains'
-				{
-					newLeafNode(otherlv_3, grammarAccess.getAssertAccess().getContainsKeyword_1_0_2());
-				}
-				this_WS_4=RULE_WS
-				{
-					newLeafNode(this_WS_4, grammarAccess.getAssertAccess().getWSTerminalRuleCall_1_0_3());
+					newLeafNode(otherlv_2, grammarAccess.getAssertAccess().getContainsKeyword_1_0_1());
 				}
 				(
 					(
 						(
-							lv_Value_5_1=RULE_STRING
+							lv_Value_3_1=RULE_STRING
 							{
-								newLeafNode(lv_Value_5_1, grammarAccess.getAssertAccess().getValueSTRINGTerminalRuleCall_1_0_4_0_0());
+								newLeafNode(lv_Value_3_1, grammarAccess.getAssertAccess().getValueSTRINGTerminalRuleCall_1_0_2_0_0());
 							}
 							{
 								if ($current==null) {
@@ -714,13 +722,13 @@ ruleAssert returns [EObject current=null]
 								setWithLastConsumed(
 									$current,
 									"Value",
-									lv_Value_5_1,
+									lv_Value_3_1,
 									"org.eclipse.xtext.common.Terminals.STRING");
 							}
 							    |
-							lv_Value_5_2=RULE_IDENTIFIER
+							lv_Value_3_2=RULE_IDENTIFIER
 							{
-								newLeafNode(lv_Value_5_2, grammarAccess.getAssertAccess().getValueIDENTIFIERTerminalRuleCall_1_0_4_0_1());
+								newLeafNode(lv_Value_3_2, grammarAccess.getAssertAccess().getValueIDENTIFIERTerminalRuleCall_1_0_2_0_1());
 							}
 							{
 								if ($current==null) {
@@ -729,7 +737,7 @@ ruleAssert returns [EObject current=null]
 								setWithLastConsumed(
 									$current,
 									"Value",
-									lv_Value_5_2,
+									lv_Value_3_2,
 									"fr.minesnantes.browserautomation.SeleniumDSL.IDENTIFIER");
 							}
 						)
@@ -740,9 +748,9 @@ ruleAssert returns [EObject current=null]
 			(
 				(
 					(
-						lv_Name_6_0=RULE_STRING
+						lv_Name_4_0=RULE_STRING
 						{
-							newLeafNode(lv_Name_6_0, grammarAccess.getAssertAccess().getNameSTRINGTerminalRuleCall_1_1_0_0());
+							newLeafNode(lv_Name_4_0, grammarAccess.getAssertAccess().getNameSTRINGTerminalRuleCall_1_1_0_0());
 						}
 						{
 							if ($current==null) {
@@ -751,29 +759,21 @@ ruleAssert returns [EObject current=null]
 							setWithLastConsumed(
 								$current,
 								"Name",
-								lv_Name_6_0,
+								lv_Name_4_0,
 								"org.eclipse.xtext.common.Terminals.STRING");
 						}
 					)
 				)
-				this_WS_7=RULE_WS
+				otherlv_5='equals'
 				{
-					newLeafNode(this_WS_7, grammarAccess.getAssertAccess().getWSTerminalRuleCall_1_1_1());
-				}
-				otherlv_8='equals'
-				{
-					newLeafNode(otherlv_8, grammarAccess.getAssertAccess().getEqualsKeyword_1_1_2());
-				}
-				this_WS_9=RULE_WS
-				{
-					newLeafNode(this_WS_9, grammarAccess.getAssertAccess().getWSTerminalRuleCall_1_1_3());
+					newLeafNode(otherlv_5, grammarAccess.getAssertAccess().getEqualsKeyword_1_1_1());
 				}
 				(
 					(
 						(
-							lv_Value_10_1=RULE_STRING
+							lv_Value_6_1=RULE_STRING
 							{
-								newLeafNode(lv_Value_10_1, grammarAccess.getAssertAccess().getValueSTRINGTerminalRuleCall_1_1_4_0_0());
+								newLeafNode(lv_Value_6_1, grammarAccess.getAssertAccess().getValueSTRINGTerminalRuleCall_1_1_2_0_0());
 							}
 							{
 								if ($current==null) {
@@ -782,13 +782,13 @@ ruleAssert returns [EObject current=null]
 								setWithLastConsumed(
 									$current,
 									"Value",
-									lv_Value_10_1,
+									lv_Value_6_1,
 									"org.eclipse.xtext.common.Terminals.STRING");
 							}
 							    |
-							lv_Value_10_2=RULE_IDENTIFIER
+							lv_Value_6_2=RULE_IDENTIFIER
 							{
-								newLeafNode(lv_Value_10_2, grammarAccess.getAssertAccess().getValueIDENTIFIERTerminalRuleCall_1_1_4_0_1());
+								newLeafNode(lv_Value_6_2, grammarAccess.getAssertAccess().getValueIDENTIFIERTerminalRuleCall_1_1_2_0_1());
 							}
 							{
 								if ($current==null) {
@@ -797,7 +797,7 @@ ruleAssert returns [EObject current=null]
 								setWithLastConsumed(
 									$current,
 									"Value",
-									lv_Value_10_2,
+									lv_Value_6_2,
 									"fr.minesnantes.browserautomation.SeleniumDSL.IDENTIFIER");
 							}
 						)
@@ -808,9 +808,9 @@ ruleAssert returns [EObject current=null]
 			(
 				(
 					(
-						lv_Name_11_0=RULE_STRING
+						lv_Name_7_0=RULE_STRING
 						{
-							newLeafNode(lv_Name_11_0, grammarAccess.getAssertAccess().getNameSTRINGTerminalRuleCall_1_2_0_0());
+							newLeafNode(lv_Name_7_0, grammarAccess.getAssertAccess().getNameSTRINGTerminalRuleCall_1_2_0_0());
 						}
 						{
 							if ($current==null) {
@@ -819,18 +819,14 @@ ruleAssert returns [EObject current=null]
 							setWithLastConsumed(
 								$current,
 								"Name",
-								lv_Name_11_0,
+								lv_Name_7_0,
 								"org.eclipse.xtext.common.Terminals.STRING");
 						}
 					)
 				)
-				this_WS_12=RULE_WS
+				otherlv_8='exists'
 				{
-					newLeafNode(this_WS_12, grammarAccess.getAssertAccess().getWSTerminalRuleCall_1_2_1());
-				}
-				otherlv_13='exists'
-				{
-					newLeafNode(otherlv_13, grammarAccess.getAssertAccess().getExistsKeyword_1_2_2());
+					newLeafNode(otherlv_8, grammarAccess.getAssertAccess().getExistsKeyword_1_2_1());
 				}
 			)
 		)
@@ -853,15 +849,11 @@ ruleCallProcedure returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='^'
-		{
-			newLeafNode(otherlv_0, grammarAccess.getCallProcedureAccess().getCircumflexAccentKeyword_0());
-		}
 		(
 			(
-				lv_ProcedureName_1_0=RULE_IDENTIFIER
+				lv_ProcedureName_0_0=RULE_IDENTIFIER
 				{
-					newLeafNode(lv_ProcedureName_1_0, grammarAccess.getCallProcedureAccess().getProcedureNameIDENTIFIERTerminalRuleCall_1_0());
+					newLeafNode(lv_ProcedureName_0_0, grammarAccess.getCallProcedureAccess().getProcedureNameIDENTIFIERTerminalRuleCall_0_0());
 				}
 				{
 					if ($current==null) {
@@ -870,64 +862,105 @@ ruleCallProcedure returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"ProcedureName",
-						lv_ProcedureName_1_0,
+						lv_ProcedureName_0_0,
 						"fr.minesnantes.browserautomation.SeleniumDSL.IDENTIFIER");
 				}
 			)
 		)
 		(
-			this_WS_2=RULE_WS
+			otherlv_1='('
 			{
-				newLeafNode(this_WS_2, grammarAccess.getCallProcedureAccess().getWSTerminalRuleCall_2_0());
+				newLeafNode(otherlv_1, grammarAccess.getCallProcedureAccess().getLeftParenthesisKeyword_1_0());
 			}
 			(
 				(
 					(
-						lv_Parameters_3_1=RULE_STRING
-						{
-							newLeafNode(lv_Parameters_3_1, grammarAccess.getCallProcedureAccess().getParametersSTRINGTerminalRuleCall_2_1_0_0());
-						}
-						{
-							if ($current==null) {
-								$current = createModelElement(grammarAccess.getCallProcedureRule());
+						(
+							lv_Parameters_2_1=RULE_IDENTIFIER
+							{
+								newLeafNode(lv_Parameters_2_1, grammarAccess.getCallProcedureAccess().getParametersIDENTIFIERTerminalRuleCall_1_1_0_0_0());
 							}
-							addWithLastConsumed(
-								$current,
-								"Parameters",
-								lv_Parameters_3_1,
-								"org.eclipse.xtext.common.Terminals.STRING");
-						}
-						    |
-						lv_Parameters_3_2=RULE_IDENTIFIER
-						{
-							newLeafNode(lv_Parameters_3_2, grammarAccess.getCallProcedureAccess().getParametersIDENTIFIERTerminalRuleCall_2_1_0_1());
-						}
-						{
-							if ($current==null) {
-								$current = createModelElement(grammarAccess.getCallProcedureRule());
+							{
+								if ($current==null) {
+									$current = createModelElement(grammarAccess.getCallProcedureRule());
+								}
+								addWithLastConsumed(
+									$current,
+									"Parameters",
+									lv_Parameters_2_1,
+									"fr.minesnantes.browserautomation.SeleniumDSL.IDENTIFIER");
 							}
-							addWithLastConsumed(
-								$current,
-								"Parameters",
-								lv_Parameters_3_2,
-								"fr.minesnantes.browserautomation.SeleniumDSL.IDENTIFIER");
-						}
+							    |
+							lv_Parameters_2_2=RULE_STRING
+							{
+								newLeafNode(lv_Parameters_2_2, grammarAccess.getCallProcedureAccess().getParametersSTRINGTerminalRuleCall_1_1_0_0_1());
+							}
+							{
+								if ($current==null) {
+									$current = createModelElement(grammarAccess.getCallProcedureRule());
+								}
+								addWithLastConsumed(
+									$current,
+									"Parameters",
+									lv_Parameters_2_2,
+									"org.eclipse.xtext.common.Terminals.STRING");
+							}
+						)
 					)
 				)
+				(
+					this_COMMA_3=RULE_COMMA
+					{
+						newLeafNode(this_COMMA_3, grammarAccess.getCallProcedureAccess().getCOMMATerminalRuleCall_1_1_1_0());
+					}
+					(
+						(
+							(
+								lv_Parameters_4_1=RULE_IDENTIFIER
+								{
+									newLeafNode(lv_Parameters_4_1, grammarAccess.getCallProcedureAccess().getParametersIDENTIFIERTerminalRuleCall_1_1_1_1_0_0());
+								}
+								{
+									if ($current==null) {
+										$current = createModelElement(grammarAccess.getCallProcedureRule());
+									}
+									addWithLastConsumed(
+										$current,
+										"Parameters",
+										lv_Parameters_4_1,
+										"fr.minesnantes.browserautomation.SeleniumDSL.IDENTIFIER");
+								}
+								    |
+								lv_Parameters_4_2=RULE_STRING
+								{
+									newLeafNode(lv_Parameters_4_2, grammarAccess.getCallProcedureAccess().getParametersSTRINGTerminalRuleCall_1_1_1_1_0_1());
+								}
+								{
+									if ($current==null) {
+										$current = createModelElement(grammarAccess.getCallProcedureRule());
+									}
+									addWithLastConsumed(
+										$current,
+										"Parameters",
+										lv_Parameters_4_2,
+										"org.eclipse.xtext.common.Terminals.STRING");
+								}
+							)
+						)
+					)
+				)*
 			)
-		)*
+			otherlv_5=')'
+			{
+				newLeafNode(otherlv_5, grammarAccess.getCallProcedureAccess().getRightParenthesisKeyword_1_2());
+			}
+		)?
 	)
 ;
 
 RULE_IDENTIFIER : '^'? ('a'..'z'|'A'..'Z') ('a'..'z'|'A'..'Z'|'0'..'9')*;
 
-RULE_WS : ' ';
-
 RULE_COMMA : ',';
-
-RULE_TAB : '\t';
-
-RULE_RETURN_LINE : '\n';
 
 RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 
@@ -938,5 +971,7 @@ RULE_STRING : ('"' ('\\' .|~(('\\'|'"')))* '"'|'\'' ('\\' .|~(('\\'|'\'')))* '\'
 RULE_ML_COMMENT : '/*' ( options {greedy=false;} : . )*'*/';
 
 RULE_SL_COMMENT : '//' ~(('\n'|'\r'))* ('\r'? '\n')?;
+
+RULE_WS : (' '|'\t'|'\r'|'\n')+;
 
 RULE_ANY_OTHER : .;

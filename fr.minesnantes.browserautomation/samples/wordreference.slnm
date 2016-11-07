@@ -1,11 +1,13 @@
-def testWordReference(mot,motAttendu):
-  fill('w',mot)
-  click('submit-button')
+def testWordReference(mot, motAttendu) {
+  fill 'w' mot
+  click 'submit-button'
   assert 'ToWrd' exists
   assert 'ToWrd' equals motAttendu
-  a = read('ToWrd')
+  a = read 'ToWrd'
   assert 'ToWord' equals a
+}
 
-def main():
-  navigate_to('http://www.wordreference.com/')
+def main {
+  navigate 'http://www.wordreference.com/'
   testWordReference('bonjour', 'hello')
+}

@@ -28,61 +28,61 @@ import org.eclipse.emf.ecore.EObject;
 public interface Procedure extends EObject
 {
   /**
-	 * Returns the value of the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Name</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-	 * @return the value of the '<em>Name</em>' attribute.
-	 * @see #setName(String)
-	 * @see fr.minesnantes.browserautomation.seleniumDSL.SeleniumDSLPackage#getProcedure_Name()
-	 * @model
-	 * @generated
-	 */
+   * @return the value of the '<em>Name</em>' attribute.
+   * @see #setName(String)
+   * @see fr.minesnantes.browserautomation.seleniumDSL.SeleniumDSLPackage#getProcedure_Name()
+   * @model
+   * @generated
+   */
   String getName();
 
   /**
-	 * Sets the value of the '{@link fr.minesnantes.browserautomation.seleniumDSL.Procedure#getName <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * Sets the value of the '{@link fr.minesnantes.browserautomation.seleniumDSL.Procedure#getName <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name</em>' attribute.
-	 * @see #getName()
-	 * @generated
-	 */
+   * @param value the new value of the '<em>Name</em>' attribute.
+   * @see #getName()
+   * @generated
+   */
   void setName(String value);
 
   /**
-	 * Returns the value of the '<em><b>Parameters</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
-	 * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Parameters</b></em>' attribute list.
+   * The list contents are of type {@link java.lang.String}.
+   * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Parameters</em>' attribute list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-	 * @return the value of the '<em>Parameters</em>' attribute list.
-	 * @see fr.minesnantes.browserautomation.seleniumDSL.SeleniumDSLPackage#getProcedure_Parameters()
-	 * @model unique="false"
-	 * @generated
-	 */
+   * @return the value of the '<em>Parameters</em>' attribute list.
+   * @see fr.minesnantes.browserautomation.seleniumDSL.SeleniumDSLPackage#getProcedure_Parameters()
+   * @model unique="false"
+   * @generated
+   */
   EList<String> getParameters();
 
   /**
-	 * Returns the value of the '<em><b>Instructions</b></em>' containment reference list.
-	 * The list contents are of type {@link fr.minesnantes.browserautomation.seleniumDSL.Instruction}.
-	 * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Instructions</b></em>' containment reference list.
+   * The list contents are of type {@link fr.minesnantes.browserautomation.seleniumDSL.Instruction}.
+   * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Instructions</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-	 * @return the value of the '<em>Instructions</em>' containment reference list.
-	 * @see fr.minesnantes.browserautomation.seleniumDSL.SeleniumDSLPackage#getProcedure_Instructions()
-	 * @model containment="true"
-	 * @generated
-	 */
+   * @return the value of the '<em>Instructions</em>' containment reference list.
+   * @see fr.minesnantes.browserautomation.seleniumDSL.SeleniumDSLPackage#getProcedure_Instructions()
+   * @model containment="true"
+   * @generated
+   */
   EList<Instruction> getInstructions();
 
 } // Procedure

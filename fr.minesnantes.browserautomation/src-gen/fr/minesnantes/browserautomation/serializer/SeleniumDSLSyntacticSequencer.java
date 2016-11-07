@@ -20,24 +20,20 @@ import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 public class SeleniumDSLSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected SeleniumDSLGrammarAccess grammarAccess;
-	protected AbstractElementAlias match_Procedure_LeftParenthesisKeyword_3_q;
+	protected AbstractElementAlias match_MainProcedure_DefKeyword_1_p;
+	protected AbstractElementAlias match_MainProcedure_MainKeyword_2_p;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (SeleniumDSLGrammarAccess) access;
-		match_Procedure_LeftParenthesisKeyword_3_q = new TokenAlias(false, true, grammarAccess.getProcedureAccess().getLeftParenthesisKeyword_3());
+		match_MainProcedure_DefKeyword_1_p = new TokenAlias(true, false, grammarAccess.getMainProcedureAccess().getDefKeyword_1());
+		match_MainProcedure_MainKeyword_2_p = new TokenAlias(true, false, grammarAccess.getMainProcedureAccess().getMainKeyword_2());
 	}
 	
 	@Override
 	protected String getUnassignedRuleCallToken(EObject semanticObject, RuleCall ruleCall, INode node) {
 		if (ruleCall.getRule() == grammarAccess.getCOMMARule())
 			return getCOMMAToken(semanticObject, ruleCall, node);
-		else if (ruleCall.getRule() == grammarAccess.getRETURN_LINERule())
-			return getRETURN_LINEToken(semanticObject, ruleCall, node);
-		else if (ruleCall.getRule() == grammarAccess.getTABRule())
-			return getTABToken(semanticObject, ruleCall, node);
-		else if (ruleCall.getRule() == grammarAccess.getWSRule())
-			return getWSToken(semanticObject, ruleCall, node);
 		return "";
 	}
 	
@@ -50,53 +46,41 @@ public class SeleniumDSLSyntacticSequencer extends AbstractSyntacticSequencer {
 		return ",";
 	}
 	
-	/**
-	 * terminal RETURN_LINE: '\n';
-	 */
-	protected String getRETURN_LINEToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if (node != null)
-			return getTokenText(node);
-		return "\n";
-	}
-	
-	/**
-	 * terminal TAB: '\t';
-	 */
-	protected String getTABToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if (node != null)
-			return getTokenText(node);
-		return "\t";
-	}
-	
-	/**
-	 * terminal WS: ' ';
-	 */
-	protected String getWSToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if (node != null)
-			return getTokenText(node);
-		return " ";
-	}
-	
 	@Override
 	protected void emitUnassignedTokens(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
 		if (transition.getAmbiguousSyntaxes().isEmpty()) return;
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if (match_Procedure_LeftParenthesisKeyword_3_q.equals(syntax))
-				emit_Procedure_LeftParenthesisKeyword_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			if (match_MainProcedure_DefKeyword_1_p.equals(syntax))
+				emit_MainProcedure_DefKeyword_1_p(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_MainProcedure_MainKeyword_2_p.equals(syntax))
+				emit_MainProcedure_MainKeyword_2_p(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
 
 	/**
 	 * Ambiguous syntax:
-	 *     '('?
+	 *     'def'+
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     Name=IDENTIFIER (ambiguity) Parameters+=IDENTIFIER
+	 *     (rule start) (ambiguity) 'main'+ '{' '}' (rule start)
+	 *     (rule start) (ambiguity) 'main'+ '{' instructions+=Instruction
 	 */
-	protected void emit_Procedure_LeftParenthesisKeyword_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_MainProcedure_DefKeyword_1_p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     'main'+
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) 'def'+ (ambiguity) '{' '}' (rule start)
+	 *     (rule start) 'def'+ (ambiguity) '{' instructions+=Instruction
+	 */
+	protected void emit_MainProcedure_MainKeyword_2_p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
