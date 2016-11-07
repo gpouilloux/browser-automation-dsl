@@ -1,7 +1,10 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Plugin
-Bundle-SymbolicName: fr.minesnantes.browserautomation.plugin;singleton:=true
+Bundle-SymbolicName: fr.minesnantes.browserautomation.interpreter;singleton:=true
 Bundle-Version: 1.0.0.qualifier
-Require-Bundle: org.eclipse.ui
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.ui.workbench,
+ org.eclipse.ui.console,
+ fr.minesnantes.browserautomation.editor
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
