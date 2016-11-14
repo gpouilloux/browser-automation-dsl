@@ -11,26 +11,33 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.ui.IEditorPart;
-import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.IWorkbenchWindow;
-import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.console.ConsolePlugin;
 import org.eclipse.ui.console.IConsole;
-import org.eclipse.ui.console.IConsoleConstants;
 import org.eclipse.ui.console.IConsoleManager;
-import org.eclipse.ui.console.IConsoleView;
 import org.eclipse.ui.console.MessageConsole;
 import org.eclipse.ui.console.MessageConsoleStream;
 import org.eclipse.ui.handlers.HandlerUtil;
+import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
+import fr.minesnantes.browserautomation.seleniumDSL.Assert;
+import fr.minesnantes.browserautomation.seleniumDSL.CallProcedure;
 import fr.minesnantes.browserautomation.seleniumDSL.Click;
-import fr.minesnantes.browserautomation.seleniumDSL.Instruction;
+import fr.minesnantes.browserautomation.seleniumDSL.Fill;
 import fr.minesnantes.browserautomation.seleniumDSL.MainProcedure;
+import fr.minesnantes.browserautomation.seleniumDSL.Navigate;
 import fr.minesnantes.browserautomation.seleniumDSL.Procedure;
+import fr.minesnantes.browserautomation.seleniumDSL.Read;
+import fr.minesnantes.browserautomation.seleniumDSL.Select;
 import fr.minesnantes.browserautomation.seleniumDSL.SeleniumTest;
 import fr.minesnantes.browserautomation.seleniumDSL.presentation.SeleniumDSLEditor;
-
-import org.eclipse.jface.dialogs.MessageDialog;
 
 /**
  * Handles the execution of the selenium plugin
@@ -91,26 +98,73 @@ public class SeleniumHandler extends AbstractHandler {
 					
 					if(mainProcedure != null) {
 						this.consoleOutput.println("Entering main procedure");
-						
-						// TODO I guess we have to instantiate some Selenium stuff here
-						// for example, opening Chrome browser as well
-						
+
+						// Initialize Selenium web driver for Google Chrome
+						System.setProperty("webdriver.chrome.driver", "./chromedriver");
+						WebDriver webDriver = new ChromeDriver();
+																		
 						mainProcedure.getInstructions().forEach(i -> {
 							// TODO process each instruction
-							// (CallProc) take care of calling the procedures if they exist
-//							if(i instanceof Click) {
-//								
-//							}
-							this.consoleOutput.println(i.getClass().getCanonicalName());
+							// TODO (CallProc) take care of calling the procedures if they exist
+							
+							if(i instanceof Navigate) {
+								Navigate navigateTask = (Navigate) i;
+								String urlToNavigate = navigateTask.getUrl();
+								
+								// TODO check if regular URL using regex
+								if(urlToNavigate != null && urlToNavigate != "") {
+									webDriver.get(urlToNavigate);
+								}
+							} else if(i instanceof Click) {
+								// TODO très dégueu cette partie là...
+								Click clickTask = (Click) i;
+								String elementName = clickTask.getName();
+								if(elementName != null && elementName != "") {
+									WebElement element = null;
+									try {
+										element = webDriver.findElement(By.linkText(elementName));
+									} catch(NoSuchElementException ex) {
+										try {
+											element = webDriver.findElement(By.name(elementName));
+										} catch(NoSuchElementException ex2) {
+											element = webDriver.findElement(By.xpath("//input[@value = \"" + elementName + "\"]"));
+										}
+									} finally {
+										if(element != null) {
+											element.click();
+										}
+									}
+										
+								}
+							} else if(i instanceof Fill) {
+								Fill fillTask = (Fill) i;
+								String elementName = fillTask.getName();
+								String elementValue = fillTask.getValue();
+								if(elementName != null && elementName != "" 
+										&& elementValue != null && elementValue != "") {
+									WebElement element = webDriver.findElement(By.name(elementName));
+									element.sendKeys(elementValue);
+								}
+								
+							} else if(i instanceof Select) {
+								
+							} else if(i instanceof Assert) {
+								
+							} else if(i instanceof Read) {
+								
+							} else if(i instanceof CallProcedure) {
+								
+							} else {
+								this.consoleOutput.println("Unknown instruction - " + i.getClass().getCanonicalName());
+							}							
 						});
+						
+						// Close the browser
+						webDriver.quit();
 					}
 			}
 		}
 		
-//		MessageDialog.openInformation(
-//				window.getShell(),
-//				"Selenium test runner",
-//				"Hello, Selenium");
 		return null;
 	}
 }

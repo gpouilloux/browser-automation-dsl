@@ -2,4 +2,4 @@
 */bin/
 *.class
 fr.minesnantes.browserautomation/bin/
-#fr.minesnantes.browserautomation/src-gen/*
+org.openqa.selenium/
