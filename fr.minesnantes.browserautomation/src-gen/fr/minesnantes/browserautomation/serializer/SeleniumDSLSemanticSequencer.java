@@ -111,16 +111,10 @@ public class SeleniumDSLSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *     Click returns Click
 	 *
 	 * Constraint:
-	 *     Name=STRING
+	 *     ((Type='input' | Type='link' | Type='name' | Type='xpath') Value=STRING)
 	 */
 	protected void sequence_Click(ISerializationContext context, Click semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, SeleniumDSLPackage.Literals.CLICK__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SeleniumDSLPackage.Literals.CLICK__NAME));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getClickAccess().getNameSTRINGTerminalRuleCall_1_0(), semanticObject.getName());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -130,7 +124,7 @@ public class SeleniumDSLSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *     Fill returns Fill
 	 *
 	 * Constraint:
-	 *     (Name=STRING (value=STRING | value=IDENTIFIER))
+	 *     (Name=STRING (Value=STRING | Value=IDENTIFIER))
 	 */
 	protected void sequence_Fill(ISerializationContext context, Fill semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

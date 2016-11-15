@@ -4,7 +4,7 @@
 package fr.minesnantes.browserautomation.seleniumDSL.provider;
 
 
-import fr.minesnantes.browserautomation.seleniumDSL.Click;
+import fr.minesnantes.browserautomation.seleniumDSL.Select;
 import fr.minesnantes.browserautomation.seleniumDSL.SeleniumDSLPackage;
 
 import java.util.Collection;
@@ -19,19 +19,19 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link fr.minesnantes.browserautomation.seleniumDSL.Click} object.
+ * This is the item provider adapter for a {@link fr.minesnantes.browserautomation.seleniumDSL.Select} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ClickItemProvider extends InstructionItemProvider {
+public class SelectItemProvider extends InstructionItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ClickItemProvider(AdapterFactory adapterFactory) {
+	public SelectItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -46,26 +46,25 @@ public class ClickItemProvider extends InstructionItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addTypePropertyDescriptor(object);
-			addValuePropertyDescriptor(object);
+			addNamePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Type feature.
+	 * This adds a property descriptor for the Name feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addTypePropertyDescriptor(Object object) {
+	protected void addNamePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Click_Type_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Click_Type_feature", "_UI_Click_type"),
-				 SeleniumDSLPackage.Literals.CLICK__TYPE,
+				 getString("_UI_Select_Name_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Select_Name_feature", "_UI_Select_type"),
+				 SeleniumDSLPackage.Literals.SELECT__NAME,
 				 true,
 				 false,
 				 false,
@@ -75,36 +74,14 @@ public class ClickItemProvider extends InstructionItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Value feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addValuePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Click_Value_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Click_Value_feature", "_UI_Click_type"),
-				 SeleniumDSLPackage.Literals.CLICK__VALUE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This returns Click.gif.
+	 * This returns Select.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Click"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Select"));
 	}
 
 	/**
@@ -115,10 +92,10 @@ public class ClickItemProvider extends InstructionItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Click)object).getType();
+		String label = ((Select)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_Click_type") :
-			getString("_UI_Click_type") + " " + label;
+			getString("_UI_Select_type") :
+			getString("_UI_Select_type") + " " + label;
 	}
 	
 
@@ -133,9 +110,8 @@ public class ClickItemProvider extends InstructionItemProvider {
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Click.class)) {
-			case SeleniumDSLPackage.CLICK__TYPE:
-			case SeleniumDSLPackage.CLICK__VALUE:
+		switch (notification.getFeatureID(Select.class)) {
+			case SeleniumDSLPackage.SELECT__NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

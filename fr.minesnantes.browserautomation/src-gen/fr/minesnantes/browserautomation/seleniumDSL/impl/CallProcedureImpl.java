@@ -35,188 +35,183 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
 public class CallProcedureImpl extends InstructionImpl implements CallProcedure
 {
   /**
-   * The default value of the '{@link #getProcedureName() <em>Procedure Name</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getProcedureName() <em>Procedure Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getProcedureName()
-   * @generated
-   * @ordered
-   */
+	 * @see #getProcedureName()
+	 * @generated
+	 * @ordered
+	 */
   protected static final String PROCEDURE_NAME_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getProcedureName() <em>Procedure Name</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getProcedureName() <em>Procedure Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getProcedureName()
-   * @generated
-   * @ordered
-   */
+	 * @see #getProcedureName()
+	 * @generated
+	 * @ordered
+	 */
   protected String procedureName = PROCEDURE_NAME_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getParameters() <em>Parameters</em>}' attribute list.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getParameters() <em>Parameters</em>}' attribute list.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getParameters()
-   * @generated
-   * @ordered
-   */
+	 * @see #getParameters()
+	 * @generated
+	 * @ordered
+	 */
   protected EList<String> parameters;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected CallProcedureImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return SeleniumDSLPackage.Literals.CALL_PROCEDURE;
-  }
+		return SeleniumDSLPackage.Literals.CALL_PROCEDURE;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public String getProcedureName()
   {
-    return procedureName;
-  }
+		return procedureName;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setProcedureName(String newProcedureName)
   {
-    String oldProcedureName = procedureName;
-    procedureName = newProcedureName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SeleniumDSLPackage.CALL_PROCEDURE__PROCEDURE_NAME, oldProcedureName, procedureName));
-  }
+		String oldProcedureName = procedureName;
+		procedureName = newProcedureName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SeleniumDSLPackage.CALL_PROCEDURE__PROCEDURE_NAME, oldProcedureName, procedureName));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EList<String> getParameters()
   {
-    if (parameters == null)
-    {
-      parameters = new EDataTypeEList<String>(String.class, this, SeleniumDSLPackage.CALL_PROCEDURE__PARAMETERS);
-    }
-    return parameters;
-  }
+		if (parameters == null) {
+			parameters = new EDataTypeEList<String>(String.class, this, SeleniumDSLPackage.CALL_PROCEDURE__PARAMETERS);
+		}
+		return parameters;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
-    switch (featureID)
-    {
-      case SeleniumDSLPackage.CALL_PROCEDURE__PROCEDURE_NAME:
-        return getProcedureName();
-      case SeleniumDSLPackage.CALL_PROCEDURE__PARAMETERS:
-        return getParameters();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case SeleniumDSLPackage.CALL_PROCEDURE__PROCEDURE_NAME:
+				return getProcedureName();
+			case SeleniumDSLPackage.CALL_PROCEDURE__PARAMETERS:
+				return getParameters();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
-    switch (featureID)
-    {
-      case SeleniumDSLPackage.CALL_PROCEDURE__PROCEDURE_NAME:
-        setProcedureName((String)newValue);
-        return;
-      case SeleniumDSLPackage.CALL_PROCEDURE__PARAMETERS:
-        getParameters().clear();
-        getParameters().addAll((Collection<? extends String>)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case SeleniumDSLPackage.CALL_PROCEDURE__PROCEDURE_NAME:
+				setProcedureName((String)newValue);
+				return;
+			case SeleniumDSLPackage.CALL_PROCEDURE__PARAMETERS:
+				getParameters().clear();
+				getParameters().addAll((Collection<? extends String>)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID)
   {
-    switch (featureID)
-    {
-      case SeleniumDSLPackage.CALL_PROCEDURE__PROCEDURE_NAME:
-        setProcedureName(PROCEDURE_NAME_EDEFAULT);
-        return;
-      case SeleniumDSLPackage.CALL_PROCEDURE__PARAMETERS:
-        getParameters().clear();
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case SeleniumDSLPackage.CALL_PROCEDURE__PROCEDURE_NAME:
+				setProcedureName(PROCEDURE_NAME_EDEFAULT);
+				return;
+			case SeleniumDSLPackage.CALL_PROCEDURE__PARAMETERS:
+				getParameters().clear();
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID)
   {
-    switch (featureID)
-    {
-      case SeleniumDSLPackage.CALL_PROCEDURE__PROCEDURE_NAME:
-        return PROCEDURE_NAME_EDEFAULT == null ? procedureName != null : !PROCEDURE_NAME_EDEFAULT.equals(procedureName);
-      case SeleniumDSLPackage.CALL_PROCEDURE__PARAMETERS:
-        return parameters != null && !parameters.isEmpty();
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case SeleniumDSLPackage.CALL_PROCEDURE__PROCEDURE_NAME:
+				return PROCEDURE_NAME_EDEFAULT == null ? procedureName != null : !PROCEDURE_NAME_EDEFAULT.equals(procedureName);
+			case SeleniumDSLPackage.CALL_PROCEDURE__PARAMETERS:
+				return parameters != null && !parameters.isEmpty();
+		}
+		return super.eIsSet(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public String toString()
   {
-    if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (ProcedureName: ");
-    result.append(procedureName);
-    result.append(", Parameters: ");
-    result.append(parameters);
-    result.append(')');
-    return result.toString();
-  }
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (ProcedureName: ");
+		result.append(procedureName);
+		result.append(", Parameters: ");
+		result.append(parameters);
+		result.append(')');
+		return result.toString();
+	}
 
 } //CallProcedureImpl

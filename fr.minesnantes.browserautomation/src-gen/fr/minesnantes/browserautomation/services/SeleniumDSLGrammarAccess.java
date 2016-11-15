@@ -218,24 +218,48 @@ public class SeleniumDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.minesnantes.browserautomation.SeleniumDSL.Click");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cClickKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameSTRINGTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Assignment cTypeAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final Alternatives cTypeAlternatives_1_0 = (Alternatives)cTypeAssignment_1.eContents().get(0);
+		private final Keyword cTypeInputKeyword_1_0_0 = (Keyword)cTypeAlternatives_1_0.eContents().get(0);
+		private final Keyword cTypeLinkKeyword_1_0_1 = (Keyword)cTypeAlternatives_1_0.eContents().get(1);
+		private final Keyword cTypeNameKeyword_1_0_2 = (Keyword)cTypeAlternatives_1_0.eContents().get(2);
+		private final Keyword cTypeXpathKeyword_1_0_3 = (Keyword)cTypeAlternatives_1_0.eContents().get(3);
+		private final Assignment cValueAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cValueSTRINGTerminalRuleCall_2_0 = (RuleCall)cValueAssignment_2.eContents().get(0);
 		
 		//Click:
-		//	'click' Name=STRING;
+		//	'click' Type=('input' | 'link' | 'name' | 'xpath') Value=STRING;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'click' Name=STRING
+		//'click' Type=('input' | 'link' | 'name' | 'xpath') Value=STRING
 		public Group getGroup() { return cGroup; }
 		
 		//'click'
 		public Keyword getClickKeyword_0() { return cClickKeyword_0; }
 		
-		//Name=STRING
-		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		//Type=('input' | 'link' | 'name' | 'xpath')
+		public Assignment getTypeAssignment_1() { return cTypeAssignment_1; }
+		
+		//('input' | 'link' | 'name' | 'xpath')
+		public Alternatives getTypeAlternatives_1_0() { return cTypeAlternatives_1_0; }
+		
+		//'input'
+		public Keyword getTypeInputKeyword_1_0_0() { return cTypeInputKeyword_1_0_0; }
+		
+		//'link'
+		public Keyword getTypeLinkKeyword_1_0_1() { return cTypeLinkKeyword_1_0_1; }
+		
+		//'name'
+		public Keyword getTypeNameKeyword_1_0_2() { return cTypeNameKeyword_1_0_2; }
+		
+		//'xpath'
+		public Keyword getTypeXpathKeyword_1_0_3() { return cTypeXpathKeyword_1_0_3; }
+		
+		//Value=STRING
+		public Assignment getValueAssignment_2() { return cValueAssignment_2; }
 		
 		//STRING
-		public RuleCall getNameSTRINGTerminalRuleCall_1_0() { return cNameSTRINGTerminalRuleCall_1_0; }
+		public RuleCall getValueSTRINGTerminalRuleCall_2_0() { return cValueSTRINGTerminalRuleCall_2_0; }
 	}
 	public class FillElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.minesnantes.browserautomation.SeleniumDSL.Fill");
@@ -249,10 +273,10 @@ public class SeleniumDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cValueIDENTIFIERTerminalRuleCall_2_0_1 = (RuleCall)cValueAlternatives_2_0.eContents().get(1);
 		
 		//Fill:
-		//	'fill' Name=STRING value=(STRING | IDENTIFIER);
+		//	'fill' Name=STRING Value=(STRING | IDENTIFIER);
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'fill' Name=STRING value=(STRING | IDENTIFIER)
+		//'fill' Name=STRING Value=(STRING | IDENTIFIER)
 		public Group getGroup() { return cGroup; }
 		
 		//'fill'
@@ -264,7 +288,7 @@ public class SeleniumDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getNameSTRINGTerminalRuleCall_1_0() { return cNameSTRINGTerminalRuleCall_1_0; }
 		
-		//value=(STRING | IDENTIFIER)
+		//Value=(STRING | IDENTIFIER)
 		public Assignment getValueAssignment_2() { return cValueAssignment_2; }
 		
 		//(STRING | IDENTIFIER)
@@ -656,7 +680,7 @@ public class SeleniumDSLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Click:
-	//	'click' Name=STRING;
+	//	'click' Type=('input' | 'link' | 'name' | 'xpath') Value=STRING;
 	public ClickElements getClickAccess() {
 		return pClick;
 	}
@@ -666,7 +690,7 @@ public class SeleniumDSLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Fill:
-	//	'fill' Name=STRING value=(STRING | IDENTIFIER);
+	//	'fill' Name=STRING Value=(STRING | IDENTIFIER);
 	public FillElements getFillAccess() {
 		return pFill;
 	}

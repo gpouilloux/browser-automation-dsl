@@ -407,9 +407,58 @@ ruleClick returns [EObject current=null]
 		}
 		(
 			(
-				lv_Name_1_0=RULE_STRING
+				(
+					lv_Type_1_1='input'
+					{
+						newLeafNode(lv_Type_1_1, grammarAccess.getClickAccess().getTypeInputKeyword_1_0_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getClickRule());
+						}
+						setWithLastConsumed($current, "Type", lv_Type_1_1, null);
+					}
+					    |
+					lv_Type_1_2='link'
+					{
+						newLeafNode(lv_Type_1_2, grammarAccess.getClickAccess().getTypeLinkKeyword_1_0_1());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getClickRule());
+						}
+						setWithLastConsumed($current, "Type", lv_Type_1_2, null);
+					}
+					    |
+					lv_Type_1_3='name'
+					{
+						newLeafNode(lv_Type_1_3, grammarAccess.getClickAccess().getTypeNameKeyword_1_0_2());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getClickRule());
+						}
+						setWithLastConsumed($current, "Type", lv_Type_1_3, null);
+					}
+					    |
+					lv_Type_1_4='xpath'
+					{
+						newLeafNode(lv_Type_1_4, grammarAccess.getClickAccess().getTypeXpathKeyword_1_0_3());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getClickRule());
+						}
+						setWithLastConsumed($current, "Type", lv_Type_1_4, null);
+					}
+				)
+			)
+		)
+		(
+			(
+				lv_Value_2_0=RULE_STRING
 				{
-					newLeafNode(lv_Name_1_0, grammarAccess.getClickAccess().getNameSTRINGTerminalRuleCall_1_0());
+					newLeafNode(lv_Value_2_0, grammarAccess.getClickAccess().getValueSTRINGTerminalRuleCall_2_0());
 				}
 				{
 					if ($current==null) {
@@ -417,8 +466,8 @@ ruleClick returns [EObject current=null]
 					}
 					setWithLastConsumed(
 						$current,
-						"Name",
-						lv_Name_1_0,
+						"Value",
+						lv_Value_2_0,
 						"org.eclipse.xtext.common.Terminals.STRING");
 				}
 			)
@@ -467,9 +516,9 @@ ruleFill returns [EObject current=null]
 		(
 			(
 				(
-					lv_value_2_1=RULE_STRING
+					lv_Value_2_1=RULE_STRING
 					{
-						newLeafNode(lv_value_2_1, grammarAccess.getFillAccess().getValueSTRINGTerminalRuleCall_2_0_0());
+						newLeafNode(lv_Value_2_1, grammarAccess.getFillAccess().getValueSTRINGTerminalRuleCall_2_0_0());
 					}
 					{
 						if ($current==null) {
@@ -477,14 +526,14 @@ ruleFill returns [EObject current=null]
 						}
 						setWithLastConsumed(
 							$current,
-							"value",
-							lv_value_2_1,
+							"Value",
+							lv_Value_2_1,
 							"org.eclipse.xtext.common.Terminals.STRING");
 					}
 					    |
-					lv_value_2_2=RULE_IDENTIFIER
+					lv_Value_2_2=RULE_IDENTIFIER
 					{
-						newLeafNode(lv_value_2_2, grammarAccess.getFillAccess().getValueIDENTIFIERTerminalRuleCall_2_0_1());
+						newLeafNode(lv_Value_2_2, grammarAccess.getFillAccess().getValueIDENTIFIERTerminalRuleCall_2_0_1());
 					}
 					{
 						if ($current==null) {
@@ -492,8 +541,8 @@ ruleFill returns [EObject current=null]
 						}
 						setWithLastConsumed(
 							$current,
-							"value",
-							lv_value_2_2,
+							"Value",
+							lv_Value_2_2,
 							"fr.minesnantes.browserautomation.SeleniumDSL.IDENTIFIER");
 					}
 				)

@@ -85,8 +85,8 @@ public class FillItemProvider extends InstructionItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Fill_value_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Fill_value_feature", "_UI_Fill_type"),
+				 getString("_UI_Fill_Value_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Fill_Value_feature", "_UI_Fill_type"),
 				 SeleniumDSLPackage.Literals.FILL__VALUE,
 				 true,
 				 false,

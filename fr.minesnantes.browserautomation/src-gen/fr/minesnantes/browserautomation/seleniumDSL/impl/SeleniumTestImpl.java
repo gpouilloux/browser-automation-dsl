@@ -41,202 +41,194 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class SeleniumTestImpl extends MinimalEObjectImpl.Container implements SeleniumTest
 {
   /**
-   * The cached value of the '{@link #getProcedures() <em>Procedures</em>}' containment reference list.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getProcedures() <em>Procedures</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getProcedures()
-   * @generated
-   * @ordered
-   */
+	 * @see #getProcedures()
+	 * @generated
+	 * @ordered
+	 */
   protected EList<Procedure> procedures;
 
   /**
-   * The cached value of the '{@link #getMain() <em>Main</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getMain() <em>Main</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getMain()
-   * @generated
-   * @ordered
-   */
+	 * @see #getMain()
+	 * @generated
+	 * @ordered
+	 */
   protected MainProcedure main;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected SeleniumTestImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return SeleniumDSLPackage.Literals.SELENIUM_TEST;
-  }
+		return SeleniumDSLPackage.Literals.SELENIUM_TEST;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EList<Procedure> getProcedures()
   {
-    if (procedures == null)
-    {
-      procedures = new EObjectContainmentEList<Procedure>(Procedure.class, this, SeleniumDSLPackage.SELENIUM_TEST__PROCEDURES);
-    }
-    return procedures;
-  }
+		if (procedures == null) {
+			procedures = new EObjectContainmentEList<Procedure>(Procedure.class, this, SeleniumDSLPackage.SELENIUM_TEST__PROCEDURES);
+		}
+		return procedures;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public MainProcedure getMain()
   {
-    return main;
-  }
+		return main;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public NotificationChain basicSetMain(MainProcedure newMain, NotificationChain msgs)
   {
-    MainProcedure oldMain = main;
-    main = newMain;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SeleniumDSLPackage.SELENIUM_TEST__MAIN, oldMain, newMain);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
+		MainProcedure oldMain = main;
+		main = newMain;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SeleniumDSLPackage.SELENIUM_TEST__MAIN, oldMain, newMain);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setMain(MainProcedure newMain)
   {
-    if (newMain != main)
-    {
-      NotificationChain msgs = null;
-      if (main != null)
-        msgs = ((InternalEObject)main).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SeleniumDSLPackage.SELENIUM_TEST__MAIN, null, msgs);
-      if (newMain != null)
-        msgs = ((InternalEObject)newMain).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SeleniumDSLPackage.SELENIUM_TEST__MAIN, null, msgs);
-      msgs = basicSetMain(newMain, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SeleniumDSLPackage.SELENIUM_TEST__MAIN, newMain, newMain));
-  }
+		if (newMain != main) {
+			NotificationChain msgs = null;
+			if (main != null)
+				msgs = ((InternalEObject)main).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SeleniumDSLPackage.SELENIUM_TEST__MAIN, null, msgs);
+			if (newMain != null)
+				msgs = ((InternalEObject)newMain).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SeleniumDSLPackage.SELENIUM_TEST__MAIN, null, msgs);
+			msgs = basicSetMain(newMain, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SeleniumDSLPackage.SELENIUM_TEST__MAIN, newMain, newMain));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
-    switch (featureID)
-    {
-      case SeleniumDSLPackage.SELENIUM_TEST__PROCEDURES:
-        return ((InternalEList<?>)getProcedures()).basicRemove(otherEnd, msgs);
-      case SeleniumDSLPackage.SELENIUM_TEST__MAIN:
-        return basicSetMain(null, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
+		switch (featureID) {
+			case SeleniumDSLPackage.SELENIUM_TEST__PROCEDURES:
+				return ((InternalEList<?>)getProcedures()).basicRemove(otherEnd, msgs);
+			case SeleniumDSLPackage.SELENIUM_TEST__MAIN:
+				return basicSetMain(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
-    switch (featureID)
-    {
-      case SeleniumDSLPackage.SELENIUM_TEST__PROCEDURES:
-        return getProcedures();
-      case SeleniumDSLPackage.SELENIUM_TEST__MAIN:
-        return getMain();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case SeleniumDSLPackage.SELENIUM_TEST__PROCEDURES:
+				return getProcedures();
+			case SeleniumDSLPackage.SELENIUM_TEST__MAIN:
+				return getMain();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
-    switch (featureID)
-    {
-      case SeleniumDSLPackage.SELENIUM_TEST__PROCEDURES:
-        getProcedures().clear();
-        getProcedures().addAll((Collection<? extends Procedure>)newValue);
-        return;
-      case SeleniumDSLPackage.SELENIUM_TEST__MAIN:
-        setMain((MainProcedure)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case SeleniumDSLPackage.SELENIUM_TEST__PROCEDURES:
+				getProcedures().clear();
+				getProcedures().addAll((Collection<? extends Procedure>)newValue);
+				return;
+			case SeleniumDSLPackage.SELENIUM_TEST__MAIN:
+				setMain((MainProcedure)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID)
   {
-    switch (featureID)
-    {
-      case SeleniumDSLPackage.SELENIUM_TEST__PROCEDURES:
-        getProcedures().clear();
-        return;
-      case SeleniumDSLPackage.SELENIUM_TEST__MAIN:
-        setMain((MainProcedure)null);
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case SeleniumDSLPackage.SELENIUM_TEST__PROCEDURES:
+				getProcedures().clear();
+				return;
+			case SeleniumDSLPackage.SELENIUM_TEST__MAIN:
+				setMain((MainProcedure)null);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID)
   {
-    switch (featureID)
-    {
-      case SeleniumDSLPackage.SELENIUM_TEST__PROCEDURES:
-        return procedures != null && !procedures.isEmpty();
-      case SeleniumDSLPackage.SELENIUM_TEST__MAIN:
-        return main != null;
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case SeleniumDSLPackage.SELENIUM_TEST__PROCEDURES:
+				return procedures != null && !procedures.isEmpty();
+			case SeleniumDSLPackage.SELENIUM_TEST__MAIN:
+				return main != null;
+		}
+		return super.eIsSet(featureID);
+	}
 
 } //SeleniumTestImpl

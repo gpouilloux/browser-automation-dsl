@@ -21,7 +21,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalSeleniumDSLParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_IDENTIFIER", "RULE_COMMA", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'def'", "'('", "')'", "'{'", "'}'", "'main'", "'click'", "'fill'", "'select'", "'navigate'", "'='", "'read'", "'assert'", "'contains'", "'equals'", "'exists'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_IDENTIFIER", "RULE_COMMA", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'def'", "'('", "')'", "'{'", "'}'", "'main'", "'click'", "'input'", "'link'", "'name'", "'xpath'", "'fill'", "'select'", "'navigate'", "'='", "'read'", "'assert'", "'contains'", "'equals'", "'exists'"
     };
     public static final int RULE_IDENTIFIER=4;
     public static final int RULE_STRING=6;
@@ -34,6 +34,9 @@ public class InternalSeleniumDSLParser extends AbstractInternalAntlrParser {
     public static final int T__13=13;
     public static final int T__14=14;
     public static final int EOF=-1;
+    public static final int T__30=30;
+    public static final int T__31=31;
+    public static final int T__32=32;
     public static final int RULE_ID=7;
     public static final int RULE_COMMA=5;
     public static final int RULE_WS=11;
@@ -42,6 +45,7 @@ public class InternalSeleniumDSLParser extends AbstractInternalAntlrParser {
     public static final int T__27=27;
     public static final int T__28=28;
     public static final int RULE_INT=8;
+    public static final int T__29=29;
     public static final int T__22=22;
     public static final int RULE_ML_COMMENT=9;
     public static final int T__23=23;
@@ -467,7 +471,7 @@ public class InternalSeleniumDSLParser extends AbstractInternalAntlrParser {
                 int alt4=2;
                 int LA4_0 = input.LA(1);
 
-                if ( (LA4_0==RULE_IDENTIFIER||(LA4_0>=19 && LA4_0<=22)||LA4_0==25) ) {
+                if ( (LA4_0==RULE_IDENTIFIER||LA4_0==19||(LA4_0>=24 && LA4_0<=26)||LA4_0==29) ) {
                     alt4=1;
                 }
 
@@ -681,7 +685,7 @@ public class InternalSeleniumDSLParser extends AbstractInternalAntlrParser {
                 int alt7=2;
                 int LA7_0 = input.LA(1);
 
-                if ( (LA7_0==RULE_IDENTIFIER||(LA7_0>=19 && LA7_0<=22)||LA7_0==25) ) {
+                if ( (LA7_0==RULE_IDENTIFIER||LA7_0==19||(LA7_0>=24 && LA7_0<=26)||LA7_0==29) ) {
                     alt7=1;
                 }
 
@@ -821,22 +825,22 @@ public class InternalSeleniumDSLParser extends AbstractInternalAntlrParser {
                 alt8=1;
                 }
                 break;
-            case 20:
+            case 24:
                 {
                 alt8=2;
                 }
                 break;
-            case 21:
+            case 25:
                 {
                 alt8=3;
                 }
                 break;
-            case 22:
+            case 26:
                 {
                 alt8=4;
                 }
                 break;
-            case 25:
+            case 29:
                 {
                 alt8=5;
                 }
@@ -845,10 +849,10 @@ public class InternalSeleniumDSLParser extends AbstractInternalAntlrParser {
                 {
                 int LA8_6 = input.LA(2);
 
-                if ( (LA8_6==23) ) {
+                if ( (LA8_6==27) ) {
                     alt8=6;
                 }
-                else if ( (LA8_6==EOF||LA8_6==RULE_IDENTIFIER||LA8_6==14||LA8_6==17||(LA8_6>=19 && LA8_6<=22)||LA8_6==25) ) {
+                else if ( (LA8_6==EOF||LA8_6==RULE_IDENTIFIER||LA8_6==14||LA8_6==17||LA8_6==19||(LA8_6>=24 && LA8_6<=26)||LA8_6==29) ) {
                     alt8=7;
                 }
                 else {
@@ -1052,36 +1056,150 @@ public class InternalSeleniumDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleClick"
-    // InternalSeleniumDSL.g:396:1: ruleClick returns [EObject current=null] : (otherlv_0= 'click' ( (lv_Name_1_0= RULE_STRING ) ) ) ;
+    // InternalSeleniumDSL.g:396:1: ruleClick returns [EObject current=null] : (otherlv_0= 'click' ( ( (lv_Type_1_1= 'input' | lv_Type_1_2= 'link' | lv_Type_1_3= 'name' | lv_Type_1_4= 'xpath' ) ) ) ( (lv_Value_2_0= RULE_STRING ) ) ) ;
     public final EObject ruleClick() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
-        Token lv_Name_1_0=null;
+        Token lv_Type_1_1=null;
+        Token lv_Type_1_2=null;
+        Token lv_Type_1_3=null;
+        Token lv_Type_1_4=null;
+        Token lv_Value_2_0=null;
 
 
         	enterRule();
 
         try {
-            // InternalSeleniumDSL.g:402:2: ( (otherlv_0= 'click' ( (lv_Name_1_0= RULE_STRING ) ) ) )
-            // InternalSeleniumDSL.g:403:2: (otherlv_0= 'click' ( (lv_Name_1_0= RULE_STRING ) ) )
+            // InternalSeleniumDSL.g:402:2: ( (otherlv_0= 'click' ( ( (lv_Type_1_1= 'input' | lv_Type_1_2= 'link' | lv_Type_1_3= 'name' | lv_Type_1_4= 'xpath' ) ) ) ( (lv_Value_2_0= RULE_STRING ) ) ) )
+            // InternalSeleniumDSL.g:403:2: (otherlv_0= 'click' ( ( (lv_Type_1_1= 'input' | lv_Type_1_2= 'link' | lv_Type_1_3= 'name' | lv_Type_1_4= 'xpath' ) ) ) ( (lv_Value_2_0= RULE_STRING ) ) )
             {
-            // InternalSeleniumDSL.g:403:2: (otherlv_0= 'click' ( (lv_Name_1_0= RULE_STRING ) ) )
-            // InternalSeleniumDSL.g:404:3: otherlv_0= 'click' ( (lv_Name_1_0= RULE_STRING ) )
+            // InternalSeleniumDSL.g:403:2: (otherlv_0= 'click' ( ( (lv_Type_1_1= 'input' | lv_Type_1_2= 'link' | lv_Type_1_3= 'name' | lv_Type_1_4= 'xpath' ) ) ) ( (lv_Value_2_0= RULE_STRING ) ) )
+            // InternalSeleniumDSL.g:404:3: otherlv_0= 'click' ( ( (lv_Type_1_1= 'input' | lv_Type_1_2= 'link' | lv_Type_1_3= 'name' | lv_Type_1_4= 'xpath' ) ) ) ( (lv_Value_2_0= RULE_STRING ) )
             {
             otherlv_0=(Token)match(input,19,FOLLOW_11); 
 
             			newLeafNode(otherlv_0, grammarAccess.getClickAccess().getClickKeyword_0());
             		
-            // InternalSeleniumDSL.g:408:3: ( (lv_Name_1_0= RULE_STRING ) )
-            // InternalSeleniumDSL.g:409:4: (lv_Name_1_0= RULE_STRING )
+            // InternalSeleniumDSL.g:408:3: ( ( (lv_Type_1_1= 'input' | lv_Type_1_2= 'link' | lv_Type_1_3= 'name' | lv_Type_1_4= 'xpath' ) ) )
+            // InternalSeleniumDSL.g:409:4: ( (lv_Type_1_1= 'input' | lv_Type_1_2= 'link' | lv_Type_1_3= 'name' | lv_Type_1_4= 'xpath' ) )
             {
-            // InternalSeleniumDSL.g:409:4: (lv_Name_1_0= RULE_STRING )
-            // InternalSeleniumDSL.g:410:5: lv_Name_1_0= RULE_STRING
+            // InternalSeleniumDSL.g:409:4: ( (lv_Type_1_1= 'input' | lv_Type_1_2= 'link' | lv_Type_1_3= 'name' | lv_Type_1_4= 'xpath' ) )
+            // InternalSeleniumDSL.g:410:5: (lv_Type_1_1= 'input' | lv_Type_1_2= 'link' | lv_Type_1_3= 'name' | lv_Type_1_4= 'xpath' )
             {
-            lv_Name_1_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
+            // InternalSeleniumDSL.g:410:5: (lv_Type_1_1= 'input' | lv_Type_1_2= 'link' | lv_Type_1_3= 'name' | lv_Type_1_4= 'xpath' )
+            int alt9=4;
+            switch ( input.LA(1) ) {
+            case 20:
+                {
+                alt9=1;
+                }
+                break;
+            case 21:
+                {
+                alt9=2;
+                }
+                break;
+            case 22:
+                {
+                alt9=3;
+                }
+                break;
+            case 23:
+                {
+                alt9=4;
+                }
+                break;
+            default:
+                NoViableAltException nvae =
+                    new NoViableAltException("", 9, 0, input);
 
-            					newLeafNode(lv_Name_1_0, grammarAccess.getClickAccess().getNameSTRINGTerminalRuleCall_1_0());
+                throw nvae;
+            }
+
+            switch (alt9) {
+                case 1 :
+                    // InternalSeleniumDSL.g:411:6: lv_Type_1_1= 'input'
+                    {
+                    lv_Type_1_1=(Token)match(input,20,FOLLOW_12); 
+
+                    						newLeafNode(lv_Type_1_1, grammarAccess.getClickAccess().getTypeInputKeyword_1_0_0());
+                    					
+
+                    						if (current==null) {
+                    							current = createModelElement(grammarAccess.getClickRule());
+                    						}
+                    						setWithLastConsumed(current, "Type", lv_Type_1_1, null);
+                    					
+
+                    }
+                    break;
+                case 2 :
+                    // InternalSeleniumDSL.g:422:6: lv_Type_1_2= 'link'
+                    {
+                    lv_Type_1_2=(Token)match(input,21,FOLLOW_12); 
+
+                    						newLeafNode(lv_Type_1_2, grammarAccess.getClickAccess().getTypeLinkKeyword_1_0_1());
+                    					
+
+                    						if (current==null) {
+                    							current = createModelElement(grammarAccess.getClickRule());
+                    						}
+                    						setWithLastConsumed(current, "Type", lv_Type_1_2, null);
+                    					
+
+                    }
+                    break;
+                case 3 :
+                    // InternalSeleniumDSL.g:433:6: lv_Type_1_3= 'name'
+                    {
+                    lv_Type_1_3=(Token)match(input,22,FOLLOW_12); 
+
+                    						newLeafNode(lv_Type_1_3, grammarAccess.getClickAccess().getTypeNameKeyword_1_0_2());
+                    					
+
+                    						if (current==null) {
+                    							current = createModelElement(grammarAccess.getClickRule());
+                    						}
+                    						setWithLastConsumed(current, "Type", lv_Type_1_3, null);
+                    					
+
+                    }
+                    break;
+                case 4 :
+                    // InternalSeleniumDSL.g:444:6: lv_Type_1_4= 'xpath'
+                    {
+                    lv_Type_1_4=(Token)match(input,23,FOLLOW_12); 
+
+                    						newLeafNode(lv_Type_1_4, grammarAccess.getClickAccess().getTypeXpathKeyword_1_0_3());
+                    					
+
+                    						if (current==null) {
+                    							current = createModelElement(grammarAccess.getClickRule());
+                    						}
+                    						setWithLastConsumed(current, "Type", lv_Type_1_4, null);
+                    					
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+
+            }
+
+            // InternalSeleniumDSL.g:457:3: ( (lv_Value_2_0= RULE_STRING ) )
+            // InternalSeleniumDSL.g:458:4: (lv_Value_2_0= RULE_STRING )
+            {
+            // InternalSeleniumDSL.g:458:4: (lv_Value_2_0= RULE_STRING )
+            // InternalSeleniumDSL.g:459:5: lv_Value_2_0= RULE_STRING
+            {
+            lv_Value_2_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
+
+            					newLeafNode(lv_Value_2_0, grammarAccess.getClickAccess().getValueSTRINGTerminalRuleCall_2_0());
             				
 
             					if (current==null) {
@@ -1089,8 +1207,8 @@ public class InternalSeleniumDSLParser extends AbstractInternalAntlrParser {
             					}
             					setWithLastConsumed(
             						current,
-            						"Name",
-            						lv_Name_1_0,
+            						"Value",
+            						lv_Value_2_0,
             						"org.eclipse.xtext.common.Terminals.STRING");
             				
 
@@ -1122,7 +1240,7 @@ public class InternalSeleniumDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleFill"
-    // InternalSeleniumDSL.g:430:1: entryRuleFill returns [EObject current=null] : iv_ruleFill= ruleFill EOF ;
+    // InternalSeleniumDSL.g:479:1: entryRuleFill returns [EObject current=null] : iv_ruleFill= ruleFill EOF ;
     public final EObject entryRuleFill() throws RecognitionException {
         EObject current = null;
 
@@ -1130,8 +1248,8 @@ public class InternalSeleniumDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSeleniumDSL.g:430:45: (iv_ruleFill= ruleFill EOF )
-            // InternalSeleniumDSL.g:431:2: iv_ruleFill= ruleFill EOF
+            // InternalSeleniumDSL.g:479:45: (iv_ruleFill= ruleFill EOF )
+            // InternalSeleniumDSL.g:480:2: iv_ruleFill= ruleFill EOF
             {
              newCompositeNode(grammarAccess.getFillRule()); 
             pushFollow(FOLLOW_1);
@@ -1158,36 +1276,36 @@ public class InternalSeleniumDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFill"
-    // InternalSeleniumDSL.g:437:1: ruleFill returns [EObject current=null] : (otherlv_0= 'fill' ( (lv_Name_1_0= RULE_STRING ) ) ( ( (lv_value_2_1= RULE_STRING | lv_value_2_2= RULE_IDENTIFIER ) ) ) ) ;
+    // InternalSeleniumDSL.g:486:1: ruleFill returns [EObject current=null] : (otherlv_0= 'fill' ( (lv_Name_1_0= RULE_STRING ) ) ( ( (lv_Value_2_1= RULE_STRING | lv_Value_2_2= RULE_IDENTIFIER ) ) ) ) ;
     public final EObject ruleFill() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
         Token lv_Name_1_0=null;
-        Token lv_value_2_1=null;
-        Token lv_value_2_2=null;
+        Token lv_Value_2_1=null;
+        Token lv_Value_2_2=null;
 
 
         	enterRule();
 
         try {
-            // InternalSeleniumDSL.g:443:2: ( (otherlv_0= 'fill' ( (lv_Name_1_0= RULE_STRING ) ) ( ( (lv_value_2_1= RULE_STRING | lv_value_2_2= RULE_IDENTIFIER ) ) ) ) )
-            // InternalSeleniumDSL.g:444:2: (otherlv_0= 'fill' ( (lv_Name_1_0= RULE_STRING ) ) ( ( (lv_value_2_1= RULE_STRING | lv_value_2_2= RULE_IDENTIFIER ) ) ) )
+            // InternalSeleniumDSL.g:492:2: ( (otherlv_0= 'fill' ( (lv_Name_1_0= RULE_STRING ) ) ( ( (lv_Value_2_1= RULE_STRING | lv_Value_2_2= RULE_IDENTIFIER ) ) ) ) )
+            // InternalSeleniumDSL.g:493:2: (otherlv_0= 'fill' ( (lv_Name_1_0= RULE_STRING ) ) ( ( (lv_Value_2_1= RULE_STRING | lv_Value_2_2= RULE_IDENTIFIER ) ) ) )
             {
-            // InternalSeleniumDSL.g:444:2: (otherlv_0= 'fill' ( (lv_Name_1_0= RULE_STRING ) ) ( ( (lv_value_2_1= RULE_STRING | lv_value_2_2= RULE_IDENTIFIER ) ) ) )
-            // InternalSeleniumDSL.g:445:3: otherlv_0= 'fill' ( (lv_Name_1_0= RULE_STRING ) ) ( ( (lv_value_2_1= RULE_STRING | lv_value_2_2= RULE_IDENTIFIER ) ) )
+            // InternalSeleniumDSL.g:493:2: (otherlv_0= 'fill' ( (lv_Name_1_0= RULE_STRING ) ) ( ( (lv_Value_2_1= RULE_STRING | lv_Value_2_2= RULE_IDENTIFIER ) ) ) )
+            // InternalSeleniumDSL.g:494:3: otherlv_0= 'fill' ( (lv_Name_1_0= RULE_STRING ) ) ( ( (lv_Value_2_1= RULE_STRING | lv_Value_2_2= RULE_IDENTIFIER ) ) )
             {
-            otherlv_0=(Token)match(input,20,FOLLOW_11); 
+            otherlv_0=(Token)match(input,24,FOLLOW_12); 
 
             			newLeafNode(otherlv_0, grammarAccess.getFillAccess().getFillKeyword_0());
             		
-            // InternalSeleniumDSL.g:449:3: ( (lv_Name_1_0= RULE_STRING ) )
-            // InternalSeleniumDSL.g:450:4: (lv_Name_1_0= RULE_STRING )
+            // InternalSeleniumDSL.g:498:3: ( (lv_Name_1_0= RULE_STRING ) )
+            // InternalSeleniumDSL.g:499:4: (lv_Name_1_0= RULE_STRING )
             {
-            // InternalSeleniumDSL.g:450:4: (lv_Name_1_0= RULE_STRING )
-            // InternalSeleniumDSL.g:451:5: lv_Name_1_0= RULE_STRING
+            // InternalSeleniumDSL.g:499:4: (lv_Name_1_0= RULE_STRING )
+            // InternalSeleniumDSL.g:500:5: lv_Name_1_0= RULE_STRING
             {
-            lv_Name_1_0=(Token)match(input,RULE_STRING,FOLLOW_12); 
+            lv_Name_1_0=(Token)match(input,RULE_STRING,FOLLOW_13); 
 
             					newLeafNode(lv_Name_1_0, grammarAccess.getFillAccess().getNameSTRINGTerminalRuleCall_1_0());
             				
@@ -1207,35 +1325,35 @@ public class InternalSeleniumDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalSeleniumDSL.g:467:3: ( ( (lv_value_2_1= RULE_STRING | lv_value_2_2= RULE_IDENTIFIER ) ) )
-            // InternalSeleniumDSL.g:468:4: ( (lv_value_2_1= RULE_STRING | lv_value_2_2= RULE_IDENTIFIER ) )
+            // InternalSeleniumDSL.g:516:3: ( ( (lv_Value_2_1= RULE_STRING | lv_Value_2_2= RULE_IDENTIFIER ) ) )
+            // InternalSeleniumDSL.g:517:4: ( (lv_Value_2_1= RULE_STRING | lv_Value_2_2= RULE_IDENTIFIER ) )
             {
-            // InternalSeleniumDSL.g:468:4: ( (lv_value_2_1= RULE_STRING | lv_value_2_2= RULE_IDENTIFIER ) )
-            // InternalSeleniumDSL.g:469:5: (lv_value_2_1= RULE_STRING | lv_value_2_2= RULE_IDENTIFIER )
+            // InternalSeleniumDSL.g:517:4: ( (lv_Value_2_1= RULE_STRING | lv_Value_2_2= RULE_IDENTIFIER ) )
+            // InternalSeleniumDSL.g:518:5: (lv_Value_2_1= RULE_STRING | lv_Value_2_2= RULE_IDENTIFIER )
             {
-            // InternalSeleniumDSL.g:469:5: (lv_value_2_1= RULE_STRING | lv_value_2_2= RULE_IDENTIFIER )
-            int alt9=2;
-            int LA9_0 = input.LA(1);
+            // InternalSeleniumDSL.g:518:5: (lv_Value_2_1= RULE_STRING | lv_Value_2_2= RULE_IDENTIFIER )
+            int alt10=2;
+            int LA10_0 = input.LA(1);
 
-            if ( (LA9_0==RULE_STRING) ) {
-                alt9=1;
+            if ( (LA10_0==RULE_STRING) ) {
+                alt10=1;
             }
-            else if ( (LA9_0==RULE_IDENTIFIER) ) {
-                alt9=2;
+            else if ( (LA10_0==RULE_IDENTIFIER) ) {
+                alt10=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 9, 0, input);
+                    new NoViableAltException("", 10, 0, input);
 
                 throw nvae;
             }
-            switch (alt9) {
+            switch (alt10) {
                 case 1 :
-                    // InternalSeleniumDSL.g:470:6: lv_value_2_1= RULE_STRING
+                    // InternalSeleniumDSL.g:519:6: lv_Value_2_1= RULE_STRING
                     {
-                    lv_value_2_1=(Token)match(input,RULE_STRING,FOLLOW_2); 
+                    lv_Value_2_1=(Token)match(input,RULE_STRING,FOLLOW_2); 
 
-                    						newLeafNode(lv_value_2_1, grammarAccess.getFillAccess().getValueSTRINGTerminalRuleCall_2_0_0());
+                    						newLeafNode(lv_Value_2_1, grammarAccess.getFillAccess().getValueSTRINGTerminalRuleCall_2_0_0());
                     					
 
                     						if (current==null) {
@@ -1243,19 +1361,19 @@ public class InternalSeleniumDSLParser extends AbstractInternalAntlrParser {
                     						}
                     						setWithLastConsumed(
                     							current,
-                    							"value",
-                    							lv_value_2_1,
+                    							"Value",
+                    							lv_Value_2_1,
                     							"org.eclipse.xtext.common.Terminals.STRING");
                     					
 
                     }
                     break;
                 case 2 :
-                    // InternalSeleniumDSL.g:485:6: lv_value_2_2= RULE_IDENTIFIER
+                    // InternalSeleniumDSL.g:534:6: lv_Value_2_2= RULE_IDENTIFIER
                     {
-                    lv_value_2_2=(Token)match(input,RULE_IDENTIFIER,FOLLOW_2); 
+                    lv_Value_2_2=(Token)match(input,RULE_IDENTIFIER,FOLLOW_2); 
 
-                    						newLeafNode(lv_value_2_2, grammarAccess.getFillAccess().getValueIDENTIFIERTerminalRuleCall_2_0_1());
+                    						newLeafNode(lv_Value_2_2, grammarAccess.getFillAccess().getValueIDENTIFIERTerminalRuleCall_2_0_1());
                     					
 
                     						if (current==null) {
@@ -1263,8 +1381,8 @@ public class InternalSeleniumDSLParser extends AbstractInternalAntlrParser {
                     						}
                     						setWithLastConsumed(
                     							current,
-                    							"value",
-                    							lv_value_2_2,
+                    							"Value",
+                    							lv_Value_2_2,
                     							"fr.minesnantes.browserautomation.SeleniumDSL.IDENTIFIER");
                     					
 
@@ -1302,7 +1420,7 @@ public class InternalSeleniumDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleSelect"
-    // InternalSeleniumDSL.g:506:1: entryRuleSelect returns [EObject current=null] : iv_ruleSelect= ruleSelect EOF ;
+    // InternalSeleniumDSL.g:555:1: entryRuleSelect returns [EObject current=null] : iv_ruleSelect= ruleSelect EOF ;
     public final EObject entryRuleSelect() throws RecognitionException {
         EObject current = null;
 
@@ -1310,8 +1428,8 @@ public class InternalSeleniumDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSeleniumDSL.g:506:47: (iv_ruleSelect= ruleSelect EOF )
-            // InternalSeleniumDSL.g:507:2: iv_ruleSelect= ruleSelect EOF
+            // InternalSeleniumDSL.g:555:47: (iv_ruleSelect= ruleSelect EOF )
+            // InternalSeleniumDSL.g:556:2: iv_ruleSelect= ruleSelect EOF
             {
              newCompositeNode(grammarAccess.getSelectRule()); 
             pushFollow(FOLLOW_1);
@@ -1338,7 +1456,7 @@ public class InternalSeleniumDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSelect"
-    // InternalSeleniumDSL.g:513:1: ruleSelect returns [EObject current=null] : (otherlv_0= 'select' ( (lv_Name_1_0= RULE_STRING ) ) ) ;
+    // InternalSeleniumDSL.g:562:1: ruleSelect returns [EObject current=null] : (otherlv_0= 'select' ( (lv_Name_1_0= RULE_STRING ) ) ) ;
     public final EObject ruleSelect() throws RecognitionException {
         EObject current = null;
 
@@ -1349,21 +1467,21 @@ public class InternalSeleniumDSLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSeleniumDSL.g:519:2: ( (otherlv_0= 'select' ( (lv_Name_1_0= RULE_STRING ) ) ) )
-            // InternalSeleniumDSL.g:520:2: (otherlv_0= 'select' ( (lv_Name_1_0= RULE_STRING ) ) )
+            // InternalSeleniumDSL.g:568:2: ( (otherlv_0= 'select' ( (lv_Name_1_0= RULE_STRING ) ) ) )
+            // InternalSeleniumDSL.g:569:2: (otherlv_0= 'select' ( (lv_Name_1_0= RULE_STRING ) ) )
             {
-            // InternalSeleniumDSL.g:520:2: (otherlv_0= 'select' ( (lv_Name_1_0= RULE_STRING ) ) )
-            // InternalSeleniumDSL.g:521:3: otherlv_0= 'select' ( (lv_Name_1_0= RULE_STRING ) )
+            // InternalSeleniumDSL.g:569:2: (otherlv_0= 'select' ( (lv_Name_1_0= RULE_STRING ) ) )
+            // InternalSeleniumDSL.g:570:3: otherlv_0= 'select' ( (lv_Name_1_0= RULE_STRING ) )
             {
-            otherlv_0=(Token)match(input,21,FOLLOW_11); 
+            otherlv_0=(Token)match(input,25,FOLLOW_12); 
 
             			newLeafNode(otherlv_0, grammarAccess.getSelectAccess().getSelectKeyword_0());
             		
-            // InternalSeleniumDSL.g:525:3: ( (lv_Name_1_0= RULE_STRING ) )
-            // InternalSeleniumDSL.g:526:4: (lv_Name_1_0= RULE_STRING )
+            // InternalSeleniumDSL.g:574:3: ( (lv_Name_1_0= RULE_STRING ) )
+            // InternalSeleniumDSL.g:575:4: (lv_Name_1_0= RULE_STRING )
             {
-            // InternalSeleniumDSL.g:526:4: (lv_Name_1_0= RULE_STRING )
-            // InternalSeleniumDSL.g:527:5: lv_Name_1_0= RULE_STRING
+            // InternalSeleniumDSL.g:575:4: (lv_Name_1_0= RULE_STRING )
+            // InternalSeleniumDSL.g:576:5: lv_Name_1_0= RULE_STRING
             {
             lv_Name_1_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
 
@@ -1408,7 +1526,7 @@ public class InternalSeleniumDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleNavigate"
-    // InternalSeleniumDSL.g:547:1: entryRuleNavigate returns [EObject current=null] : iv_ruleNavigate= ruleNavigate EOF ;
+    // InternalSeleniumDSL.g:596:1: entryRuleNavigate returns [EObject current=null] : iv_ruleNavigate= ruleNavigate EOF ;
     public final EObject entryRuleNavigate() throws RecognitionException {
         EObject current = null;
 
@@ -1416,8 +1534,8 @@ public class InternalSeleniumDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSeleniumDSL.g:547:49: (iv_ruleNavigate= ruleNavigate EOF )
-            // InternalSeleniumDSL.g:548:2: iv_ruleNavigate= ruleNavigate EOF
+            // InternalSeleniumDSL.g:596:49: (iv_ruleNavigate= ruleNavigate EOF )
+            // InternalSeleniumDSL.g:597:2: iv_ruleNavigate= ruleNavigate EOF
             {
              newCompositeNode(grammarAccess.getNavigateRule()); 
             pushFollow(FOLLOW_1);
@@ -1444,7 +1562,7 @@ public class InternalSeleniumDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleNavigate"
-    // InternalSeleniumDSL.g:554:1: ruleNavigate returns [EObject current=null] : (otherlv_0= 'navigate' ( ( (lv_url_1_1= RULE_STRING | lv_url_1_2= RULE_IDENTIFIER ) ) ) ) ;
+    // InternalSeleniumDSL.g:603:1: ruleNavigate returns [EObject current=null] : (otherlv_0= 'navigate' ( ( (lv_url_1_1= RULE_STRING | lv_url_1_2= RULE_IDENTIFIER ) ) ) ) ;
     public final EObject ruleNavigate() throws RecognitionException {
         EObject current = null;
 
@@ -1456,41 +1574,41 @@ public class InternalSeleniumDSLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSeleniumDSL.g:560:2: ( (otherlv_0= 'navigate' ( ( (lv_url_1_1= RULE_STRING | lv_url_1_2= RULE_IDENTIFIER ) ) ) ) )
-            // InternalSeleniumDSL.g:561:2: (otherlv_0= 'navigate' ( ( (lv_url_1_1= RULE_STRING | lv_url_1_2= RULE_IDENTIFIER ) ) ) )
+            // InternalSeleniumDSL.g:609:2: ( (otherlv_0= 'navigate' ( ( (lv_url_1_1= RULE_STRING | lv_url_1_2= RULE_IDENTIFIER ) ) ) ) )
+            // InternalSeleniumDSL.g:610:2: (otherlv_0= 'navigate' ( ( (lv_url_1_1= RULE_STRING | lv_url_1_2= RULE_IDENTIFIER ) ) ) )
             {
-            // InternalSeleniumDSL.g:561:2: (otherlv_0= 'navigate' ( ( (lv_url_1_1= RULE_STRING | lv_url_1_2= RULE_IDENTIFIER ) ) ) )
-            // InternalSeleniumDSL.g:562:3: otherlv_0= 'navigate' ( ( (lv_url_1_1= RULE_STRING | lv_url_1_2= RULE_IDENTIFIER ) ) )
+            // InternalSeleniumDSL.g:610:2: (otherlv_0= 'navigate' ( ( (lv_url_1_1= RULE_STRING | lv_url_1_2= RULE_IDENTIFIER ) ) ) )
+            // InternalSeleniumDSL.g:611:3: otherlv_0= 'navigate' ( ( (lv_url_1_1= RULE_STRING | lv_url_1_2= RULE_IDENTIFIER ) ) )
             {
-            otherlv_0=(Token)match(input,22,FOLLOW_12); 
+            otherlv_0=(Token)match(input,26,FOLLOW_13); 
 
             			newLeafNode(otherlv_0, grammarAccess.getNavigateAccess().getNavigateKeyword_0());
             		
-            // InternalSeleniumDSL.g:566:3: ( ( (lv_url_1_1= RULE_STRING | lv_url_1_2= RULE_IDENTIFIER ) ) )
-            // InternalSeleniumDSL.g:567:4: ( (lv_url_1_1= RULE_STRING | lv_url_1_2= RULE_IDENTIFIER ) )
+            // InternalSeleniumDSL.g:615:3: ( ( (lv_url_1_1= RULE_STRING | lv_url_1_2= RULE_IDENTIFIER ) ) )
+            // InternalSeleniumDSL.g:616:4: ( (lv_url_1_1= RULE_STRING | lv_url_1_2= RULE_IDENTIFIER ) )
             {
-            // InternalSeleniumDSL.g:567:4: ( (lv_url_1_1= RULE_STRING | lv_url_1_2= RULE_IDENTIFIER ) )
-            // InternalSeleniumDSL.g:568:5: (lv_url_1_1= RULE_STRING | lv_url_1_2= RULE_IDENTIFIER )
+            // InternalSeleniumDSL.g:616:4: ( (lv_url_1_1= RULE_STRING | lv_url_1_2= RULE_IDENTIFIER ) )
+            // InternalSeleniumDSL.g:617:5: (lv_url_1_1= RULE_STRING | lv_url_1_2= RULE_IDENTIFIER )
             {
-            // InternalSeleniumDSL.g:568:5: (lv_url_1_1= RULE_STRING | lv_url_1_2= RULE_IDENTIFIER )
-            int alt10=2;
-            int LA10_0 = input.LA(1);
+            // InternalSeleniumDSL.g:617:5: (lv_url_1_1= RULE_STRING | lv_url_1_2= RULE_IDENTIFIER )
+            int alt11=2;
+            int LA11_0 = input.LA(1);
 
-            if ( (LA10_0==RULE_STRING) ) {
-                alt10=1;
+            if ( (LA11_0==RULE_STRING) ) {
+                alt11=1;
             }
-            else if ( (LA10_0==RULE_IDENTIFIER) ) {
-                alt10=2;
+            else if ( (LA11_0==RULE_IDENTIFIER) ) {
+                alt11=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 10, 0, input);
+                    new NoViableAltException("", 11, 0, input);
 
                 throw nvae;
             }
-            switch (alt10) {
+            switch (alt11) {
                 case 1 :
-                    // InternalSeleniumDSL.g:569:6: lv_url_1_1= RULE_STRING
+                    // InternalSeleniumDSL.g:618:6: lv_url_1_1= RULE_STRING
                     {
                     lv_url_1_1=(Token)match(input,RULE_STRING,FOLLOW_2); 
 
@@ -1510,7 +1628,7 @@ public class InternalSeleniumDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalSeleniumDSL.g:584:6: lv_url_1_2= RULE_IDENTIFIER
+                    // InternalSeleniumDSL.g:633:6: lv_url_1_2= RULE_IDENTIFIER
                     {
                     lv_url_1_2=(Token)match(input,RULE_IDENTIFIER,FOLLOW_2); 
 
@@ -1561,7 +1679,7 @@ public class InternalSeleniumDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleRead"
-    // InternalSeleniumDSL.g:605:1: entryRuleRead returns [EObject current=null] : iv_ruleRead= ruleRead EOF ;
+    // InternalSeleniumDSL.g:654:1: entryRuleRead returns [EObject current=null] : iv_ruleRead= ruleRead EOF ;
     public final EObject entryRuleRead() throws RecognitionException {
         EObject current = null;
 
@@ -1569,8 +1687,8 @@ public class InternalSeleniumDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSeleniumDSL.g:605:45: (iv_ruleRead= ruleRead EOF )
-            // InternalSeleniumDSL.g:606:2: iv_ruleRead= ruleRead EOF
+            // InternalSeleniumDSL.g:654:45: (iv_ruleRead= ruleRead EOF )
+            // InternalSeleniumDSL.g:655:2: iv_ruleRead= ruleRead EOF
             {
              newCompositeNode(grammarAccess.getReadRule()); 
             pushFollow(FOLLOW_1);
@@ -1597,7 +1715,7 @@ public class InternalSeleniumDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleRead"
-    // InternalSeleniumDSL.g:612:1: ruleRead returns [EObject current=null] : ( ( (lv_Variable_0_0= RULE_IDENTIFIER ) ) otherlv_1= '=' otherlv_2= 'read' ( (lv_Name_3_0= RULE_STRING ) ) ) ;
+    // InternalSeleniumDSL.g:661:1: ruleRead returns [EObject current=null] : ( ( (lv_Variable_0_0= RULE_IDENTIFIER ) ) otherlv_1= '=' otherlv_2= 'read' ( (lv_Name_3_0= RULE_STRING ) ) ) ;
     public final EObject ruleRead() throws RecognitionException {
         EObject current = null;
 
@@ -1610,19 +1728,19 @@ public class InternalSeleniumDSLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSeleniumDSL.g:618:2: ( ( ( (lv_Variable_0_0= RULE_IDENTIFIER ) ) otherlv_1= '=' otherlv_2= 'read' ( (lv_Name_3_0= RULE_STRING ) ) ) )
-            // InternalSeleniumDSL.g:619:2: ( ( (lv_Variable_0_0= RULE_IDENTIFIER ) ) otherlv_1= '=' otherlv_2= 'read' ( (lv_Name_3_0= RULE_STRING ) ) )
+            // InternalSeleniumDSL.g:667:2: ( ( ( (lv_Variable_0_0= RULE_IDENTIFIER ) ) otherlv_1= '=' otherlv_2= 'read' ( (lv_Name_3_0= RULE_STRING ) ) ) )
+            // InternalSeleniumDSL.g:668:2: ( ( (lv_Variable_0_0= RULE_IDENTIFIER ) ) otherlv_1= '=' otherlv_2= 'read' ( (lv_Name_3_0= RULE_STRING ) ) )
             {
-            // InternalSeleniumDSL.g:619:2: ( ( (lv_Variable_0_0= RULE_IDENTIFIER ) ) otherlv_1= '=' otherlv_2= 'read' ( (lv_Name_3_0= RULE_STRING ) ) )
-            // InternalSeleniumDSL.g:620:3: ( (lv_Variable_0_0= RULE_IDENTIFIER ) ) otherlv_1= '=' otherlv_2= 'read' ( (lv_Name_3_0= RULE_STRING ) )
+            // InternalSeleniumDSL.g:668:2: ( ( (lv_Variable_0_0= RULE_IDENTIFIER ) ) otherlv_1= '=' otherlv_2= 'read' ( (lv_Name_3_0= RULE_STRING ) ) )
+            // InternalSeleniumDSL.g:669:3: ( (lv_Variable_0_0= RULE_IDENTIFIER ) ) otherlv_1= '=' otherlv_2= 'read' ( (lv_Name_3_0= RULE_STRING ) )
             {
-            // InternalSeleniumDSL.g:620:3: ( (lv_Variable_0_0= RULE_IDENTIFIER ) )
-            // InternalSeleniumDSL.g:621:4: (lv_Variable_0_0= RULE_IDENTIFIER )
+            // InternalSeleniumDSL.g:669:3: ( (lv_Variable_0_0= RULE_IDENTIFIER ) )
+            // InternalSeleniumDSL.g:670:4: (lv_Variable_0_0= RULE_IDENTIFIER )
             {
-            // InternalSeleniumDSL.g:621:4: (lv_Variable_0_0= RULE_IDENTIFIER )
-            // InternalSeleniumDSL.g:622:5: lv_Variable_0_0= RULE_IDENTIFIER
+            // InternalSeleniumDSL.g:670:4: (lv_Variable_0_0= RULE_IDENTIFIER )
+            // InternalSeleniumDSL.g:671:5: lv_Variable_0_0= RULE_IDENTIFIER
             {
-            lv_Variable_0_0=(Token)match(input,RULE_IDENTIFIER,FOLLOW_13); 
+            lv_Variable_0_0=(Token)match(input,RULE_IDENTIFIER,FOLLOW_14); 
 
             					newLeafNode(lv_Variable_0_0, grammarAccess.getReadAccess().getVariableIDENTIFIERTerminalRuleCall_0_0());
             				
@@ -1642,19 +1760,19 @@ public class InternalSeleniumDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,23,FOLLOW_14); 
+            otherlv_1=(Token)match(input,27,FOLLOW_15); 
 
             			newLeafNode(otherlv_1, grammarAccess.getReadAccess().getEqualsSignKeyword_1());
             		
-            otherlv_2=(Token)match(input,24,FOLLOW_11); 
+            otherlv_2=(Token)match(input,28,FOLLOW_12); 
 
             			newLeafNode(otherlv_2, grammarAccess.getReadAccess().getReadKeyword_2());
             		
-            // InternalSeleniumDSL.g:646:3: ( (lv_Name_3_0= RULE_STRING ) )
-            // InternalSeleniumDSL.g:647:4: (lv_Name_3_0= RULE_STRING )
+            // InternalSeleniumDSL.g:695:3: ( (lv_Name_3_0= RULE_STRING ) )
+            // InternalSeleniumDSL.g:696:4: (lv_Name_3_0= RULE_STRING )
             {
-            // InternalSeleniumDSL.g:647:4: (lv_Name_3_0= RULE_STRING )
-            // InternalSeleniumDSL.g:648:5: lv_Name_3_0= RULE_STRING
+            // InternalSeleniumDSL.g:696:4: (lv_Name_3_0= RULE_STRING )
+            // InternalSeleniumDSL.g:697:5: lv_Name_3_0= RULE_STRING
             {
             lv_Name_3_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
 
@@ -1699,7 +1817,7 @@ public class InternalSeleniumDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAssert"
-    // InternalSeleniumDSL.g:668:1: entryRuleAssert returns [EObject current=null] : iv_ruleAssert= ruleAssert EOF ;
+    // InternalSeleniumDSL.g:717:1: entryRuleAssert returns [EObject current=null] : iv_ruleAssert= ruleAssert EOF ;
     public final EObject entryRuleAssert() throws RecognitionException {
         EObject current = null;
 
@@ -1707,8 +1825,8 @@ public class InternalSeleniumDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSeleniumDSL.g:668:47: (iv_ruleAssert= ruleAssert EOF )
-            // InternalSeleniumDSL.g:669:2: iv_ruleAssert= ruleAssert EOF
+            // InternalSeleniumDSL.g:717:47: (iv_ruleAssert= ruleAssert EOF )
+            // InternalSeleniumDSL.g:718:2: iv_ruleAssert= ruleAssert EOF
             {
              newCompositeNode(grammarAccess.getAssertRule()); 
             pushFollow(FOLLOW_1);
@@ -1735,7 +1853,7 @@ public class InternalSeleniumDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAssert"
-    // InternalSeleniumDSL.g:675:1: ruleAssert returns [EObject current=null] : (otherlv_0= 'assert' ( ( ( (lv_Search_1_0= RULE_STRING ) ) otherlv_2= 'contains' ( ( (lv_Value_3_1= RULE_STRING | lv_Value_3_2= RULE_IDENTIFIER ) ) ) ) | ( ( (lv_Name_4_0= RULE_STRING ) ) otherlv_5= 'equals' ( ( (lv_Value_6_1= RULE_STRING | lv_Value_6_2= RULE_IDENTIFIER ) ) ) ) | ( ( (lv_Name_7_0= RULE_STRING ) ) otherlv_8= 'exists' ) ) ) ;
+    // InternalSeleniumDSL.g:724:1: ruleAssert returns [EObject current=null] : (otherlv_0= 'assert' ( ( ( (lv_Search_1_0= RULE_STRING ) ) otherlv_2= 'contains' ( ( (lv_Value_3_1= RULE_STRING | lv_Value_3_2= RULE_IDENTIFIER ) ) ) ) | ( ( (lv_Name_4_0= RULE_STRING ) ) otherlv_5= 'equals' ( ( (lv_Value_6_1= RULE_STRING | lv_Value_6_2= RULE_IDENTIFIER ) ) ) ) | ( ( (lv_Name_7_0= RULE_STRING ) ) otherlv_8= 'exists' ) ) ) ;
     public final EObject ruleAssert() throws RecognitionException {
         EObject current = null;
 
@@ -1755,40 +1873,40 @@ public class InternalSeleniumDSLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSeleniumDSL.g:681:2: ( (otherlv_0= 'assert' ( ( ( (lv_Search_1_0= RULE_STRING ) ) otherlv_2= 'contains' ( ( (lv_Value_3_1= RULE_STRING | lv_Value_3_2= RULE_IDENTIFIER ) ) ) ) | ( ( (lv_Name_4_0= RULE_STRING ) ) otherlv_5= 'equals' ( ( (lv_Value_6_1= RULE_STRING | lv_Value_6_2= RULE_IDENTIFIER ) ) ) ) | ( ( (lv_Name_7_0= RULE_STRING ) ) otherlv_8= 'exists' ) ) ) )
-            // InternalSeleniumDSL.g:682:2: (otherlv_0= 'assert' ( ( ( (lv_Search_1_0= RULE_STRING ) ) otherlv_2= 'contains' ( ( (lv_Value_3_1= RULE_STRING | lv_Value_3_2= RULE_IDENTIFIER ) ) ) ) | ( ( (lv_Name_4_0= RULE_STRING ) ) otherlv_5= 'equals' ( ( (lv_Value_6_1= RULE_STRING | lv_Value_6_2= RULE_IDENTIFIER ) ) ) ) | ( ( (lv_Name_7_0= RULE_STRING ) ) otherlv_8= 'exists' ) ) )
+            // InternalSeleniumDSL.g:730:2: ( (otherlv_0= 'assert' ( ( ( (lv_Search_1_0= RULE_STRING ) ) otherlv_2= 'contains' ( ( (lv_Value_3_1= RULE_STRING | lv_Value_3_2= RULE_IDENTIFIER ) ) ) ) | ( ( (lv_Name_4_0= RULE_STRING ) ) otherlv_5= 'equals' ( ( (lv_Value_6_1= RULE_STRING | lv_Value_6_2= RULE_IDENTIFIER ) ) ) ) | ( ( (lv_Name_7_0= RULE_STRING ) ) otherlv_8= 'exists' ) ) ) )
+            // InternalSeleniumDSL.g:731:2: (otherlv_0= 'assert' ( ( ( (lv_Search_1_0= RULE_STRING ) ) otherlv_2= 'contains' ( ( (lv_Value_3_1= RULE_STRING | lv_Value_3_2= RULE_IDENTIFIER ) ) ) ) | ( ( (lv_Name_4_0= RULE_STRING ) ) otherlv_5= 'equals' ( ( (lv_Value_6_1= RULE_STRING | lv_Value_6_2= RULE_IDENTIFIER ) ) ) ) | ( ( (lv_Name_7_0= RULE_STRING ) ) otherlv_8= 'exists' ) ) )
             {
-            // InternalSeleniumDSL.g:682:2: (otherlv_0= 'assert' ( ( ( (lv_Search_1_0= RULE_STRING ) ) otherlv_2= 'contains' ( ( (lv_Value_3_1= RULE_STRING | lv_Value_3_2= RULE_IDENTIFIER ) ) ) ) | ( ( (lv_Name_4_0= RULE_STRING ) ) otherlv_5= 'equals' ( ( (lv_Value_6_1= RULE_STRING | lv_Value_6_2= RULE_IDENTIFIER ) ) ) ) | ( ( (lv_Name_7_0= RULE_STRING ) ) otherlv_8= 'exists' ) ) )
-            // InternalSeleniumDSL.g:683:3: otherlv_0= 'assert' ( ( ( (lv_Search_1_0= RULE_STRING ) ) otherlv_2= 'contains' ( ( (lv_Value_3_1= RULE_STRING | lv_Value_3_2= RULE_IDENTIFIER ) ) ) ) | ( ( (lv_Name_4_0= RULE_STRING ) ) otherlv_5= 'equals' ( ( (lv_Value_6_1= RULE_STRING | lv_Value_6_2= RULE_IDENTIFIER ) ) ) ) | ( ( (lv_Name_7_0= RULE_STRING ) ) otherlv_8= 'exists' ) )
+            // InternalSeleniumDSL.g:731:2: (otherlv_0= 'assert' ( ( ( (lv_Search_1_0= RULE_STRING ) ) otherlv_2= 'contains' ( ( (lv_Value_3_1= RULE_STRING | lv_Value_3_2= RULE_IDENTIFIER ) ) ) ) | ( ( (lv_Name_4_0= RULE_STRING ) ) otherlv_5= 'equals' ( ( (lv_Value_6_1= RULE_STRING | lv_Value_6_2= RULE_IDENTIFIER ) ) ) ) | ( ( (lv_Name_7_0= RULE_STRING ) ) otherlv_8= 'exists' ) ) )
+            // InternalSeleniumDSL.g:732:3: otherlv_0= 'assert' ( ( ( (lv_Search_1_0= RULE_STRING ) ) otherlv_2= 'contains' ( ( (lv_Value_3_1= RULE_STRING | lv_Value_3_2= RULE_IDENTIFIER ) ) ) ) | ( ( (lv_Name_4_0= RULE_STRING ) ) otherlv_5= 'equals' ( ( (lv_Value_6_1= RULE_STRING | lv_Value_6_2= RULE_IDENTIFIER ) ) ) ) | ( ( (lv_Name_7_0= RULE_STRING ) ) otherlv_8= 'exists' ) )
             {
-            otherlv_0=(Token)match(input,25,FOLLOW_11); 
+            otherlv_0=(Token)match(input,29,FOLLOW_12); 
 
             			newLeafNode(otherlv_0, grammarAccess.getAssertAccess().getAssertKeyword_0());
             		
-            // InternalSeleniumDSL.g:687:3: ( ( ( (lv_Search_1_0= RULE_STRING ) ) otherlv_2= 'contains' ( ( (lv_Value_3_1= RULE_STRING | lv_Value_3_2= RULE_IDENTIFIER ) ) ) ) | ( ( (lv_Name_4_0= RULE_STRING ) ) otherlv_5= 'equals' ( ( (lv_Value_6_1= RULE_STRING | lv_Value_6_2= RULE_IDENTIFIER ) ) ) ) | ( ( (lv_Name_7_0= RULE_STRING ) ) otherlv_8= 'exists' ) )
-            int alt13=3;
-            int LA13_0 = input.LA(1);
+            // InternalSeleniumDSL.g:736:3: ( ( ( (lv_Search_1_0= RULE_STRING ) ) otherlv_2= 'contains' ( ( (lv_Value_3_1= RULE_STRING | lv_Value_3_2= RULE_IDENTIFIER ) ) ) ) | ( ( (lv_Name_4_0= RULE_STRING ) ) otherlv_5= 'equals' ( ( (lv_Value_6_1= RULE_STRING | lv_Value_6_2= RULE_IDENTIFIER ) ) ) ) | ( ( (lv_Name_7_0= RULE_STRING ) ) otherlv_8= 'exists' ) )
+            int alt14=3;
+            int LA14_0 = input.LA(1);
 
-            if ( (LA13_0==RULE_STRING) ) {
+            if ( (LA14_0==RULE_STRING) ) {
                 switch ( input.LA(2) ) {
-                case 28:
+                case 32:
                     {
-                    alt13=3;
+                    alt14=3;
                     }
                     break;
-                case 27:
+                case 31:
                     {
-                    alt13=2;
+                    alt14=2;
                     }
                     break;
-                case 26:
+                case 30:
                     {
-                    alt13=1;
+                    alt14=1;
                     }
                     break;
                 default:
                     NoViableAltException nvae =
-                        new NoViableAltException("", 13, 1, input);
+                        new NoViableAltException("", 14, 1, input);
 
                     throw nvae;
                 }
@@ -1796,24 +1914,24 @@ public class InternalSeleniumDSLParser extends AbstractInternalAntlrParser {
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 13, 0, input);
+                    new NoViableAltException("", 14, 0, input);
 
                 throw nvae;
             }
-            switch (alt13) {
+            switch (alt14) {
                 case 1 :
-                    // InternalSeleniumDSL.g:688:4: ( ( (lv_Search_1_0= RULE_STRING ) ) otherlv_2= 'contains' ( ( (lv_Value_3_1= RULE_STRING | lv_Value_3_2= RULE_IDENTIFIER ) ) ) )
+                    // InternalSeleniumDSL.g:737:4: ( ( (lv_Search_1_0= RULE_STRING ) ) otherlv_2= 'contains' ( ( (lv_Value_3_1= RULE_STRING | lv_Value_3_2= RULE_IDENTIFIER ) ) ) )
                     {
-                    // InternalSeleniumDSL.g:688:4: ( ( (lv_Search_1_0= RULE_STRING ) ) otherlv_2= 'contains' ( ( (lv_Value_3_1= RULE_STRING | lv_Value_3_2= RULE_IDENTIFIER ) ) ) )
-                    // InternalSeleniumDSL.g:689:5: ( (lv_Search_1_0= RULE_STRING ) ) otherlv_2= 'contains' ( ( (lv_Value_3_1= RULE_STRING | lv_Value_3_2= RULE_IDENTIFIER ) ) )
+                    // InternalSeleniumDSL.g:737:4: ( ( (lv_Search_1_0= RULE_STRING ) ) otherlv_2= 'contains' ( ( (lv_Value_3_1= RULE_STRING | lv_Value_3_2= RULE_IDENTIFIER ) ) ) )
+                    // InternalSeleniumDSL.g:738:5: ( (lv_Search_1_0= RULE_STRING ) ) otherlv_2= 'contains' ( ( (lv_Value_3_1= RULE_STRING | lv_Value_3_2= RULE_IDENTIFIER ) ) )
                     {
-                    // InternalSeleniumDSL.g:689:5: ( (lv_Search_1_0= RULE_STRING ) )
-                    // InternalSeleniumDSL.g:690:6: (lv_Search_1_0= RULE_STRING )
+                    // InternalSeleniumDSL.g:738:5: ( (lv_Search_1_0= RULE_STRING ) )
+                    // InternalSeleniumDSL.g:739:6: (lv_Search_1_0= RULE_STRING )
                     {
-                    // InternalSeleniumDSL.g:690:6: (lv_Search_1_0= RULE_STRING )
-                    // InternalSeleniumDSL.g:691:7: lv_Search_1_0= RULE_STRING
+                    // InternalSeleniumDSL.g:739:6: (lv_Search_1_0= RULE_STRING )
+                    // InternalSeleniumDSL.g:740:7: lv_Search_1_0= RULE_STRING
                     {
-                    lv_Search_1_0=(Token)match(input,RULE_STRING,FOLLOW_15); 
+                    lv_Search_1_0=(Token)match(input,RULE_STRING,FOLLOW_16); 
 
                     							newLeafNode(lv_Search_1_0, grammarAccess.getAssertAccess().getSearchSTRINGTerminalRuleCall_1_0_0_0());
                     						
@@ -1833,35 +1951,35 @@ public class InternalSeleniumDSLParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_2=(Token)match(input,26,FOLLOW_12); 
+                    otherlv_2=(Token)match(input,30,FOLLOW_13); 
 
                     					newLeafNode(otherlv_2, grammarAccess.getAssertAccess().getContainsKeyword_1_0_1());
                     				
-                    // InternalSeleniumDSL.g:711:5: ( ( (lv_Value_3_1= RULE_STRING | lv_Value_3_2= RULE_IDENTIFIER ) ) )
-                    // InternalSeleniumDSL.g:712:6: ( (lv_Value_3_1= RULE_STRING | lv_Value_3_2= RULE_IDENTIFIER ) )
+                    // InternalSeleniumDSL.g:760:5: ( ( (lv_Value_3_1= RULE_STRING | lv_Value_3_2= RULE_IDENTIFIER ) ) )
+                    // InternalSeleniumDSL.g:761:6: ( (lv_Value_3_1= RULE_STRING | lv_Value_3_2= RULE_IDENTIFIER ) )
                     {
-                    // InternalSeleniumDSL.g:712:6: ( (lv_Value_3_1= RULE_STRING | lv_Value_3_2= RULE_IDENTIFIER ) )
-                    // InternalSeleniumDSL.g:713:7: (lv_Value_3_1= RULE_STRING | lv_Value_3_2= RULE_IDENTIFIER )
+                    // InternalSeleniumDSL.g:761:6: ( (lv_Value_3_1= RULE_STRING | lv_Value_3_2= RULE_IDENTIFIER ) )
+                    // InternalSeleniumDSL.g:762:7: (lv_Value_3_1= RULE_STRING | lv_Value_3_2= RULE_IDENTIFIER )
                     {
-                    // InternalSeleniumDSL.g:713:7: (lv_Value_3_1= RULE_STRING | lv_Value_3_2= RULE_IDENTIFIER )
-                    int alt11=2;
-                    int LA11_0 = input.LA(1);
+                    // InternalSeleniumDSL.g:762:7: (lv_Value_3_1= RULE_STRING | lv_Value_3_2= RULE_IDENTIFIER )
+                    int alt12=2;
+                    int LA12_0 = input.LA(1);
 
-                    if ( (LA11_0==RULE_STRING) ) {
-                        alt11=1;
+                    if ( (LA12_0==RULE_STRING) ) {
+                        alt12=1;
                     }
-                    else if ( (LA11_0==RULE_IDENTIFIER) ) {
-                        alt11=2;
+                    else if ( (LA12_0==RULE_IDENTIFIER) ) {
+                        alt12=2;
                     }
                     else {
                         NoViableAltException nvae =
-                            new NoViableAltException("", 11, 0, input);
+                            new NoViableAltException("", 12, 0, input);
 
                         throw nvae;
                     }
-                    switch (alt11) {
+                    switch (alt12) {
                         case 1 :
-                            // InternalSeleniumDSL.g:714:8: lv_Value_3_1= RULE_STRING
+                            // InternalSeleniumDSL.g:763:8: lv_Value_3_1= RULE_STRING
                             {
                             lv_Value_3_1=(Token)match(input,RULE_STRING,FOLLOW_2); 
 
@@ -1881,7 +1999,7 @@ public class InternalSeleniumDSLParser extends AbstractInternalAntlrParser {
                             }
                             break;
                         case 2 :
-                            // InternalSeleniumDSL.g:729:8: lv_Value_3_2= RULE_IDENTIFIER
+                            // InternalSeleniumDSL.g:778:8: lv_Value_3_2= RULE_IDENTIFIER
                             {
                             lv_Value_3_2=(Token)match(input,RULE_IDENTIFIER,FOLLOW_2); 
 
@@ -1916,18 +2034,18 @@ public class InternalSeleniumDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalSeleniumDSL.g:748:4: ( ( (lv_Name_4_0= RULE_STRING ) ) otherlv_5= 'equals' ( ( (lv_Value_6_1= RULE_STRING | lv_Value_6_2= RULE_IDENTIFIER ) ) ) )
+                    // InternalSeleniumDSL.g:797:4: ( ( (lv_Name_4_0= RULE_STRING ) ) otherlv_5= 'equals' ( ( (lv_Value_6_1= RULE_STRING | lv_Value_6_2= RULE_IDENTIFIER ) ) ) )
                     {
-                    // InternalSeleniumDSL.g:748:4: ( ( (lv_Name_4_0= RULE_STRING ) ) otherlv_5= 'equals' ( ( (lv_Value_6_1= RULE_STRING | lv_Value_6_2= RULE_IDENTIFIER ) ) ) )
-                    // InternalSeleniumDSL.g:749:5: ( (lv_Name_4_0= RULE_STRING ) ) otherlv_5= 'equals' ( ( (lv_Value_6_1= RULE_STRING | lv_Value_6_2= RULE_IDENTIFIER ) ) )
+                    // InternalSeleniumDSL.g:797:4: ( ( (lv_Name_4_0= RULE_STRING ) ) otherlv_5= 'equals' ( ( (lv_Value_6_1= RULE_STRING | lv_Value_6_2= RULE_IDENTIFIER ) ) ) )
+                    // InternalSeleniumDSL.g:798:5: ( (lv_Name_4_0= RULE_STRING ) ) otherlv_5= 'equals' ( ( (lv_Value_6_1= RULE_STRING | lv_Value_6_2= RULE_IDENTIFIER ) ) )
                     {
-                    // InternalSeleniumDSL.g:749:5: ( (lv_Name_4_0= RULE_STRING ) )
-                    // InternalSeleniumDSL.g:750:6: (lv_Name_4_0= RULE_STRING )
+                    // InternalSeleniumDSL.g:798:5: ( (lv_Name_4_0= RULE_STRING ) )
+                    // InternalSeleniumDSL.g:799:6: (lv_Name_4_0= RULE_STRING )
                     {
-                    // InternalSeleniumDSL.g:750:6: (lv_Name_4_0= RULE_STRING )
-                    // InternalSeleniumDSL.g:751:7: lv_Name_4_0= RULE_STRING
+                    // InternalSeleniumDSL.g:799:6: (lv_Name_4_0= RULE_STRING )
+                    // InternalSeleniumDSL.g:800:7: lv_Name_4_0= RULE_STRING
                     {
-                    lv_Name_4_0=(Token)match(input,RULE_STRING,FOLLOW_16); 
+                    lv_Name_4_0=(Token)match(input,RULE_STRING,FOLLOW_17); 
 
                     							newLeafNode(lv_Name_4_0, grammarAccess.getAssertAccess().getNameSTRINGTerminalRuleCall_1_1_0_0());
                     						
@@ -1947,35 +2065,35 @@ public class InternalSeleniumDSLParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_5=(Token)match(input,27,FOLLOW_12); 
+                    otherlv_5=(Token)match(input,31,FOLLOW_13); 
 
                     					newLeafNode(otherlv_5, grammarAccess.getAssertAccess().getEqualsKeyword_1_1_1());
                     				
-                    // InternalSeleniumDSL.g:771:5: ( ( (lv_Value_6_1= RULE_STRING | lv_Value_6_2= RULE_IDENTIFIER ) ) )
-                    // InternalSeleniumDSL.g:772:6: ( (lv_Value_6_1= RULE_STRING | lv_Value_6_2= RULE_IDENTIFIER ) )
+                    // InternalSeleniumDSL.g:820:5: ( ( (lv_Value_6_1= RULE_STRING | lv_Value_6_2= RULE_IDENTIFIER ) ) )
+                    // InternalSeleniumDSL.g:821:6: ( (lv_Value_6_1= RULE_STRING | lv_Value_6_2= RULE_IDENTIFIER ) )
                     {
-                    // InternalSeleniumDSL.g:772:6: ( (lv_Value_6_1= RULE_STRING | lv_Value_6_2= RULE_IDENTIFIER ) )
-                    // InternalSeleniumDSL.g:773:7: (lv_Value_6_1= RULE_STRING | lv_Value_6_2= RULE_IDENTIFIER )
+                    // InternalSeleniumDSL.g:821:6: ( (lv_Value_6_1= RULE_STRING | lv_Value_6_2= RULE_IDENTIFIER ) )
+                    // InternalSeleniumDSL.g:822:7: (lv_Value_6_1= RULE_STRING | lv_Value_6_2= RULE_IDENTIFIER )
                     {
-                    // InternalSeleniumDSL.g:773:7: (lv_Value_6_1= RULE_STRING | lv_Value_6_2= RULE_IDENTIFIER )
-                    int alt12=2;
-                    int LA12_0 = input.LA(1);
+                    // InternalSeleniumDSL.g:822:7: (lv_Value_6_1= RULE_STRING | lv_Value_6_2= RULE_IDENTIFIER )
+                    int alt13=2;
+                    int LA13_0 = input.LA(1);
 
-                    if ( (LA12_0==RULE_STRING) ) {
-                        alt12=1;
+                    if ( (LA13_0==RULE_STRING) ) {
+                        alt13=1;
                     }
-                    else if ( (LA12_0==RULE_IDENTIFIER) ) {
-                        alt12=2;
+                    else if ( (LA13_0==RULE_IDENTIFIER) ) {
+                        alt13=2;
                     }
                     else {
                         NoViableAltException nvae =
-                            new NoViableAltException("", 12, 0, input);
+                            new NoViableAltException("", 13, 0, input);
 
                         throw nvae;
                     }
-                    switch (alt12) {
+                    switch (alt13) {
                         case 1 :
-                            // InternalSeleniumDSL.g:774:8: lv_Value_6_1= RULE_STRING
+                            // InternalSeleniumDSL.g:823:8: lv_Value_6_1= RULE_STRING
                             {
                             lv_Value_6_1=(Token)match(input,RULE_STRING,FOLLOW_2); 
 
@@ -1995,7 +2113,7 @@ public class InternalSeleniumDSLParser extends AbstractInternalAntlrParser {
                             }
                             break;
                         case 2 :
-                            // InternalSeleniumDSL.g:789:8: lv_Value_6_2= RULE_IDENTIFIER
+                            // InternalSeleniumDSL.g:838:8: lv_Value_6_2= RULE_IDENTIFIER
                             {
                             lv_Value_6_2=(Token)match(input,RULE_IDENTIFIER,FOLLOW_2); 
 
@@ -2030,18 +2148,18 @@ public class InternalSeleniumDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalSeleniumDSL.g:808:4: ( ( (lv_Name_7_0= RULE_STRING ) ) otherlv_8= 'exists' )
+                    // InternalSeleniumDSL.g:857:4: ( ( (lv_Name_7_0= RULE_STRING ) ) otherlv_8= 'exists' )
                     {
-                    // InternalSeleniumDSL.g:808:4: ( ( (lv_Name_7_0= RULE_STRING ) ) otherlv_8= 'exists' )
-                    // InternalSeleniumDSL.g:809:5: ( (lv_Name_7_0= RULE_STRING ) ) otherlv_8= 'exists'
+                    // InternalSeleniumDSL.g:857:4: ( ( (lv_Name_7_0= RULE_STRING ) ) otherlv_8= 'exists' )
+                    // InternalSeleniumDSL.g:858:5: ( (lv_Name_7_0= RULE_STRING ) ) otherlv_8= 'exists'
                     {
-                    // InternalSeleniumDSL.g:809:5: ( (lv_Name_7_0= RULE_STRING ) )
-                    // InternalSeleniumDSL.g:810:6: (lv_Name_7_0= RULE_STRING )
+                    // InternalSeleniumDSL.g:858:5: ( (lv_Name_7_0= RULE_STRING ) )
+                    // InternalSeleniumDSL.g:859:6: (lv_Name_7_0= RULE_STRING )
                     {
-                    // InternalSeleniumDSL.g:810:6: (lv_Name_7_0= RULE_STRING )
-                    // InternalSeleniumDSL.g:811:7: lv_Name_7_0= RULE_STRING
+                    // InternalSeleniumDSL.g:859:6: (lv_Name_7_0= RULE_STRING )
+                    // InternalSeleniumDSL.g:860:7: lv_Name_7_0= RULE_STRING
                     {
-                    lv_Name_7_0=(Token)match(input,RULE_STRING,FOLLOW_17); 
+                    lv_Name_7_0=(Token)match(input,RULE_STRING,FOLLOW_18); 
 
                     							newLeafNode(lv_Name_7_0, grammarAccess.getAssertAccess().getNameSTRINGTerminalRuleCall_1_2_0_0());
                     						
@@ -2061,7 +2179,7 @@ public class InternalSeleniumDSLParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_8=(Token)match(input,28,FOLLOW_2); 
+                    otherlv_8=(Token)match(input,32,FOLLOW_2); 
 
                     					newLeafNode(otherlv_8, grammarAccess.getAssertAccess().getExistsKeyword_1_2_1());
                     				
@@ -2097,7 +2215,7 @@ public class InternalSeleniumDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleCallProcedure"
-    // InternalSeleniumDSL.g:837:1: entryRuleCallProcedure returns [EObject current=null] : iv_ruleCallProcedure= ruleCallProcedure EOF ;
+    // InternalSeleniumDSL.g:886:1: entryRuleCallProcedure returns [EObject current=null] : iv_ruleCallProcedure= ruleCallProcedure EOF ;
     public final EObject entryRuleCallProcedure() throws RecognitionException {
         EObject current = null;
 
@@ -2105,8 +2223,8 @@ public class InternalSeleniumDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSeleniumDSL.g:837:54: (iv_ruleCallProcedure= ruleCallProcedure EOF )
-            // InternalSeleniumDSL.g:838:2: iv_ruleCallProcedure= ruleCallProcedure EOF
+            // InternalSeleniumDSL.g:886:54: (iv_ruleCallProcedure= ruleCallProcedure EOF )
+            // InternalSeleniumDSL.g:887:2: iv_ruleCallProcedure= ruleCallProcedure EOF
             {
              newCompositeNode(grammarAccess.getCallProcedureRule()); 
             pushFollow(FOLLOW_1);
@@ -2133,7 +2251,7 @@ public class InternalSeleniumDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCallProcedure"
-    // InternalSeleniumDSL.g:844:1: ruleCallProcedure returns [EObject current=null] : ( ( (lv_ProcedureName_0_0= RULE_IDENTIFIER ) ) (otherlv_1= '(' ( ( ( (lv_Parameters_2_1= RULE_IDENTIFIER | lv_Parameters_2_2= RULE_STRING ) ) ) (this_COMMA_3= RULE_COMMA ( ( (lv_Parameters_4_1= RULE_IDENTIFIER | lv_Parameters_4_2= RULE_STRING ) ) ) )* ) otherlv_5= ')' )? ) ;
+    // InternalSeleniumDSL.g:893:1: ruleCallProcedure returns [EObject current=null] : ( ( (lv_ProcedureName_0_0= RULE_IDENTIFIER ) ) (otherlv_1= '(' ( ( ( (lv_Parameters_2_1= RULE_IDENTIFIER | lv_Parameters_2_2= RULE_STRING ) ) ) (this_COMMA_3= RULE_COMMA ( ( (lv_Parameters_4_1= RULE_IDENTIFIER | lv_Parameters_4_2= RULE_STRING ) ) ) )* ) otherlv_5= ')' )? ) ;
     public final EObject ruleCallProcedure() throws RecognitionException {
         EObject current = null;
 
@@ -2150,19 +2268,19 @@ public class InternalSeleniumDSLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSeleniumDSL.g:850:2: ( ( ( (lv_ProcedureName_0_0= RULE_IDENTIFIER ) ) (otherlv_1= '(' ( ( ( (lv_Parameters_2_1= RULE_IDENTIFIER | lv_Parameters_2_2= RULE_STRING ) ) ) (this_COMMA_3= RULE_COMMA ( ( (lv_Parameters_4_1= RULE_IDENTIFIER | lv_Parameters_4_2= RULE_STRING ) ) ) )* ) otherlv_5= ')' )? ) )
-            // InternalSeleniumDSL.g:851:2: ( ( (lv_ProcedureName_0_0= RULE_IDENTIFIER ) ) (otherlv_1= '(' ( ( ( (lv_Parameters_2_1= RULE_IDENTIFIER | lv_Parameters_2_2= RULE_STRING ) ) ) (this_COMMA_3= RULE_COMMA ( ( (lv_Parameters_4_1= RULE_IDENTIFIER | lv_Parameters_4_2= RULE_STRING ) ) ) )* ) otherlv_5= ')' )? )
+            // InternalSeleniumDSL.g:899:2: ( ( ( (lv_ProcedureName_0_0= RULE_IDENTIFIER ) ) (otherlv_1= '(' ( ( ( (lv_Parameters_2_1= RULE_IDENTIFIER | lv_Parameters_2_2= RULE_STRING ) ) ) (this_COMMA_3= RULE_COMMA ( ( (lv_Parameters_4_1= RULE_IDENTIFIER | lv_Parameters_4_2= RULE_STRING ) ) ) )* ) otherlv_5= ')' )? ) )
+            // InternalSeleniumDSL.g:900:2: ( ( (lv_ProcedureName_0_0= RULE_IDENTIFIER ) ) (otherlv_1= '(' ( ( ( (lv_Parameters_2_1= RULE_IDENTIFIER | lv_Parameters_2_2= RULE_STRING ) ) ) (this_COMMA_3= RULE_COMMA ( ( (lv_Parameters_4_1= RULE_IDENTIFIER | lv_Parameters_4_2= RULE_STRING ) ) ) )* ) otherlv_5= ')' )? )
             {
-            // InternalSeleniumDSL.g:851:2: ( ( (lv_ProcedureName_0_0= RULE_IDENTIFIER ) ) (otherlv_1= '(' ( ( ( (lv_Parameters_2_1= RULE_IDENTIFIER | lv_Parameters_2_2= RULE_STRING ) ) ) (this_COMMA_3= RULE_COMMA ( ( (lv_Parameters_4_1= RULE_IDENTIFIER | lv_Parameters_4_2= RULE_STRING ) ) ) )* ) otherlv_5= ')' )? )
-            // InternalSeleniumDSL.g:852:3: ( (lv_ProcedureName_0_0= RULE_IDENTIFIER ) ) (otherlv_1= '(' ( ( ( (lv_Parameters_2_1= RULE_IDENTIFIER | lv_Parameters_2_2= RULE_STRING ) ) ) (this_COMMA_3= RULE_COMMA ( ( (lv_Parameters_4_1= RULE_IDENTIFIER | lv_Parameters_4_2= RULE_STRING ) ) ) )* ) otherlv_5= ')' )?
+            // InternalSeleniumDSL.g:900:2: ( ( (lv_ProcedureName_0_0= RULE_IDENTIFIER ) ) (otherlv_1= '(' ( ( ( (lv_Parameters_2_1= RULE_IDENTIFIER | lv_Parameters_2_2= RULE_STRING ) ) ) (this_COMMA_3= RULE_COMMA ( ( (lv_Parameters_4_1= RULE_IDENTIFIER | lv_Parameters_4_2= RULE_STRING ) ) ) )* ) otherlv_5= ')' )? )
+            // InternalSeleniumDSL.g:901:3: ( (lv_ProcedureName_0_0= RULE_IDENTIFIER ) ) (otherlv_1= '(' ( ( ( (lv_Parameters_2_1= RULE_IDENTIFIER | lv_Parameters_2_2= RULE_STRING ) ) ) (this_COMMA_3= RULE_COMMA ( ( (lv_Parameters_4_1= RULE_IDENTIFIER | lv_Parameters_4_2= RULE_STRING ) ) ) )* ) otherlv_5= ')' )?
             {
-            // InternalSeleniumDSL.g:852:3: ( (lv_ProcedureName_0_0= RULE_IDENTIFIER ) )
-            // InternalSeleniumDSL.g:853:4: (lv_ProcedureName_0_0= RULE_IDENTIFIER )
+            // InternalSeleniumDSL.g:901:3: ( (lv_ProcedureName_0_0= RULE_IDENTIFIER ) )
+            // InternalSeleniumDSL.g:902:4: (lv_ProcedureName_0_0= RULE_IDENTIFIER )
             {
-            // InternalSeleniumDSL.g:853:4: (lv_ProcedureName_0_0= RULE_IDENTIFIER )
-            // InternalSeleniumDSL.g:854:5: lv_ProcedureName_0_0= RULE_IDENTIFIER
+            // InternalSeleniumDSL.g:902:4: (lv_ProcedureName_0_0= RULE_IDENTIFIER )
+            // InternalSeleniumDSL.g:903:5: lv_ProcedureName_0_0= RULE_IDENTIFIER
             {
-            lv_ProcedureName_0_0=(Token)match(input,RULE_IDENTIFIER,FOLLOW_18); 
+            lv_ProcedureName_0_0=(Token)match(input,RULE_IDENTIFIER,FOLLOW_19); 
 
             					newLeafNode(lv_ProcedureName_0_0, grammarAccess.getCallProcedureAccess().getProcedureNameIDENTIFIERTerminalRuleCall_0_0());
             				
@@ -2182,49 +2300,49 @@ public class InternalSeleniumDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalSeleniumDSL.g:870:3: (otherlv_1= '(' ( ( ( (lv_Parameters_2_1= RULE_IDENTIFIER | lv_Parameters_2_2= RULE_STRING ) ) ) (this_COMMA_3= RULE_COMMA ( ( (lv_Parameters_4_1= RULE_IDENTIFIER | lv_Parameters_4_2= RULE_STRING ) ) ) )* ) otherlv_5= ')' )?
-            int alt17=2;
-            int LA17_0 = input.LA(1);
+            // InternalSeleniumDSL.g:919:3: (otherlv_1= '(' ( ( ( (lv_Parameters_2_1= RULE_IDENTIFIER | lv_Parameters_2_2= RULE_STRING ) ) ) (this_COMMA_3= RULE_COMMA ( ( (lv_Parameters_4_1= RULE_IDENTIFIER | lv_Parameters_4_2= RULE_STRING ) ) ) )* ) otherlv_5= ')' )?
+            int alt18=2;
+            int LA18_0 = input.LA(1);
 
-            if ( (LA17_0==14) ) {
-                alt17=1;
+            if ( (LA18_0==14) ) {
+                alt18=1;
             }
-            switch (alt17) {
+            switch (alt18) {
                 case 1 :
-                    // InternalSeleniumDSL.g:871:4: otherlv_1= '(' ( ( ( (lv_Parameters_2_1= RULE_IDENTIFIER | lv_Parameters_2_2= RULE_STRING ) ) ) (this_COMMA_3= RULE_COMMA ( ( (lv_Parameters_4_1= RULE_IDENTIFIER | lv_Parameters_4_2= RULE_STRING ) ) ) )* ) otherlv_5= ')'
+                    // InternalSeleniumDSL.g:920:4: otherlv_1= '(' ( ( ( (lv_Parameters_2_1= RULE_IDENTIFIER | lv_Parameters_2_2= RULE_STRING ) ) ) (this_COMMA_3= RULE_COMMA ( ( (lv_Parameters_4_1= RULE_IDENTIFIER | lv_Parameters_4_2= RULE_STRING ) ) ) )* ) otherlv_5= ')'
                     {
-                    otherlv_1=(Token)match(input,14,FOLLOW_12); 
+                    otherlv_1=(Token)match(input,14,FOLLOW_13); 
 
                     				newLeafNode(otherlv_1, grammarAccess.getCallProcedureAccess().getLeftParenthesisKeyword_1_0());
                     			
-                    // InternalSeleniumDSL.g:875:4: ( ( ( (lv_Parameters_2_1= RULE_IDENTIFIER | lv_Parameters_2_2= RULE_STRING ) ) ) (this_COMMA_3= RULE_COMMA ( ( (lv_Parameters_4_1= RULE_IDENTIFIER | lv_Parameters_4_2= RULE_STRING ) ) ) )* )
-                    // InternalSeleniumDSL.g:876:5: ( ( (lv_Parameters_2_1= RULE_IDENTIFIER | lv_Parameters_2_2= RULE_STRING ) ) ) (this_COMMA_3= RULE_COMMA ( ( (lv_Parameters_4_1= RULE_IDENTIFIER | lv_Parameters_4_2= RULE_STRING ) ) ) )*
+                    // InternalSeleniumDSL.g:924:4: ( ( ( (lv_Parameters_2_1= RULE_IDENTIFIER | lv_Parameters_2_2= RULE_STRING ) ) ) (this_COMMA_3= RULE_COMMA ( ( (lv_Parameters_4_1= RULE_IDENTIFIER | lv_Parameters_4_2= RULE_STRING ) ) ) )* )
+                    // InternalSeleniumDSL.g:925:5: ( ( (lv_Parameters_2_1= RULE_IDENTIFIER | lv_Parameters_2_2= RULE_STRING ) ) ) (this_COMMA_3= RULE_COMMA ( ( (lv_Parameters_4_1= RULE_IDENTIFIER | lv_Parameters_4_2= RULE_STRING ) ) ) )*
                     {
-                    // InternalSeleniumDSL.g:876:5: ( ( (lv_Parameters_2_1= RULE_IDENTIFIER | lv_Parameters_2_2= RULE_STRING ) ) )
-                    // InternalSeleniumDSL.g:877:6: ( (lv_Parameters_2_1= RULE_IDENTIFIER | lv_Parameters_2_2= RULE_STRING ) )
+                    // InternalSeleniumDSL.g:925:5: ( ( (lv_Parameters_2_1= RULE_IDENTIFIER | lv_Parameters_2_2= RULE_STRING ) ) )
+                    // InternalSeleniumDSL.g:926:6: ( (lv_Parameters_2_1= RULE_IDENTIFIER | lv_Parameters_2_2= RULE_STRING ) )
                     {
-                    // InternalSeleniumDSL.g:877:6: ( (lv_Parameters_2_1= RULE_IDENTIFIER | lv_Parameters_2_2= RULE_STRING ) )
-                    // InternalSeleniumDSL.g:878:7: (lv_Parameters_2_1= RULE_IDENTIFIER | lv_Parameters_2_2= RULE_STRING )
+                    // InternalSeleniumDSL.g:926:6: ( (lv_Parameters_2_1= RULE_IDENTIFIER | lv_Parameters_2_2= RULE_STRING ) )
+                    // InternalSeleniumDSL.g:927:7: (lv_Parameters_2_1= RULE_IDENTIFIER | lv_Parameters_2_2= RULE_STRING )
                     {
-                    // InternalSeleniumDSL.g:878:7: (lv_Parameters_2_1= RULE_IDENTIFIER | lv_Parameters_2_2= RULE_STRING )
-                    int alt14=2;
-                    int LA14_0 = input.LA(1);
+                    // InternalSeleniumDSL.g:927:7: (lv_Parameters_2_1= RULE_IDENTIFIER | lv_Parameters_2_2= RULE_STRING )
+                    int alt15=2;
+                    int LA15_0 = input.LA(1);
 
-                    if ( (LA14_0==RULE_IDENTIFIER) ) {
-                        alt14=1;
+                    if ( (LA15_0==RULE_IDENTIFIER) ) {
+                        alt15=1;
                     }
-                    else if ( (LA14_0==RULE_STRING) ) {
-                        alt14=2;
+                    else if ( (LA15_0==RULE_STRING) ) {
+                        alt15=2;
                     }
                     else {
                         NoViableAltException nvae =
-                            new NoViableAltException("", 14, 0, input);
+                            new NoViableAltException("", 15, 0, input);
 
                         throw nvae;
                     }
-                    switch (alt14) {
+                    switch (alt15) {
                         case 1 :
-                            // InternalSeleniumDSL.g:879:8: lv_Parameters_2_1= RULE_IDENTIFIER
+                            // InternalSeleniumDSL.g:928:8: lv_Parameters_2_1= RULE_IDENTIFIER
                             {
                             lv_Parameters_2_1=(Token)match(input,RULE_IDENTIFIER,FOLLOW_6); 
 
@@ -2244,7 +2362,7 @@ public class InternalSeleniumDSLParser extends AbstractInternalAntlrParser {
                             }
                             break;
                         case 2 :
-                            // InternalSeleniumDSL.g:894:8: lv_Parameters_2_2= RULE_STRING
+                            // InternalSeleniumDSL.g:943:8: lv_Parameters_2_2= RULE_STRING
                             {
                             lv_Parameters_2_2=(Token)match(input,RULE_STRING,FOLLOW_6); 
 
@@ -2272,50 +2390,50 @@ public class InternalSeleniumDSLParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalSeleniumDSL.g:911:5: (this_COMMA_3= RULE_COMMA ( ( (lv_Parameters_4_1= RULE_IDENTIFIER | lv_Parameters_4_2= RULE_STRING ) ) ) )*
-                    loop16:
+                    // InternalSeleniumDSL.g:960:5: (this_COMMA_3= RULE_COMMA ( ( (lv_Parameters_4_1= RULE_IDENTIFIER | lv_Parameters_4_2= RULE_STRING ) ) ) )*
+                    loop17:
                     do {
-                        int alt16=2;
-                        int LA16_0 = input.LA(1);
+                        int alt17=2;
+                        int LA17_0 = input.LA(1);
 
-                        if ( (LA16_0==RULE_COMMA) ) {
-                            alt16=1;
+                        if ( (LA17_0==RULE_COMMA) ) {
+                            alt17=1;
                         }
 
 
-                        switch (alt16) {
+                        switch (alt17) {
                     	case 1 :
-                    	    // InternalSeleniumDSL.g:912:6: this_COMMA_3= RULE_COMMA ( ( (lv_Parameters_4_1= RULE_IDENTIFIER | lv_Parameters_4_2= RULE_STRING ) ) )
+                    	    // InternalSeleniumDSL.g:961:6: this_COMMA_3= RULE_COMMA ( ( (lv_Parameters_4_1= RULE_IDENTIFIER | lv_Parameters_4_2= RULE_STRING ) ) )
                     	    {
-                    	    this_COMMA_3=(Token)match(input,RULE_COMMA,FOLLOW_12); 
+                    	    this_COMMA_3=(Token)match(input,RULE_COMMA,FOLLOW_13); 
 
                     	    						newLeafNode(this_COMMA_3, grammarAccess.getCallProcedureAccess().getCOMMATerminalRuleCall_1_1_1_0());
                     	    					
-                    	    // InternalSeleniumDSL.g:916:6: ( ( (lv_Parameters_4_1= RULE_IDENTIFIER | lv_Parameters_4_2= RULE_STRING ) ) )
-                    	    // InternalSeleniumDSL.g:917:7: ( (lv_Parameters_4_1= RULE_IDENTIFIER | lv_Parameters_4_2= RULE_STRING ) )
+                    	    // InternalSeleniumDSL.g:965:6: ( ( (lv_Parameters_4_1= RULE_IDENTIFIER | lv_Parameters_4_2= RULE_STRING ) ) )
+                    	    // InternalSeleniumDSL.g:966:7: ( (lv_Parameters_4_1= RULE_IDENTIFIER | lv_Parameters_4_2= RULE_STRING ) )
                     	    {
-                    	    // InternalSeleniumDSL.g:917:7: ( (lv_Parameters_4_1= RULE_IDENTIFIER | lv_Parameters_4_2= RULE_STRING ) )
-                    	    // InternalSeleniumDSL.g:918:8: (lv_Parameters_4_1= RULE_IDENTIFIER | lv_Parameters_4_2= RULE_STRING )
+                    	    // InternalSeleniumDSL.g:966:7: ( (lv_Parameters_4_1= RULE_IDENTIFIER | lv_Parameters_4_2= RULE_STRING ) )
+                    	    // InternalSeleniumDSL.g:967:8: (lv_Parameters_4_1= RULE_IDENTIFIER | lv_Parameters_4_2= RULE_STRING )
                     	    {
-                    	    // InternalSeleniumDSL.g:918:8: (lv_Parameters_4_1= RULE_IDENTIFIER | lv_Parameters_4_2= RULE_STRING )
-                    	    int alt15=2;
-                    	    int LA15_0 = input.LA(1);
+                    	    // InternalSeleniumDSL.g:967:8: (lv_Parameters_4_1= RULE_IDENTIFIER | lv_Parameters_4_2= RULE_STRING )
+                    	    int alt16=2;
+                    	    int LA16_0 = input.LA(1);
 
-                    	    if ( (LA15_0==RULE_IDENTIFIER) ) {
-                    	        alt15=1;
+                    	    if ( (LA16_0==RULE_IDENTIFIER) ) {
+                    	        alt16=1;
                     	    }
-                    	    else if ( (LA15_0==RULE_STRING) ) {
-                    	        alt15=2;
+                    	    else if ( (LA16_0==RULE_STRING) ) {
+                    	        alt16=2;
                     	    }
                     	    else {
                     	        NoViableAltException nvae =
-                    	            new NoViableAltException("", 15, 0, input);
+                    	            new NoViableAltException("", 16, 0, input);
 
                     	        throw nvae;
                     	    }
-                    	    switch (alt15) {
+                    	    switch (alt16) {
                     	        case 1 :
-                    	            // InternalSeleniumDSL.g:919:9: lv_Parameters_4_1= RULE_IDENTIFIER
+                    	            // InternalSeleniumDSL.g:968:9: lv_Parameters_4_1= RULE_IDENTIFIER
                     	            {
                     	            lv_Parameters_4_1=(Token)match(input,RULE_IDENTIFIER,FOLLOW_6); 
 
@@ -2335,7 +2453,7 @@ public class InternalSeleniumDSLParser extends AbstractInternalAntlrParser {
                     	            }
                     	            break;
                     	        case 2 :
-                    	            // InternalSeleniumDSL.g:934:9: lv_Parameters_4_2= RULE_STRING
+                    	            // InternalSeleniumDSL.g:983:9: lv_Parameters_4_2= RULE_STRING
                     	            {
                     	            lv_Parameters_4_2=(Token)match(input,RULE_STRING,FOLLOW_6); 
 
@@ -2368,7 +2486,7 @@ public class InternalSeleniumDSLParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop16;
+                    	    break loop17;
                         }
                     } while (true);
 
@@ -2418,16 +2536,17 @@ public class InternalSeleniumDSLParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000014000L});
     public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000008020L});
     public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000010000L});
-    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x00000000027A0010L});
+    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x00000000270A0010L});
     public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000042000L});
     public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000050000L});
-    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000000050L});
-    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000800000L});
-    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000001000000L});
-    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000004000000L});
-    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000008000000L});
-    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000010000000L});
-    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000000004002L});
+    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000F00000L});
+    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000000050L});
+    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000008000000L});
+    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000010000000L});
+    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000040000000L});
+    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000080000000L});
+    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000100000000L});
+    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000000004002L});
 
 }

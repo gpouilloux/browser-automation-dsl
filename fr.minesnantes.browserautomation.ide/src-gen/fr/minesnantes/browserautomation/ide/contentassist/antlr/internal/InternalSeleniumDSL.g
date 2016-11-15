@@ -375,6 +375,39 @@ finally {
 	restoreStackSize(stackSize);
 }
 
+rule__Click__TypeAlternatives_1_0
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getClickAccess().getTypeInputKeyword_1_0_0()); }
+		'input'
+		{ after(grammarAccess.getClickAccess().getTypeInputKeyword_1_0_0()); }
+	)
+	|
+	(
+		{ before(grammarAccess.getClickAccess().getTypeLinkKeyword_1_0_1()); }
+		'link'
+		{ after(grammarAccess.getClickAccess().getTypeLinkKeyword_1_0_1()); }
+	)
+	|
+	(
+		{ before(grammarAccess.getClickAccess().getTypeNameKeyword_1_0_2()); }
+		'name'
+		{ after(grammarAccess.getClickAccess().getTypeNameKeyword_1_0_2()); }
+	)
+	|
+	(
+		{ before(grammarAccess.getClickAccess().getTypeXpathKeyword_1_0_3()); }
+		'xpath'
+		{ after(grammarAccess.getClickAccess().getTypeXpathKeyword_1_0_3()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
 rule__Fill__ValueAlternatives_2_0
 	@init {
 		int stackSize = keepStackSize();
@@ -1142,6 +1175,7 @@ rule__Click__Group__1
 	}
 :
 	rule__Click__Group__1__Impl
+	rule__Click__Group__2
 ;
 finally {
 	restoreStackSize(stackSize);
@@ -1153,9 +1187,35 @@ rule__Click__Group__1__Impl
 	}
 :
 (
-	{ before(grammarAccess.getClickAccess().getNameAssignment_1()); }
-	(rule__Click__NameAssignment_1)
-	{ after(grammarAccess.getClickAccess().getNameAssignment_1()); }
+	{ before(grammarAccess.getClickAccess().getTypeAssignment_1()); }
+	(rule__Click__TypeAssignment_1)
+	{ after(grammarAccess.getClickAccess().getTypeAssignment_1()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Click__Group__2
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__Click__Group__2__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Click__Group__2__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getClickAccess().getValueAssignment_2()); }
+	(rule__Click__ValueAssignment_2)
+	{ after(grammarAccess.getClickAccess().getValueAssignment_2()); }
 )
 ;
 finally {
@@ -2078,15 +2138,30 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Click__NameAssignment_1
+rule__Click__TypeAssignment_1
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getClickAccess().getNameSTRINGTerminalRuleCall_1_0()); }
+		{ before(grammarAccess.getClickAccess().getTypeAlternatives_1_0()); }
+		(rule__Click__TypeAlternatives_1_0)
+		{ after(grammarAccess.getClickAccess().getTypeAlternatives_1_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Click__ValueAssignment_2
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getClickAccess().getValueSTRINGTerminalRuleCall_2_0()); }
 		RULE_STRING
-		{ after(grammarAccess.getClickAccess().getNameSTRINGTerminalRuleCall_1_0()); }
+		{ after(grammarAccess.getClickAccess().getValueSTRINGTerminalRuleCall_2_0()); }
 	)
 ;
 finally {

@@ -3,10 +3,25 @@
  */
 package fr.minesnantes.browserautomation.generator;
 
+import com.google.common.collect.Iterables;
+import fr.minesnantes.browserautomation.generator.Counter;
+import fr.minesnantes.browserautomation.seleniumDSL.Click;
+import fr.minesnantes.browserautomation.seleniumDSL.Fill;
+import fr.minesnantes.browserautomation.seleniumDSL.Instruction;
+import fr.minesnantes.browserautomation.seleniumDSL.MainProcedure;
+import fr.minesnantes.browserautomation.seleniumDSL.Navigate;
+import fr.minesnantes.browserautomation.seleniumDSL.Procedure;
+import fr.minesnantes.browserautomation.seleniumDSL.SeleniumTest;
+import java.io.File;
+import java.util.Arrays;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.generator.AbstractGenerator;
 import org.eclipse.xtext.generator.IFileSystemAccess2;
 import org.eclipse.xtext.generator.IGeneratorContext;
+import org.eclipse.xtext.xbase.lib.IterableExtensions;
 
 /**
  * Generates code from your model files on save.
@@ -15,7 +30,196 @@ import org.eclipse.xtext.generator.IGeneratorContext;
  */
 @SuppressWarnings("all")
 public class SeleniumDSLGenerator extends AbstractGenerator {
+  private EList<Procedure> procedures;
+  
+  private Counter elementCounter = new Counter();
+  
   @Override
   public void doGenerate(final Resource resource, final IFileSystemAccess2 fsa, final IGeneratorContext context) {
+    EList<EObject> _contents = resource.getContents();
+    Iterable<SeleniumTest> _filter = Iterables.<SeleniumTest>filter(_contents, SeleniumTest.class);
+    SeleniumTest _head = IterableExtensions.<SeleniumTest>head(_filter);
+    CharSequence _generateSeleniumTest = this.generateSeleniumTest(_head);
+    fsa.generateFile(
+      (("browserautomation" + File.separator) + "SeleniumTest.java"), _generateSeleniumTest);
+  }
+  
+  public CharSequence generateSeleniumTest(final SeleniumTest st) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("package browserautomation;");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("import org.openqa.selenium.By;");
+    _builder.newLine();
+    _builder.append("import org.openqa.selenium.WebDriver;");
+    _builder.newLine();
+    _builder.append("import org.openqa.selenium.WebElement;");
+    _builder.newLine();
+    _builder.append("import org.openqa.selenium.chrome.ChromeDriver;");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("public class SeleniumTest {");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("public static void main(String[] args) {");
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.append("// Initialize Selenium web driver for Google Chrome");
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.append("System.setProperty(\"webdriver.chrome.driver\", \"lib/chromedriver\");");
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.append("WebDriver webDriver = new ChromeDriver();");
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.newLine();
+    {
+      MainProcedure _main = st.getMain();
+      EList<Instruction> _instructions = _main.getInstructions();
+      for(final Instruction i : _instructions) {
+        _builder.append("        ");
+        CharSequence _generateInstruction = this.generateInstruction(i);
+        _builder.append(_generateInstruction, "        ");
+        _builder.newLineIfNotEmpty();
+      }
+    }
+    _builder.append("        ");
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.append("// Close the browser");
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.append("webDriver.quit();");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.append("}");
+    _builder.newLine();
+    return _builder;
+  }
+  
+  protected CharSequence _generateInstruction(final Navigate n) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("webDriver.get(\"");
+    String _url = n.getUrl();
+    _builder.append(_url, "");
+    _builder.append("\");");
+    _builder.newLineIfNotEmpty();
+    return _builder;
+  }
+  
+  protected CharSequence _generateInstruction(final Click c) {
+    StringConcatenation _builder = new StringConcatenation();
+    StringConcatenation _builder_1 = new StringConcatenation();
+    _builder_1.append("element");
+    int _nextCount = this.elementCounter.nextCount();
+    _builder_1.append(_nextCount, "");
+    final String eltName = _builder_1.toString();
+    _builder.newLineIfNotEmpty();
+    final String clickValue = c.getValue();
+    _builder.newLineIfNotEmpty();
+    CharSequence _switchResult = null;
+    String _type = c.getType();
+    switch (_type) {
+      case "input":
+        StringConcatenation _builder_2 = new StringConcatenation();
+        _builder_2.append("WebElement ");
+        _builder_2.append(eltName, "");
+        _builder_2.append(" = webDriver.findElement(By.xpath(\"//input[@value=\\\"");
+        _builder_2.append(clickValue, "");
+        _builder_2.append("\\\"]\"));");
+        _switchResult = _builder_2;
+        break;
+      case "link":
+        StringConcatenation _builder_3 = new StringConcatenation();
+        _builder_3.append("WebElement ");
+        _builder_3.append(eltName, "");
+        _builder_3.append(" = webDriver.findElement(By.linkText(\"");
+        _builder_3.append(clickValue, "");
+        _builder_3.append("\"));");
+        _switchResult = _builder_3;
+        break;
+      case "xpath":
+        StringConcatenation _builder_4 = new StringConcatenation();
+        _builder_4.append("WebElement ");
+        _builder_4.append(eltName, "");
+        _builder_4.append(" = webDriver.findElement(By.xpath(\"");
+        _builder_4.append(clickValue, "");
+        _builder_4.append("\"));");
+        _switchResult = _builder_4;
+        break;
+      case "name":
+        StringConcatenation _builder_5 = new StringConcatenation();
+        _builder_5.append("WebElement ");
+        _builder_5.append(eltName, "");
+        _builder_5.append(" = webDriver.findElement(By.name(\"");
+        _builder_5.append(clickValue, "");
+        _builder_5.append("\"));");
+        _switchResult = _builder_5;
+        break;
+      default:
+        StringConcatenation _builder_6 = new StringConcatenation();
+        _builder_6.append("// FIXME unrecognized click instruction: click ");
+        String _type_1 = c.getType();
+        _builder_6.append(_type_1, "");
+        _builder_6.append(" ");
+        _builder_6.append(clickValue, "");
+        _switchResult = _builder_6;
+        break;
+    }
+    _builder.append(_switchResult, "");
+    _builder.newLineIfNotEmpty();
+    _builder.append(eltName, "");
+    _builder.append(".click();");
+    _builder.newLineIfNotEmpty();
+    return _builder;
+  }
+  
+  protected CharSequence _generateInstruction(final Fill f) {
+    StringConcatenation _builder = new StringConcatenation();
+    StringConcatenation _builder_1 = new StringConcatenation();
+    _builder_1.append("element");
+    int _nextCount = this.elementCounter.nextCount();
+    _builder_1.append(_nextCount, "");
+    final String eltName = _builder_1.toString();
+    _builder.newLineIfNotEmpty();
+    _builder.append("WebElement ");
+    _builder.append(eltName, "");
+    _builder.append(" = webDriver.findElement(By.name(\"");
+    String _name = f.getName();
+    _builder.append(_name, "");
+    _builder.append("\"));");
+    _builder.newLineIfNotEmpty();
+    _builder.append(eltName, "");
+    _builder.append(".sendKeys(\"");
+    String _value = f.getValue();
+    _builder.append(_value, "");
+    _builder.append("\");");
+    _builder.newLineIfNotEmpty();
+    return _builder;
+  }
+  
+  protected CharSequence _generateInstruction(final Instruction i) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("// FIXME wtf is this instruction?");
+    _builder.newLine();
+    return _builder;
+  }
+  
+  public CharSequence generateInstruction(final Instruction c) {
+    if (c instanceof Click) {
+      return _generateInstruction((Click)c);
+    } else if (c instanceof Fill) {
+      return _generateInstruction((Fill)c);
+    } else if (c instanceof Navigate) {
+      return _generateInstruction((Navigate)c);
+    } else if (c != null) {
+      return _generateInstruction(c);
+    } else {
+      throw new IllegalArgumentException("Unhandled parameter types: " +
+        Arrays.<Object>asList(c).toString());
+    }
   }
 }

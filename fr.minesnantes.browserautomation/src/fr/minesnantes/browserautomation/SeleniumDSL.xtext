@@ -19,9 +19,9 @@ Instruction:
   (Click | Fill | Select | Navigate | Assert | Read | CallProcedure)
 ;
 
-Click: 'click' Name=STRING;
+Click: 'click' Type=('input'|'link'|'name'|'xpath') Value=STRING;
 
-Fill: 'fill' Name=STRING value=(STRING|IDENTIFIER);
+Fill: 'fill' Name=STRING Value=(STRING|IDENTIFIER);
 
 Select: 'select' Name=STRING;
 

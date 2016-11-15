@@ -211,6 +211,29 @@ public class SeleniumDSLItemProviderAdapterFactory extends SeleniumDSLAdapterFac
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link fr.minesnantes.browserautomation.seleniumDSL.Select} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected SelectItemProvider selectItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link fr.minesnantes.browserautomation.seleniumDSL.Select}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createSelectAdapter() {
+		if (selectItemProvider == null) {
+			selectItemProvider = new SelectItemProvider(this);
+		}
+
+		return selectItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link fr.minesnantes.browserautomation.seleniumDSL.Navigate} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -407,6 +430,7 @@ public class SeleniumDSLItemProviderAdapterFactory extends SeleniumDSLAdapterFac
 		if (instructionItemProvider != null) instructionItemProvider.dispose();
 		if (clickItemProvider != null) clickItemProvider.dispose();
 		if (fillItemProvider != null) fillItemProvider.dispose();
+		if (selectItemProvider != null) selectItemProvider.dispose();
 		if (navigateItemProvider != null) navigateItemProvider.dispose();
 		if (readItemProvider != null) readItemProvider.dispose();
 		if (assertItemProvider != null) assertItemProvider.dispose();

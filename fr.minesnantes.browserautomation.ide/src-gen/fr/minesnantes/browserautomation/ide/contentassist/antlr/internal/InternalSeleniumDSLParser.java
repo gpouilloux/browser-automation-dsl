@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalSeleniumDSLParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_IDENTIFIER", "RULE_COMMA", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'def'", "'{'", "'}'", "'('", "')'", "'main'", "'click'", "'fill'", "'select'", "'navigate'", "'='", "'read'", "'assert'", "'contains'", "'equals'", "'exists'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_IDENTIFIER", "RULE_COMMA", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'input'", "'link'", "'name'", "'xpath'", "'def'", "'{'", "'}'", "'('", "')'", "'main'", "'click'", "'fill'", "'select'", "'navigate'", "'='", "'read'", "'assert'", "'contains'", "'equals'", "'exists'"
     };
     public static final int RULE_IDENTIFIER=5;
     public static final int RULE_STRING=4;
@@ -35,6 +35,9 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
     public static final int T__13=13;
     public static final int T__14=14;
     public static final int EOF=-1;
+    public static final int T__30=30;
+    public static final int T__31=31;
+    public static final int T__32=32;
     public static final int RULE_ID=7;
     public static final int RULE_COMMA=6;
     public static final int RULE_WS=11;
@@ -43,6 +46,7 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
     public static final int T__27=27;
     public static final int T__28=28;
     public static final int RULE_INT=8;
+    public static final int T__29=29;
     public static final int T__22=22;
     public static final int RULE_ML_COMMENT=9;
     public static final int T__23=23;
@@ -943,27 +947,27 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
             // InternalSeleniumDSL.g:331:1: ( ( ruleClick ) | ( ruleFill ) | ( ruleSelect ) | ( ruleNavigate ) | ( ruleAssert ) | ( ruleRead ) | ( ruleCallProcedure ) )
             int alt1=7;
             switch ( input.LA(1) ) {
-            case 19:
+            case 23:
                 {
                 alt1=1;
                 }
                 break;
-            case 20:
+            case 24:
                 {
                 alt1=2;
                 }
                 break;
-            case 21:
+            case 25:
                 {
                 alt1=3;
                 }
                 break;
-            case 22:
+            case 26:
                 {
                 alt1=4;
                 }
                 break;
-            case 25:
+            case 29:
                 {
                 alt1=5;
                 }
@@ -972,10 +976,10 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
                 {
                 int LA1_6 = input.LA(2);
 
-                if ( (LA1_6==EOF||LA1_6==RULE_IDENTIFIER||(LA1_6>=15 && LA1_6<=16)||(LA1_6>=19 && LA1_6<=22)||LA1_6==25) ) {
+                if ( (LA1_6==EOF||LA1_6==RULE_IDENTIFIER||(LA1_6>=19 && LA1_6<=20)||(LA1_6>=23 && LA1_6<=26)||LA1_6==29) ) {
                     alt1=7;
                 }
-                else if ( (LA1_6==23) ) {
+                else if ( (LA1_6==27) ) {
                     alt1=6;
                 }
                 else {
@@ -1144,35 +1148,150 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
     // $ANTLR end "rule__Instruction__Alternatives"
 
 
-    // $ANTLR start "rule__Fill__ValueAlternatives_2_0"
-    // InternalSeleniumDSL.g:378:1: rule__Fill__ValueAlternatives_2_0 : ( ( RULE_STRING ) | ( RULE_IDENTIFIER ) );
-    public final void rule__Fill__ValueAlternatives_2_0() throws RecognitionException {
+    // $ANTLR start "rule__Click__TypeAlternatives_1_0"
+    // InternalSeleniumDSL.g:378:1: rule__Click__TypeAlternatives_1_0 : ( ( 'input' ) | ( 'link' ) | ( 'name' ) | ( 'xpath' ) );
+    public final void rule__Click__TypeAlternatives_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:382:1: ( ( RULE_STRING ) | ( RULE_IDENTIFIER ) )
-            int alt2=2;
-            int LA2_0 = input.LA(1);
-
-            if ( (LA2_0==RULE_STRING) ) {
+            // InternalSeleniumDSL.g:382:1: ( ( 'input' ) | ( 'link' ) | ( 'name' ) | ( 'xpath' ) )
+            int alt2=4;
+            switch ( input.LA(1) ) {
+            case 13:
+                {
                 alt2=1;
-            }
-            else if ( (LA2_0==RULE_IDENTIFIER) ) {
+                }
+                break;
+            case 14:
+                {
                 alt2=2;
-            }
-            else {
+                }
+                break;
+            case 15:
+                {
+                alt2=3;
+                }
+                break;
+            case 16:
+                {
+                alt2=4;
+                }
+                break;
+            default:
                 NoViableAltException nvae =
                     new NoViableAltException("", 2, 0, input);
 
                 throw nvae;
             }
+
             switch (alt2) {
                 case 1 :
-                    // InternalSeleniumDSL.g:383:2: ( RULE_STRING )
+                    // InternalSeleniumDSL.g:383:2: ( 'input' )
                     {
-                    // InternalSeleniumDSL.g:383:2: ( RULE_STRING )
-                    // InternalSeleniumDSL.g:384:3: RULE_STRING
+                    // InternalSeleniumDSL.g:383:2: ( 'input' )
+                    // InternalSeleniumDSL.g:384:3: 'input'
+                    {
+                     before(grammarAccess.getClickAccess().getTypeInputKeyword_1_0_0()); 
+                    match(input,13,FOLLOW_2); 
+                     after(grammarAccess.getClickAccess().getTypeInputKeyword_1_0_0()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // InternalSeleniumDSL.g:389:2: ( 'link' )
+                    {
+                    // InternalSeleniumDSL.g:389:2: ( 'link' )
+                    // InternalSeleniumDSL.g:390:3: 'link'
+                    {
+                     before(grammarAccess.getClickAccess().getTypeLinkKeyword_1_0_1()); 
+                    match(input,14,FOLLOW_2); 
+                     after(grammarAccess.getClickAccess().getTypeLinkKeyword_1_0_1()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 3 :
+                    // InternalSeleniumDSL.g:395:2: ( 'name' )
+                    {
+                    // InternalSeleniumDSL.g:395:2: ( 'name' )
+                    // InternalSeleniumDSL.g:396:3: 'name'
+                    {
+                     before(grammarAccess.getClickAccess().getTypeNameKeyword_1_0_2()); 
+                    match(input,15,FOLLOW_2); 
+                     after(grammarAccess.getClickAccess().getTypeNameKeyword_1_0_2()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 4 :
+                    // InternalSeleniumDSL.g:401:2: ( 'xpath' )
+                    {
+                    // InternalSeleniumDSL.g:401:2: ( 'xpath' )
+                    // InternalSeleniumDSL.g:402:3: 'xpath'
+                    {
+                     before(grammarAccess.getClickAccess().getTypeXpathKeyword_1_0_3()); 
+                    match(input,16,FOLLOW_2); 
+                     after(grammarAccess.getClickAccess().getTypeXpathKeyword_1_0_3()); 
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Click__TypeAlternatives_1_0"
+
+
+    // $ANTLR start "rule__Fill__ValueAlternatives_2_0"
+    // InternalSeleniumDSL.g:411:1: rule__Fill__ValueAlternatives_2_0 : ( ( RULE_STRING ) | ( RULE_IDENTIFIER ) );
+    public final void rule__Fill__ValueAlternatives_2_0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSeleniumDSL.g:415:1: ( ( RULE_STRING ) | ( RULE_IDENTIFIER ) )
+            int alt3=2;
+            int LA3_0 = input.LA(1);
+
+            if ( (LA3_0==RULE_STRING) ) {
+                alt3=1;
+            }
+            else if ( (LA3_0==RULE_IDENTIFIER) ) {
+                alt3=2;
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 3, 0, input);
+
+                throw nvae;
+            }
+            switch (alt3) {
+                case 1 :
+                    // InternalSeleniumDSL.g:416:2: ( RULE_STRING )
+                    {
+                    // InternalSeleniumDSL.g:416:2: ( RULE_STRING )
+                    // InternalSeleniumDSL.g:417:3: RULE_STRING
                     {
                      before(grammarAccess.getFillAccess().getValueSTRINGTerminalRuleCall_2_0_0()); 
                     match(input,RULE_STRING,FOLLOW_2); 
@@ -1184,10 +1303,10 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
                     }
                     break;
                 case 2 :
-                    // InternalSeleniumDSL.g:389:2: ( RULE_IDENTIFIER )
+                    // InternalSeleniumDSL.g:422:2: ( RULE_IDENTIFIER )
                     {
-                    // InternalSeleniumDSL.g:389:2: ( RULE_IDENTIFIER )
-                    // InternalSeleniumDSL.g:390:3: RULE_IDENTIFIER
+                    // InternalSeleniumDSL.g:422:2: ( RULE_IDENTIFIER )
+                    // InternalSeleniumDSL.g:423:3: RULE_IDENTIFIER
                     {
                      before(grammarAccess.getFillAccess().getValueIDENTIFIERTerminalRuleCall_2_0_1()); 
                     match(input,RULE_IDENTIFIER,FOLLOW_2); 
@@ -1216,34 +1335,34 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Navigate__UrlAlternatives_1_0"
-    // InternalSeleniumDSL.g:399:1: rule__Navigate__UrlAlternatives_1_0 : ( ( RULE_STRING ) | ( RULE_IDENTIFIER ) );
+    // InternalSeleniumDSL.g:432:1: rule__Navigate__UrlAlternatives_1_0 : ( ( RULE_STRING ) | ( RULE_IDENTIFIER ) );
     public final void rule__Navigate__UrlAlternatives_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:403:1: ( ( RULE_STRING ) | ( RULE_IDENTIFIER ) )
-            int alt3=2;
-            int LA3_0 = input.LA(1);
+            // InternalSeleniumDSL.g:436:1: ( ( RULE_STRING ) | ( RULE_IDENTIFIER ) )
+            int alt4=2;
+            int LA4_0 = input.LA(1);
 
-            if ( (LA3_0==RULE_STRING) ) {
-                alt3=1;
+            if ( (LA4_0==RULE_STRING) ) {
+                alt4=1;
             }
-            else if ( (LA3_0==RULE_IDENTIFIER) ) {
-                alt3=2;
+            else if ( (LA4_0==RULE_IDENTIFIER) ) {
+                alt4=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 3, 0, input);
+                    new NoViableAltException("", 4, 0, input);
 
                 throw nvae;
             }
-            switch (alt3) {
+            switch (alt4) {
                 case 1 :
-                    // InternalSeleniumDSL.g:404:2: ( RULE_STRING )
+                    // InternalSeleniumDSL.g:437:2: ( RULE_STRING )
                     {
-                    // InternalSeleniumDSL.g:404:2: ( RULE_STRING )
-                    // InternalSeleniumDSL.g:405:3: RULE_STRING
+                    // InternalSeleniumDSL.g:437:2: ( RULE_STRING )
+                    // InternalSeleniumDSL.g:438:3: RULE_STRING
                     {
                      before(grammarAccess.getNavigateAccess().getUrlSTRINGTerminalRuleCall_1_0_0()); 
                     match(input,RULE_STRING,FOLLOW_2); 
@@ -1255,10 +1374,10 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
                     }
                     break;
                 case 2 :
-                    // InternalSeleniumDSL.g:410:2: ( RULE_IDENTIFIER )
+                    // InternalSeleniumDSL.g:443:2: ( RULE_IDENTIFIER )
                     {
-                    // InternalSeleniumDSL.g:410:2: ( RULE_IDENTIFIER )
-                    // InternalSeleniumDSL.g:411:3: RULE_IDENTIFIER
+                    // InternalSeleniumDSL.g:443:2: ( RULE_IDENTIFIER )
+                    // InternalSeleniumDSL.g:444:3: RULE_IDENTIFIER
                     {
                      before(grammarAccess.getNavigateAccess().getUrlIDENTIFIERTerminalRuleCall_1_0_1()); 
                     match(input,RULE_IDENTIFIER,FOLLOW_2); 
@@ -1287,36 +1406,36 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Assert__Alternatives_1"
-    // InternalSeleniumDSL.g:420:1: rule__Assert__Alternatives_1 : ( ( ( rule__Assert__Group_1_0__0 ) ) | ( ( rule__Assert__Group_1_1__0 ) ) | ( ( rule__Assert__Group_1_2__0 ) ) );
+    // InternalSeleniumDSL.g:453:1: rule__Assert__Alternatives_1 : ( ( ( rule__Assert__Group_1_0__0 ) ) | ( ( rule__Assert__Group_1_1__0 ) ) | ( ( rule__Assert__Group_1_2__0 ) ) );
     public final void rule__Assert__Alternatives_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:424:1: ( ( ( rule__Assert__Group_1_0__0 ) ) | ( ( rule__Assert__Group_1_1__0 ) ) | ( ( rule__Assert__Group_1_2__0 ) ) )
-            int alt4=3;
-            int LA4_0 = input.LA(1);
+            // InternalSeleniumDSL.g:457:1: ( ( ( rule__Assert__Group_1_0__0 ) ) | ( ( rule__Assert__Group_1_1__0 ) ) | ( ( rule__Assert__Group_1_2__0 ) ) )
+            int alt5=3;
+            int LA5_0 = input.LA(1);
 
-            if ( (LA4_0==RULE_STRING) ) {
+            if ( (LA5_0==RULE_STRING) ) {
                 switch ( input.LA(2) ) {
-                case 26:
+                case 31:
                     {
-                    alt4=1;
+                    alt5=2;
                     }
                     break;
-                case 28:
+                case 30:
                     {
-                    alt4=3;
+                    alt5=1;
                     }
                     break;
-                case 27:
+                case 32:
                     {
-                    alt4=2;
+                    alt5=3;
                     }
                     break;
                 default:
                     NoViableAltException nvae =
-                        new NoViableAltException("", 4, 1, input);
+                        new NoViableAltException("", 5, 1, input);
 
                     throw nvae;
                 }
@@ -1324,20 +1443,20 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 4, 0, input);
+                    new NoViableAltException("", 5, 0, input);
 
                 throw nvae;
             }
-            switch (alt4) {
+            switch (alt5) {
                 case 1 :
-                    // InternalSeleniumDSL.g:425:2: ( ( rule__Assert__Group_1_0__0 ) )
+                    // InternalSeleniumDSL.g:458:2: ( ( rule__Assert__Group_1_0__0 ) )
                     {
-                    // InternalSeleniumDSL.g:425:2: ( ( rule__Assert__Group_1_0__0 ) )
-                    // InternalSeleniumDSL.g:426:3: ( rule__Assert__Group_1_0__0 )
+                    // InternalSeleniumDSL.g:458:2: ( ( rule__Assert__Group_1_0__0 ) )
+                    // InternalSeleniumDSL.g:459:3: ( rule__Assert__Group_1_0__0 )
                     {
                      before(grammarAccess.getAssertAccess().getGroup_1_0()); 
-                    // InternalSeleniumDSL.g:427:3: ( rule__Assert__Group_1_0__0 )
-                    // InternalSeleniumDSL.g:427:4: rule__Assert__Group_1_0__0
+                    // InternalSeleniumDSL.g:460:3: ( rule__Assert__Group_1_0__0 )
+                    // InternalSeleniumDSL.g:460:4: rule__Assert__Group_1_0__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__Assert__Group_1_0__0();
@@ -1355,14 +1474,14 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
                     }
                     break;
                 case 2 :
-                    // InternalSeleniumDSL.g:431:2: ( ( rule__Assert__Group_1_1__0 ) )
+                    // InternalSeleniumDSL.g:464:2: ( ( rule__Assert__Group_1_1__0 ) )
                     {
-                    // InternalSeleniumDSL.g:431:2: ( ( rule__Assert__Group_1_1__0 ) )
-                    // InternalSeleniumDSL.g:432:3: ( rule__Assert__Group_1_1__0 )
+                    // InternalSeleniumDSL.g:464:2: ( ( rule__Assert__Group_1_1__0 ) )
+                    // InternalSeleniumDSL.g:465:3: ( rule__Assert__Group_1_1__0 )
                     {
                      before(grammarAccess.getAssertAccess().getGroup_1_1()); 
-                    // InternalSeleniumDSL.g:433:3: ( rule__Assert__Group_1_1__0 )
-                    // InternalSeleniumDSL.g:433:4: rule__Assert__Group_1_1__0
+                    // InternalSeleniumDSL.g:466:3: ( rule__Assert__Group_1_1__0 )
+                    // InternalSeleniumDSL.g:466:4: rule__Assert__Group_1_1__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__Assert__Group_1_1__0();
@@ -1380,14 +1499,14 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
                     }
                     break;
                 case 3 :
-                    // InternalSeleniumDSL.g:437:2: ( ( rule__Assert__Group_1_2__0 ) )
+                    // InternalSeleniumDSL.g:470:2: ( ( rule__Assert__Group_1_2__0 ) )
                     {
-                    // InternalSeleniumDSL.g:437:2: ( ( rule__Assert__Group_1_2__0 ) )
-                    // InternalSeleniumDSL.g:438:3: ( rule__Assert__Group_1_2__0 )
+                    // InternalSeleniumDSL.g:470:2: ( ( rule__Assert__Group_1_2__0 ) )
+                    // InternalSeleniumDSL.g:471:3: ( rule__Assert__Group_1_2__0 )
                     {
                      before(grammarAccess.getAssertAccess().getGroup_1_2()); 
-                    // InternalSeleniumDSL.g:439:3: ( rule__Assert__Group_1_2__0 )
-                    // InternalSeleniumDSL.g:439:4: rule__Assert__Group_1_2__0
+                    // InternalSeleniumDSL.g:472:3: ( rule__Assert__Group_1_2__0 )
+                    // InternalSeleniumDSL.g:472:4: rule__Assert__Group_1_2__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__Assert__Group_1_2__0();
@@ -1422,34 +1541,34 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Assert__ValueAlternatives_1_0_2_0"
-    // InternalSeleniumDSL.g:447:1: rule__Assert__ValueAlternatives_1_0_2_0 : ( ( RULE_STRING ) | ( RULE_IDENTIFIER ) );
+    // InternalSeleniumDSL.g:480:1: rule__Assert__ValueAlternatives_1_0_2_0 : ( ( RULE_STRING ) | ( RULE_IDENTIFIER ) );
     public final void rule__Assert__ValueAlternatives_1_0_2_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:451:1: ( ( RULE_STRING ) | ( RULE_IDENTIFIER ) )
-            int alt5=2;
-            int LA5_0 = input.LA(1);
+            // InternalSeleniumDSL.g:484:1: ( ( RULE_STRING ) | ( RULE_IDENTIFIER ) )
+            int alt6=2;
+            int LA6_0 = input.LA(1);
 
-            if ( (LA5_0==RULE_STRING) ) {
-                alt5=1;
+            if ( (LA6_0==RULE_STRING) ) {
+                alt6=1;
             }
-            else if ( (LA5_0==RULE_IDENTIFIER) ) {
-                alt5=2;
+            else if ( (LA6_0==RULE_IDENTIFIER) ) {
+                alt6=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 5, 0, input);
+                    new NoViableAltException("", 6, 0, input);
 
                 throw nvae;
             }
-            switch (alt5) {
+            switch (alt6) {
                 case 1 :
-                    // InternalSeleniumDSL.g:452:2: ( RULE_STRING )
+                    // InternalSeleniumDSL.g:485:2: ( RULE_STRING )
                     {
-                    // InternalSeleniumDSL.g:452:2: ( RULE_STRING )
-                    // InternalSeleniumDSL.g:453:3: RULE_STRING
+                    // InternalSeleniumDSL.g:485:2: ( RULE_STRING )
+                    // InternalSeleniumDSL.g:486:3: RULE_STRING
                     {
                      before(grammarAccess.getAssertAccess().getValueSTRINGTerminalRuleCall_1_0_2_0_0()); 
                     match(input,RULE_STRING,FOLLOW_2); 
@@ -1461,10 +1580,10 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
                     }
                     break;
                 case 2 :
-                    // InternalSeleniumDSL.g:458:2: ( RULE_IDENTIFIER )
+                    // InternalSeleniumDSL.g:491:2: ( RULE_IDENTIFIER )
                     {
-                    // InternalSeleniumDSL.g:458:2: ( RULE_IDENTIFIER )
-                    // InternalSeleniumDSL.g:459:3: RULE_IDENTIFIER
+                    // InternalSeleniumDSL.g:491:2: ( RULE_IDENTIFIER )
+                    // InternalSeleniumDSL.g:492:3: RULE_IDENTIFIER
                     {
                      before(grammarAccess.getAssertAccess().getValueIDENTIFIERTerminalRuleCall_1_0_2_0_1()); 
                     match(input,RULE_IDENTIFIER,FOLLOW_2); 
@@ -1493,34 +1612,34 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Assert__ValueAlternatives_1_1_2_0"
-    // InternalSeleniumDSL.g:468:1: rule__Assert__ValueAlternatives_1_1_2_0 : ( ( RULE_STRING ) | ( RULE_IDENTIFIER ) );
+    // InternalSeleniumDSL.g:501:1: rule__Assert__ValueAlternatives_1_1_2_0 : ( ( RULE_STRING ) | ( RULE_IDENTIFIER ) );
     public final void rule__Assert__ValueAlternatives_1_1_2_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:472:1: ( ( RULE_STRING ) | ( RULE_IDENTIFIER ) )
-            int alt6=2;
-            int LA6_0 = input.LA(1);
+            // InternalSeleniumDSL.g:505:1: ( ( RULE_STRING ) | ( RULE_IDENTIFIER ) )
+            int alt7=2;
+            int LA7_0 = input.LA(1);
 
-            if ( (LA6_0==RULE_STRING) ) {
-                alt6=1;
+            if ( (LA7_0==RULE_STRING) ) {
+                alt7=1;
             }
-            else if ( (LA6_0==RULE_IDENTIFIER) ) {
-                alt6=2;
+            else if ( (LA7_0==RULE_IDENTIFIER) ) {
+                alt7=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 6, 0, input);
+                    new NoViableAltException("", 7, 0, input);
 
                 throw nvae;
             }
-            switch (alt6) {
+            switch (alt7) {
                 case 1 :
-                    // InternalSeleniumDSL.g:473:2: ( RULE_STRING )
+                    // InternalSeleniumDSL.g:506:2: ( RULE_STRING )
                     {
-                    // InternalSeleniumDSL.g:473:2: ( RULE_STRING )
-                    // InternalSeleniumDSL.g:474:3: RULE_STRING
+                    // InternalSeleniumDSL.g:506:2: ( RULE_STRING )
+                    // InternalSeleniumDSL.g:507:3: RULE_STRING
                     {
                      before(grammarAccess.getAssertAccess().getValueSTRINGTerminalRuleCall_1_1_2_0_0()); 
                     match(input,RULE_STRING,FOLLOW_2); 
@@ -1532,10 +1651,10 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
                     }
                     break;
                 case 2 :
-                    // InternalSeleniumDSL.g:479:2: ( RULE_IDENTIFIER )
+                    // InternalSeleniumDSL.g:512:2: ( RULE_IDENTIFIER )
                     {
-                    // InternalSeleniumDSL.g:479:2: ( RULE_IDENTIFIER )
-                    // InternalSeleniumDSL.g:480:3: RULE_IDENTIFIER
+                    // InternalSeleniumDSL.g:512:2: ( RULE_IDENTIFIER )
+                    // InternalSeleniumDSL.g:513:3: RULE_IDENTIFIER
                     {
                      before(grammarAccess.getAssertAccess().getValueIDENTIFIERTerminalRuleCall_1_1_2_0_1()); 
                     match(input,RULE_IDENTIFIER,FOLLOW_2); 
@@ -1564,34 +1683,34 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__CallProcedure__ParametersAlternatives_1_1_0_0"
-    // InternalSeleniumDSL.g:489:1: rule__CallProcedure__ParametersAlternatives_1_1_0_0 : ( ( RULE_IDENTIFIER ) | ( RULE_STRING ) );
+    // InternalSeleniumDSL.g:522:1: rule__CallProcedure__ParametersAlternatives_1_1_0_0 : ( ( RULE_IDENTIFIER ) | ( RULE_STRING ) );
     public final void rule__CallProcedure__ParametersAlternatives_1_1_0_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:493:1: ( ( RULE_IDENTIFIER ) | ( RULE_STRING ) )
-            int alt7=2;
-            int LA7_0 = input.LA(1);
+            // InternalSeleniumDSL.g:526:1: ( ( RULE_IDENTIFIER ) | ( RULE_STRING ) )
+            int alt8=2;
+            int LA8_0 = input.LA(1);
 
-            if ( (LA7_0==RULE_IDENTIFIER) ) {
-                alt7=1;
+            if ( (LA8_0==RULE_IDENTIFIER) ) {
+                alt8=1;
             }
-            else if ( (LA7_0==RULE_STRING) ) {
-                alt7=2;
+            else if ( (LA8_0==RULE_STRING) ) {
+                alt8=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 7, 0, input);
+                    new NoViableAltException("", 8, 0, input);
 
                 throw nvae;
             }
-            switch (alt7) {
+            switch (alt8) {
                 case 1 :
-                    // InternalSeleniumDSL.g:494:2: ( RULE_IDENTIFIER )
+                    // InternalSeleniumDSL.g:527:2: ( RULE_IDENTIFIER )
                     {
-                    // InternalSeleniumDSL.g:494:2: ( RULE_IDENTIFIER )
-                    // InternalSeleniumDSL.g:495:3: RULE_IDENTIFIER
+                    // InternalSeleniumDSL.g:527:2: ( RULE_IDENTIFIER )
+                    // InternalSeleniumDSL.g:528:3: RULE_IDENTIFIER
                     {
                      before(grammarAccess.getCallProcedureAccess().getParametersIDENTIFIERTerminalRuleCall_1_1_0_0_0()); 
                     match(input,RULE_IDENTIFIER,FOLLOW_2); 
@@ -1603,10 +1722,10 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
                     }
                     break;
                 case 2 :
-                    // InternalSeleniumDSL.g:500:2: ( RULE_STRING )
+                    // InternalSeleniumDSL.g:533:2: ( RULE_STRING )
                     {
-                    // InternalSeleniumDSL.g:500:2: ( RULE_STRING )
-                    // InternalSeleniumDSL.g:501:3: RULE_STRING
+                    // InternalSeleniumDSL.g:533:2: ( RULE_STRING )
+                    // InternalSeleniumDSL.g:534:3: RULE_STRING
                     {
                      before(grammarAccess.getCallProcedureAccess().getParametersSTRINGTerminalRuleCall_1_1_0_0_1()); 
                     match(input,RULE_STRING,FOLLOW_2); 
@@ -1635,34 +1754,34 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__CallProcedure__ParametersAlternatives_1_1_1_1_0"
-    // InternalSeleniumDSL.g:510:1: rule__CallProcedure__ParametersAlternatives_1_1_1_1_0 : ( ( RULE_IDENTIFIER ) | ( RULE_STRING ) );
+    // InternalSeleniumDSL.g:543:1: rule__CallProcedure__ParametersAlternatives_1_1_1_1_0 : ( ( RULE_IDENTIFIER ) | ( RULE_STRING ) );
     public final void rule__CallProcedure__ParametersAlternatives_1_1_1_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:514:1: ( ( RULE_IDENTIFIER ) | ( RULE_STRING ) )
-            int alt8=2;
-            int LA8_0 = input.LA(1);
+            // InternalSeleniumDSL.g:547:1: ( ( RULE_IDENTIFIER ) | ( RULE_STRING ) )
+            int alt9=2;
+            int LA9_0 = input.LA(1);
 
-            if ( (LA8_0==RULE_IDENTIFIER) ) {
-                alt8=1;
+            if ( (LA9_0==RULE_IDENTIFIER) ) {
+                alt9=1;
             }
-            else if ( (LA8_0==RULE_STRING) ) {
-                alt8=2;
+            else if ( (LA9_0==RULE_STRING) ) {
+                alt9=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 8, 0, input);
+                    new NoViableAltException("", 9, 0, input);
 
                 throw nvae;
             }
-            switch (alt8) {
+            switch (alt9) {
                 case 1 :
-                    // InternalSeleniumDSL.g:515:2: ( RULE_IDENTIFIER )
+                    // InternalSeleniumDSL.g:548:2: ( RULE_IDENTIFIER )
                     {
-                    // InternalSeleniumDSL.g:515:2: ( RULE_IDENTIFIER )
-                    // InternalSeleniumDSL.g:516:3: RULE_IDENTIFIER
+                    // InternalSeleniumDSL.g:548:2: ( RULE_IDENTIFIER )
+                    // InternalSeleniumDSL.g:549:3: RULE_IDENTIFIER
                     {
                      before(grammarAccess.getCallProcedureAccess().getParametersIDENTIFIERTerminalRuleCall_1_1_1_1_0_0()); 
                     match(input,RULE_IDENTIFIER,FOLLOW_2); 
@@ -1674,10 +1793,10 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
                     }
                     break;
                 case 2 :
-                    // InternalSeleniumDSL.g:521:2: ( RULE_STRING )
+                    // InternalSeleniumDSL.g:554:2: ( RULE_STRING )
                     {
-                    // InternalSeleniumDSL.g:521:2: ( RULE_STRING )
-                    // InternalSeleniumDSL.g:522:3: RULE_STRING
+                    // InternalSeleniumDSL.g:554:2: ( RULE_STRING )
+                    // InternalSeleniumDSL.g:555:3: RULE_STRING
                     {
                      before(grammarAccess.getCallProcedureAccess().getParametersSTRINGTerminalRuleCall_1_1_1_1_0_1()); 
                     match(input,RULE_STRING,FOLLOW_2); 
@@ -1706,14 +1825,14 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__SeleniumTest__Group__0"
-    // InternalSeleniumDSL.g:531:1: rule__SeleniumTest__Group__0 : rule__SeleniumTest__Group__0__Impl rule__SeleniumTest__Group__1 ;
+    // InternalSeleniumDSL.g:564:1: rule__SeleniumTest__Group__0 : rule__SeleniumTest__Group__0__Impl rule__SeleniumTest__Group__1 ;
     public final void rule__SeleniumTest__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:535:1: ( rule__SeleniumTest__Group__0__Impl rule__SeleniumTest__Group__1 )
-            // InternalSeleniumDSL.g:536:2: rule__SeleniumTest__Group__0__Impl rule__SeleniumTest__Group__1
+            // InternalSeleniumDSL.g:568:1: ( rule__SeleniumTest__Group__0__Impl rule__SeleniumTest__Group__1 )
+            // InternalSeleniumDSL.g:569:2: rule__SeleniumTest__Group__0__Impl rule__SeleniumTest__Group__1
             {
             pushFollow(FOLLOW_3);
             rule__SeleniumTest__Group__0__Impl();
@@ -1744,39 +1863,39 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__SeleniumTest__Group__0__Impl"
-    // InternalSeleniumDSL.g:543:1: rule__SeleniumTest__Group__0__Impl : ( ( rule__SeleniumTest__ProceduresAssignment_0 )* ) ;
+    // InternalSeleniumDSL.g:576:1: rule__SeleniumTest__Group__0__Impl : ( ( rule__SeleniumTest__ProceduresAssignment_0 )* ) ;
     public final void rule__SeleniumTest__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:547:1: ( ( ( rule__SeleniumTest__ProceduresAssignment_0 )* ) )
-            // InternalSeleniumDSL.g:548:1: ( ( rule__SeleniumTest__ProceduresAssignment_0 )* )
+            // InternalSeleniumDSL.g:580:1: ( ( ( rule__SeleniumTest__ProceduresAssignment_0 )* ) )
+            // InternalSeleniumDSL.g:581:1: ( ( rule__SeleniumTest__ProceduresAssignment_0 )* )
             {
-            // InternalSeleniumDSL.g:548:1: ( ( rule__SeleniumTest__ProceduresAssignment_0 )* )
-            // InternalSeleniumDSL.g:549:2: ( rule__SeleniumTest__ProceduresAssignment_0 )*
+            // InternalSeleniumDSL.g:581:1: ( ( rule__SeleniumTest__ProceduresAssignment_0 )* )
+            // InternalSeleniumDSL.g:582:2: ( rule__SeleniumTest__ProceduresAssignment_0 )*
             {
              before(grammarAccess.getSeleniumTestAccess().getProceduresAssignment_0()); 
-            // InternalSeleniumDSL.g:550:2: ( rule__SeleniumTest__ProceduresAssignment_0 )*
-            loop9:
+            // InternalSeleniumDSL.g:583:2: ( rule__SeleniumTest__ProceduresAssignment_0 )*
+            loop10:
             do {
-                int alt9=2;
-                int LA9_0 = input.LA(1);
+                int alt10=2;
+                int LA10_0 = input.LA(1);
 
-                if ( (LA9_0==13) ) {
-                    int LA9_1 = input.LA(2);
+                if ( (LA10_0==17) ) {
+                    int LA10_1 = input.LA(2);
 
-                    if ( (LA9_1==RULE_IDENTIFIER) ) {
-                        alt9=1;
+                    if ( (LA10_1==RULE_IDENTIFIER) ) {
+                        alt10=1;
                     }
 
 
                 }
 
 
-                switch (alt9) {
+                switch (alt10) {
             	case 1 :
-            	    // InternalSeleniumDSL.g:550:3: rule__SeleniumTest__ProceduresAssignment_0
+            	    // InternalSeleniumDSL.g:583:3: rule__SeleniumTest__ProceduresAssignment_0
             	    {
             	    pushFollow(FOLLOW_4);
             	    rule__SeleniumTest__ProceduresAssignment_0();
@@ -1788,7 +1907,7 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
             	    break;
 
             	default :
-            	    break loop9;
+            	    break loop10;
                 }
             } while (true);
 
@@ -1815,14 +1934,14 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__SeleniumTest__Group__1"
-    // InternalSeleniumDSL.g:558:1: rule__SeleniumTest__Group__1 : rule__SeleniumTest__Group__1__Impl ;
+    // InternalSeleniumDSL.g:591:1: rule__SeleniumTest__Group__1 : rule__SeleniumTest__Group__1__Impl ;
     public final void rule__SeleniumTest__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:562:1: ( rule__SeleniumTest__Group__1__Impl )
-            // InternalSeleniumDSL.g:563:2: rule__SeleniumTest__Group__1__Impl
+            // InternalSeleniumDSL.g:595:1: ( rule__SeleniumTest__Group__1__Impl )
+            // InternalSeleniumDSL.g:596:2: rule__SeleniumTest__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__SeleniumTest__Group__1__Impl();
@@ -1848,21 +1967,21 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__SeleniumTest__Group__1__Impl"
-    // InternalSeleniumDSL.g:569:1: rule__SeleniumTest__Group__1__Impl : ( ( rule__SeleniumTest__MainAssignment_1 ) ) ;
+    // InternalSeleniumDSL.g:602:1: rule__SeleniumTest__Group__1__Impl : ( ( rule__SeleniumTest__MainAssignment_1 ) ) ;
     public final void rule__SeleniumTest__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:573:1: ( ( ( rule__SeleniumTest__MainAssignment_1 ) ) )
-            // InternalSeleniumDSL.g:574:1: ( ( rule__SeleniumTest__MainAssignment_1 ) )
+            // InternalSeleniumDSL.g:606:1: ( ( ( rule__SeleniumTest__MainAssignment_1 ) ) )
+            // InternalSeleniumDSL.g:607:1: ( ( rule__SeleniumTest__MainAssignment_1 ) )
             {
-            // InternalSeleniumDSL.g:574:1: ( ( rule__SeleniumTest__MainAssignment_1 ) )
-            // InternalSeleniumDSL.g:575:2: ( rule__SeleniumTest__MainAssignment_1 )
+            // InternalSeleniumDSL.g:607:1: ( ( rule__SeleniumTest__MainAssignment_1 ) )
+            // InternalSeleniumDSL.g:608:2: ( rule__SeleniumTest__MainAssignment_1 )
             {
              before(grammarAccess.getSeleniumTestAccess().getMainAssignment_1()); 
-            // InternalSeleniumDSL.g:576:2: ( rule__SeleniumTest__MainAssignment_1 )
-            // InternalSeleniumDSL.g:576:3: rule__SeleniumTest__MainAssignment_1
+            // InternalSeleniumDSL.g:609:2: ( rule__SeleniumTest__MainAssignment_1 )
+            // InternalSeleniumDSL.g:609:3: rule__SeleniumTest__MainAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__SeleniumTest__MainAssignment_1();
@@ -1895,14 +2014,14 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Procedure__Group__0"
-    // InternalSeleniumDSL.g:585:1: rule__Procedure__Group__0 : rule__Procedure__Group__0__Impl rule__Procedure__Group__1 ;
+    // InternalSeleniumDSL.g:618:1: rule__Procedure__Group__0 : rule__Procedure__Group__0__Impl rule__Procedure__Group__1 ;
     public final void rule__Procedure__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:589:1: ( rule__Procedure__Group__0__Impl rule__Procedure__Group__1 )
-            // InternalSeleniumDSL.g:590:2: rule__Procedure__Group__0__Impl rule__Procedure__Group__1
+            // InternalSeleniumDSL.g:622:1: ( rule__Procedure__Group__0__Impl rule__Procedure__Group__1 )
+            // InternalSeleniumDSL.g:623:2: rule__Procedure__Group__0__Impl rule__Procedure__Group__1
             {
             pushFollow(FOLLOW_5);
             rule__Procedure__Group__0__Impl();
@@ -1933,20 +2052,20 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Procedure__Group__0__Impl"
-    // InternalSeleniumDSL.g:597:1: rule__Procedure__Group__0__Impl : ( 'def' ) ;
+    // InternalSeleniumDSL.g:630:1: rule__Procedure__Group__0__Impl : ( 'def' ) ;
     public final void rule__Procedure__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:601:1: ( ( 'def' ) )
-            // InternalSeleniumDSL.g:602:1: ( 'def' )
+            // InternalSeleniumDSL.g:634:1: ( ( 'def' ) )
+            // InternalSeleniumDSL.g:635:1: ( 'def' )
             {
-            // InternalSeleniumDSL.g:602:1: ( 'def' )
-            // InternalSeleniumDSL.g:603:2: 'def'
+            // InternalSeleniumDSL.g:635:1: ( 'def' )
+            // InternalSeleniumDSL.g:636:2: 'def'
             {
              before(grammarAccess.getProcedureAccess().getDefKeyword_0()); 
-            match(input,13,FOLLOW_2); 
+            match(input,17,FOLLOW_2); 
              after(grammarAccess.getProcedureAccess().getDefKeyword_0()); 
 
             }
@@ -1970,14 +2089,14 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Procedure__Group__1"
-    // InternalSeleniumDSL.g:612:1: rule__Procedure__Group__1 : rule__Procedure__Group__1__Impl rule__Procedure__Group__2 ;
+    // InternalSeleniumDSL.g:645:1: rule__Procedure__Group__1 : rule__Procedure__Group__1__Impl rule__Procedure__Group__2 ;
     public final void rule__Procedure__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:616:1: ( rule__Procedure__Group__1__Impl rule__Procedure__Group__2 )
-            // InternalSeleniumDSL.g:617:2: rule__Procedure__Group__1__Impl rule__Procedure__Group__2
+            // InternalSeleniumDSL.g:649:1: ( rule__Procedure__Group__1__Impl rule__Procedure__Group__2 )
+            // InternalSeleniumDSL.g:650:2: rule__Procedure__Group__1__Impl rule__Procedure__Group__2
             {
             pushFollow(FOLLOW_6);
             rule__Procedure__Group__1__Impl();
@@ -2008,21 +2127,21 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Procedure__Group__1__Impl"
-    // InternalSeleniumDSL.g:624:1: rule__Procedure__Group__1__Impl : ( ( rule__Procedure__NameAssignment_1 ) ) ;
+    // InternalSeleniumDSL.g:657:1: rule__Procedure__Group__1__Impl : ( ( rule__Procedure__NameAssignment_1 ) ) ;
     public final void rule__Procedure__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:628:1: ( ( ( rule__Procedure__NameAssignment_1 ) ) )
-            // InternalSeleniumDSL.g:629:1: ( ( rule__Procedure__NameAssignment_1 ) )
+            // InternalSeleniumDSL.g:661:1: ( ( ( rule__Procedure__NameAssignment_1 ) ) )
+            // InternalSeleniumDSL.g:662:1: ( ( rule__Procedure__NameAssignment_1 ) )
             {
-            // InternalSeleniumDSL.g:629:1: ( ( rule__Procedure__NameAssignment_1 ) )
-            // InternalSeleniumDSL.g:630:2: ( rule__Procedure__NameAssignment_1 )
+            // InternalSeleniumDSL.g:662:1: ( ( rule__Procedure__NameAssignment_1 ) )
+            // InternalSeleniumDSL.g:663:2: ( rule__Procedure__NameAssignment_1 )
             {
              before(grammarAccess.getProcedureAccess().getNameAssignment_1()); 
-            // InternalSeleniumDSL.g:631:2: ( rule__Procedure__NameAssignment_1 )
-            // InternalSeleniumDSL.g:631:3: rule__Procedure__NameAssignment_1
+            // InternalSeleniumDSL.g:664:2: ( rule__Procedure__NameAssignment_1 )
+            // InternalSeleniumDSL.g:664:3: rule__Procedure__NameAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__Procedure__NameAssignment_1();
@@ -2055,14 +2174,14 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Procedure__Group__2"
-    // InternalSeleniumDSL.g:639:1: rule__Procedure__Group__2 : rule__Procedure__Group__2__Impl rule__Procedure__Group__3 ;
+    // InternalSeleniumDSL.g:672:1: rule__Procedure__Group__2 : rule__Procedure__Group__2__Impl rule__Procedure__Group__3 ;
     public final void rule__Procedure__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:643:1: ( rule__Procedure__Group__2__Impl rule__Procedure__Group__3 )
-            // InternalSeleniumDSL.g:644:2: rule__Procedure__Group__2__Impl rule__Procedure__Group__3
+            // InternalSeleniumDSL.g:676:1: ( rule__Procedure__Group__2__Impl rule__Procedure__Group__3 )
+            // InternalSeleniumDSL.g:677:2: rule__Procedure__Group__2__Impl rule__Procedure__Group__3
             {
             pushFollow(FOLLOW_6);
             rule__Procedure__Group__2__Impl();
@@ -2093,29 +2212,29 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Procedure__Group__2__Impl"
-    // InternalSeleniumDSL.g:651:1: rule__Procedure__Group__2__Impl : ( ( rule__Procedure__Group_2__0 )? ) ;
+    // InternalSeleniumDSL.g:684:1: rule__Procedure__Group__2__Impl : ( ( rule__Procedure__Group_2__0 )? ) ;
     public final void rule__Procedure__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:655:1: ( ( ( rule__Procedure__Group_2__0 )? ) )
-            // InternalSeleniumDSL.g:656:1: ( ( rule__Procedure__Group_2__0 )? )
+            // InternalSeleniumDSL.g:688:1: ( ( ( rule__Procedure__Group_2__0 )? ) )
+            // InternalSeleniumDSL.g:689:1: ( ( rule__Procedure__Group_2__0 )? )
             {
-            // InternalSeleniumDSL.g:656:1: ( ( rule__Procedure__Group_2__0 )? )
-            // InternalSeleniumDSL.g:657:2: ( rule__Procedure__Group_2__0 )?
+            // InternalSeleniumDSL.g:689:1: ( ( rule__Procedure__Group_2__0 )? )
+            // InternalSeleniumDSL.g:690:2: ( rule__Procedure__Group_2__0 )?
             {
              before(grammarAccess.getProcedureAccess().getGroup_2()); 
-            // InternalSeleniumDSL.g:658:2: ( rule__Procedure__Group_2__0 )?
-            int alt10=2;
-            int LA10_0 = input.LA(1);
+            // InternalSeleniumDSL.g:691:2: ( rule__Procedure__Group_2__0 )?
+            int alt11=2;
+            int LA11_0 = input.LA(1);
 
-            if ( (LA10_0==16) ) {
-                alt10=1;
+            if ( (LA11_0==20) ) {
+                alt11=1;
             }
-            switch (alt10) {
+            switch (alt11) {
                 case 1 :
-                    // InternalSeleniumDSL.g:658:3: rule__Procedure__Group_2__0
+                    // InternalSeleniumDSL.g:691:3: rule__Procedure__Group_2__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__Procedure__Group_2__0();
@@ -2151,14 +2270,14 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Procedure__Group__3"
-    // InternalSeleniumDSL.g:666:1: rule__Procedure__Group__3 : rule__Procedure__Group__3__Impl rule__Procedure__Group__4 ;
+    // InternalSeleniumDSL.g:699:1: rule__Procedure__Group__3 : rule__Procedure__Group__3__Impl rule__Procedure__Group__4 ;
     public final void rule__Procedure__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:670:1: ( rule__Procedure__Group__3__Impl rule__Procedure__Group__4 )
-            // InternalSeleniumDSL.g:671:2: rule__Procedure__Group__3__Impl rule__Procedure__Group__4
+            // InternalSeleniumDSL.g:703:1: ( rule__Procedure__Group__3__Impl rule__Procedure__Group__4 )
+            // InternalSeleniumDSL.g:704:2: rule__Procedure__Group__3__Impl rule__Procedure__Group__4
             {
             pushFollow(FOLLOW_7);
             rule__Procedure__Group__3__Impl();
@@ -2189,20 +2308,20 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Procedure__Group__3__Impl"
-    // InternalSeleniumDSL.g:678:1: rule__Procedure__Group__3__Impl : ( '{' ) ;
+    // InternalSeleniumDSL.g:711:1: rule__Procedure__Group__3__Impl : ( '{' ) ;
     public final void rule__Procedure__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:682:1: ( ( '{' ) )
-            // InternalSeleniumDSL.g:683:1: ( '{' )
+            // InternalSeleniumDSL.g:715:1: ( ( '{' ) )
+            // InternalSeleniumDSL.g:716:1: ( '{' )
             {
-            // InternalSeleniumDSL.g:683:1: ( '{' )
-            // InternalSeleniumDSL.g:684:2: '{'
+            // InternalSeleniumDSL.g:716:1: ( '{' )
+            // InternalSeleniumDSL.g:717:2: '{'
             {
              before(grammarAccess.getProcedureAccess().getLeftCurlyBracketKeyword_3()); 
-            match(input,14,FOLLOW_2); 
+            match(input,18,FOLLOW_2); 
              after(grammarAccess.getProcedureAccess().getLeftCurlyBracketKeyword_3()); 
 
             }
@@ -2226,14 +2345,14 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Procedure__Group__4"
-    // InternalSeleniumDSL.g:693:1: rule__Procedure__Group__4 : rule__Procedure__Group__4__Impl rule__Procedure__Group__5 ;
+    // InternalSeleniumDSL.g:726:1: rule__Procedure__Group__4 : rule__Procedure__Group__4__Impl rule__Procedure__Group__5 ;
     public final void rule__Procedure__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:697:1: ( rule__Procedure__Group__4__Impl rule__Procedure__Group__5 )
-            // InternalSeleniumDSL.g:698:2: rule__Procedure__Group__4__Impl rule__Procedure__Group__5
+            // InternalSeleniumDSL.g:730:1: ( rule__Procedure__Group__4__Impl rule__Procedure__Group__5 )
+            // InternalSeleniumDSL.g:731:2: rule__Procedure__Group__4__Impl rule__Procedure__Group__5
             {
             pushFollow(FOLLOW_7);
             rule__Procedure__Group__4__Impl();
@@ -2264,33 +2383,33 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Procedure__Group__4__Impl"
-    // InternalSeleniumDSL.g:705:1: rule__Procedure__Group__4__Impl : ( ( rule__Procedure__InstructionsAssignment_4 )* ) ;
+    // InternalSeleniumDSL.g:738:1: rule__Procedure__Group__4__Impl : ( ( rule__Procedure__InstructionsAssignment_4 )* ) ;
     public final void rule__Procedure__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:709:1: ( ( ( rule__Procedure__InstructionsAssignment_4 )* ) )
-            // InternalSeleniumDSL.g:710:1: ( ( rule__Procedure__InstructionsAssignment_4 )* )
+            // InternalSeleniumDSL.g:742:1: ( ( ( rule__Procedure__InstructionsAssignment_4 )* ) )
+            // InternalSeleniumDSL.g:743:1: ( ( rule__Procedure__InstructionsAssignment_4 )* )
             {
-            // InternalSeleniumDSL.g:710:1: ( ( rule__Procedure__InstructionsAssignment_4 )* )
-            // InternalSeleniumDSL.g:711:2: ( rule__Procedure__InstructionsAssignment_4 )*
+            // InternalSeleniumDSL.g:743:1: ( ( rule__Procedure__InstructionsAssignment_4 )* )
+            // InternalSeleniumDSL.g:744:2: ( rule__Procedure__InstructionsAssignment_4 )*
             {
              before(grammarAccess.getProcedureAccess().getInstructionsAssignment_4()); 
-            // InternalSeleniumDSL.g:712:2: ( rule__Procedure__InstructionsAssignment_4 )*
-            loop11:
+            // InternalSeleniumDSL.g:745:2: ( rule__Procedure__InstructionsAssignment_4 )*
+            loop12:
             do {
-                int alt11=2;
-                int LA11_0 = input.LA(1);
+                int alt12=2;
+                int LA12_0 = input.LA(1);
 
-                if ( (LA11_0==RULE_IDENTIFIER||(LA11_0>=19 && LA11_0<=22)||LA11_0==25) ) {
-                    alt11=1;
+                if ( (LA12_0==RULE_IDENTIFIER||(LA12_0>=23 && LA12_0<=26)||LA12_0==29) ) {
+                    alt12=1;
                 }
 
 
-                switch (alt11) {
+                switch (alt12) {
             	case 1 :
-            	    // InternalSeleniumDSL.g:712:3: rule__Procedure__InstructionsAssignment_4
+            	    // InternalSeleniumDSL.g:745:3: rule__Procedure__InstructionsAssignment_4
             	    {
             	    pushFollow(FOLLOW_8);
             	    rule__Procedure__InstructionsAssignment_4();
@@ -2302,7 +2421,7 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
             	    break;
 
             	default :
-            	    break loop11;
+            	    break loop12;
                 }
             } while (true);
 
@@ -2329,14 +2448,14 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Procedure__Group__5"
-    // InternalSeleniumDSL.g:720:1: rule__Procedure__Group__5 : rule__Procedure__Group__5__Impl ;
+    // InternalSeleniumDSL.g:753:1: rule__Procedure__Group__5 : rule__Procedure__Group__5__Impl ;
     public final void rule__Procedure__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:724:1: ( rule__Procedure__Group__5__Impl )
-            // InternalSeleniumDSL.g:725:2: rule__Procedure__Group__5__Impl
+            // InternalSeleniumDSL.g:757:1: ( rule__Procedure__Group__5__Impl )
+            // InternalSeleniumDSL.g:758:2: rule__Procedure__Group__5__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Procedure__Group__5__Impl();
@@ -2362,20 +2481,20 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Procedure__Group__5__Impl"
-    // InternalSeleniumDSL.g:731:1: rule__Procedure__Group__5__Impl : ( '}' ) ;
+    // InternalSeleniumDSL.g:764:1: rule__Procedure__Group__5__Impl : ( '}' ) ;
     public final void rule__Procedure__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:735:1: ( ( '}' ) )
-            // InternalSeleniumDSL.g:736:1: ( '}' )
+            // InternalSeleniumDSL.g:768:1: ( ( '}' ) )
+            // InternalSeleniumDSL.g:769:1: ( '}' )
             {
-            // InternalSeleniumDSL.g:736:1: ( '}' )
-            // InternalSeleniumDSL.g:737:2: '}'
+            // InternalSeleniumDSL.g:769:1: ( '}' )
+            // InternalSeleniumDSL.g:770:2: '}'
             {
              before(grammarAccess.getProcedureAccess().getRightCurlyBracketKeyword_5()); 
-            match(input,15,FOLLOW_2); 
+            match(input,19,FOLLOW_2); 
              after(grammarAccess.getProcedureAccess().getRightCurlyBracketKeyword_5()); 
 
             }
@@ -2399,14 +2518,14 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Procedure__Group_2__0"
-    // InternalSeleniumDSL.g:747:1: rule__Procedure__Group_2__0 : rule__Procedure__Group_2__0__Impl rule__Procedure__Group_2__1 ;
+    // InternalSeleniumDSL.g:780:1: rule__Procedure__Group_2__0 : rule__Procedure__Group_2__0__Impl rule__Procedure__Group_2__1 ;
     public final void rule__Procedure__Group_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:751:1: ( rule__Procedure__Group_2__0__Impl rule__Procedure__Group_2__1 )
-            // InternalSeleniumDSL.g:752:2: rule__Procedure__Group_2__0__Impl rule__Procedure__Group_2__1
+            // InternalSeleniumDSL.g:784:1: ( rule__Procedure__Group_2__0__Impl rule__Procedure__Group_2__1 )
+            // InternalSeleniumDSL.g:785:2: rule__Procedure__Group_2__0__Impl rule__Procedure__Group_2__1
             {
             pushFollow(FOLLOW_5);
             rule__Procedure__Group_2__0__Impl();
@@ -2437,20 +2556,20 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Procedure__Group_2__0__Impl"
-    // InternalSeleniumDSL.g:759:1: rule__Procedure__Group_2__0__Impl : ( '(' ) ;
+    // InternalSeleniumDSL.g:792:1: rule__Procedure__Group_2__0__Impl : ( '(' ) ;
     public final void rule__Procedure__Group_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:763:1: ( ( '(' ) )
-            // InternalSeleniumDSL.g:764:1: ( '(' )
+            // InternalSeleniumDSL.g:796:1: ( ( '(' ) )
+            // InternalSeleniumDSL.g:797:1: ( '(' )
             {
-            // InternalSeleniumDSL.g:764:1: ( '(' )
-            // InternalSeleniumDSL.g:765:2: '('
+            // InternalSeleniumDSL.g:797:1: ( '(' )
+            // InternalSeleniumDSL.g:798:2: '('
             {
              before(grammarAccess.getProcedureAccess().getLeftParenthesisKeyword_2_0()); 
-            match(input,16,FOLLOW_2); 
+            match(input,20,FOLLOW_2); 
              after(grammarAccess.getProcedureAccess().getLeftParenthesisKeyword_2_0()); 
 
             }
@@ -2474,14 +2593,14 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Procedure__Group_2__1"
-    // InternalSeleniumDSL.g:774:1: rule__Procedure__Group_2__1 : rule__Procedure__Group_2__1__Impl rule__Procedure__Group_2__2 ;
+    // InternalSeleniumDSL.g:807:1: rule__Procedure__Group_2__1 : rule__Procedure__Group_2__1__Impl rule__Procedure__Group_2__2 ;
     public final void rule__Procedure__Group_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:778:1: ( rule__Procedure__Group_2__1__Impl rule__Procedure__Group_2__2 )
-            // InternalSeleniumDSL.g:779:2: rule__Procedure__Group_2__1__Impl rule__Procedure__Group_2__2
+            // InternalSeleniumDSL.g:811:1: ( rule__Procedure__Group_2__1__Impl rule__Procedure__Group_2__2 )
+            // InternalSeleniumDSL.g:812:2: rule__Procedure__Group_2__1__Impl rule__Procedure__Group_2__2
             {
             pushFollow(FOLLOW_9);
             rule__Procedure__Group_2__1__Impl();
@@ -2512,21 +2631,21 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Procedure__Group_2__1__Impl"
-    // InternalSeleniumDSL.g:786:1: rule__Procedure__Group_2__1__Impl : ( ( rule__Procedure__Group_2_1__0 ) ) ;
+    // InternalSeleniumDSL.g:819:1: rule__Procedure__Group_2__1__Impl : ( ( rule__Procedure__Group_2_1__0 ) ) ;
     public final void rule__Procedure__Group_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:790:1: ( ( ( rule__Procedure__Group_2_1__0 ) ) )
-            // InternalSeleniumDSL.g:791:1: ( ( rule__Procedure__Group_2_1__0 ) )
+            // InternalSeleniumDSL.g:823:1: ( ( ( rule__Procedure__Group_2_1__0 ) ) )
+            // InternalSeleniumDSL.g:824:1: ( ( rule__Procedure__Group_2_1__0 ) )
             {
-            // InternalSeleniumDSL.g:791:1: ( ( rule__Procedure__Group_2_1__0 ) )
-            // InternalSeleniumDSL.g:792:2: ( rule__Procedure__Group_2_1__0 )
+            // InternalSeleniumDSL.g:824:1: ( ( rule__Procedure__Group_2_1__0 ) )
+            // InternalSeleniumDSL.g:825:2: ( rule__Procedure__Group_2_1__0 )
             {
              before(grammarAccess.getProcedureAccess().getGroup_2_1()); 
-            // InternalSeleniumDSL.g:793:2: ( rule__Procedure__Group_2_1__0 )
-            // InternalSeleniumDSL.g:793:3: rule__Procedure__Group_2_1__0
+            // InternalSeleniumDSL.g:826:2: ( rule__Procedure__Group_2_1__0 )
+            // InternalSeleniumDSL.g:826:3: rule__Procedure__Group_2_1__0
             {
             pushFollow(FOLLOW_2);
             rule__Procedure__Group_2_1__0();
@@ -2559,14 +2678,14 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Procedure__Group_2__2"
-    // InternalSeleniumDSL.g:801:1: rule__Procedure__Group_2__2 : rule__Procedure__Group_2__2__Impl ;
+    // InternalSeleniumDSL.g:834:1: rule__Procedure__Group_2__2 : rule__Procedure__Group_2__2__Impl ;
     public final void rule__Procedure__Group_2__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:805:1: ( rule__Procedure__Group_2__2__Impl )
-            // InternalSeleniumDSL.g:806:2: rule__Procedure__Group_2__2__Impl
+            // InternalSeleniumDSL.g:838:1: ( rule__Procedure__Group_2__2__Impl )
+            // InternalSeleniumDSL.g:839:2: rule__Procedure__Group_2__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Procedure__Group_2__2__Impl();
@@ -2592,20 +2711,20 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Procedure__Group_2__2__Impl"
-    // InternalSeleniumDSL.g:812:1: rule__Procedure__Group_2__2__Impl : ( ')' ) ;
+    // InternalSeleniumDSL.g:845:1: rule__Procedure__Group_2__2__Impl : ( ')' ) ;
     public final void rule__Procedure__Group_2__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:816:1: ( ( ')' ) )
-            // InternalSeleniumDSL.g:817:1: ( ')' )
+            // InternalSeleniumDSL.g:849:1: ( ( ')' ) )
+            // InternalSeleniumDSL.g:850:1: ( ')' )
             {
-            // InternalSeleniumDSL.g:817:1: ( ')' )
-            // InternalSeleniumDSL.g:818:2: ')'
+            // InternalSeleniumDSL.g:850:1: ( ')' )
+            // InternalSeleniumDSL.g:851:2: ')'
             {
              before(grammarAccess.getProcedureAccess().getRightParenthesisKeyword_2_2()); 
-            match(input,17,FOLLOW_2); 
+            match(input,21,FOLLOW_2); 
              after(grammarAccess.getProcedureAccess().getRightParenthesisKeyword_2_2()); 
 
             }
@@ -2629,14 +2748,14 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Procedure__Group_2_1__0"
-    // InternalSeleniumDSL.g:828:1: rule__Procedure__Group_2_1__0 : rule__Procedure__Group_2_1__0__Impl rule__Procedure__Group_2_1__1 ;
+    // InternalSeleniumDSL.g:861:1: rule__Procedure__Group_2_1__0 : rule__Procedure__Group_2_1__0__Impl rule__Procedure__Group_2_1__1 ;
     public final void rule__Procedure__Group_2_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:832:1: ( rule__Procedure__Group_2_1__0__Impl rule__Procedure__Group_2_1__1 )
-            // InternalSeleniumDSL.g:833:2: rule__Procedure__Group_2_1__0__Impl rule__Procedure__Group_2_1__1
+            // InternalSeleniumDSL.g:865:1: ( rule__Procedure__Group_2_1__0__Impl rule__Procedure__Group_2_1__1 )
+            // InternalSeleniumDSL.g:866:2: rule__Procedure__Group_2_1__0__Impl rule__Procedure__Group_2_1__1
             {
             pushFollow(FOLLOW_10);
             rule__Procedure__Group_2_1__0__Impl();
@@ -2667,21 +2786,21 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Procedure__Group_2_1__0__Impl"
-    // InternalSeleniumDSL.g:840:1: rule__Procedure__Group_2_1__0__Impl : ( ( rule__Procedure__ParametersAssignment_2_1_0 ) ) ;
+    // InternalSeleniumDSL.g:873:1: rule__Procedure__Group_2_1__0__Impl : ( ( rule__Procedure__ParametersAssignment_2_1_0 ) ) ;
     public final void rule__Procedure__Group_2_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:844:1: ( ( ( rule__Procedure__ParametersAssignment_2_1_0 ) ) )
-            // InternalSeleniumDSL.g:845:1: ( ( rule__Procedure__ParametersAssignment_2_1_0 ) )
+            // InternalSeleniumDSL.g:877:1: ( ( ( rule__Procedure__ParametersAssignment_2_1_0 ) ) )
+            // InternalSeleniumDSL.g:878:1: ( ( rule__Procedure__ParametersAssignment_2_1_0 ) )
             {
-            // InternalSeleniumDSL.g:845:1: ( ( rule__Procedure__ParametersAssignment_2_1_0 ) )
-            // InternalSeleniumDSL.g:846:2: ( rule__Procedure__ParametersAssignment_2_1_0 )
+            // InternalSeleniumDSL.g:878:1: ( ( rule__Procedure__ParametersAssignment_2_1_0 ) )
+            // InternalSeleniumDSL.g:879:2: ( rule__Procedure__ParametersAssignment_2_1_0 )
             {
              before(grammarAccess.getProcedureAccess().getParametersAssignment_2_1_0()); 
-            // InternalSeleniumDSL.g:847:2: ( rule__Procedure__ParametersAssignment_2_1_0 )
-            // InternalSeleniumDSL.g:847:3: rule__Procedure__ParametersAssignment_2_1_0
+            // InternalSeleniumDSL.g:880:2: ( rule__Procedure__ParametersAssignment_2_1_0 )
+            // InternalSeleniumDSL.g:880:3: rule__Procedure__ParametersAssignment_2_1_0
             {
             pushFollow(FOLLOW_2);
             rule__Procedure__ParametersAssignment_2_1_0();
@@ -2714,14 +2833,14 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Procedure__Group_2_1__1"
-    // InternalSeleniumDSL.g:855:1: rule__Procedure__Group_2_1__1 : rule__Procedure__Group_2_1__1__Impl ;
+    // InternalSeleniumDSL.g:888:1: rule__Procedure__Group_2_1__1 : rule__Procedure__Group_2_1__1__Impl ;
     public final void rule__Procedure__Group_2_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:859:1: ( rule__Procedure__Group_2_1__1__Impl )
-            // InternalSeleniumDSL.g:860:2: rule__Procedure__Group_2_1__1__Impl
+            // InternalSeleniumDSL.g:892:1: ( rule__Procedure__Group_2_1__1__Impl )
+            // InternalSeleniumDSL.g:893:2: rule__Procedure__Group_2_1__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Procedure__Group_2_1__1__Impl();
@@ -2747,33 +2866,33 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Procedure__Group_2_1__1__Impl"
-    // InternalSeleniumDSL.g:866:1: rule__Procedure__Group_2_1__1__Impl : ( ( rule__Procedure__Group_2_1_1__0 )* ) ;
+    // InternalSeleniumDSL.g:899:1: rule__Procedure__Group_2_1__1__Impl : ( ( rule__Procedure__Group_2_1_1__0 )* ) ;
     public final void rule__Procedure__Group_2_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:870:1: ( ( ( rule__Procedure__Group_2_1_1__0 )* ) )
-            // InternalSeleniumDSL.g:871:1: ( ( rule__Procedure__Group_2_1_1__0 )* )
+            // InternalSeleniumDSL.g:903:1: ( ( ( rule__Procedure__Group_2_1_1__0 )* ) )
+            // InternalSeleniumDSL.g:904:1: ( ( rule__Procedure__Group_2_1_1__0 )* )
             {
-            // InternalSeleniumDSL.g:871:1: ( ( rule__Procedure__Group_2_1_1__0 )* )
-            // InternalSeleniumDSL.g:872:2: ( rule__Procedure__Group_2_1_1__0 )*
+            // InternalSeleniumDSL.g:904:1: ( ( rule__Procedure__Group_2_1_1__0 )* )
+            // InternalSeleniumDSL.g:905:2: ( rule__Procedure__Group_2_1_1__0 )*
             {
              before(grammarAccess.getProcedureAccess().getGroup_2_1_1()); 
-            // InternalSeleniumDSL.g:873:2: ( rule__Procedure__Group_2_1_1__0 )*
-            loop12:
+            // InternalSeleniumDSL.g:906:2: ( rule__Procedure__Group_2_1_1__0 )*
+            loop13:
             do {
-                int alt12=2;
-                int LA12_0 = input.LA(1);
+                int alt13=2;
+                int LA13_0 = input.LA(1);
 
-                if ( (LA12_0==RULE_COMMA) ) {
-                    alt12=1;
+                if ( (LA13_0==RULE_COMMA) ) {
+                    alt13=1;
                 }
 
 
-                switch (alt12) {
+                switch (alt13) {
             	case 1 :
-            	    // InternalSeleniumDSL.g:873:3: rule__Procedure__Group_2_1_1__0
+            	    // InternalSeleniumDSL.g:906:3: rule__Procedure__Group_2_1_1__0
             	    {
             	    pushFollow(FOLLOW_11);
             	    rule__Procedure__Group_2_1_1__0();
@@ -2785,7 +2904,7 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
             	    break;
 
             	default :
-            	    break loop12;
+            	    break loop13;
                 }
             } while (true);
 
@@ -2812,14 +2931,14 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Procedure__Group_2_1_1__0"
-    // InternalSeleniumDSL.g:882:1: rule__Procedure__Group_2_1_1__0 : rule__Procedure__Group_2_1_1__0__Impl rule__Procedure__Group_2_1_1__1 ;
+    // InternalSeleniumDSL.g:915:1: rule__Procedure__Group_2_1_1__0 : rule__Procedure__Group_2_1_1__0__Impl rule__Procedure__Group_2_1_1__1 ;
     public final void rule__Procedure__Group_2_1_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:886:1: ( rule__Procedure__Group_2_1_1__0__Impl rule__Procedure__Group_2_1_1__1 )
-            // InternalSeleniumDSL.g:887:2: rule__Procedure__Group_2_1_1__0__Impl rule__Procedure__Group_2_1_1__1
+            // InternalSeleniumDSL.g:919:1: ( rule__Procedure__Group_2_1_1__0__Impl rule__Procedure__Group_2_1_1__1 )
+            // InternalSeleniumDSL.g:920:2: rule__Procedure__Group_2_1_1__0__Impl rule__Procedure__Group_2_1_1__1
             {
             pushFollow(FOLLOW_5);
             rule__Procedure__Group_2_1_1__0__Impl();
@@ -2850,17 +2969,17 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Procedure__Group_2_1_1__0__Impl"
-    // InternalSeleniumDSL.g:894:1: rule__Procedure__Group_2_1_1__0__Impl : ( RULE_COMMA ) ;
+    // InternalSeleniumDSL.g:927:1: rule__Procedure__Group_2_1_1__0__Impl : ( RULE_COMMA ) ;
     public final void rule__Procedure__Group_2_1_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:898:1: ( ( RULE_COMMA ) )
-            // InternalSeleniumDSL.g:899:1: ( RULE_COMMA )
+            // InternalSeleniumDSL.g:931:1: ( ( RULE_COMMA ) )
+            // InternalSeleniumDSL.g:932:1: ( RULE_COMMA )
             {
-            // InternalSeleniumDSL.g:899:1: ( RULE_COMMA )
-            // InternalSeleniumDSL.g:900:2: RULE_COMMA
+            // InternalSeleniumDSL.g:932:1: ( RULE_COMMA )
+            // InternalSeleniumDSL.g:933:2: RULE_COMMA
             {
              before(grammarAccess.getProcedureAccess().getCOMMATerminalRuleCall_2_1_1_0()); 
             match(input,RULE_COMMA,FOLLOW_2); 
@@ -2887,14 +3006,14 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Procedure__Group_2_1_1__1"
-    // InternalSeleniumDSL.g:909:1: rule__Procedure__Group_2_1_1__1 : rule__Procedure__Group_2_1_1__1__Impl ;
+    // InternalSeleniumDSL.g:942:1: rule__Procedure__Group_2_1_1__1 : rule__Procedure__Group_2_1_1__1__Impl ;
     public final void rule__Procedure__Group_2_1_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:913:1: ( rule__Procedure__Group_2_1_1__1__Impl )
-            // InternalSeleniumDSL.g:914:2: rule__Procedure__Group_2_1_1__1__Impl
+            // InternalSeleniumDSL.g:946:1: ( rule__Procedure__Group_2_1_1__1__Impl )
+            // InternalSeleniumDSL.g:947:2: rule__Procedure__Group_2_1_1__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Procedure__Group_2_1_1__1__Impl();
@@ -2920,21 +3039,21 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Procedure__Group_2_1_1__1__Impl"
-    // InternalSeleniumDSL.g:920:1: rule__Procedure__Group_2_1_1__1__Impl : ( ( rule__Procedure__ParametersAssignment_2_1_1_1 ) ) ;
+    // InternalSeleniumDSL.g:953:1: rule__Procedure__Group_2_1_1__1__Impl : ( ( rule__Procedure__ParametersAssignment_2_1_1_1 ) ) ;
     public final void rule__Procedure__Group_2_1_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:924:1: ( ( ( rule__Procedure__ParametersAssignment_2_1_1_1 ) ) )
-            // InternalSeleniumDSL.g:925:1: ( ( rule__Procedure__ParametersAssignment_2_1_1_1 ) )
+            // InternalSeleniumDSL.g:957:1: ( ( ( rule__Procedure__ParametersAssignment_2_1_1_1 ) ) )
+            // InternalSeleniumDSL.g:958:1: ( ( rule__Procedure__ParametersAssignment_2_1_1_1 ) )
             {
-            // InternalSeleniumDSL.g:925:1: ( ( rule__Procedure__ParametersAssignment_2_1_1_1 ) )
-            // InternalSeleniumDSL.g:926:2: ( rule__Procedure__ParametersAssignment_2_1_1_1 )
+            // InternalSeleniumDSL.g:958:1: ( ( rule__Procedure__ParametersAssignment_2_1_1_1 ) )
+            // InternalSeleniumDSL.g:959:2: ( rule__Procedure__ParametersAssignment_2_1_1_1 )
             {
              before(grammarAccess.getProcedureAccess().getParametersAssignment_2_1_1_1()); 
-            // InternalSeleniumDSL.g:927:2: ( rule__Procedure__ParametersAssignment_2_1_1_1 )
-            // InternalSeleniumDSL.g:927:3: rule__Procedure__ParametersAssignment_2_1_1_1
+            // InternalSeleniumDSL.g:960:2: ( rule__Procedure__ParametersAssignment_2_1_1_1 )
+            // InternalSeleniumDSL.g:960:3: rule__Procedure__ParametersAssignment_2_1_1_1
             {
             pushFollow(FOLLOW_2);
             rule__Procedure__ParametersAssignment_2_1_1_1();
@@ -2967,14 +3086,14 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__MainProcedure__Group__0"
-    // InternalSeleniumDSL.g:936:1: rule__MainProcedure__Group__0 : rule__MainProcedure__Group__0__Impl rule__MainProcedure__Group__1 ;
+    // InternalSeleniumDSL.g:969:1: rule__MainProcedure__Group__0 : rule__MainProcedure__Group__0__Impl rule__MainProcedure__Group__1 ;
     public final void rule__MainProcedure__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:940:1: ( rule__MainProcedure__Group__0__Impl rule__MainProcedure__Group__1 )
-            // InternalSeleniumDSL.g:941:2: rule__MainProcedure__Group__0__Impl rule__MainProcedure__Group__1
+            // InternalSeleniumDSL.g:973:1: ( rule__MainProcedure__Group__0__Impl rule__MainProcedure__Group__1 )
+            // InternalSeleniumDSL.g:974:2: rule__MainProcedure__Group__0__Impl rule__MainProcedure__Group__1
             {
             pushFollow(FOLLOW_3);
             rule__MainProcedure__Group__0__Impl();
@@ -3005,21 +3124,21 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__MainProcedure__Group__0__Impl"
-    // InternalSeleniumDSL.g:948:1: rule__MainProcedure__Group__0__Impl : ( () ) ;
+    // InternalSeleniumDSL.g:981:1: rule__MainProcedure__Group__0__Impl : ( () ) ;
     public final void rule__MainProcedure__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:952:1: ( ( () ) )
-            // InternalSeleniumDSL.g:953:1: ( () )
+            // InternalSeleniumDSL.g:985:1: ( ( () ) )
+            // InternalSeleniumDSL.g:986:1: ( () )
             {
-            // InternalSeleniumDSL.g:953:1: ( () )
-            // InternalSeleniumDSL.g:954:2: ()
+            // InternalSeleniumDSL.g:986:1: ( () )
+            // InternalSeleniumDSL.g:987:2: ()
             {
              before(grammarAccess.getMainProcedureAccess().getMainProcedureAction_0()); 
-            // InternalSeleniumDSL.g:955:2: ()
-            // InternalSeleniumDSL.g:955:3: 
+            // InternalSeleniumDSL.g:988:2: ()
+            // InternalSeleniumDSL.g:988:3: 
             {
             }
 
@@ -3042,14 +3161,14 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__MainProcedure__Group__1"
-    // InternalSeleniumDSL.g:963:1: rule__MainProcedure__Group__1 : rule__MainProcedure__Group__1__Impl rule__MainProcedure__Group__2 ;
+    // InternalSeleniumDSL.g:996:1: rule__MainProcedure__Group__1 : rule__MainProcedure__Group__1__Impl rule__MainProcedure__Group__2 ;
     public final void rule__MainProcedure__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:967:1: ( rule__MainProcedure__Group__1__Impl rule__MainProcedure__Group__2 )
-            // InternalSeleniumDSL.g:968:2: rule__MainProcedure__Group__1__Impl rule__MainProcedure__Group__2
+            // InternalSeleniumDSL.g:1000:1: ( rule__MainProcedure__Group__1__Impl rule__MainProcedure__Group__2 )
+            // InternalSeleniumDSL.g:1001:2: rule__MainProcedure__Group__1__Impl rule__MainProcedure__Group__2
             {
             pushFollow(FOLLOW_12);
             rule__MainProcedure__Group__1__Impl();
@@ -3080,26 +3199,26 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__MainProcedure__Group__1__Impl"
-    // InternalSeleniumDSL.g:975:1: rule__MainProcedure__Group__1__Impl : ( ( ( 'def' ) ) ( ( 'def' )* ) ) ;
+    // InternalSeleniumDSL.g:1008:1: rule__MainProcedure__Group__1__Impl : ( ( ( 'def' ) ) ( ( 'def' )* ) ) ;
     public final void rule__MainProcedure__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:979:1: ( ( ( ( 'def' ) ) ( ( 'def' )* ) ) )
-            // InternalSeleniumDSL.g:980:1: ( ( ( 'def' ) ) ( ( 'def' )* ) )
+            // InternalSeleniumDSL.g:1012:1: ( ( ( ( 'def' ) ) ( ( 'def' )* ) ) )
+            // InternalSeleniumDSL.g:1013:1: ( ( ( 'def' ) ) ( ( 'def' )* ) )
             {
-            // InternalSeleniumDSL.g:980:1: ( ( ( 'def' ) ) ( ( 'def' )* ) )
-            // InternalSeleniumDSL.g:981:2: ( ( 'def' ) ) ( ( 'def' )* )
+            // InternalSeleniumDSL.g:1013:1: ( ( ( 'def' ) ) ( ( 'def' )* ) )
+            // InternalSeleniumDSL.g:1014:2: ( ( 'def' ) ) ( ( 'def' )* )
             {
-            // InternalSeleniumDSL.g:981:2: ( ( 'def' ) )
-            // InternalSeleniumDSL.g:982:3: ( 'def' )
+            // InternalSeleniumDSL.g:1014:2: ( ( 'def' ) )
+            // InternalSeleniumDSL.g:1015:3: ( 'def' )
             {
              before(grammarAccess.getMainProcedureAccess().getDefKeyword_1()); 
-            // InternalSeleniumDSL.g:983:3: ( 'def' )
-            // InternalSeleniumDSL.g:983:4: 'def'
+            // InternalSeleniumDSL.g:1016:3: ( 'def' )
+            // InternalSeleniumDSL.g:1016:4: 'def'
             {
-            match(input,13,FOLLOW_4); 
+            match(input,17,FOLLOW_4); 
 
             }
 
@@ -3107,32 +3226,32 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
             }
 
-            // InternalSeleniumDSL.g:986:2: ( ( 'def' )* )
-            // InternalSeleniumDSL.g:987:3: ( 'def' )*
+            // InternalSeleniumDSL.g:1019:2: ( ( 'def' )* )
+            // InternalSeleniumDSL.g:1020:3: ( 'def' )*
             {
              before(grammarAccess.getMainProcedureAccess().getDefKeyword_1()); 
-            // InternalSeleniumDSL.g:988:3: ( 'def' )*
-            loop13:
+            // InternalSeleniumDSL.g:1021:3: ( 'def' )*
+            loop14:
             do {
-                int alt13=2;
-                int LA13_0 = input.LA(1);
+                int alt14=2;
+                int LA14_0 = input.LA(1);
 
-                if ( (LA13_0==13) ) {
-                    alt13=1;
+                if ( (LA14_0==17) ) {
+                    alt14=1;
                 }
 
 
-                switch (alt13) {
+                switch (alt14) {
             	case 1 :
-            	    // InternalSeleniumDSL.g:988:4: 'def'
+            	    // InternalSeleniumDSL.g:1021:4: 'def'
             	    {
-            	    match(input,13,FOLLOW_4); 
+            	    match(input,17,FOLLOW_4); 
 
             	    }
             	    break;
 
             	default :
-            	    break loop13;
+            	    break loop14;
                 }
             } while (true);
 
@@ -3162,14 +3281,14 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__MainProcedure__Group__2"
-    // InternalSeleniumDSL.g:997:1: rule__MainProcedure__Group__2 : rule__MainProcedure__Group__2__Impl rule__MainProcedure__Group__3 ;
+    // InternalSeleniumDSL.g:1030:1: rule__MainProcedure__Group__2 : rule__MainProcedure__Group__2__Impl rule__MainProcedure__Group__3 ;
     public final void rule__MainProcedure__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:1001:1: ( rule__MainProcedure__Group__2__Impl rule__MainProcedure__Group__3 )
-            // InternalSeleniumDSL.g:1002:2: rule__MainProcedure__Group__2__Impl rule__MainProcedure__Group__3
+            // InternalSeleniumDSL.g:1034:1: ( rule__MainProcedure__Group__2__Impl rule__MainProcedure__Group__3 )
+            // InternalSeleniumDSL.g:1035:2: rule__MainProcedure__Group__2__Impl rule__MainProcedure__Group__3
             {
             pushFollow(FOLLOW_13);
             rule__MainProcedure__Group__2__Impl();
@@ -3200,26 +3319,26 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__MainProcedure__Group__2__Impl"
-    // InternalSeleniumDSL.g:1009:1: rule__MainProcedure__Group__2__Impl : ( ( ( 'main' ) ) ( ( 'main' )* ) ) ;
+    // InternalSeleniumDSL.g:1042:1: rule__MainProcedure__Group__2__Impl : ( ( ( 'main' ) ) ( ( 'main' )* ) ) ;
     public final void rule__MainProcedure__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:1013:1: ( ( ( ( 'main' ) ) ( ( 'main' )* ) ) )
-            // InternalSeleniumDSL.g:1014:1: ( ( ( 'main' ) ) ( ( 'main' )* ) )
+            // InternalSeleniumDSL.g:1046:1: ( ( ( ( 'main' ) ) ( ( 'main' )* ) ) )
+            // InternalSeleniumDSL.g:1047:1: ( ( ( 'main' ) ) ( ( 'main' )* ) )
             {
-            // InternalSeleniumDSL.g:1014:1: ( ( ( 'main' ) ) ( ( 'main' )* ) )
-            // InternalSeleniumDSL.g:1015:2: ( ( 'main' ) ) ( ( 'main' )* )
+            // InternalSeleniumDSL.g:1047:1: ( ( ( 'main' ) ) ( ( 'main' )* ) )
+            // InternalSeleniumDSL.g:1048:2: ( ( 'main' ) ) ( ( 'main' )* )
             {
-            // InternalSeleniumDSL.g:1015:2: ( ( 'main' ) )
-            // InternalSeleniumDSL.g:1016:3: ( 'main' )
+            // InternalSeleniumDSL.g:1048:2: ( ( 'main' ) )
+            // InternalSeleniumDSL.g:1049:3: ( 'main' )
             {
              before(grammarAccess.getMainProcedureAccess().getMainKeyword_2()); 
-            // InternalSeleniumDSL.g:1017:3: ( 'main' )
-            // InternalSeleniumDSL.g:1017:4: 'main'
+            // InternalSeleniumDSL.g:1050:3: ( 'main' )
+            // InternalSeleniumDSL.g:1050:4: 'main'
             {
-            match(input,18,FOLLOW_14); 
+            match(input,22,FOLLOW_14); 
 
             }
 
@@ -3227,32 +3346,32 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
             }
 
-            // InternalSeleniumDSL.g:1020:2: ( ( 'main' )* )
-            // InternalSeleniumDSL.g:1021:3: ( 'main' )*
+            // InternalSeleniumDSL.g:1053:2: ( ( 'main' )* )
+            // InternalSeleniumDSL.g:1054:3: ( 'main' )*
             {
              before(grammarAccess.getMainProcedureAccess().getMainKeyword_2()); 
-            // InternalSeleniumDSL.g:1022:3: ( 'main' )*
-            loop14:
+            // InternalSeleniumDSL.g:1055:3: ( 'main' )*
+            loop15:
             do {
-                int alt14=2;
-                int LA14_0 = input.LA(1);
+                int alt15=2;
+                int LA15_0 = input.LA(1);
 
-                if ( (LA14_0==18) ) {
-                    alt14=1;
+                if ( (LA15_0==22) ) {
+                    alt15=1;
                 }
 
 
-                switch (alt14) {
+                switch (alt15) {
             	case 1 :
-            	    // InternalSeleniumDSL.g:1022:4: 'main'
+            	    // InternalSeleniumDSL.g:1055:4: 'main'
             	    {
-            	    match(input,18,FOLLOW_14); 
+            	    match(input,22,FOLLOW_14); 
 
             	    }
             	    break;
 
             	default :
-            	    break loop14;
+            	    break loop15;
                 }
             } while (true);
 
@@ -3282,14 +3401,14 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__MainProcedure__Group__3"
-    // InternalSeleniumDSL.g:1031:1: rule__MainProcedure__Group__3 : rule__MainProcedure__Group__3__Impl rule__MainProcedure__Group__4 ;
+    // InternalSeleniumDSL.g:1064:1: rule__MainProcedure__Group__3 : rule__MainProcedure__Group__3__Impl rule__MainProcedure__Group__4 ;
     public final void rule__MainProcedure__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:1035:1: ( rule__MainProcedure__Group__3__Impl rule__MainProcedure__Group__4 )
-            // InternalSeleniumDSL.g:1036:2: rule__MainProcedure__Group__3__Impl rule__MainProcedure__Group__4
+            // InternalSeleniumDSL.g:1068:1: ( rule__MainProcedure__Group__3__Impl rule__MainProcedure__Group__4 )
+            // InternalSeleniumDSL.g:1069:2: rule__MainProcedure__Group__3__Impl rule__MainProcedure__Group__4
             {
             pushFollow(FOLLOW_7);
             rule__MainProcedure__Group__3__Impl();
@@ -3320,20 +3439,20 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__MainProcedure__Group__3__Impl"
-    // InternalSeleniumDSL.g:1043:1: rule__MainProcedure__Group__3__Impl : ( '{' ) ;
+    // InternalSeleniumDSL.g:1076:1: rule__MainProcedure__Group__3__Impl : ( '{' ) ;
     public final void rule__MainProcedure__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:1047:1: ( ( '{' ) )
-            // InternalSeleniumDSL.g:1048:1: ( '{' )
+            // InternalSeleniumDSL.g:1080:1: ( ( '{' ) )
+            // InternalSeleniumDSL.g:1081:1: ( '{' )
             {
-            // InternalSeleniumDSL.g:1048:1: ( '{' )
-            // InternalSeleniumDSL.g:1049:2: '{'
+            // InternalSeleniumDSL.g:1081:1: ( '{' )
+            // InternalSeleniumDSL.g:1082:2: '{'
             {
              before(grammarAccess.getMainProcedureAccess().getLeftCurlyBracketKeyword_3()); 
-            match(input,14,FOLLOW_2); 
+            match(input,18,FOLLOW_2); 
              after(grammarAccess.getMainProcedureAccess().getLeftCurlyBracketKeyword_3()); 
 
             }
@@ -3357,14 +3476,14 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__MainProcedure__Group__4"
-    // InternalSeleniumDSL.g:1058:1: rule__MainProcedure__Group__4 : rule__MainProcedure__Group__4__Impl rule__MainProcedure__Group__5 ;
+    // InternalSeleniumDSL.g:1091:1: rule__MainProcedure__Group__4 : rule__MainProcedure__Group__4__Impl rule__MainProcedure__Group__5 ;
     public final void rule__MainProcedure__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:1062:1: ( rule__MainProcedure__Group__4__Impl rule__MainProcedure__Group__5 )
-            // InternalSeleniumDSL.g:1063:2: rule__MainProcedure__Group__4__Impl rule__MainProcedure__Group__5
+            // InternalSeleniumDSL.g:1095:1: ( rule__MainProcedure__Group__4__Impl rule__MainProcedure__Group__5 )
+            // InternalSeleniumDSL.g:1096:2: rule__MainProcedure__Group__4__Impl rule__MainProcedure__Group__5
             {
             pushFollow(FOLLOW_7);
             rule__MainProcedure__Group__4__Impl();
@@ -3395,33 +3514,33 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__MainProcedure__Group__4__Impl"
-    // InternalSeleniumDSL.g:1070:1: rule__MainProcedure__Group__4__Impl : ( ( rule__MainProcedure__InstructionsAssignment_4 )* ) ;
+    // InternalSeleniumDSL.g:1103:1: rule__MainProcedure__Group__4__Impl : ( ( rule__MainProcedure__InstructionsAssignment_4 )* ) ;
     public final void rule__MainProcedure__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:1074:1: ( ( ( rule__MainProcedure__InstructionsAssignment_4 )* ) )
-            // InternalSeleniumDSL.g:1075:1: ( ( rule__MainProcedure__InstructionsAssignment_4 )* )
+            // InternalSeleniumDSL.g:1107:1: ( ( ( rule__MainProcedure__InstructionsAssignment_4 )* ) )
+            // InternalSeleniumDSL.g:1108:1: ( ( rule__MainProcedure__InstructionsAssignment_4 )* )
             {
-            // InternalSeleniumDSL.g:1075:1: ( ( rule__MainProcedure__InstructionsAssignment_4 )* )
-            // InternalSeleniumDSL.g:1076:2: ( rule__MainProcedure__InstructionsAssignment_4 )*
+            // InternalSeleniumDSL.g:1108:1: ( ( rule__MainProcedure__InstructionsAssignment_4 )* )
+            // InternalSeleniumDSL.g:1109:2: ( rule__MainProcedure__InstructionsAssignment_4 )*
             {
              before(grammarAccess.getMainProcedureAccess().getInstructionsAssignment_4()); 
-            // InternalSeleniumDSL.g:1077:2: ( rule__MainProcedure__InstructionsAssignment_4 )*
-            loop15:
+            // InternalSeleniumDSL.g:1110:2: ( rule__MainProcedure__InstructionsAssignment_4 )*
+            loop16:
             do {
-                int alt15=2;
-                int LA15_0 = input.LA(1);
+                int alt16=2;
+                int LA16_0 = input.LA(1);
 
-                if ( (LA15_0==RULE_IDENTIFIER||(LA15_0>=19 && LA15_0<=22)||LA15_0==25) ) {
-                    alt15=1;
+                if ( (LA16_0==RULE_IDENTIFIER||(LA16_0>=23 && LA16_0<=26)||LA16_0==29) ) {
+                    alt16=1;
                 }
 
 
-                switch (alt15) {
+                switch (alt16) {
             	case 1 :
-            	    // InternalSeleniumDSL.g:1077:3: rule__MainProcedure__InstructionsAssignment_4
+            	    // InternalSeleniumDSL.g:1110:3: rule__MainProcedure__InstructionsAssignment_4
             	    {
             	    pushFollow(FOLLOW_8);
             	    rule__MainProcedure__InstructionsAssignment_4();
@@ -3433,7 +3552,7 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
             	    break;
 
             	default :
-            	    break loop15;
+            	    break loop16;
                 }
             } while (true);
 
@@ -3460,14 +3579,14 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__MainProcedure__Group__5"
-    // InternalSeleniumDSL.g:1085:1: rule__MainProcedure__Group__5 : rule__MainProcedure__Group__5__Impl ;
+    // InternalSeleniumDSL.g:1118:1: rule__MainProcedure__Group__5 : rule__MainProcedure__Group__5__Impl ;
     public final void rule__MainProcedure__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:1089:1: ( rule__MainProcedure__Group__5__Impl )
-            // InternalSeleniumDSL.g:1090:2: rule__MainProcedure__Group__5__Impl
+            // InternalSeleniumDSL.g:1122:1: ( rule__MainProcedure__Group__5__Impl )
+            // InternalSeleniumDSL.g:1123:2: rule__MainProcedure__Group__5__Impl
             {
             pushFollow(FOLLOW_2);
             rule__MainProcedure__Group__5__Impl();
@@ -3493,20 +3612,20 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__MainProcedure__Group__5__Impl"
-    // InternalSeleniumDSL.g:1096:1: rule__MainProcedure__Group__5__Impl : ( '}' ) ;
+    // InternalSeleniumDSL.g:1129:1: rule__MainProcedure__Group__5__Impl : ( '}' ) ;
     public final void rule__MainProcedure__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:1100:1: ( ( '}' ) )
-            // InternalSeleniumDSL.g:1101:1: ( '}' )
+            // InternalSeleniumDSL.g:1133:1: ( ( '}' ) )
+            // InternalSeleniumDSL.g:1134:1: ( '}' )
             {
-            // InternalSeleniumDSL.g:1101:1: ( '}' )
-            // InternalSeleniumDSL.g:1102:2: '}'
+            // InternalSeleniumDSL.g:1134:1: ( '}' )
+            // InternalSeleniumDSL.g:1135:2: '}'
             {
              before(grammarAccess.getMainProcedureAccess().getRightCurlyBracketKeyword_5()); 
-            match(input,15,FOLLOW_2); 
+            match(input,19,FOLLOW_2); 
              after(grammarAccess.getMainProcedureAccess().getRightCurlyBracketKeyword_5()); 
 
             }
@@ -3530,14 +3649,14 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Click__Group__0"
-    // InternalSeleniumDSL.g:1112:1: rule__Click__Group__0 : rule__Click__Group__0__Impl rule__Click__Group__1 ;
+    // InternalSeleniumDSL.g:1145:1: rule__Click__Group__0 : rule__Click__Group__0__Impl rule__Click__Group__1 ;
     public final void rule__Click__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:1116:1: ( rule__Click__Group__0__Impl rule__Click__Group__1 )
-            // InternalSeleniumDSL.g:1117:2: rule__Click__Group__0__Impl rule__Click__Group__1
+            // InternalSeleniumDSL.g:1149:1: ( rule__Click__Group__0__Impl rule__Click__Group__1 )
+            // InternalSeleniumDSL.g:1150:2: rule__Click__Group__0__Impl rule__Click__Group__1
             {
             pushFollow(FOLLOW_15);
             rule__Click__Group__0__Impl();
@@ -3568,20 +3687,20 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Click__Group__0__Impl"
-    // InternalSeleniumDSL.g:1124:1: rule__Click__Group__0__Impl : ( 'click' ) ;
+    // InternalSeleniumDSL.g:1157:1: rule__Click__Group__0__Impl : ( 'click' ) ;
     public final void rule__Click__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:1128:1: ( ( 'click' ) )
-            // InternalSeleniumDSL.g:1129:1: ( 'click' )
+            // InternalSeleniumDSL.g:1161:1: ( ( 'click' ) )
+            // InternalSeleniumDSL.g:1162:1: ( 'click' )
             {
-            // InternalSeleniumDSL.g:1129:1: ( 'click' )
-            // InternalSeleniumDSL.g:1130:2: 'click'
+            // InternalSeleniumDSL.g:1162:1: ( 'click' )
+            // InternalSeleniumDSL.g:1163:2: 'click'
             {
              before(grammarAccess.getClickAccess().getClickKeyword_0()); 
-            match(input,19,FOLLOW_2); 
+            match(input,23,FOLLOW_2); 
              after(grammarAccess.getClickAccess().getClickKeyword_0()); 
 
             }
@@ -3605,17 +3724,22 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Click__Group__1"
-    // InternalSeleniumDSL.g:1139:1: rule__Click__Group__1 : rule__Click__Group__1__Impl ;
+    // InternalSeleniumDSL.g:1172:1: rule__Click__Group__1 : rule__Click__Group__1__Impl rule__Click__Group__2 ;
     public final void rule__Click__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:1143:1: ( rule__Click__Group__1__Impl )
-            // InternalSeleniumDSL.g:1144:2: rule__Click__Group__1__Impl
+            // InternalSeleniumDSL.g:1176:1: ( rule__Click__Group__1__Impl rule__Click__Group__2 )
+            // InternalSeleniumDSL.g:1177:2: rule__Click__Group__1__Impl rule__Click__Group__2
             {
-            pushFollow(FOLLOW_2);
+            pushFollow(FOLLOW_16);
             rule__Click__Group__1__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Click__Group__2();
 
             state._fsp--;
 
@@ -3638,31 +3762,31 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Click__Group__1__Impl"
-    // InternalSeleniumDSL.g:1150:1: rule__Click__Group__1__Impl : ( ( rule__Click__NameAssignment_1 ) ) ;
+    // InternalSeleniumDSL.g:1184:1: rule__Click__Group__1__Impl : ( ( rule__Click__TypeAssignment_1 ) ) ;
     public final void rule__Click__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:1154:1: ( ( ( rule__Click__NameAssignment_1 ) ) )
-            // InternalSeleniumDSL.g:1155:1: ( ( rule__Click__NameAssignment_1 ) )
+            // InternalSeleniumDSL.g:1188:1: ( ( ( rule__Click__TypeAssignment_1 ) ) )
+            // InternalSeleniumDSL.g:1189:1: ( ( rule__Click__TypeAssignment_1 ) )
             {
-            // InternalSeleniumDSL.g:1155:1: ( ( rule__Click__NameAssignment_1 ) )
-            // InternalSeleniumDSL.g:1156:2: ( rule__Click__NameAssignment_1 )
+            // InternalSeleniumDSL.g:1189:1: ( ( rule__Click__TypeAssignment_1 ) )
+            // InternalSeleniumDSL.g:1190:2: ( rule__Click__TypeAssignment_1 )
             {
-             before(grammarAccess.getClickAccess().getNameAssignment_1()); 
-            // InternalSeleniumDSL.g:1157:2: ( rule__Click__NameAssignment_1 )
-            // InternalSeleniumDSL.g:1157:3: rule__Click__NameAssignment_1
+             before(grammarAccess.getClickAccess().getTypeAssignment_1()); 
+            // InternalSeleniumDSL.g:1191:2: ( rule__Click__TypeAssignment_1 )
+            // InternalSeleniumDSL.g:1191:3: rule__Click__TypeAssignment_1
             {
             pushFollow(FOLLOW_2);
-            rule__Click__NameAssignment_1();
+            rule__Click__TypeAssignment_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getClickAccess().getNameAssignment_1()); 
+             after(grammarAccess.getClickAccess().getTypeAssignment_1()); 
 
             }
 
@@ -3684,17 +3808,97 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
     // $ANTLR end "rule__Click__Group__1__Impl"
 
 
+    // $ANTLR start "rule__Click__Group__2"
+    // InternalSeleniumDSL.g:1199:1: rule__Click__Group__2 : rule__Click__Group__2__Impl ;
+    public final void rule__Click__Group__2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSeleniumDSL.g:1203:1: ( rule__Click__Group__2__Impl )
+            // InternalSeleniumDSL.g:1204:2: rule__Click__Group__2__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__Click__Group__2__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Click__Group__2"
+
+
+    // $ANTLR start "rule__Click__Group__2__Impl"
+    // InternalSeleniumDSL.g:1210:1: rule__Click__Group__2__Impl : ( ( rule__Click__ValueAssignment_2 ) ) ;
+    public final void rule__Click__Group__2__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSeleniumDSL.g:1214:1: ( ( ( rule__Click__ValueAssignment_2 ) ) )
+            // InternalSeleniumDSL.g:1215:1: ( ( rule__Click__ValueAssignment_2 ) )
+            {
+            // InternalSeleniumDSL.g:1215:1: ( ( rule__Click__ValueAssignment_2 ) )
+            // InternalSeleniumDSL.g:1216:2: ( rule__Click__ValueAssignment_2 )
+            {
+             before(grammarAccess.getClickAccess().getValueAssignment_2()); 
+            // InternalSeleniumDSL.g:1217:2: ( rule__Click__ValueAssignment_2 )
+            // InternalSeleniumDSL.g:1217:3: rule__Click__ValueAssignment_2
+            {
+            pushFollow(FOLLOW_2);
+            rule__Click__ValueAssignment_2();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getClickAccess().getValueAssignment_2()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Click__Group__2__Impl"
+
+
     // $ANTLR start "rule__Fill__Group__0"
-    // InternalSeleniumDSL.g:1166:1: rule__Fill__Group__0 : rule__Fill__Group__0__Impl rule__Fill__Group__1 ;
+    // InternalSeleniumDSL.g:1226:1: rule__Fill__Group__0 : rule__Fill__Group__0__Impl rule__Fill__Group__1 ;
     public final void rule__Fill__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:1170:1: ( rule__Fill__Group__0__Impl rule__Fill__Group__1 )
-            // InternalSeleniumDSL.g:1171:2: rule__Fill__Group__0__Impl rule__Fill__Group__1
+            // InternalSeleniumDSL.g:1230:1: ( rule__Fill__Group__0__Impl rule__Fill__Group__1 )
+            // InternalSeleniumDSL.g:1231:2: rule__Fill__Group__0__Impl rule__Fill__Group__1
             {
-            pushFollow(FOLLOW_15);
+            pushFollow(FOLLOW_16);
             rule__Fill__Group__0__Impl();
 
             state._fsp--;
@@ -3723,20 +3927,20 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Fill__Group__0__Impl"
-    // InternalSeleniumDSL.g:1178:1: rule__Fill__Group__0__Impl : ( 'fill' ) ;
+    // InternalSeleniumDSL.g:1238:1: rule__Fill__Group__0__Impl : ( 'fill' ) ;
     public final void rule__Fill__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:1182:1: ( ( 'fill' ) )
-            // InternalSeleniumDSL.g:1183:1: ( 'fill' )
+            // InternalSeleniumDSL.g:1242:1: ( ( 'fill' ) )
+            // InternalSeleniumDSL.g:1243:1: ( 'fill' )
             {
-            // InternalSeleniumDSL.g:1183:1: ( 'fill' )
-            // InternalSeleniumDSL.g:1184:2: 'fill'
+            // InternalSeleniumDSL.g:1243:1: ( 'fill' )
+            // InternalSeleniumDSL.g:1244:2: 'fill'
             {
              before(grammarAccess.getFillAccess().getFillKeyword_0()); 
-            match(input,20,FOLLOW_2); 
+            match(input,24,FOLLOW_2); 
              after(grammarAccess.getFillAccess().getFillKeyword_0()); 
 
             }
@@ -3760,16 +3964,16 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Fill__Group__1"
-    // InternalSeleniumDSL.g:1193:1: rule__Fill__Group__1 : rule__Fill__Group__1__Impl rule__Fill__Group__2 ;
+    // InternalSeleniumDSL.g:1253:1: rule__Fill__Group__1 : rule__Fill__Group__1__Impl rule__Fill__Group__2 ;
     public final void rule__Fill__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:1197:1: ( rule__Fill__Group__1__Impl rule__Fill__Group__2 )
-            // InternalSeleniumDSL.g:1198:2: rule__Fill__Group__1__Impl rule__Fill__Group__2
+            // InternalSeleniumDSL.g:1257:1: ( rule__Fill__Group__1__Impl rule__Fill__Group__2 )
+            // InternalSeleniumDSL.g:1258:2: rule__Fill__Group__1__Impl rule__Fill__Group__2
             {
-            pushFollow(FOLLOW_16);
+            pushFollow(FOLLOW_17);
             rule__Fill__Group__1__Impl();
 
             state._fsp--;
@@ -3798,21 +4002,21 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Fill__Group__1__Impl"
-    // InternalSeleniumDSL.g:1205:1: rule__Fill__Group__1__Impl : ( ( rule__Fill__NameAssignment_1 ) ) ;
+    // InternalSeleniumDSL.g:1265:1: rule__Fill__Group__1__Impl : ( ( rule__Fill__NameAssignment_1 ) ) ;
     public final void rule__Fill__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:1209:1: ( ( ( rule__Fill__NameAssignment_1 ) ) )
-            // InternalSeleniumDSL.g:1210:1: ( ( rule__Fill__NameAssignment_1 ) )
+            // InternalSeleniumDSL.g:1269:1: ( ( ( rule__Fill__NameAssignment_1 ) ) )
+            // InternalSeleniumDSL.g:1270:1: ( ( rule__Fill__NameAssignment_1 ) )
             {
-            // InternalSeleniumDSL.g:1210:1: ( ( rule__Fill__NameAssignment_1 ) )
-            // InternalSeleniumDSL.g:1211:2: ( rule__Fill__NameAssignment_1 )
+            // InternalSeleniumDSL.g:1270:1: ( ( rule__Fill__NameAssignment_1 ) )
+            // InternalSeleniumDSL.g:1271:2: ( rule__Fill__NameAssignment_1 )
             {
              before(grammarAccess.getFillAccess().getNameAssignment_1()); 
-            // InternalSeleniumDSL.g:1212:2: ( rule__Fill__NameAssignment_1 )
-            // InternalSeleniumDSL.g:1212:3: rule__Fill__NameAssignment_1
+            // InternalSeleniumDSL.g:1272:2: ( rule__Fill__NameAssignment_1 )
+            // InternalSeleniumDSL.g:1272:3: rule__Fill__NameAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__Fill__NameAssignment_1();
@@ -3845,14 +4049,14 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Fill__Group__2"
-    // InternalSeleniumDSL.g:1220:1: rule__Fill__Group__2 : rule__Fill__Group__2__Impl ;
+    // InternalSeleniumDSL.g:1280:1: rule__Fill__Group__2 : rule__Fill__Group__2__Impl ;
     public final void rule__Fill__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:1224:1: ( rule__Fill__Group__2__Impl )
-            // InternalSeleniumDSL.g:1225:2: rule__Fill__Group__2__Impl
+            // InternalSeleniumDSL.g:1284:1: ( rule__Fill__Group__2__Impl )
+            // InternalSeleniumDSL.g:1285:2: rule__Fill__Group__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Fill__Group__2__Impl();
@@ -3878,21 +4082,21 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Fill__Group__2__Impl"
-    // InternalSeleniumDSL.g:1231:1: rule__Fill__Group__2__Impl : ( ( rule__Fill__ValueAssignment_2 ) ) ;
+    // InternalSeleniumDSL.g:1291:1: rule__Fill__Group__2__Impl : ( ( rule__Fill__ValueAssignment_2 ) ) ;
     public final void rule__Fill__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:1235:1: ( ( ( rule__Fill__ValueAssignment_2 ) ) )
-            // InternalSeleniumDSL.g:1236:1: ( ( rule__Fill__ValueAssignment_2 ) )
+            // InternalSeleniumDSL.g:1295:1: ( ( ( rule__Fill__ValueAssignment_2 ) ) )
+            // InternalSeleniumDSL.g:1296:1: ( ( rule__Fill__ValueAssignment_2 ) )
             {
-            // InternalSeleniumDSL.g:1236:1: ( ( rule__Fill__ValueAssignment_2 ) )
-            // InternalSeleniumDSL.g:1237:2: ( rule__Fill__ValueAssignment_2 )
+            // InternalSeleniumDSL.g:1296:1: ( ( rule__Fill__ValueAssignment_2 ) )
+            // InternalSeleniumDSL.g:1297:2: ( rule__Fill__ValueAssignment_2 )
             {
              before(grammarAccess.getFillAccess().getValueAssignment_2()); 
-            // InternalSeleniumDSL.g:1238:2: ( rule__Fill__ValueAssignment_2 )
-            // InternalSeleniumDSL.g:1238:3: rule__Fill__ValueAssignment_2
+            // InternalSeleniumDSL.g:1298:2: ( rule__Fill__ValueAssignment_2 )
+            // InternalSeleniumDSL.g:1298:3: rule__Fill__ValueAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__Fill__ValueAssignment_2();
@@ -3925,16 +4129,16 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Select__Group__0"
-    // InternalSeleniumDSL.g:1247:1: rule__Select__Group__0 : rule__Select__Group__0__Impl rule__Select__Group__1 ;
+    // InternalSeleniumDSL.g:1307:1: rule__Select__Group__0 : rule__Select__Group__0__Impl rule__Select__Group__1 ;
     public final void rule__Select__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:1251:1: ( rule__Select__Group__0__Impl rule__Select__Group__1 )
-            // InternalSeleniumDSL.g:1252:2: rule__Select__Group__0__Impl rule__Select__Group__1
+            // InternalSeleniumDSL.g:1311:1: ( rule__Select__Group__0__Impl rule__Select__Group__1 )
+            // InternalSeleniumDSL.g:1312:2: rule__Select__Group__0__Impl rule__Select__Group__1
             {
-            pushFollow(FOLLOW_15);
+            pushFollow(FOLLOW_16);
             rule__Select__Group__0__Impl();
 
             state._fsp--;
@@ -3963,20 +4167,20 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Select__Group__0__Impl"
-    // InternalSeleniumDSL.g:1259:1: rule__Select__Group__0__Impl : ( 'select' ) ;
+    // InternalSeleniumDSL.g:1319:1: rule__Select__Group__0__Impl : ( 'select' ) ;
     public final void rule__Select__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:1263:1: ( ( 'select' ) )
-            // InternalSeleniumDSL.g:1264:1: ( 'select' )
+            // InternalSeleniumDSL.g:1323:1: ( ( 'select' ) )
+            // InternalSeleniumDSL.g:1324:1: ( 'select' )
             {
-            // InternalSeleniumDSL.g:1264:1: ( 'select' )
-            // InternalSeleniumDSL.g:1265:2: 'select'
+            // InternalSeleniumDSL.g:1324:1: ( 'select' )
+            // InternalSeleniumDSL.g:1325:2: 'select'
             {
              before(grammarAccess.getSelectAccess().getSelectKeyword_0()); 
-            match(input,21,FOLLOW_2); 
+            match(input,25,FOLLOW_2); 
              after(grammarAccess.getSelectAccess().getSelectKeyword_0()); 
 
             }
@@ -4000,14 +4204,14 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Select__Group__1"
-    // InternalSeleniumDSL.g:1274:1: rule__Select__Group__1 : rule__Select__Group__1__Impl ;
+    // InternalSeleniumDSL.g:1334:1: rule__Select__Group__1 : rule__Select__Group__1__Impl ;
     public final void rule__Select__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:1278:1: ( rule__Select__Group__1__Impl )
-            // InternalSeleniumDSL.g:1279:2: rule__Select__Group__1__Impl
+            // InternalSeleniumDSL.g:1338:1: ( rule__Select__Group__1__Impl )
+            // InternalSeleniumDSL.g:1339:2: rule__Select__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Select__Group__1__Impl();
@@ -4033,21 +4237,21 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Select__Group__1__Impl"
-    // InternalSeleniumDSL.g:1285:1: rule__Select__Group__1__Impl : ( ( rule__Select__NameAssignment_1 ) ) ;
+    // InternalSeleniumDSL.g:1345:1: rule__Select__Group__1__Impl : ( ( rule__Select__NameAssignment_1 ) ) ;
     public final void rule__Select__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:1289:1: ( ( ( rule__Select__NameAssignment_1 ) ) )
-            // InternalSeleniumDSL.g:1290:1: ( ( rule__Select__NameAssignment_1 ) )
+            // InternalSeleniumDSL.g:1349:1: ( ( ( rule__Select__NameAssignment_1 ) ) )
+            // InternalSeleniumDSL.g:1350:1: ( ( rule__Select__NameAssignment_1 ) )
             {
-            // InternalSeleniumDSL.g:1290:1: ( ( rule__Select__NameAssignment_1 ) )
-            // InternalSeleniumDSL.g:1291:2: ( rule__Select__NameAssignment_1 )
+            // InternalSeleniumDSL.g:1350:1: ( ( rule__Select__NameAssignment_1 ) )
+            // InternalSeleniumDSL.g:1351:2: ( rule__Select__NameAssignment_1 )
             {
              before(grammarAccess.getSelectAccess().getNameAssignment_1()); 
-            // InternalSeleniumDSL.g:1292:2: ( rule__Select__NameAssignment_1 )
-            // InternalSeleniumDSL.g:1292:3: rule__Select__NameAssignment_1
+            // InternalSeleniumDSL.g:1352:2: ( rule__Select__NameAssignment_1 )
+            // InternalSeleniumDSL.g:1352:3: rule__Select__NameAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__Select__NameAssignment_1();
@@ -4080,16 +4284,16 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Navigate__Group__0"
-    // InternalSeleniumDSL.g:1301:1: rule__Navigate__Group__0 : rule__Navigate__Group__0__Impl rule__Navigate__Group__1 ;
+    // InternalSeleniumDSL.g:1361:1: rule__Navigate__Group__0 : rule__Navigate__Group__0__Impl rule__Navigate__Group__1 ;
     public final void rule__Navigate__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:1305:1: ( rule__Navigate__Group__0__Impl rule__Navigate__Group__1 )
-            // InternalSeleniumDSL.g:1306:2: rule__Navigate__Group__0__Impl rule__Navigate__Group__1
+            // InternalSeleniumDSL.g:1365:1: ( rule__Navigate__Group__0__Impl rule__Navigate__Group__1 )
+            // InternalSeleniumDSL.g:1366:2: rule__Navigate__Group__0__Impl rule__Navigate__Group__1
             {
-            pushFollow(FOLLOW_16);
+            pushFollow(FOLLOW_17);
             rule__Navigate__Group__0__Impl();
 
             state._fsp--;
@@ -4118,20 +4322,20 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Navigate__Group__0__Impl"
-    // InternalSeleniumDSL.g:1313:1: rule__Navigate__Group__0__Impl : ( 'navigate' ) ;
+    // InternalSeleniumDSL.g:1373:1: rule__Navigate__Group__0__Impl : ( 'navigate' ) ;
     public final void rule__Navigate__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:1317:1: ( ( 'navigate' ) )
-            // InternalSeleniumDSL.g:1318:1: ( 'navigate' )
+            // InternalSeleniumDSL.g:1377:1: ( ( 'navigate' ) )
+            // InternalSeleniumDSL.g:1378:1: ( 'navigate' )
             {
-            // InternalSeleniumDSL.g:1318:1: ( 'navigate' )
-            // InternalSeleniumDSL.g:1319:2: 'navigate'
+            // InternalSeleniumDSL.g:1378:1: ( 'navigate' )
+            // InternalSeleniumDSL.g:1379:2: 'navigate'
             {
              before(grammarAccess.getNavigateAccess().getNavigateKeyword_0()); 
-            match(input,22,FOLLOW_2); 
+            match(input,26,FOLLOW_2); 
              after(grammarAccess.getNavigateAccess().getNavigateKeyword_0()); 
 
             }
@@ -4155,14 +4359,14 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Navigate__Group__1"
-    // InternalSeleniumDSL.g:1328:1: rule__Navigate__Group__1 : rule__Navigate__Group__1__Impl ;
+    // InternalSeleniumDSL.g:1388:1: rule__Navigate__Group__1 : rule__Navigate__Group__1__Impl ;
     public final void rule__Navigate__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:1332:1: ( rule__Navigate__Group__1__Impl )
-            // InternalSeleniumDSL.g:1333:2: rule__Navigate__Group__1__Impl
+            // InternalSeleniumDSL.g:1392:1: ( rule__Navigate__Group__1__Impl )
+            // InternalSeleniumDSL.g:1393:2: rule__Navigate__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Navigate__Group__1__Impl();
@@ -4188,21 +4392,21 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Navigate__Group__1__Impl"
-    // InternalSeleniumDSL.g:1339:1: rule__Navigate__Group__1__Impl : ( ( rule__Navigate__UrlAssignment_1 ) ) ;
+    // InternalSeleniumDSL.g:1399:1: rule__Navigate__Group__1__Impl : ( ( rule__Navigate__UrlAssignment_1 ) ) ;
     public final void rule__Navigate__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:1343:1: ( ( ( rule__Navigate__UrlAssignment_1 ) ) )
-            // InternalSeleniumDSL.g:1344:1: ( ( rule__Navigate__UrlAssignment_1 ) )
+            // InternalSeleniumDSL.g:1403:1: ( ( ( rule__Navigate__UrlAssignment_1 ) ) )
+            // InternalSeleniumDSL.g:1404:1: ( ( rule__Navigate__UrlAssignment_1 ) )
             {
-            // InternalSeleniumDSL.g:1344:1: ( ( rule__Navigate__UrlAssignment_1 ) )
-            // InternalSeleniumDSL.g:1345:2: ( rule__Navigate__UrlAssignment_1 )
+            // InternalSeleniumDSL.g:1404:1: ( ( rule__Navigate__UrlAssignment_1 ) )
+            // InternalSeleniumDSL.g:1405:2: ( rule__Navigate__UrlAssignment_1 )
             {
              before(grammarAccess.getNavigateAccess().getUrlAssignment_1()); 
-            // InternalSeleniumDSL.g:1346:2: ( rule__Navigate__UrlAssignment_1 )
-            // InternalSeleniumDSL.g:1346:3: rule__Navigate__UrlAssignment_1
+            // InternalSeleniumDSL.g:1406:2: ( rule__Navigate__UrlAssignment_1 )
+            // InternalSeleniumDSL.g:1406:3: rule__Navigate__UrlAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__Navigate__UrlAssignment_1();
@@ -4235,16 +4439,16 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Read__Group__0"
-    // InternalSeleniumDSL.g:1355:1: rule__Read__Group__0 : rule__Read__Group__0__Impl rule__Read__Group__1 ;
+    // InternalSeleniumDSL.g:1415:1: rule__Read__Group__0 : rule__Read__Group__0__Impl rule__Read__Group__1 ;
     public final void rule__Read__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:1359:1: ( rule__Read__Group__0__Impl rule__Read__Group__1 )
-            // InternalSeleniumDSL.g:1360:2: rule__Read__Group__0__Impl rule__Read__Group__1
+            // InternalSeleniumDSL.g:1419:1: ( rule__Read__Group__0__Impl rule__Read__Group__1 )
+            // InternalSeleniumDSL.g:1420:2: rule__Read__Group__0__Impl rule__Read__Group__1
             {
-            pushFollow(FOLLOW_17);
+            pushFollow(FOLLOW_18);
             rule__Read__Group__0__Impl();
 
             state._fsp--;
@@ -4273,21 +4477,21 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Read__Group__0__Impl"
-    // InternalSeleniumDSL.g:1367:1: rule__Read__Group__0__Impl : ( ( rule__Read__VariableAssignment_0 ) ) ;
+    // InternalSeleniumDSL.g:1427:1: rule__Read__Group__0__Impl : ( ( rule__Read__VariableAssignment_0 ) ) ;
     public final void rule__Read__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:1371:1: ( ( ( rule__Read__VariableAssignment_0 ) ) )
-            // InternalSeleniumDSL.g:1372:1: ( ( rule__Read__VariableAssignment_0 ) )
+            // InternalSeleniumDSL.g:1431:1: ( ( ( rule__Read__VariableAssignment_0 ) ) )
+            // InternalSeleniumDSL.g:1432:1: ( ( rule__Read__VariableAssignment_0 ) )
             {
-            // InternalSeleniumDSL.g:1372:1: ( ( rule__Read__VariableAssignment_0 ) )
-            // InternalSeleniumDSL.g:1373:2: ( rule__Read__VariableAssignment_0 )
+            // InternalSeleniumDSL.g:1432:1: ( ( rule__Read__VariableAssignment_0 ) )
+            // InternalSeleniumDSL.g:1433:2: ( rule__Read__VariableAssignment_0 )
             {
              before(grammarAccess.getReadAccess().getVariableAssignment_0()); 
-            // InternalSeleniumDSL.g:1374:2: ( rule__Read__VariableAssignment_0 )
-            // InternalSeleniumDSL.g:1374:3: rule__Read__VariableAssignment_0
+            // InternalSeleniumDSL.g:1434:2: ( rule__Read__VariableAssignment_0 )
+            // InternalSeleniumDSL.g:1434:3: rule__Read__VariableAssignment_0
             {
             pushFollow(FOLLOW_2);
             rule__Read__VariableAssignment_0();
@@ -4320,16 +4524,16 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Read__Group__1"
-    // InternalSeleniumDSL.g:1382:1: rule__Read__Group__1 : rule__Read__Group__1__Impl rule__Read__Group__2 ;
+    // InternalSeleniumDSL.g:1442:1: rule__Read__Group__1 : rule__Read__Group__1__Impl rule__Read__Group__2 ;
     public final void rule__Read__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:1386:1: ( rule__Read__Group__1__Impl rule__Read__Group__2 )
-            // InternalSeleniumDSL.g:1387:2: rule__Read__Group__1__Impl rule__Read__Group__2
+            // InternalSeleniumDSL.g:1446:1: ( rule__Read__Group__1__Impl rule__Read__Group__2 )
+            // InternalSeleniumDSL.g:1447:2: rule__Read__Group__1__Impl rule__Read__Group__2
             {
-            pushFollow(FOLLOW_18);
+            pushFollow(FOLLOW_19);
             rule__Read__Group__1__Impl();
 
             state._fsp--;
@@ -4358,20 +4562,20 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Read__Group__1__Impl"
-    // InternalSeleniumDSL.g:1394:1: rule__Read__Group__1__Impl : ( '=' ) ;
+    // InternalSeleniumDSL.g:1454:1: rule__Read__Group__1__Impl : ( '=' ) ;
     public final void rule__Read__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:1398:1: ( ( '=' ) )
-            // InternalSeleniumDSL.g:1399:1: ( '=' )
+            // InternalSeleniumDSL.g:1458:1: ( ( '=' ) )
+            // InternalSeleniumDSL.g:1459:1: ( '=' )
             {
-            // InternalSeleniumDSL.g:1399:1: ( '=' )
-            // InternalSeleniumDSL.g:1400:2: '='
+            // InternalSeleniumDSL.g:1459:1: ( '=' )
+            // InternalSeleniumDSL.g:1460:2: '='
             {
              before(grammarAccess.getReadAccess().getEqualsSignKeyword_1()); 
-            match(input,23,FOLLOW_2); 
+            match(input,27,FOLLOW_2); 
              after(grammarAccess.getReadAccess().getEqualsSignKeyword_1()); 
 
             }
@@ -4395,16 +4599,16 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Read__Group__2"
-    // InternalSeleniumDSL.g:1409:1: rule__Read__Group__2 : rule__Read__Group__2__Impl rule__Read__Group__3 ;
+    // InternalSeleniumDSL.g:1469:1: rule__Read__Group__2 : rule__Read__Group__2__Impl rule__Read__Group__3 ;
     public final void rule__Read__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:1413:1: ( rule__Read__Group__2__Impl rule__Read__Group__3 )
-            // InternalSeleniumDSL.g:1414:2: rule__Read__Group__2__Impl rule__Read__Group__3
+            // InternalSeleniumDSL.g:1473:1: ( rule__Read__Group__2__Impl rule__Read__Group__3 )
+            // InternalSeleniumDSL.g:1474:2: rule__Read__Group__2__Impl rule__Read__Group__3
             {
-            pushFollow(FOLLOW_15);
+            pushFollow(FOLLOW_16);
             rule__Read__Group__2__Impl();
 
             state._fsp--;
@@ -4433,20 +4637,20 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Read__Group__2__Impl"
-    // InternalSeleniumDSL.g:1421:1: rule__Read__Group__2__Impl : ( 'read' ) ;
+    // InternalSeleniumDSL.g:1481:1: rule__Read__Group__2__Impl : ( 'read' ) ;
     public final void rule__Read__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:1425:1: ( ( 'read' ) )
-            // InternalSeleniumDSL.g:1426:1: ( 'read' )
+            // InternalSeleniumDSL.g:1485:1: ( ( 'read' ) )
+            // InternalSeleniumDSL.g:1486:1: ( 'read' )
             {
-            // InternalSeleniumDSL.g:1426:1: ( 'read' )
-            // InternalSeleniumDSL.g:1427:2: 'read'
+            // InternalSeleniumDSL.g:1486:1: ( 'read' )
+            // InternalSeleniumDSL.g:1487:2: 'read'
             {
              before(grammarAccess.getReadAccess().getReadKeyword_2()); 
-            match(input,24,FOLLOW_2); 
+            match(input,28,FOLLOW_2); 
              after(grammarAccess.getReadAccess().getReadKeyword_2()); 
 
             }
@@ -4470,14 +4674,14 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Read__Group__3"
-    // InternalSeleniumDSL.g:1436:1: rule__Read__Group__3 : rule__Read__Group__3__Impl ;
+    // InternalSeleniumDSL.g:1496:1: rule__Read__Group__3 : rule__Read__Group__3__Impl ;
     public final void rule__Read__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:1440:1: ( rule__Read__Group__3__Impl )
-            // InternalSeleniumDSL.g:1441:2: rule__Read__Group__3__Impl
+            // InternalSeleniumDSL.g:1500:1: ( rule__Read__Group__3__Impl )
+            // InternalSeleniumDSL.g:1501:2: rule__Read__Group__3__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Read__Group__3__Impl();
@@ -4503,21 +4707,21 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Read__Group__3__Impl"
-    // InternalSeleniumDSL.g:1447:1: rule__Read__Group__3__Impl : ( ( rule__Read__NameAssignment_3 ) ) ;
+    // InternalSeleniumDSL.g:1507:1: rule__Read__Group__3__Impl : ( ( rule__Read__NameAssignment_3 ) ) ;
     public final void rule__Read__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:1451:1: ( ( ( rule__Read__NameAssignment_3 ) ) )
-            // InternalSeleniumDSL.g:1452:1: ( ( rule__Read__NameAssignment_3 ) )
+            // InternalSeleniumDSL.g:1511:1: ( ( ( rule__Read__NameAssignment_3 ) ) )
+            // InternalSeleniumDSL.g:1512:1: ( ( rule__Read__NameAssignment_3 ) )
             {
-            // InternalSeleniumDSL.g:1452:1: ( ( rule__Read__NameAssignment_3 ) )
-            // InternalSeleniumDSL.g:1453:2: ( rule__Read__NameAssignment_3 )
+            // InternalSeleniumDSL.g:1512:1: ( ( rule__Read__NameAssignment_3 ) )
+            // InternalSeleniumDSL.g:1513:2: ( rule__Read__NameAssignment_3 )
             {
              before(grammarAccess.getReadAccess().getNameAssignment_3()); 
-            // InternalSeleniumDSL.g:1454:2: ( rule__Read__NameAssignment_3 )
-            // InternalSeleniumDSL.g:1454:3: rule__Read__NameAssignment_3
+            // InternalSeleniumDSL.g:1514:2: ( rule__Read__NameAssignment_3 )
+            // InternalSeleniumDSL.g:1514:3: rule__Read__NameAssignment_3
             {
             pushFollow(FOLLOW_2);
             rule__Read__NameAssignment_3();
@@ -4550,16 +4754,16 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Assert__Group__0"
-    // InternalSeleniumDSL.g:1463:1: rule__Assert__Group__0 : rule__Assert__Group__0__Impl rule__Assert__Group__1 ;
+    // InternalSeleniumDSL.g:1523:1: rule__Assert__Group__0 : rule__Assert__Group__0__Impl rule__Assert__Group__1 ;
     public final void rule__Assert__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:1467:1: ( rule__Assert__Group__0__Impl rule__Assert__Group__1 )
-            // InternalSeleniumDSL.g:1468:2: rule__Assert__Group__0__Impl rule__Assert__Group__1
+            // InternalSeleniumDSL.g:1527:1: ( rule__Assert__Group__0__Impl rule__Assert__Group__1 )
+            // InternalSeleniumDSL.g:1528:2: rule__Assert__Group__0__Impl rule__Assert__Group__1
             {
-            pushFollow(FOLLOW_15);
+            pushFollow(FOLLOW_16);
             rule__Assert__Group__0__Impl();
 
             state._fsp--;
@@ -4588,20 +4792,20 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Assert__Group__0__Impl"
-    // InternalSeleniumDSL.g:1475:1: rule__Assert__Group__0__Impl : ( 'assert' ) ;
+    // InternalSeleniumDSL.g:1535:1: rule__Assert__Group__0__Impl : ( 'assert' ) ;
     public final void rule__Assert__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:1479:1: ( ( 'assert' ) )
-            // InternalSeleniumDSL.g:1480:1: ( 'assert' )
+            // InternalSeleniumDSL.g:1539:1: ( ( 'assert' ) )
+            // InternalSeleniumDSL.g:1540:1: ( 'assert' )
             {
-            // InternalSeleniumDSL.g:1480:1: ( 'assert' )
-            // InternalSeleniumDSL.g:1481:2: 'assert'
+            // InternalSeleniumDSL.g:1540:1: ( 'assert' )
+            // InternalSeleniumDSL.g:1541:2: 'assert'
             {
              before(grammarAccess.getAssertAccess().getAssertKeyword_0()); 
-            match(input,25,FOLLOW_2); 
+            match(input,29,FOLLOW_2); 
              after(grammarAccess.getAssertAccess().getAssertKeyword_0()); 
 
             }
@@ -4625,14 +4829,14 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Assert__Group__1"
-    // InternalSeleniumDSL.g:1490:1: rule__Assert__Group__1 : rule__Assert__Group__1__Impl ;
+    // InternalSeleniumDSL.g:1550:1: rule__Assert__Group__1 : rule__Assert__Group__1__Impl ;
     public final void rule__Assert__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:1494:1: ( rule__Assert__Group__1__Impl )
-            // InternalSeleniumDSL.g:1495:2: rule__Assert__Group__1__Impl
+            // InternalSeleniumDSL.g:1554:1: ( rule__Assert__Group__1__Impl )
+            // InternalSeleniumDSL.g:1555:2: rule__Assert__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Assert__Group__1__Impl();
@@ -4658,21 +4862,21 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Assert__Group__1__Impl"
-    // InternalSeleniumDSL.g:1501:1: rule__Assert__Group__1__Impl : ( ( rule__Assert__Alternatives_1 ) ) ;
+    // InternalSeleniumDSL.g:1561:1: rule__Assert__Group__1__Impl : ( ( rule__Assert__Alternatives_1 ) ) ;
     public final void rule__Assert__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:1505:1: ( ( ( rule__Assert__Alternatives_1 ) ) )
-            // InternalSeleniumDSL.g:1506:1: ( ( rule__Assert__Alternatives_1 ) )
+            // InternalSeleniumDSL.g:1565:1: ( ( ( rule__Assert__Alternatives_1 ) ) )
+            // InternalSeleniumDSL.g:1566:1: ( ( rule__Assert__Alternatives_1 ) )
             {
-            // InternalSeleniumDSL.g:1506:1: ( ( rule__Assert__Alternatives_1 ) )
-            // InternalSeleniumDSL.g:1507:2: ( rule__Assert__Alternatives_1 )
+            // InternalSeleniumDSL.g:1566:1: ( ( rule__Assert__Alternatives_1 ) )
+            // InternalSeleniumDSL.g:1567:2: ( rule__Assert__Alternatives_1 )
             {
              before(grammarAccess.getAssertAccess().getAlternatives_1()); 
-            // InternalSeleniumDSL.g:1508:2: ( rule__Assert__Alternatives_1 )
-            // InternalSeleniumDSL.g:1508:3: rule__Assert__Alternatives_1
+            // InternalSeleniumDSL.g:1568:2: ( rule__Assert__Alternatives_1 )
+            // InternalSeleniumDSL.g:1568:3: rule__Assert__Alternatives_1
             {
             pushFollow(FOLLOW_2);
             rule__Assert__Alternatives_1();
@@ -4705,16 +4909,16 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Assert__Group_1_0__0"
-    // InternalSeleniumDSL.g:1517:1: rule__Assert__Group_1_0__0 : rule__Assert__Group_1_0__0__Impl rule__Assert__Group_1_0__1 ;
+    // InternalSeleniumDSL.g:1577:1: rule__Assert__Group_1_0__0 : rule__Assert__Group_1_0__0__Impl rule__Assert__Group_1_0__1 ;
     public final void rule__Assert__Group_1_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:1521:1: ( rule__Assert__Group_1_0__0__Impl rule__Assert__Group_1_0__1 )
-            // InternalSeleniumDSL.g:1522:2: rule__Assert__Group_1_0__0__Impl rule__Assert__Group_1_0__1
+            // InternalSeleniumDSL.g:1581:1: ( rule__Assert__Group_1_0__0__Impl rule__Assert__Group_1_0__1 )
+            // InternalSeleniumDSL.g:1582:2: rule__Assert__Group_1_0__0__Impl rule__Assert__Group_1_0__1
             {
-            pushFollow(FOLLOW_19);
+            pushFollow(FOLLOW_20);
             rule__Assert__Group_1_0__0__Impl();
 
             state._fsp--;
@@ -4743,21 +4947,21 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Assert__Group_1_0__0__Impl"
-    // InternalSeleniumDSL.g:1529:1: rule__Assert__Group_1_0__0__Impl : ( ( rule__Assert__SearchAssignment_1_0_0 ) ) ;
+    // InternalSeleniumDSL.g:1589:1: rule__Assert__Group_1_0__0__Impl : ( ( rule__Assert__SearchAssignment_1_0_0 ) ) ;
     public final void rule__Assert__Group_1_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:1533:1: ( ( ( rule__Assert__SearchAssignment_1_0_0 ) ) )
-            // InternalSeleniumDSL.g:1534:1: ( ( rule__Assert__SearchAssignment_1_0_0 ) )
+            // InternalSeleniumDSL.g:1593:1: ( ( ( rule__Assert__SearchAssignment_1_0_0 ) ) )
+            // InternalSeleniumDSL.g:1594:1: ( ( rule__Assert__SearchAssignment_1_0_0 ) )
             {
-            // InternalSeleniumDSL.g:1534:1: ( ( rule__Assert__SearchAssignment_1_0_0 ) )
-            // InternalSeleniumDSL.g:1535:2: ( rule__Assert__SearchAssignment_1_0_0 )
+            // InternalSeleniumDSL.g:1594:1: ( ( rule__Assert__SearchAssignment_1_0_0 ) )
+            // InternalSeleniumDSL.g:1595:2: ( rule__Assert__SearchAssignment_1_0_0 )
             {
              before(grammarAccess.getAssertAccess().getSearchAssignment_1_0_0()); 
-            // InternalSeleniumDSL.g:1536:2: ( rule__Assert__SearchAssignment_1_0_0 )
-            // InternalSeleniumDSL.g:1536:3: rule__Assert__SearchAssignment_1_0_0
+            // InternalSeleniumDSL.g:1596:2: ( rule__Assert__SearchAssignment_1_0_0 )
+            // InternalSeleniumDSL.g:1596:3: rule__Assert__SearchAssignment_1_0_0
             {
             pushFollow(FOLLOW_2);
             rule__Assert__SearchAssignment_1_0_0();
@@ -4790,16 +4994,16 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Assert__Group_1_0__1"
-    // InternalSeleniumDSL.g:1544:1: rule__Assert__Group_1_0__1 : rule__Assert__Group_1_0__1__Impl rule__Assert__Group_1_0__2 ;
+    // InternalSeleniumDSL.g:1604:1: rule__Assert__Group_1_0__1 : rule__Assert__Group_1_0__1__Impl rule__Assert__Group_1_0__2 ;
     public final void rule__Assert__Group_1_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:1548:1: ( rule__Assert__Group_1_0__1__Impl rule__Assert__Group_1_0__2 )
-            // InternalSeleniumDSL.g:1549:2: rule__Assert__Group_1_0__1__Impl rule__Assert__Group_1_0__2
+            // InternalSeleniumDSL.g:1608:1: ( rule__Assert__Group_1_0__1__Impl rule__Assert__Group_1_0__2 )
+            // InternalSeleniumDSL.g:1609:2: rule__Assert__Group_1_0__1__Impl rule__Assert__Group_1_0__2
             {
-            pushFollow(FOLLOW_16);
+            pushFollow(FOLLOW_17);
             rule__Assert__Group_1_0__1__Impl();
 
             state._fsp--;
@@ -4828,20 +5032,20 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Assert__Group_1_0__1__Impl"
-    // InternalSeleniumDSL.g:1556:1: rule__Assert__Group_1_0__1__Impl : ( 'contains' ) ;
+    // InternalSeleniumDSL.g:1616:1: rule__Assert__Group_1_0__1__Impl : ( 'contains' ) ;
     public final void rule__Assert__Group_1_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:1560:1: ( ( 'contains' ) )
-            // InternalSeleniumDSL.g:1561:1: ( 'contains' )
+            // InternalSeleniumDSL.g:1620:1: ( ( 'contains' ) )
+            // InternalSeleniumDSL.g:1621:1: ( 'contains' )
             {
-            // InternalSeleniumDSL.g:1561:1: ( 'contains' )
-            // InternalSeleniumDSL.g:1562:2: 'contains'
+            // InternalSeleniumDSL.g:1621:1: ( 'contains' )
+            // InternalSeleniumDSL.g:1622:2: 'contains'
             {
              before(grammarAccess.getAssertAccess().getContainsKeyword_1_0_1()); 
-            match(input,26,FOLLOW_2); 
+            match(input,30,FOLLOW_2); 
              after(grammarAccess.getAssertAccess().getContainsKeyword_1_0_1()); 
 
             }
@@ -4865,14 +5069,14 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Assert__Group_1_0__2"
-    // InternalSeleniumDSL.g:1571:1: rule__Assert__Group_1_0__2 : rule__Assert__Group_1_0__2__Impl ;
+    // InternalSeleniumDSL.g:1631:1: rule__Assert__Group_1_0__2 : rule__Assert__Group_1_0__2__Impl ;
     public final void rule__Assert__Group_1_0__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:1575:1: ( rule__Assert__Group_1_0__2__Impl )
-            // InternalSeleniumDSL.g:1576:2: rule__Assert__Group_1_0__2__Impl
+            // InternalSeleniumDSL.g:1635:1: ( rule__Assert__Group_1_0__2__Impl )
+            // InternalSeleniumDSL.g:1636:2: rule__Assert__Group_1_0__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Assert__Group_1_0__2__Impl();
@@ -4898,21 +5102,21 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Assert__Group_1_0__2__Impl"
-    // InternalSeleniumDSL.g:1582:1: rule__Assert__Group_1_0__2__Impl : ( ( rule__Assert__ValueAssignment_1_0_2 ) ) ;
+    // InternalSeleniumDSL.g:1642:1: rule__Assert__Group_1_0__2__Impl : ( ( rule__Assert__ValueAssignment_1_0_2 ) ) ;
     public final void rule__Assert__Group_1_0__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:1586:1: ( ( ( rule__Assert__ValueAssignment_1_0_2 ) ) )
-            // InternalSeleniumDSL.g:1587:1: ( ( rule__Assert__ValueAssignment_1_0_2 ) )
+            // InternalSeleniumDSL.g:1646:1: ( ( ( rule__Assert__ValueAssignment_1_0_2 ) ) )
+            // InternalSeleniumDSL.g:1647:1: ( ( rule__Assert__ValueAssignment_1_0_2 ) )
             {
-            // InternalSeleniumDSL.g:1587:1: ( ( rule__Assert__ValueAssignment_1_0_2 ) )
-            // InternalSeleniumDSL.g:1588:2: ( rule__Assert__ValueAssignment_1_0_2 )
+            // InternalSeleniumDSL.g:1647:1: ( ( rule__Assert__ValueAssignment_1_0_2 ) )
+            // InternalSeleniumDSL.g:1648:2: ( rule__Assert__ValueAssignment_1_0_2 )
             {
              before(grammarAccess.getAssertAccess().getValueAssignment_1_0_2()); 
-            // InternalSeleniumDSL.g:1589:2: ( rule__Assert__ValueAssignment_1_0_2 )
-            // InternalSeleniumDSL.g:1589:3: rule__Assert__ValueAssignment_1_0_2
+            // InternalSeleniumDSL.g:1649:2: ( rule__Assert__ValueAssignment_1_0_2 )
+            // InternalSeleniumDSL.g:1649:3: rule__Assert__ValueAssignment_1_0_2
             {
             pushFollow(FOLLOW_2);
             rule__Assert__ValueAssignment_1_0_2();
@@ -4945,16 +5149,16 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Assert__Group_1_1__0"
-    // InternalSeleniumDSL.g:1598:1: rule__Assert__Group_1_1__0 : rule__Assert__Group_1_1__0__Impl rule__Assert__Group_1_1__1 ;
+    // InternalSeleniumDSL.g:1658:1: rule__Assert__Group_1_1__0 : rule__Assert__Group_1_1__0__Impl rule__Assert__Group_1_1__1 ;
     public final void rule__Assert__Group_1_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:1602:1: ( rule__Assert__Group_1_1__0__Impl rule__Assert__Group_1_1__1 )
-            // InternalSeleniumDSL.g:1603:2: rule__Assert__Group_1_1__0__Impl rule__Assert__Group_1_1__1
+            // InternalSeleniumDSL.g:1662:1: ( rule__Assert__Group_1_1__0__Impl rule__Assert__Group_1_1__1 )
+            // InternalSeleniumDSL.g:1663:2: rule__Assert__Group_1_1__0__Impl rule__Assert__Group_1_1__1
             {
-            pushFollow(FOLLOW_20);
+            pushFollow(FOLLOW_21);
             rule__Assert__Group_1_1__0__Impl();
 
             state._fsp--;
@@ -4983,21 +5187,21 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Assert__Group_1_1__0__Impl"
-    // InternalSeleniumDSL.g:1610:1: rule__Assert__Group_1_1__0__Impl : ( ( rule__Assert__NameAssignment_1_1_0 ) ) ;
+    // InternalSeleniumDSL.g:1670:1: rule__Assert__Group_1_1__0__Impl : ( ( rule__Assert__NameAssignment_1_1_0 ) ) ;
     public final void rule__Assert__Group_1_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:1614:1: ( ( ( rule__Assert__NameAssignment_1_1_0 ) ) )
-            // InternalSeleniumDSL.g:1615:1: ( ( rule__Assert__NameAssignment_1_1_0 ) )
+            // InternalSeleniumDSL.g:1674:1: ( ( ( rule__Assert__NameAssignment_1_1_0 ) ) )
+            // InternalSeleniumDSL.g:1675:1: ( ( rule__Assert__NameAssignment_1_1_0 ) )
             {
-            // InternalSeleniumDSL.g:1615:1: ( ( rule__Assert__NameAssignment_1_1_0 ) )
-            // InternalSeleniumDSL.g:1616:2: ( rule__Assert__NameAssignment_1_1_0 )
+            // InternalSeleniumDSL.g:1675:1: ( ( rule__Assert__NameAssignment_1_1_0 ) )
+            // InternalSeleniumDSL.g:1676:2: ( rule__Assert__NameAssignment_1_1_0 )
             {
              before(grammarAccess.getAssertAccess().getNameAssignment_1_1_0()); 
-            // InternalSeleniumDSL.g:1617:2: ( rule__Assert__NameAssignment_1_1_0 )
-            // InternalSeleniumDSL.g:1617:3: rule__Assert__NameAssignment_1_1_0
+            // InternalSeleniumDSL.g:1677:2: ( rule__Assert__NameAssignment_1_1_0 )
+            // InternalSeleniumDSL.g:1677:3: rule__Assert__NameAssignment_1_1_0
             {
             pushFollow(FOLLOW_2);
             rule__Assert__NameAssignment_1_1_0();
@@ -5030,16 +5234,16 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Assert__Group_1_1__1"
-    // InternalSeleniumDSL.g:1625:1: rule__Assert__Group_1_1__1 : rule__Assert__Group_1_1__1__Impl rule__Assert__Group_1_1__2 ;
+    // InternalSeleniumDSL.g:1685:1: rule__Assert__Group_1_1__1 : rule__Assert__Group_1_1__1__Impl rule__Assert__Group_1_1__2 ;
     public final void rule__Assert__Group_1_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:1629:1: ( rule__Assert__Group_1_1__1__Impl rule__Assert__Group_1_1__2 )
-            // InternalSeleniumDSL.g:1630:2: rule__Assert__Group_1_1__1__Impl rule__Assert__Group_1_1__2
+            // InternalSeleniumDSL.g:1689:1: ( rule__Assert__Group_1_1__1__Impl rule__Assert__Group_1_1__2 )
+            // InternalSeleniumDSL.g:1690:2: rule__Assert__Group_1_1__1__Impl rule__Assert__Group_1_1__2
             {
-            pushFollow(FOLLOW_16);
+            pushFollow(FOLLOW_17);
             rule__Assert__Group_1_1__1__Impl();
 
             state._fsp--;
@@ -5068,20 +5272,20 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Assert__Group_1_1__1__Impl"
-    // InternalSeleniumDSL.g:1637:1: rule__Assert__Group_1_1__1__Impl : ( 'equals' ) ;
+    // InternalSeleniumDSL.g:1697:1: rule__Assert__Group_1_1__1__Impl : ( 'equals' ) ;
     public final void rule__Assert__Group_1_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:1641:1: ( ( 'equals' ) )
-            // InternalSeleniumDSL.g:1642:1: ( 'equals' )
+            // InternalSeleniumDSL.g:1701:1: ( ( 'equals' ) )
+            // InternalSeleniumDSL.g:1702:1: ( 'equals' )
             {
-            // InternalSeleniumDSL.g:1642:1: ( 'equals' )
-            // InternalSeleniumDSL.g:1643:2: 'equals'
+            // InternalSeleniumDSL.g:1702:1: ( 'equals' )
+            // InternalSeleniumDSL.g:1703:2: 'equals'
             {
              before(grammarAccess.getAssertAccess().getEqualsKeyword_1_1_1()); 
-            match(input,27,FOLLOW_2); 
+            match(input,31,FOLLOW_2); 
              after(grammarAccess.getAssertAccess().getEqualsKeyword_1_1_1()); 
 
             }
@@ -5105,14 +5309,14 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Assert__Group_1_1__2"
-    // InternalSeleniumDSL.g:1652:1: rule__Assert__Group_1_1__2 : rule__Assert__Group_1_1__2__Impl ;
+    // InternalSeleniumDSL.g:1712:1: rule__Assert__Group_1_1__2 : rule__Assert__Group_1_1__2__Impl ;
     public final void rule__Assert__Group_1_1__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:1656:1: ( rule__Assert__Group_1_1__2__Impl )
-            // InternalSeleniumDSL.g:1657:2: rule__Assert__Group_1_1__2__Impl
+            // InternalSeleniumDSL.g:1716:1: ( rule__Assert__Group_1_1__2__Impl )
+            // InternalSeleniumDSL.g:1717:2: rule__Assert__Group_1_1__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Assert__Group_1_1__2__Impl();
@@ -5138,21 +5342,21 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Assert__Group_1_1__2__Impl"
-    // InternalSeleniumDSL.g:1663:1: rule__Assert__Group_1_1__2__Impl : ( ( rule__Assert__ValueAssignment_1_1_2 ) ) ;
+    // InternalSeleniumDSL.g:1723:1: rule__Assert__Group_1_1__2__Impl : ( ( rule__Assert__ValueAssignment_1_1_2 ) ) ;
     public final void rule__Assert__Group_1_1__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:1667:1: ( ( ( rule__Assert__ValueAssignment_1_1_2 ) ) )
-            // InternalSeleniumDSL.g:1668:1: ( ( rule__Assert__ValueAssignment_1_1_2 ) )
+            // InternalSeleniumDSL.g:1727:1: ( ( ( rule__Assert__ValueAssignment_1_1_2 ) ) )
+            // InternalSeleniumDSL.g:1728:1: ( ( rule__Assert__ValueAssignment_1_1_2 ) )
             {
-            // InternalSeleniumDSL.g:1668:1: ( ( rule__Assert__ValueAssignment_1_1_2 ) )
-            // InternalSeleniumDSL.g:1669:2: ( rule__Assert__ValueAssignment_1_1_2 )
+            // InternalSeleniumDSL.g:1728:1: ( ( rule__Assert__ValueAssignment_1_1_2 ) )
+            // InternalSeleniumDSL.g:1729:2: ( rule__Assert__ValueAssignment_1_1_2 )
             {
              before(grammarAccess.getAssertAccess().getValueAssignment_1_1_2()); 
-            // InternalSeleniumDSL.g:1670:2: ( rule__Assert__ValueAssignment_1_1_2 )
-            // InternalSeleniumDSL.g:1670:3: rule__Assert__ValueAssignment_1_1_2
+            // InternalSeleniumDSL.g:1730:2: ( rule__Assert__ValueAssignment_1_1_2 )
+            // InternalSeleniumDSL.g:1730:3: rule__Assert__ValueAssignment_1_1_2
             {
             pushFollow(FOLLOW_2);
             rule__Assert__ValueAssignment_1_1_2();
@@ -5185,16 +5389,16 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Assert__Group_1_2__0"
-    // InternalSeleniumDSL.g:1679:1: rule__Assert__Group_1_2__0 : rule__Assert__Group_1_2__0__Impl rule__Assert__Group_1_2__1 ;
+    // InternalSeleniumDSL.g:1739:1: rule__Assert__Group_1_2__0 : rule__Assert__Group_1_2__0__Impl rule__Assert__Group_1_2__1 ;
     public final void rule__Assert__Group_1_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:1683:1: ( rule__Assert__Group_1_2__0__Impl rule__Assert__Group_1_2__1 )
-            // InternalSeleniumDSL.g:1684:2: rule__Assert__Group_1_2__0__Impl rule__Assert__Group_1_2__1
+            // InternalSeleniumDSL.g:1743:1: ( rule__Assert__Group_1_2__0__Impl rule__Assert__Group_1_2__1 )
+            // InternalSeleniumDSL.g:1744:2: rule__Assert__Group_1_2__0__Impl rule__Assert__Group_1_2__1
             {
-            pushFollow(FOLLOW_21);
+            pushFollow(FOLLOW_22);
             rule__Assert__Group_1_2__0__Impl();
 
             state._fsp--;
@@ -5223,21 +5427,21 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Assert__Group_1_2__0__Impl"
-    // InternalSeleniumDSL.g:1691:1: rule__Assert__Group_1_2__0__Impl : ( ( rule__Assert__NameAssignment_1_2_0 ) ) ;
+    // InternalSeleniumDSL.g:1751:1: rule__Assert__Group_1_2__0__Impl : ( ( rule__Assert__NameAssignment_1_2_0 ) ) ;
     public final void rule__Assert__Group_1_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:1695:1: ( ( ( rule__Assert__NameAssignment_1_2_0 ) ) )
-            // InternalSeleniumDSL.g:1696:1: ( ( rule__Assert__NameAssignment_1_2_0 ) )
+            // InternalSeleniumDSL.g:1755:1: ( ( ( rule__Assert__NameAssignment_1_2_0 ) ) )
+            // InternalSeleniumDSL.g:1756:1: ( ( rule__Assert__NameAssignment_1_2_0 ) )
             {
-            // InternalSeleniumDSL.g:1696:1: ( ( rule__Assert__NameAssignment_1_2_0 ) )
-            // InternalSeleniumDSL.g:1697:2: ( rule__Assert__NameAssignment_1_2_0 )
+            // InternalSeleniumDSL.g:1756:1: ( ( rule__Assert__NameAssignment_1_2_0 ) )
+            // InternalSeleniumDSL.g:1757:2: ( rule__Assert__NameAssignment_1_2_0 )
             {
              before(grammarAccess.getAssertAccess().getNameAssignment_1_2_0()); 
-            // InternalSeleniumDSL.g:1698:2: ( rule__Assert__NameAssignment_1_2_0 )
-            // InternalSeleniumDSL.g:1698:3: rule__Assert__NameAssignment_1_2_0
+            // InternalSeleniumDSL.g:1758:2: ( rule__Assert__NameAssignment_1_2_0 )
+            // InternalSeleniumDSL.g:1758:3: rule__Assert__NameAssignment_1_2_0
             {
             pushFollow(FOLLOW_2);
             rule__Assert__NameAssignment_1_2_0();
@@ -5270,14 +5474,14 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Assert__Group_1_2__1"
-    // InternalSeleniumDSL.g:1706:1: rule__Assert__Group_1_2__1 : rule__Assert__Group_1_2__1__Impl ;
+    // InternalSeleniumDSL.g:1766:1: rule__Assert__Group_1_2__1 : rule__Assert__Group_1_2__1__Impl ;
     public final void rule__Assert__Group_1_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:1710:1: ( rule__Assert__Group_1_2__1__Impl )
-            // InternalSeleniumDSL.g:1711:2: rule__Assert__Group_1_2__1__Impl
+            // InternalSeleniumDSL.g:1770:1: ( rule__Assert__Group_1_2__1__Impl )
+            // InternalSeleniumDSL.g:1771:2: rule__Assert__Group_1_2__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Assert__Group_1_2__1__Impl();
@@ -5303,20 +5507,20 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Assert__Group_1_2__1__Impl"
-    // InternalSeleniumDSL.g:1717:1: rule__Assert__Group_1_2__1__Impl : ( 'exists' ) ;
+    // InternalSeleniumDSL.g:1777:1: rule__Assert__Group_1_2__1__Impl : ( 'exists' ) ;
     public final void rule__Assert__Group_1_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:1721:1: ( ( 'exists' ) )
-            // InternalSeleniumDSL.g:1722:1: ( 'exists' )
+            // InternalSeleniumDSL.g:1781:1: ( ( 'exists' ) )
+            // InternalSeleniumDSL.g:1782:1: ( 'exists' )
             {
-            // InternalSeleniumDSL.g:1722:1: ( 'exists' )
-            // InternalSeleniumDSL.g:1723:2: 'exists'
+            // InternalSeleniumDSL.g:1782:1: ( 'exists' )
+            // InternalSeleniumDSL.g:1783:2: 'exists'
             {
              before(grammarAccess.getAssertAccess().getExistsKeyword_1_2_1()); 
-            match(input,28,FOLLOW_2); 
+            match(input,32,FOLLOW_2); 
              after(grammarAccess.getAssertAccess().getExistsKeyword_1_2_1()); 
 
             }
@@ -5340,16 +5544,16 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__CallProcedure__Group__0"
-    // InternalSeleniumDSL.g:1733:1: rule__CallProcedure__Group__0 : rule__CallProcedure__Group__0__Impl rule__CallProcedure__Group__1 ;
+    // InternalSeleniumDSL.g:1793:1: rule__CallProcedure__Group__0 : rule__CallProcedure__Group__0__Impl rule__CallProcedure__Group__1 ;
     public final void rule__CallProcedure__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:1737:1: ( rule__CallProcedure__Group__0__Impl rule__CallProcedure__Group__1 )
-            // InternalSeleniumDSL.g:1738:2: rule__CallProcedure__Group__0__Impl rule__CallProcedure__Group__1
+            // InternalSeleniumDSL.g:1797:1: ( rule__CallProcedure__Group__0__Impl rule__CallProcedure__Group__1 )
+            // InternalSeleniumDSL.g:1798:2: rule__CallProcedure__Group__0__Impl rule__CallProcedure__Group__1
             {
-            pushFollow(FOLLOW_22);
+            pushFollow(FOLLOW_23);
             rule__CallProcedure__Group__0__Impl();
 
             state._fsp--;
@@ -5378,21 +5582,21 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__CallProcedure__Group__0__Impl"
-    // InternalSeleniumDSL.g:1745:1: rule__CallProcedure__Group__0__Impl : ( ( rule__CallProcedure__ProcedureNameAssignment_0 ) ) ;
+    // InternalSeleniumDSL.g:1805:1: rule__CallProcedure__Group__0__Impl : ( ( rule__CallProcedure__ProcedureNameAssignment_0 ) ) ;
     public final void rule__CallProcedure__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:1749:1: ( ( ( rule__CallProcedure__ProcedureNameAssignment_0 ) ) )
-            // InternalSeleniumDSL.g:1750:1: ( ( rule__CallProcedure__ProcedureNameAssignment_0 ) )
+            // InternalSeleniumDSL.g:1809:1: ( ( ( rule__CallProcedure__ProcedureNameAssignment_0 ) ) )
+            // InternalSeleniumDSL.g:1810:1: ( ( rule__CallProcedure__ProcedureNameAssignment_0 ) )
             {
-            // InternalSeleniumDSL.g:1750:1: ( ( rule__CallProcedure__ProcedureNameAssignment_0 ) )
-            // InternalSeleniumDSL.g:1751:2: ( rule__CallProcedure__ProcedureNameAssignment_0 )
+            // InternalSeleniumDSL.g:1810:1: ( ( rule__CallProcedure__ProcedureNameAssignment_0 ) )
+            // InternalSeleniumDSL.g:1811:2: ( rule__CallProcedure__ProcedureNameAssignment_0 )
             {
              before(grammarAccess.getCallProcedureAccess().getProcedureNameAssignment_0()); 
-            // InternalSeleniumDSL.g:1752:2: ( rule__CallProcedure__ProcedureNameAssignment_0 )
-            // InternalSeleniumDSL.g:1752:3: rule__CallProcedure__ProcedureNameAssignment_0
+            // InternalSeleniumDSL.g:1812:2: ( rule__CallProcedure__ProcedureNameAssignment_0 )
+            // InternalSeleniumDSL.g:1812:3: rule__CallProcedure__ProcedureNameAssignment_0
             {
             pushFollow(FOLLOW_2);
             rule__CallProcedure__ProcedureNameAssignment_0();
@@ -5425,14 +5629,14 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__CallProcedure__Group__1"
-    // InternalSeleniumDSL.g:1760:1: rule__CallProcedure__Group__1 : rule__CallProcedure__Group__1__Impl ;
+    // InternalSeleniumDSL.g:1820:1: rule__CallProcedure__Group__1 : rule__CallProcedure__Group__1__Impl ;
     public final void rule__CallProcedure__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:1764:1: ( rule__CallProcedure__Group__1__Impl )
-            // InternalSeleniumDSL.g:1765:2: rule__CallProcedure__Group__1__Impl
+            // InternalSeleniumDSL.g:1824:1: ( rule__CallProcedure__Group__1__Impl )
+            // InternalSeleniumDSL.g:1825:2: rule__CallProcedure__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__CallProcedure__Group__1__Impl();
@@ -5458,29 +5662,29 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__CallProcedure__Group__1__Impl"
-    // InternalSeleniumDSL.g:1771:1: rule__CallProcedure__Group__1__Impl : ( ( rule__CallProcedure__Group_1__0 )? ) ;
+    // InternalSeleniumDSL.g:1831:1: rule__CallProcedure__Group__1__Impl : ( ( rule__CallProcedure__Group_1__0 )? ) ;
     public final void rule__CallProcedure__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:1775:1: ( ( ( rule__CallProcedure__Group_1__0 )? ) )
-            // InternalSeleniumDSL.g:1776:1: ( ( rule__CallProcedure__Group_1__0 )? )
+            // InternalSeleniumDSL.g:1835:1: ( ( ( rule__CallProcedure__Group_1__0 )? ) )
+            // InternalSeleniumDSL.g:1836:1: ( ( rule__CallProcedure__Group_1__0 )? )
             {
-            // InternalSeleniumDSL.g:1776:1: ( ( rule__CallProcedure__Group_1__0 )? )
-            // InternalSeleniumDSL.g:1777:2: ( rule__CallProcedure__Group_1__0 )?
+            // InternalSeleniumDSL.g:1836:1: ( ( rule__CallProcedure__Group_1__0 )? )
+            // InternalSeleniumDSL.g:1837:2: ( rule__CallProcedure__Group_1__0 )?
             {
              before(grammarAccess.getCallProcedureAccess().getGroup_1()); 
-            // InternalSeleniumDSL.g:1778:2: ( rule__CallProcedure__Group_1__0 )?
-            int alt16=2;
-            int LA16_0 = input.LA(1);
+            // InternalSeleniumDSL.g:1838:2: ( rule__CallProcedure__Group_1__0 )?
+            int alt17=2;
+            int LA17_0 = input.LA(1);
 
-            if ( (LA16_0==16) ) {
-                alt16=1;
+            if ( (LA17_0==20) ) {
+                alt17=1;
             }
-            switch (alt16) {
+            switch (alt17) {
                 case 1 :
-                    // InternalSeleniumDSL.g:1778:3: rule__CallProcedure__Group_1__0
+                    // InternalSeleniumDSL.g:1838:3: rule__CallProcedure__Group_1__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__CallProcedure__Group_1__0();
@@ -5516,16 +5720,16 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__CallProcedure__Group_1__0"
-    // InternalSeleniumDSL.g:1787:1: rule__CallProcedure__Group_1__0 : rule__CallProcedure__Group_1__0__Impl rule__CallProcedure__Group_1__1 ;
+    // InternalSeleniumDSL.g:1847:1: rule__CallProcedure__Group_1__0 : rule__CallProcedure__Group_1__0__Impl rule__CallProcedure__Group_1__1 ;
     public final void rule__CallProcedure__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:1791:1: ( rule__CallProcedure__Group_1__0__Impl rule__CallProcedure__Group_1__1 )
-            // InternalSeleniumDSL.g:1792:2: rule__CallProcedure__Group_1__0__Impl rule__CallProcedure__Group_1__1
+            // InternalSeleniumDSL.g:1851:1: ( rule__CallProcedure__Group_1__0__Impl rule__CallProcedure__Group_1__1 )
+            // InternalSeleniumDSL.g:1852:2: rule__CallProcedure__Group_1__0__Impl rule__CallProcedure__Group_1__1
             {
-            pushFollow(FOLLOW_16);
+            pushFollow(FOLLOW_17);
             rule__CallProcedure__Group_1__0__Impl();
 
             state._fsp--;
@@ -5554,20 +5758,20 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__CallProcedure__Group_1__0__Impl"
-    // InternalSeleniumDSL.g:1799:1: rule__CallProcedure__Group_1__0__Impl : ( '(' ) ;
+    // InternalSeleniumDSL.g:1859:1: rule__CallProcedure__Group_1__0__Impl : ( '(' ) ;
     public final void rule__CallProcedure__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:1803:1: ( ( '(' ) )
-            // InternalSeleniumDSL.g:1804:1: ( '(' )
+            // InternalSeleniumDSL.g:1863:1: ( ( '(' ) )
+            // InternalSeleniumDSL.g:1864:1: ( '(' )
             {
-            // InternalSeleniumDSL.g:1804:1: ( '(' )
-            // InternalSeleniumDSL.g:1805:2: '('
+            // InternalSeleniumDSL.g:1864:1: ( '(' )
+            // InternalSeleniumDSL.g:1865:2: '('
             {
              before(grammarAccess.getCallProcedureAccess().getLeftParenthesisKeyword_1_0()); 
-            match(input,16,FOLLOW_2); 
+            match(input,20,FOLLOW_2); 
              after(grammarAccess.getCallProcedureAccess().getLeftParenthesisKeyword_1_0()); 
 
             }
@@ -5591,14 +5795,14 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__CallProcedure__Group_1__1"
-    // InternalSeleniumDSL.g:1814:1: rule__CallProcedure__Group_1__1 : rule__CallProcedure__Group_1__1__Impl rule__CallProcedure__Group_1__2 ;
+    // InternalSeleniumDSL.g:1874:1: rule__CallProcedure__Group_1__1 : rule__CallProcedure__Group_1__1__Impl rule__CallProcedure__Group_1__2 ;
     public final void rule__CallProcedure__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:1818:1: ( rule__CallProcedure__Group_1__1__Impl rule__CallProcedure__Group_1__2 )
-            // InternalSeleniumDSL.g:1819:2: rule__CallProcedure__Group_1__1__Impl rule__CallProcedure__Group_1__2
+            // InternalSeleniumDSL.g:1878:1: ( rule__CallProcedure__Group_1__1__Impl rule__CallProcedure__Group_1__2 )
+            // InternalSeleniumDSL.g:1879:2: rule__CallProcedure__Group_1__1__Impl rule__CallProcedure__Group_1__2
             {
             pushFollow(FOLLOW_9);
             rule__CallProcedure__Group_1__1__Impl();
@@ -5629,21 +5833,21 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__CallProcedure__Group_1__1__Impl"
-    // InternalSeleniumDSL.g:1826:1: rule__CallProcedure__Group_1__1__Impl : ( ( rule__CallProcedure__Group_1_1__0 ) ) ;
+    // InternalSeleniumDSL.g:1886:1: rule__CallProcedure__Group_1__1__Impl : ( ( rule__CallProcedure__Group_1_1__0 ) ) ;
     public final void rule__CallProcedure__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:1830:1: ( ( ( rule__CallProcedure__Group_1_1__0 ) ) )
-            // InternalSeleniumDSL.g:1831:1: ( ( rule__CallProcedure__Group_1_1__0 ) )
+            // InternalSeleniumDSL.g:1890:1: ( ( ( rule__CallProcedure__Group_1_1__0 ) ) )
+            // InternalSeleniumDSL.g:1891:1: ( ( rule__CallProcedure__Group_1_1__0 ) )
             {
-            // InternalSeleniumDSL.g:1831:1: ( ( rule__CallProcedure__Group_1_1__0 ) )
-            // InternalSeleniumDSL.g:1832:2: ( rule__CallProcedure__Group_1_1__0 )
+            // InternalSeleniumDSL.g:1891:1: ( ( rule__CallProcedure__Group_1_1__0 ) )
+            // InternalSeleniumDSL.g:1892:2: ( rule__CallProcedure__Group_1_1__0 )
             {
              before(grammarAccess.getCallProcedureAccess().getGroup_1_1()); 
-            // InternalSeleniumDSL.g:1833:2: ( rule__CallProcedure__Group_1_1__0 )
-            // InternalSeleniumDSL.g:1833:3: rule__CallProcedure__Group_1_1__0
+            // InternalSeleniumDSL.g:1893:2: ( rule__CallProcedure__Group_1_1__0 )
+            // InternalSeleniumDSL.g:1893:3: rule__CallProcedure__Group_1_1__0
             {
             pushFollow(FOLLOW_2);
             rule__CallProcedure__Group_1_1__0();
@@ -5676,14 +5880,14 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__CallProcedure__Group_1__2"
-    // InternalSeleniumDSL.g:1841:1: rule__CallProcedure__Group_1__2 : rule__CallProcedure__Group_1__2__Impl ;
+    // InternalSeleniumDSL.g:1901:1: rule__CallProcedure__Group_1__2 : rule__CallProcedure__Group_1__2__Impl ;
     public final void rule__CallProcedure__Group_1__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:1845:1: ( rule__CallProcedure__Group_1__2__Impl )
-            // InternalSeleniumDSL.g:1846:2: rule__CallProcedure__Group_1__2__Impl
+            // InternalSeleniumDSL.g:1905:1: ( rule__CallProcedure__Group_1__2__Impl )
+            // InternalSeleniumDSL.g:1906:2: rule__CallProcedure__Group_1__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__CallProcedure__Group_1__2__Impl();
@@ -5709,20 +5913,20 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__CallProcedure__Group_1__2__Impl"
-    // InternalSeleniumDSL.g:1852:1: rule__CallProcedure__Group_1__2__Impl : ( ')' ) ;
+    // InternalSeleniumDSL.g:1912:1: rule__CallProcedure__Group_1__2__Impl : ( ')' ) ;
     public final void rule__CallProcedure__Group_1__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:1856:1: ( ( ')' ) )
-            // InternalSeleniumDSL.g:1857:1: ( ')' )
+            // InternalSeleniumDSL.g:1916:1: ( ( ')' ) )
+            // InternalSeleniumDSL.g:1917:1: ( ')' )
             {
-            // InternalSeleniumDSL.g:1857:1: ( ')' )
-            // InternalSeleniumDSL.g:1858:2: ')'
+            // InternalSeleniumDSL.g:1917:1: ( ')' )
+            // InternalSeleniumDSL.g:1918:2: ')'
             {
              before(grammarAccess.getCallProcedureAccess().getRightParenthesisKeyword_1_2()); 
-            match(input,17,FOLLOW_2); 
+            match(input,21,FOLLOW_2); 
              after(grammarAccess.getCallProcedureAccess().getRightParenthesisKeyword_1_2()); 
 
             }
@@ -5746,14 +5950,14 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__CallProcedure__Group_1_1__0"
-    // InternalSeleniumDSL.g:1868:1: rule__CallProcedure__Group_1_1__0 : rule__CallProcedure__Group_1_1__0__Impl rule__CallProcedure__Group_1_1__1 ;
+    // InternalSeleniumDSL.g:1928:1: rule__CallProcedure__Group_1_1__0 : rule__CallProcedure__Group_1_1__0__Impl rule__CallProcedure__Group_1_1__1 ;
     public final void rule__CallProcedure__Group_1_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:1872:1: ( rule__CallProcedure__Group_1_1__0__Impl rule__CallProcedure__Group_1_1__1 )
-            // InternalSeleniumDSL.g:1873:2: rule__CallProcedure__Group_1_1__0__Impl rule__CallProcedure__Group_1_1__1
+            // InternalSeleniumDSL.g:1932:1: ( rule__CallProcedure__Group_1_1__0__Impl rule__CallProcedure__Group_1_1__1 )
+            // InternalSeleniumDSL.g:1933:2: rule__CallProcedure__Group_1_1__0__Impl rule__CallProcedure__Group_1_1__1
             {
             pushFollow(FOLLOW_10);
             rule__CallProcedure__Group_1_1__0__Impl();
@@ -5784,21 +5988,21 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__CallProcedure__Group_1_1__0__Impl"
-    // InternalSeleniumDSL.g:1880:1: rule__CallProcedure__Group_1_1__0__Impl : ( ( rule__CallProcedure__ParametersAssignment_1_1_0 ) ) ;
+    // InternalSeleniumDSL.g:1940:1: rule__CallProcedure__Group_1_1__0__Impl : ( ( rule__CallProcedure__ParametersAssignment_1_1_0 ) ) ;
     public final void rule__CallProcedure__Group_1_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:1884:1: ( ( ( rule__CallProcedure__ParametersAssignment_1_1_0 ) ) )
-            // InternalSeleniumDSL.g:1885:1: ( ( rule__CallProcedure__ParametersAssignment_1_1_0 ) )
+            // InternalSeleniumDSL.g:1944:1: ( ( ( rule__CallProcedure__ParametersAssignment_1_1_0 ) ) )
+            // InternalSeleniumDSL.g:1945:1: ( ( rule__CallProcedure__ParametersAssignment_1_1_0 ) )
             {
-            // InternalSeleniumDSL.g:1885:1: ( ( rule__CallProcedure__ParametersAssignment_1_1_0 ) )
-            // InternalSeleniumDSL.g:1886:2: ( rule__CallProcedure__ParametersAssignment_1_1_0 )
+            // InternalSeleniumDSL.g:1945:1: ( ( rule__CallProcedure__ParametersAssignment_1_1_0 ) )
+            // InternalSeleniumDSL.g:1946:2: ( rule__CallProcedure__ParametersAssignment_1_1_0 )
             {
              before(grammarAccess.getCallProcedureAccess().getParametersAssignment_1_1_0()); 
-            // InternalSeleniumDSL.g:1887:2: ( rule__CallProcedure__ParametersAssignment_1_1_0 )
-            // InternalSeleniumDSL.g:1887:3: rule__CallProcedure__ParametersAssignment_1_1_0
+            // InternalSeleniumDSL.g:1947:2: ( rule__CallProcedure__ParametersAssignment_1_1_0 )
+            // InternalSeleniumDSL.g:1947:3: rule__CallProcedure__ParametersAssignment_1_1_0
             {
             pushFollow(FOLLOW_2);
             rule__CallProcedure__ParametersAssignment_1_1_0();
@@ -5831,14 +6035,14 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__CallProcedure__Group_1_1__1"
-    // InternalSeleniumDSL.g:1895:1: rule__CallProcedure__Group_1_1__1 : rule__CallProcedure__Group_1_1__1__Impl ;
+    // InternalSeleniumDSL.g:1955:1: rule__CallProcedure__Group_1_1__1 : rule__CallProcedure__Group_1_1__1__Impl ;
     public final void rule__CallProcedure__Group_1_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:1899:1: ( rule__CallProcedure__Group_1_1__1__Impl )
-            // InternalSeleniumDSL.g:1900:2: rule__CallProcedure__Group_1_1__1__Impl
+            // InternalSeleniumDSL.g:1959:1: ( rule__CallProcedure__Group_1_1__1__Impl )
+            // InternalSeleniumDSL.g:1960:2: rule__CallProcedure__Group_1_1__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__CallProcedure__Group_1_1__1__Impl();
@@ -5864,33 +6068,33 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__CallProcedure__Group_1_1__1__Impl"
-    // InternalSeleniumDSL.g:1906:1: rule__CallProcedure__Group_1_1__1__Impl : ( ( rule__CallProcedure__Group_1_1_1__0 )* ) ;
+    // InternalSeleniumDSL.g:1966:1: rule__CallProcedure__Group_1_1__1__Impl : ( ( rule__CallProcedure__Group_1_1_1__0 )* ) ;
     public final void rule__CallProcedure__Group_1_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:1910:1: ( ( ( rule__CallProcedure__Group_1_1_1__0 )* ) )
-            // InternalSeleniumDSL.g:1911:1: ( ( rule__CallProcedure__Group_1_1_1__0 )* )
+            // InternalSeleniumDSL.g:1970:1: ( ( ( rule__CallProcedure__Group_1_1_1__0 )* ) )
+            // InternalSeleniumDSL.g:1971:1: ( ( rule__CallProcedure__Group_1_1_1__0 )* )
             {
-            // InternalSeleniumDSL.g:1911:1: ( ( rule__CallProcedure__Group_1_1_1__0 )* )
-            // InternalSeleniumDSL.g:1912:2: ( rule__CallProcedure__Group_1_1_1__0 )*
+            // InternalSeleniumDSL.g:1971:1: ( ( rule__CallProcedure__Group_1_1_1__0 )* )
+            // InternalSeleniumDSL.g:1972:2: ( rule__CallProcedure__Group_1_1_1__0 )*
             {
              before(grammarAccess.getCallProcedureAccess().getGroup_1_1_1()); 
-            // InternalSeleniumDSL.g:1913:2: ( rule__CallProcedure__Group_1_1_1__0 )*
-            loop17:
+            // InternalSeleniumDSL.g:1973:2: ( rule__CallProcedure__Group_1_1_1__0 )*
+            loop18:
             do {
-                int alt17=2;
-                int LA17_0 = input.LA(1);
+                int alt18=2;
+                int LA18_0 = input.LA(1);
 
-                if ( (LA17_0==RULE_COMMA) ) {
-                    alt17=1;
+                if ( (LA18_0==RULE_COMMA) ) {
+                    alt18=1;
                 }
 
 
-                switch (alt17) {
+                switch (alt18) {
             	case 1 :
-            	    // InternalSeleniumDSL.g:1913:3: rule__CallProcedure__Group_1_1_1__0
+            	    // InternalSeleniumDSL.g:1973:3: rule__CallProcedure__Group_1_1_1__0
             	    {
             	    pushFollow(FOLLOW_11);
             	    rule__CallProcedure__Group_1_1_1__0();
@@ -5902,7 +6106,7 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
             	    break;
 
             	default :
-            	    break loop17;
+            	    break loop18;
                 }
             } while (true);
 
@@ -5929,16 +6133,16 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__CallProcedure__Group_1_1_1__0"
-    // InternalSeleniumDSL.g:1922:1: rule__CallProcedure__Group_1_1_1__0 : rule__CallProcedure__Group_1_1_1__0__Impl rule__CallProcedure__Group_1_1_1__1 ;
+    // InternalSeleniumDSL.g:1982:1: rule__CallProcedure__Group_1_1_1__0 : rule__CallProcedure__Group_1_1_1__0__Impl rule__CallProcedure__Group_1_1_1__1 ;
     public final void rule__CallProcedure__Group_1_1_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:1926:1: ( rule__CallProcedure__Group_1_1_1__0__Impl rule__CallProcedure__Group_1_1_1__1 )
-            // InternalSeleniumDSL.g:1927:2: rule__CallProcedure__Group_1_1_1__0__Impl rule__CallProcedure__Group_1_1_1__1
+            // InternalSeleniumDSL.g:1986:1: ( rule__CallProcedure__Group_1_1_1__0__Impl rule__CallProcedure__Group_1_1_1__1 )
+            // InternalSeleniumDSL.g:1987:2: rule__CallProcedure__Group_1_1_1__0__Impl rule__CallProcedure__Group_1_1_1__1
             {
-            pushFollow(FOLLOW_16);
+            pushFollow(FOLLOW_17);
             rule__CallProcedure__Group_1_1_1__0__Impl();
 
             state._fsp--;
@@ -5967,17 +6171,17 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__CallProcedure__Group_1_1_1__0__Impl"
-    // InternalSeleniumDSL.g:1934:1: rule__CallProcedure__Group_1_1_1__0__Impl : ( RULE_COMMA ) ;
+    // InternalSeleniumDSL.g:1994:1: rule__CallProcedure__Group_1_1_1__0__Impl : ( RULE_COMMA ) ;
     public final void rule__CallProcedure__Group_1_1_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:1938:1: ( ( RULE_COMMA ) )
-            // InternalSeleniumDSL.g:1939:1: ( RULE_COMMA )
+            // InternalSeleniumDSL.g:1998:1: ( ( RULE_COMMA ) )
+            // InternalSeleniumDSL.g:1999:1: ( RULE_COMMA )
             {
-            // InternalSeleniumDSL.g:1939:1: ( RULE_COMMA )
-            // InternalSeleniumDSL.g:1940:2: RULE_COMMA
+            // InternalSeleniumDSL.g:1999:1: ( RULE_COMMA )
+            // InternalSeleniumDSL.g:2000:2: RULE_COMMA
             {
              before(grammarAccess.getCallProcedureAccess().getCOMMATerminalRuleCall_1_1_1_0()); 
             match(input,RULE_COMMA,FOLLOW_2); 
@@ -6004,14 +6208,14 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__CallProcedure__Group_1_1_1__1"
-    // InternalSeleniumDSL.g:1949:1: rule__CallProcedure__Group_1_1_1__1 : rule__CallProcedure__Group_1_1_1__1__Impl ;
+    // InternalSeleniumDSL.g:2009:1: rule__CallProcedure__Group_1_1_1__1 : rule__CallProcedure__Group_1_1_1__1__Impl ;
     public final void rule__CallProcedure__Group_1_1_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:1953:1: ( rule__CallProcedure__Group_1_1_1__1__Impl )
-            // InternalSeleniumDSL.g:1954:2: rule__CallProcedure__Group_1_1_1__1__Impl
+            // InternalSeleniumDSL.g:2013:1: ( rule__CallProcedure__Group_1_1_1__1__Impl )
+            // InternalSeleniumDSL.g:2014:2: rule__CallProcedure__Group_1_1_1__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__CallProcedure__Group_1_1_1__1__Impl();
@@ -6037,21 +6241,21 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__CallProcedure__Group_1_1_1__1__Impl"
-    // InternalSeleniumDSL.g:1960:1: rule__CallProcedure__Group_1_1_1__1__Impl : ( ( rule__CallProcedure__ParametersAssignment_1_1_1_1 ) ) ;
+    // InternalSeleniumDSL.g:2020:1: rule__CallProcedure__Group_1_1_1__1__Impl : ( ( rule__CallProcedure__ParametersAssignment_1_1_1_1 ) ) ;
     public final void rule__CallProcedure__Group_1_1_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:1964:1: ( ( ( rule__CallProcedure__ParametersAssignment_1_1_1_1 ) ) )
-            // InternalSeleniumDSL.g:1965:1: ( ( rule__CallProcedure__ParametersAssignment_1_1_1_1 ) )
+            // InternalSeleniumDSL.g:2024:1: ( ( ( rule__CallProcedure__ParametersAssignment_1_1_1_1 ) ) )
+            // InternalSeleniumDSL.g:2025:1: ( ( rule__CallProcedure__ParametersAssignment_1_1_1_1 ) )
             {
-            // InternalSeleniumDSL.g:1965:1: ( ( rule__CallProcedure__ParametersAssignment_1_1_1_1 ) )
-            // InternalSeleniumDSL.g:1966:2: ( rule__CallProcedure__ParametersAssignment_1_1_1_1 )
+            // InternalSeleniumDSL.g:2025:1: ( ( rule__CallProcedure__ParametersAssignment_1_1_1_1 ) )
+            // InternalSeleniumDSL.g:2026:2: ( rule__CallProcedure__ParametersAssignment_1_1_1_1 )
             {
              before(grammarAccess.getCallProcedureAccess().getParametersAssignment_1_1_1_1()); 
-            // InternalSeleniumDSL.g:1967:2: ( rule__CallProcedure__ParametersAssignment_1_1_1_1 )
-            // InternalSeleniumDSL.g:1967:3: rule__CallProcedure__ParametersAssignment_1_1_1_1
+            // InternalSeleniumDSL.g:2027:2: ( rule__CallProcedure__ParametersAssignment_1_1_1_1 )
+            // InternalSeleniumDSL.g:2027:3: rule__CallProcedure__ParametersAssignment_1_1_1_1
             {
             pushFollow(FOLLOW_2);
             rule__CallProcedure__ParametersAssignment_1_1_1_1();
@@ -6084,17 +6288,17 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__SeleniumTest__ProceduresAssignment_0"
-    // InternalSeleniumDSL.g:1976:1: rule__SeleniumTest__ProceduresAssignment_0 : ( ruleProcedure ) ;
+    // InternalSeleniumDSL.g:2036:1: rule__SeleniumTest__ProceduresAssignment_0 : ( ruleProcedure ) ;
     public final void rule__SeleniumTest__ProceduresAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:1980:1: ( ( ruleProcedure ) )
-            // InternalSeleniumDSL.g:1981:2: ( ruleProcedure )
+            // InternalSeleniumDSL.g:2040:1: ( ( ruleProcedure ) )
+            // InternalSeleniumDSL.g:2041:2: ( ruleProcedure )
             {
-            // InternalSeleniumDSL.g:1981:2: ( ruleProcedure )
-            // InternalSeleniumDSL.g:1982:3: ruleProcedure
+            // InternalSeleniumDSL.g:2041:2: ( ruleProcedure )
+            // InternalSeleniumDSL.g:2042:3: ruleProcedure
             {
              before(grammarAccess.getSeleniumTestAccess().getProceduresProcedureParserRuleCall_0_0()); 
             pushFollow(FOLLOW_2);
@@ -6125,17 +6329,17 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__SeleniumTest__MainAssignment_1"
-    // InternalSeleniumDSL.g:1991:1: rule__SeleniumTest__MainAssignment_1 : ( ruleMainProcedure ) ;
+    // InternalSeleniumDSL.g:2051:1: rule__SeleniumTest__MainAssignment_1 : ( ruleMainProcedure ) ;
     public final void rule__SeleniumTest__MainAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:1995:1: ( ( ruleMainProcedure ) )
-            // InternalSeleniumDSL.g:1996:2: ( ruleMainProcedure )
+            // InternalSeleniumDSL.g:2055:1: ( ( ruleMainProcedure ) )
+            // InternalSeleniumDSL.g:2056:2: ( ruleMainProcedure )
             {
-            // InternalSeleniumDSL.g:1996:2: ( ruleMainProcedure )
-            // InternalSeleniumDSL.g:1997:3: ruleMainProcedure
+            // InternalSeleniumDSL.g:2056:2: ( ruleMainProcedure )
+            // InternalSeleniumDSL.g:2057:3: ruleMainProcedure
             {
              before(grammarAccess.getSeleniumTestAccess().getMainMainProcedureParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -6166,17 +6370,17 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Procedure__NameAssignment_1"
-    // InternalSeleniumDSL.g:2006:1: rule__Procedure__NameAssignment_1 : ( RULE_IDENTIFIER ) ;
+    // InternalSeleniumDSL.g:2066:1: rule__Procedure__NameAssignment_1 : ( RULE_IDENTIFIER ) ;
     public final void rule__Procedure__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:2010:1: ( ( RULE_IDENTIFIER ) )
-            // InternalSeleniumDSL.g:2011:2: ( RULE_IDENTIFIER )
+            // InternalSeleniumDSL.g:2070:1: ( ( RULE_IDENTIFIER ) )
+            // InternalSeleniumDSL.g:2071:2: ( RULE_IDENTIFIER )
             {
-            // InternalSeleniumDSL.g:2011:2: ( RULE_IDENTIFIER )
-            // InternalSeleniumDSL.g:2012:3: RULE_IDENTIFIER
+            // InternalSeleniumDSL.g:2071:2: ( RULE_IDENTIFIER )
+            // InternalSeleniumDSL.g:2072:3: RULE_IDENTIFIER
             {
              before(grammarAccess.getProcedureAccess().getNameIDENTIFIERTerminalRuleCall_1_0()); 
             match(input,RULE_IDENTIFIER,FOLLOW_2); 
@@ -6203,17 +6407,17 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Procedure__ParametersAssignment_2_1_0"
-    // InternalSeleniumDSL.g:2021:1: rule__Procedure__ParametersAssignment_2_1_0 : ( RULE_IDENTIFIER ) ;
+    // InternalSeleniumDSL.g:2081:1: rule__Procedure__ParametersAssignment_2_1_0 : ( RULE_IDENTIFIER ) ;
     public final void rule__Procedure__ParametersAssignment_2_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:2025:1: ( ( RULE_IDENTIFIER ) )
-            // InternalSeleniumDSL.g:2026:2: ( RULE_IDENTIFIER )
+            // InternalSeleniumDSL.g:2085:1: ( ( RULE_IDENTIFIER ) )
+            // InternalSeleniumDSL.g:2086:2: ( RULE_IDENTIFIER )
             {
-            // InternalSeleniumDSL.g:2026:2: ( RULE_IDENTIFIER )
-            // InternalSeleniumDSL.g:2027:3: RULE_IDENTIFIER
+            // InternalSeleniumDSL.g:2086:2: ( RULE_IDENTIFIER )
+            // InternalSeleniumDSL.g:2087:3: RULE_IDENTIFIER
             {
              before(grammarAccess.getProcedureAccess().getParametersIDENTIFIERTerminalRuleCall_2_1_0_0()); 
             match(input,RULE_IDENTIFIER,FOLLOW_2); 
@@ -6240,17 +6444,17 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Procedure__ParametersAssignment_2_1_1_1"
-    // InternalSeleniumDSL.g:2036:1: rule__Procedure__ParametersAssignment_2_1_1_1 : ( RULE_IDENTIFIER ) ;
+    // InternalSeleniumDSL.g:2096:1: rule__Procedure__ParametersAssignment_2_1_1_1 : ( RULE_IDENTIFIER ) ;
     public final void rule__Procedure__ParametersAssignment_2_1_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:2040:1: ( ( RULE_IDENTIFIER ) )
-            // InternalSeleniumDSL.g:2041:2: ( RULE_IDENTIFIER )
+            // InternalSeleniumDSL.g:2100:1: ( ( RULE_IDENTIFIER ) )
+            // InternalSeleniumDSL.g:2101:2: ( RULE_IDENTIFIER )
             {
-            // InternalSeleniumDSL.g:2041:2: ( RULE_IDENTIFIER )
-            // InternalSeleniumDSL.g:2042:3: RULE_IDENTIFIER
+            // InternalSeleniumDSL.g:2101:2: ( RULE_IDENTIFIER )
+            // InternalSeleniumDSL.g:2102:3: RULE_IDENTIFIER
             {
              before(grammarAccess.getProcedureAccess().getParametersIDENTIFIERTerminalRuleCall_2_1_1_1_0()); 
             match(input,RULE_IDENTIFIER,FOLLOW_2); 
@@ -6277,17 +6481,17 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Procedure__InstructionsAssignment_4"
-    // InternalSeleniumDSL.g:2051:1: rule__Procedure__InstructionsAssignment_4 : ( ruleInstruction ) ;
+    // InternalSeleniumDSL.g:2111:1: rule__Procedure__InstructionsAssignment_4 : ( ruleInstruction ) ;
     public final void rule__Procedure__InstructionsAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:2055:1: ( ( ruleInstruction ) )
-            // InternalSeleniumDSL.g:2056:2: ( ruleInstruction )
+            // InternalSeleniumDSL.g:2115:1: ( ( ruleInstruction ) )
+            // InternalSeleniumDSL.g:2116:2: ( ruleInstruction )
             {
-            // InternalSeleniumDSL.g:2056:2: ( ruleInstruction )
-            // InternalSeleniumDSL.g:2057:3: ruleInstruction
+            // InternalSeleniumDSL.g:2116:2: ( ruleInstruction )
+            // InternalSeleniumDSL.g:2117:3: ruleInstruction
             {
              before(grammarAccess.getProcedureAccess().getInstructionsInstructionParserRuleCall_4_0()); 
             pushFollow(FOLLOW_2);
@@ -6318,17 +6522,17 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__MainProcedure__InstructionsAssignment_4"
-    // InternalSeleniumDSL.g:2066:1: rule__MainProcedure__InstructionsAssignment_4 : ( ruleInstruction ) ;
+    // InternalSeleniumDSL.g:2126:1: rule__MainProcedure__InstructionsAssignment_4 : ( ruleInstruction ) ;
     public final void rule__MainProcedure__InstructionsAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:2070:1: ( ( ruleInstruction ) )
-            // InternalSeleniumDSL.g:2071:2: ( ruleInstruction )
+            // InternalSeleniumDSL.g:2130:1: ( ( ruleInstruction ) )
+            // InternalSeleniumDSL.g:2131:2: ( ruleInstruction )
             {
-            // InternalSeleniumDSL.g:2071:2: ( ruleInstruction )
-            // InternalSeleniumDSL.g:2072:3: ruleInstruction
+            // InternalSeleniumDSL.g:2131:2: ( ruleInstruction )
+            // InternalSeleniumDSL.g:2132:3: ruleInstruction
             {
              before(grammarAccess.getMainProcedureAccess().getInstructionsInstructionParserRuleCall_4_0()); 
             pushFollow(FOLLOW_2);
@@ -6358,22 +6562,32 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
     // $ANTLR end "rule__MainProcedure__InstructionsAssignment_4"
 
 
-    // $ANTLR start "rule__Click__NameAssignment_1"
-    // InternalSeleniumDSL.g:2081:1: rule__Click__NameAssignment_1 : ( RULE_STRING ) ;
-    public final void rule__Click__NameAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__Click__TypeAssignment_1"
+    // InternalSeleniumDSL.g:2141:1: rule__Click__TypeAssignment_1 : ( ( rule__Click__TypeAlternatives_1_0 ) ) ;
+    public final void rule__Click__TypeAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:2085:1: ( ( RULE_STRING ) )
-            // InternalSeleniumDSL.g:2086:2: ( RULE_STRING )
+            // InternalSeleniumDSL.g:2145:1: ( ( ( rule__Click__TypeAlternatives_1_0 ) ) )
+            // InternalSeleniumDSL.g:2146:2: ( ( rule__Click__TypeAlternatives_1_0 ) )
             {
-            // InternalSeleniumDSL.g:2086:2: ( RULE_STRING )
-            // InternalSeleniumDSL.g:2087:3: RULE_STRING
+            // InternalSeleniumDSL.g:2146:2: ( ( rule__Click__TypeAlternatives_1_0 ) )
+            // InternalSeleniumDSL.g:2147:3: ( rule__Click__TypeAlternatives_1_0 )
             {
-             before(grammarAccess.getClickAccess().getNameSTRINGTerminalRuleCall_1_0()); 
-            match(input,RULE_STRING,FOLLOW_2); 
-             after(grammarAccess.getClickAccess().getNameSTRINGTerminalRuleCall_1_0()); 
+             before(grammarAccess.getClickAccess().getTypeAlternatives_1_0()); 
+            // InternalSeleniumDSL.g:2148:3: ( rule__Click__TypeAlternatives_1_0 )
+            // InternalSeleniumDSL.g:2148:4: rule__Click__TypeAlternatives_1_0
+            {
+            pushFollow(FOLLOW_2);
+            rule__Click__TypeAlternatives_1_0();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getClickAccess().getTypeAlternatives_1_0()); 
 
             }
 
@@ -6392,21 +6606,58 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__Click__NameAssignment_1"
+    // $ANTLR end "rule__Click__TypeAssignment_1"
+
+
+    // $ANTLR start "rule__Click__ValueAssignment_2"
+    // InternalSeleniumDSL.g:2156:1: rule__Click__ValueAssignment_2 : ( RULE_STRING ) ;
+    public final void rule__Click__ValueAssignment_2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSeleniumDSL.g:2160:1: ( ( RULE_STRING ) )
+            // InternalSeleniumDSL.g:2161:2: ( RULE_STRING )
+            {
+            // InternalSeleniumDSL.g:2161:2: ( RULE_STRING )
+            // InternalSeleniumDSL.g:2162:3: RULE_STRING
+            {
+             before(grammarAccess.getClickAccess().getValueSTRINGTerminalRuleCall_2_0()); 
+            match(input,RULE_STRING,FOLLOW_2); 
+             after(grammarAccess.getClickAccess().getValueSTRINGTerminalRuleCall_2_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Click__ValueAssignment_2"
 
 
     // $ANTLR start "rule__Fill__NameAssignment_1"
-    // InternalSeleniumDSL.g:2096:1: rule__Fill__NameAssignment_1 : ( RULE_STRING ) ;
+    // InternalSeleniumDSL.g:2171:1: rule__Fill__NameAssignment_1 : ( RULE_STRING ) ;
     public final void rule__Fill__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:2100:1: ( ( RULE_STRING ) )
-            // InternalSeleniumDSL.g:2101:2: ( RULE_STRING )
+            // InternalSeleniumDSL.g:2175:1: ( ( RULE_STRING ) )
+            // InternalSeleniumDSL.g:2176:2: ( RULE_STRING )
             {
-            // InternalSeleniumDSL.g:2101:2: ( RULE_STRING )
-            // InternalSeleniumDSL.g:2102:3: RULE_STRING
+            // InternalSeleniumDSL.g:2176:2: ( RULE_STRING )
+            // InternalSeleniumDSL.g:2177:3: RULE_STRING
             {
              before(grammarAccess.getFillAccess().getNameSTRINGTerminalRuleCall_1_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -6433,21 +6684,21 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Fill__ValueAssignment_2"
-    // InternalSeleniumDSL.g:2111:1: rule__Fill__ValueAssignment_2 : ( ( rule__Fill__ValueAlternatives_2_0 ) ) ;
+    // InternalSeleniumDSL.g:2186:1: rule__Fill__ValueAssignment_2 : ( ( rule__Fill__ValueAlternatives_2_0 ) ) ;
     public final void rule__Fill__ValueAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:2115:1: ( ( ( rule__Fill__ValueAlternatives_2_0 ) ) )
-            // InternalSeleniumDSL.g:2116:2: ( ( rule__Fill__ValueAlternatives_2_0 ) )
+            // InternalSeleniumDSL.g:2190:1: ( ( ( rule__Fill__ValueAlternatives_2_0 ) ) )
+            // InternalSeleniumDSL.g:2191:2: ( ( rule__Fill__ValueAlternatives_2_0 ) )
             {
-            // InternalSeleniumDSL.g:2116:2: ( ( rule__Fill__ValueAlternatives_2_0 ) )
-            // InternalSeleniumDSL.g:2117:3: ( rule__Fill__ValueAlternatives_2_0 )
+            // InternalSeleniumDSL.g:2191:2: ( ( rule__Fill__ValueAlternatives_2_0 ) )
+            // InternalSeleniumDSL.g:2192:3: ( rule__Fill__ValueAlternatives_2_0 )
             {
              before(grammarAccess.getFillAccess().getValueAlternatives_2_0()); 
-            // InternalSeleniumDSL.g:2118:3: ( rule__Fill__ValueAlternatives_2_0 )
-            // InternalSeleniumDSL.g:2118:4: rule__Fill__ValueAlternatives_2_0
+            // InternalSeleniumDSL.g:2193:3: ( rule__Fill__ValueAlternatives_2_0 )
+            // InternalSeleniumDSL.g:2193:4: rule__Fill__ValueAlternatives_2_0
             {
             pushFollow(FOLLOW_2);
             rule__Fill__ValueAlternatives_2_0();
@@ -6480,17 +6731,17 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Select__NameAssignment_1"
-    // InternalSeleniumDSL.g:2126:1: rule__Select__NameAssignment_1 : ( RULE_STRING ) ;
+    // InternalSeleniumDSL.g:2201:1: rule__Select__NameAssignment_1 : ( RULE_STRING ) ;
     public final void rule__Select__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:2130:1: ( ( RULE_STRING ) )
-            // InternalSeleniumDSL.g:2131:2: ( RULE_STRING )
+            // InternalSeleniumDSL.g:2205:1: ( ( RULE_STRING ) )
+            // InternalSeleniumDSL.g:2206:2: ( RULE_STRING )
             {
-            // InternalSeleniumDSL.g:2131:2: ( RULE_STRING )
-            // InternalSeleniumDSL.g:2132:3: RULE_STRING
+            // InternalSeleniumDSL.g:2206:2: ( RULE_STRING )
+            // InternalSeleniumDSL.g:2207:3: RULE_STRING
             {
              before(grammarAccess.getSelectAccess().getNameSTRINGTerminalRuleCall_1_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -6517,21 +6768,21 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Navigate__UrlAssignment_1"
-    // InternalSeleniumDSL.g:2141:1: rule__Navigate__UrlAssignment_1 : ( ( rule__Navigate__UrlAlternatives_1_0 ) ) ;
+    // InternalSeleniumDSL.g:2216:1: rule__Navigate__UrlAssignment_1 : ( ( rule__Navigate__UrlAlternatives_1_0 ) ) ;
     public final void rule__Navigate__UrlAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:2145:1: ( ( ( rule__Navigate__UrlAlternatives_1_0 ) ) )
-            // InternalSeleniumDSL.g:2146:2: ( ( rule__Navigate__UrlAlternatives_1_0 ) )
+            // InternalSeleniumDSL.g:2220:1: ( ( ( rule__Navigate__UrlAlternatives_1_0 ) ) )
+            // InternalSeleniumDSL.g:2221:2: ( ( rule__Navigate__UrlAlternatives_1_0 ) )
             {
-            // InternalSeleniumDSL.g:2146:2: ( ( rule__Navigate__UrlAlternatives_1_0 ) )
-            // InternalSeleniumDSL.g:2147:3: ( rule__Navigate__UrlAlternatives_1_0 )
+            // InternalSeleniumDSL.g:2221:2: ( ( rule__Navigate__UrlAlternatives_1_0 ) )
+            // InternalSeleniumDSL.g:2222:3: ( rule__Navigate__UrlAlternatives_1_0 )
             {
              before(grammarAccess.getNavigateAccess().getUrlAlternatives_1_0()); 
-            // InternalSeleniumDSL.g:2148:3: ( rule__Navigate__UrlAlternatives_1_0 )
-            // InternalSeleniumDSL.g:2148:4: rule__Navigate__UrlAlternatives_1_0
+            // InternalSeleniumDSL.g:2223:3: ( rule__Navigate__UrlAlternatives_1_0 )
+            // InternalSeleniumDSL.g:2223:4: rule__Navigate__UrlAlternatives_1_0
             {
             pushFollow(FOLLOW_2);
             rule__Navigate__UrlAlternatives_1_0();
@@ -6564,17 +6815,17 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Read__VariableAssignment_0"
-    // InternalSeleniumDSL.g:2156:1: rule__Read__VariableAssignment_0 : ( RULE_IDENTIFIER ) ;
+    // InternalSeleniumDSL.g:2231:1: rule__Read__VariableAssignment_0 : ( RULE_IDENTIFIER ) ;
     public final void rule__Read__VariableAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:2160:1: ( ( RULE_IDENTIFIER ) )
-            // InternalSeleniumDSL.g:2161:2: ( RULE_IDENTIFIER )
+            // InternalSeleniumDSL.g:2235:1: ( ( RULE_IDENTIFIER ) )
+            // InternalSeleniumDSL.g:2236:2: ( RULE_IDENTIFIER )
             {
-            // InternalSeleniumDSL.g:2161:2: ( RULE_IDENTIFIER )
-            // InternalSeleniumDSL.g:2162:3: RULE_IDENTIFIER
+            // InternalSeleniumDSL.g:2236:2: ( RULE_IDENTIFIER )
+            // InternalSeleniumDSL.g:2237:3: RULE_IDENTIFIER
             {
              before(grammarAccess.getReadAccess().getVariableIDENTIFIERTerminalRuleCall_0_0()); 
             match(input,RULE_IDENTIFIER,FOLLOW_2); 
@@ -6601,17 +6852,17 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Read__NameAssignment_3"
-    // InternalSeleniumDSL.g:2171:1: rule__Read__NameAssignment_3 : ( RULE_STRING ) ;
+    // InternalSeleniumDSL.g:2246:1: rule__Read__NameAssignment_3 : ( RULE_STRING ) ;
     public final void rule__Read__NameAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:2175:1: ( ( RULE_STRING ) )
-            // InternalSeleniumDSL.g:2176:2: ( RULE_STRING )
+            // InternalSeleniumDSL.g:2250:1: ( ( RULE_STRING ) )
+            // InternalSeleniumDSL.g:2251:2: ( RULE_STRING )
             {
-            // InternalSeleniumDSL.g:2176:2: ( RULE_STRING )
-            // InternalSeleniumDSL.g:2177:3: RULE_STRING
+            // InternalSeleniumDSL.g:2251:2: ( RULE_STRING )
+            // InternalSeleniumDSL.g:2252:3: RULE_STRING
             {
              before(grammarAccess.getReadAccess().getNameSTRINGTerminalRuleCall_3_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -6638,17 +6889,17 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Assert__SearchAssignment_1_0_0"
-    // InternalSeleniumDSL.g:2186:1: rule__Assert__SearchAssignment_1_0_0 : ( RULE_STRING ) ;
+    // InternalSeleniumDSL.g:2261:1: rule__Assert__SearchAssignment_1_0_0 : ( RULE_STRING ) ;
     public final void rule__Assert__SearchAssignment_1_0_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:2190:1: ( ( RULE_STRING ) )
-            // InternalSeleniumDSL.g:2191:2: ( RULE_STRING )
+            // InternalSeleniumDSL.g:2265:1: ( ( RULE_STRING ) )
+            // InternalSeleniumDSL.g:2266:2: ( RULE_STRING )
             {
-            // InternalSeleniumDSL.g:2191:2: ( RULE_STRING )
-            // InternalSeleniumDSL.g:2192:3: RULE_STRING
+            // InternalSeleniumDSL.g:2266:2: ( RULE_STRING )
+            // InternalSeleniumDSL.g:2267:3: RULE_STRING
             {
              before(grammarAccess.getAssertAccess().getSearchSTRINGTerminalRuleCall_1_0_0_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -6675,21 +6926,21 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Assert__ValueAssignment_1_0_2"
-    // InternalSeleniumDSL.g:2201:1: rule__Assert__ValueAssignment_1_0_2 : ( ( rule__Assert__ValueAlternatives_1_0_2_0 ) ) ;
+    // InternalSeleniumDSL.g:2276:1: rule__Assert__ValueAssignment_1_0_2 : ( ( rule__Assert__ValueAlternatives_1_0_2_0 ) ) ;
     public final void rule__Assert__ValueAssignment_1_0_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:2205:1: ( ( ( rule__Assert__ValueAlternatives_1_0_2_0 ) ) )
-            // InternalSeleniumDSL.g:2206:2: ( ( rule__Assert__ValueAlternatives_1_0_2_0 ) )
+            // InternalSeleniumDSL.g:2280:1: ( ( ( rule__Assert__ValueAlternatives_1_0_2_0 ) ) )
+            // InternalSeleniumDSL.g:2281:2: ( ( rule__Assert__ValueAlternatives_1_0_2_0 ) )
             {
-            // InternalSeleniumDSL.g:2206:2: ( ( rule__Assert__ValueAlternatives_1_0_2_0 ) )
-            // InternalSeleniumDSL.g:2207:3: ( rule__Assert__ValueAlternatives_1_0_2_0 )
+            // InternalSeleniumDSL.g:2281:2: ( ( rule__Assert__ValueAlternatives_1_0_2_0 ) )
+            // InternalSeleniumDSL.g:2282:3: ( rule__Assert__ValueAlternatives_1_0_2_0 )
             {
              before(grammarAccess.getAssertAccess().getValueAlternatives_1_0_2_0()); 
-            // InternalSeleniumDSL.g:2208:3: ( rule__Assert__ValueAlternatives_1_0_2_0 )
-            // InternalSeleniumDSL.g:2208:4: rule__Assert__ValueAlternatives_1_0_2_0
+            // InternalSeleniumDSL.g:2283:3: ( rule__Assert__ValueAlternatives_1_0_2_0 )
+            // InternalSeleniumDSL.g:2283:4: rule__Assert__ValueAlternatives_1_0_2_0
             {
             pushFollow(FOLLOW_2);
             rule__Assert__ValueAlternatives_1_0_2_0();
@@ -6722,17 +6973,17 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Assert__NameAssignment_1_1_0"
-    // InternalSeleniumDSL.g:2216:1: rule__Assert__NameAssignment_1_1_0 : ( RULE_STRING ) ;
+    // InternalSeleniumDSL.g:2291:1: rule__Assert__NameAssignment_1_1_0 : ( RULE_STRING ) ;
     public final void rule__Assert__NameAssignment_1_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:2220:1: ( ( RULE_STRING ) )
-            // InternalSeleniumDSL.g:2221:2: ( RULE_STRING )
+            // InternalSeleniumDSL.g:2295:1: ( ( RULE_STRING ) )
+            // InternalSeleniumDSL.g:2296:2: ( RULE_STRING )
             {
-            // InternalSeleniumDSL.g:2221:2: ( RULE_STRING )
-            // InternalSeleniumDSL.g:2222:3: RULE_STRING
+            // InternalSeleniumDSL.g:2296:2: ( RULE_STRING )
+            // InternalSeleniumDSL.g:2297:3: RULE_STRING
             {
              before(grammarAccess.getAssertAccess().getNameSTRINGTerminalRuleCall_1_1_0_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -6759,21 +7010,21 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Assert__ValueAssignment_1_1_2"
-    // InternalSeleniumDSL.g:2231:1: rule__Assert__ValueAssignment_1_1_2 : ( ( rule__Assert__ValueAlternatives_1_1_2_0 ) ) ;
+    // InternalSeleniumDSL.g:2306:1: rule__Assert__ValueAssignment_1_1_2 : ( ( rule__Assert__ValueAlternatives_1_1_2_0 ) ) ;
     public final void rule__Assert__ValueAssignment_1_1_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:2235:1: ( ( ( rule__Assert__ValueAlternatives_1_1_2_0 ) ) )
-            // InternalSeleniumDSL.g:2236:2: ( ( rule__Assert__ValueAlternatives_1_1_2_0 ) )
+            // InternalSeleniumDSL.g:2310:1: ( ( ( rule__Assert__ValueAlternatives_1_1_2_0 ) ) )
+            // InternalSeleniumDSL.g:2311:2: ( ( rule__Assert__ValueAlternatives_1_1_2_0 ) )
             {
-            // InternalSeleniumDSL.g:2236:2: ( ( rule__Assert__ValueAlternatives_1_1_2_0 ) )
-            // InternalSeleniumDSL.g:2237:3: ( rule__Assert__ValueAlternatives_1_1_2_0 )
+            // InternalSeleniumDSL.g:2311:2: ( ( rule__Assert__ValueAlternatives_1_1_2_0 ) )
+            // InternalSeleniumDSL.g:2312:3: ( rule__Assert__ValueAlternatives_1_1_2_0 )
             {
              before(grammarAccess.getAssertAccess().getValueAlternatives_1_1_2_0()); 
-            // InternalSeleniumDSL.g:2238:3: ( rule__Assert__ValueAlternatives_1_1_2_0 )
-            // InternalSeleniumDSL.g:2238:4: rule__Assert__ValueAlternatives_1_1_2_0
+            // InternalSeleniumDSL.g:2313:3: ( rule__Assert__ValueAlternatives_1_1_2_0 )
+            // InternalSeleniumDSL.g:2313:4: rule__Assert__ValueAlternatives_1_1_2_0
             {
             pushFollow(FOLLOW_2);
             rule__Assert__ValueAlternatives_1_1_2_0();
@@ -6806,17 +7057,17 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Assert__NameAssignment_1_2_0"
-    // InternalSeleniumDSL.g:2246:1: rule__Assert__NameAssignment_1_2_0 : ( RULE_STRING ) ;
+    // InternalSeleniumDSL.g:2321:1: rule__Assert__NameAssignment_1_2_0 : ( RULE_STRING ) ;
     public final void rule__Assert__NameAssignment_1_2_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:2250:1: ( ( RULE_STRING ) )
-            // InternalSeleniumDSL.g:2251:2: ( RULE_STRING )
+            // InternalSeleniumDSL.g:2325:1: ( ( RULE_STRING ) )
+            // InternalSeleniumDSL.g:2326:2: ( RULE_STRING )
             {
-            // InternalSeleniumDSL.g:2251:2: ( RULE_STRING )
-            // InternalSeleniumDSL.g:2252:3: RULE_STRING
+            // InternalSeleniumDSL.g:2326:2: ( RULE_STRING )
+            // InternalSeleniumDSL.g:2327:3: RULE_STRING
             {
              before(grammarAccess.getAssertAccess().getNameSTRINGTerminalRuleCall_1_2_0_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -6843,17 +7094,17 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__CallProcedure__ProcedureNameAssignment_0"
-    // InternalSeleniumDSL.g:2261:1: rule__CallProcedure__ProcedureNameAssignment_0 : ( RULE_IDENTIFIER ) ;
+    // InternalSeleniumDSL.g:2336:1: rule__CallProcedure__ProcedureNameAssignment_0 : ( RULE_IDENTIFIER ) ;
     public final void rule__CallProcedure__ProcedureNameAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:2265:1: ( ( RULE_IDENTIFIER ) )
-            // InternalSeleniumDSL.g:2266:2: ( RULE_IDENTIFIER )
+            // InternalSeleniumDSL.g:2340:1: ( ( RULE_IDENTIFIER ) )
+            // InternalSeleniumDSL.g:2341:2: ( RULE_IDENTIFIER )
             {
-            // InternalSeleniumDSL.g:2266:2: ( RULE_IDENTIFIER )
-            // InternalSeleniumDSL.g:2267:3: RULE_IDENTIFIER
+            // InternalSeleniumDSL.g:2341:2: ( RULE_IDENTIFIER )
+            // InternalSeleniumDSL.g:2342:3: RULE_IDENTIFIER
             {
              before(grammarAccess.getCallProcedureAccess().getProcedureNameIDENTIFIERTerminalRuleCall_0_0()); 
             match(input,RULE_IDENTIFIER,FOLLOW_2); 
@@ -6880,21 +7131,21 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__CallProcedure__ParametersAssignment_1_1_0"
-    // InternalSeleniumDSL.g:2276:1: rule__CallProcedure__ParametersAssignment_1_1_0 : ( ( rule__CallProcedure__ParametersAlternatives_1_1_0_0 ) ) ;
+    // InternalSeleniumDSL.g:2351:1: rule__CallProcedure__ParametersAssignment_1_1_0 : ( ( rule__CallProcedure__ParametersAlternatives_1_1_0_0 ) ) ;
     public final void rule__CallProcedure__ParametersAssignment_1_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:2280:1: ( ( ( rule__CallProcedure__ParametersAlternatives_1_1_0_0 ) ) )
-            // InternalSeleniumDSL.g:2281:2: ( ( rule__CallProcedure__ParametersAlternatives_1_1_0_0 ) )
+            // InternalSeleniumDSL.g:2355:1: ( ( ( rule__CallProcedure__ParametersAlternatives_1_1_0_0 ) ) )
+            // InternalSeleniumDSL.g:2356:2: ( ( rule__CallProcedure__ParametersAlternatives_1_1_0_0 ) )
             {
-            // InternalSeleniumDSL.g:2281:2: ( ( rule__CallProcedure__ParametersAlternatives_1_1_0_0 ) )
-            // InternalSeleniumDSL.g:2282:3: ( rule__CallProcedure__ParametersAlternatives_1_1_0_0 )
+            // InternalSeleniumDSL.g:2356:2: ( ( rule__CallProcedure__ParametersAlternatives_1_1_0_0 ) )
+            // InternalSeleniumDSL.g:2357:3: ( rule__CallProcedure__ParametersAlternatives_1_1_0_0 )
             {
              before(grammarAccess.getCallProcedureAccess().getParametersAlternatives_1_1_0_0()); 
-            // InternalSeleniumDSL.g:2283:3: ( rule__CallProcedure__ParametersAlternatives_1_1_0_0 )
-            // InternalSeleniumDSL.g:2283:4: rule__CallProcedure__ParametersAlternatives_1_1_0_0
+            // InternalSeleniumDSL.g:2358:3: ( rule__CallProcedure__ParametersAlternatives_1_1_0_0 )
+            // InternalSeleniumDSL.g:2358:4: rule__CallProcedure__ParametersAlternatives_1_1_0_0
             {
             pushFollow(FOLLOW_2);
             rule__CallProcedure__ParametersAlternatives_1_1_0_0();
@@ -6927,21 +7178,21 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__CallProcedure__ParametersAssignment_1_1_1_1"
-    // InternalSeleniumDSL.g:2291:1: rule__CallProcedure__ParametersAssignment_1_1_1_1 : ( ( rule__CallProcedure__ParametersAlternatives_1_1_1_1_0 ) ) ;
+    // InternalSeleniumDSL.g:2366:1: rule__CallProcedure__ParametersAssignment_1_1_1_1 : ( ( rule__CallProcedure__ParametersAlternatives_1_1_1_1_0 ) ) ;
     public final void rule__CallProcedure__ParametersAssignment_1_1_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDSL.g:2295:1: ( ( ( rule__CallProcedure__ParametersAlternatives_1_1_1_1_0 ) ) )
-            // InternalSeleniumDSL.g:2296:2: ( ( rule__CallProcedure__ParametersAlternatives_1_1_1_1_0 ) )
+            // InternalSeleniumDSL.g:2370:1: ( ( ( rule__CallProcedure__ParametersAlternatives_1_1_1_1_0 ) ) )
+            // InternalSeleniumDSL.g:2371:2: ( ( rule__CallProcedure__ParametersAlternatives_1_1_1_1_0 ) )
             {
-            // InternalSeleniumDSL.g:2296:2: ( ( rule__CallProcedure__ParametersAlternatives_1_1_1_1_0 ) )
-            // InternalSeleniumDSL.g:2297:3: ( rule__CallProcedure__ParametersAlternatives_1_1_1_1_0 )
+            // InternalSeleniumDSL.g:2371:2: ( ( rule__CallProcedure__ParametersAlternatives_1_1_1_1_0 ) )
+            // InternalSeleniumDSL.g:2372:3: ( rule__CallProcedure__ParametersAlternatives_1_1_1_1_0 )
             {
              before(grammarAccess.getCallProcedureAccess().getParametersAlternatives_1_1_1_1_0()); 
-            // InternalSeleniumDSL.g:2298:3: ( rule__CallProcedure__ParametersAlternatives_1_1_1_1_0 )
-            // InternalSeleniumDSL.g:2298:4: rule__CallProcedure__ParametersAlternatives_1_1_1_1_0
+            // InternalSeleniumDSL.g:2373:3: ( rule__CallProcedure__ParametersAlternatives_1_1_1_1_0 )
+            // InternalSeleniumDSL.g:2373:4: rule__CallProcedure__ParametersAlternatives_1_1_1_1_0
             {
             pushFollow(FOLLOW_2);
             rule__CallProcedure__ParametersAlternatives_1_1_1_1_0();
@@ -6979,25 +7230,26 @@ public class InternalSeleniumDSLParser extends AbstractInternalContentAssistPars
 
     public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000002002L});
+    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000020002L});
     public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000014000L});
-    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000002788020L});
-    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000002780022L});
-    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000140000L});
+    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000027880020L});
+    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000027800022L});
+    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000200000L});
     public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000000040L});
     public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000000042L});
-    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000040000L});
-    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000040002L});
-    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000000030L});
-    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000000800000L});
-    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000001000000L});
-    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000004000000L});
-    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000008000000L});
-    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000010000000L});
-    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000400000L});
+    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000040000L});
+    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000400002L});
+    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x000000000001E000L});
+    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000000000030L});
+    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000008000000L});
+    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000010000000L});
+    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000040000000L});
+    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000080000000L});
+    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000100000000L});
+    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000000100000L});
 
 }

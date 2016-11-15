@@ -36,6 +36,7 @@ public class SeleniumDSLParser extends AbstractContentAssistParser {
 				private static final long serialVersionUID = 1L;
 				{
 					put(grammarAccess.getInstructionAccess().getAlternatives(), "rule__Instruction__Alternatives");
+					put(grammarAccess.getClickAccess().getTypeAlternatives_1_0(), "rule__Click__TypeAlternatives_1_0");
 					put(grammarAccess.getFillAccess().getValueAlternatives_2_0(), "rule__Fill__ValueAlternatives_2_0");
 					put(grammarAccess.getNavigateAccess().getUrlAlternatives_1_0(), "rule__Navigate__UrlAlternatives_1_0");
 					put(grammarAccess.getAssertAccess().getAlternatives_1(), "rule__Assert__Alternatives_1");
@@ -69,7 +70,8 @@ public class SeleniumDSLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getProcedureAccess().getParametersAssignment_2_1_1_1(), "rule__Procedure__ParametersAssignment_2_1_1_1");
 					put(grammarAccess.getProcedureAccess().getInstructionsAssignment_4(), "rule__Procedure__InstructionsAssignment_4");
 					put(grammarAccess.getMainProcedureAccess().getInstructionsAssignment_4(), "rule__MainProcedure__InstructionsAssignment_4");
-					put(grammarAccess.getClickAccess().getNameAssignment_1(), "rule__Click__NameAssignment_1");
+					put(grammarAccess.getClickAccess().getTypeAssignment_1(), "rule__Click__TypeAssignment_1");
+					put(grammarAccess.getClickAccess().getValueAssignment_2(), "rule__Click__ValueAssignment_2");
 					put(grammarAccess.getFillAccess().getNameAssignment_1(), "rule__Fill__NameAssignment_1");
 					put(grammarAccess.getFillAccess().getValueAssignment_2(), "rule__Fill__ValueAssignment_2");
 					put(grammarAccess.getSelectAccess().getNameAssignment_1(), "rule__Select__NameAssignment_1");

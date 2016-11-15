@@ -167,6 +167,11 @@ public class MainProcedureItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(SeleniumDSLPackage.Literals.MAIN_PROCEDURE__INSTRUCTIONS,
+				 SeleniumDSLFactory.eINSTANCE.createSelect()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SeleniumDSLPackage.Literals.MAIN_PROCEDURE__INSTRUCTIONS,
 				 SeleniumDSLFactory.eINSTANCE.createNavigate()));
 
 		newChildDescriptors.add

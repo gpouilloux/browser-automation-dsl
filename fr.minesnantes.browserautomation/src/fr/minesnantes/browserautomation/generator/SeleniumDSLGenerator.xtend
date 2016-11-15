@@ -3,10 +3,30 @@
  */
 package fr.minesnantes.browserautomation.generator
 
+import fr.minesnantes.browserautomation.seleniumDSL.Procedure
+import fr.minesnantes.browserautomation.seleniumDSL.SeleniumTest
+import java.io.File
+import org.eclipse.emf.common.util.EList
 import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
+import fr.minesnantes.browserautomation.seleniumDSL.Navigate
+import fr.minesnantes.browserautomation.seleniumDSL.Click
+import fr.minesnantes.browserautomation.seleniumDSL.Instruction
+import fr.minesnantes.browserautomation.seleniumDSL.Fill
+
+class Counter {
+    private int count;
+
+    def Counter() {
+        count = 0;
+    }
+
+    def int nextCount() {
+        return count++;
+    }
+}
 
 /**
  * Generates code from your model files on save.
@@ -15,11 +35,67 @@ import org.eclipse.xtext.generator.IGeneratorContext
  */
 class SeleniumDSLGenerator extends AbstractGenerator {
 
-	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
-//		fsa.generateFile('greetings.txt', 'People to greet: ' + 
-//			resource.allContents
-//				.filter(typeof(Greeting))
-//				.map[name]
-//				.join(', '))
-	}
+    private EList<Procedure> procedures;
+
+    private Counter elementCounter = new Counter();
+
+    override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
+        fsa.generateFile(
+            'browserautomation' + File.separator + 'SeleniumTest.java',
+            // resource.allContents.toIterable.filter(Calendar).head.generateCalendar
+            resource.contents.filter(SeleniumTest).head.generateSeleniumTest
+        )
+    }
+
+    def generateSeleniumTest(SeleniumTest st) '''
+        package browserautomation;
+        
+        import org.openqa.selenium.By;
+        import org.openqa.selenium.WebDriver;
+        import org.openqa.selenium.WebElement;
+        import org.openqa.selenium.chrome.ChromeDriver;
+        
+        public class SeleniumTest {
+            public static void main(String[] args) {
+                // Initialize Selenium web driver for Google Chrome
+                System.setProperty("webdriver.chrome.driver", "lib/chromedriver");
+                WebDriver webDriver = new ChromeDriver();
+                
+                «FOR i : st.main.instructions»
+                    «generateInstruction(i)»
+                «ENDFOR»
+                
+                // Close the browser
+                webDriver.quit();
+            }
+        }
+    '''
+    
+    def dispatch generateInstruction(Navigate n) '''
+        webDriver.get("«n.url»");
+    '''
+    
+    def dispatch generateInstruction(Click c) '''
+        «val eltName = '''element«elementCounter.nextCount»'''»
+        «val clickValue = c.value»
+        «switch c.type {
+            case 'input': '''WebElement «eltName» = webDriver.findElement(By.xpath("//input[@value=\"«clickValue»\"]"));'''
+            case 'link': '''WebElement «eltName» = webDriver.findElement(By.linkText("«clickValue»"));'''
+            case 'xpath': '''WebElement «eltName» = webDriver.findElement(By.xpath("«clickValue»"));'''
+            case 'name' : '''WebElement «eltName» = webDriver.findElement(By.name("«clickValue»"));'''
+            default: '''// FIXME unrecognized click instruction: click «c.type» «clickValue»''' 
+        }»
+        «eltName».click();
+    '''
+    
+    def dispatch generateInstruction(Fill f) '''
+        «val eltName = '''element«elementCounter.nextCount»'''»
+        WebElement «eltName» = webDriver.findElement(By.name("«f.name»"));
+        «eltName».sendKeys("«f.value»");
+    '''
+    
+        def dispatch generateInstruction(Instruction i) '''
+        // FIXME wtf is this instruction?
+    '''
+
 }

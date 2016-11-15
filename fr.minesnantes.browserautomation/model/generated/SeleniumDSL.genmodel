@@ -20,11 +20,12 @@
     </genClasses>
     <genClasses ecoreClass="SeleniumDSL.ecore#//Instruction"/>
     <genClasses ecoreClass="SeleniumDSL.ecore#//Click">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SeleniumDSL.ecore#//Click/Name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SeleniumDSL.ecore#//Click/Type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SeleniumDSL.ecore#//Click/Value"/>
     </genClasses>
     <genClasses ecoreClass="SeleniumDSL.ecore#//Fill">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SeleniumDSL.ecore#//Fill/Name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SeleniumDSL.ecore#//Fill/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SeleniumDSL.ecore#//Fill/Value"/>
     </genClasses>
     <genClasses ecoreClass="SeleniumDSL.ecore#//Select">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SeleniumDSL.ecore#//Select/Name"/>
