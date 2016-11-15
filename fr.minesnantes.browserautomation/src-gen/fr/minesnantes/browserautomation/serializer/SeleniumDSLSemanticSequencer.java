@@ -15,6 +15,7 @@ import fr.minesnantes.browserautomation.seleniumDSL.Read;
 import fr.minesnantes.browserautomation.seleniumDSL.Select;
 import fr.minesnantes.browserautomation.seleniumDSL.SeleniumDSLPackage;
 import fr.minesnantes.browserautomation.seleniumDSL.SeleniumTest;
+import fr.minesnantes.browserautomation.seleniumDSL.Tick;
 import fr.minesnantes.browserautomation.services.SeleniumDSLGrammarAccess;
 import java.util.Set;
 import org.eclipse.emf.ecore.EObject;
@@ -70,6 +71,9 @@ public class SeleniumDSLSemanticSequencer extends AbstractDelegatingSemanticSequ
 				return; 
 			case SeleniumDSLPackage.SELENIUM_TEST:
 				sequence_SeleniumTest(context, (SeleniumTest) semanticObject); 
+				return; 
+			case SeleniumDSLPackage.TICK:
+				sequence_Tick(context, (Tick) semanticObject); 
 				return; 
 			}
 		if (errorAcceptor != null)
@@ -196,16 +200,10 @@ public class SeleniumDSLSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *     Select returns Select
 	 *
 	 * Constraint:
-	 *     Name=STRING
+	 *     (Name=STRING (Value=STRING | Value=IDENTIFIER))
 	 */
 	protected void sequence_Select(ISerializationContext context, Select semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, SeleniumDSLPackage.Literals.SELECT__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SeleniumDSLPackage.Literals.SELECT__NAME));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getSelectAccess().getNameSTRINGTerminalRuleCall_1_0(), semanticObject.getName());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -218,6 +216,25 @@ public class SeleniumDSLSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 */
 	protected void sequence_SeleniumTest(ISerializationContext context, SeleniumTest semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Instruction returns Tick
+	 *     Tick returns Tick
+	 *
+	 * Constraint:
+	 *     Name=STRING
+	 */
+	protected void sequence_Tick(ISerializationContext context, Tick semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SeleniumDSLPackage.Literals.TICK__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SeleniumDSLPackage.Literals.TICK__NAME));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getTickAccess().getNameSTRINGTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.finish();
 	}
 	
 	

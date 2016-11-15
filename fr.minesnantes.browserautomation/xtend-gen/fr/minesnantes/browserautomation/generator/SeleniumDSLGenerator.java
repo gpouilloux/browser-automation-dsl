@@ -11,9 +11,14 @@ import fr.minesnantes.browserautomation.seleniumDSL.Instruction;
 import fr.minesnantes.browserautomation.seleniumDSL.MainProcedure;
 import fr.minesnantes.browserautomation.seleniumDSL.Navigate;
 import fr.minesnantes.browserautomation.seleniumDSL.Procedure;
+import fr.minesnantes.browserautomation.seleniumDSL.Read;
+import fr.minesnantes.browserautomation.seleniumDSL.Select;
 import fr.minesnantes.browserautomation.seleniumDSL.SeleniumTest;
+import fr.minesnantes.browserautomation.seleniumDSL.Tick;
 import java.io.File;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -32,16 +37,40 @@ import org.eclipse.xtext.xbase.lib.IterableExtensions;
 public class SeleniumDSLGenerator extends AbstractGenerator {
   private EList<Procedure> procedures;
   
-  private Counter elementCounter = new Counter();
+  private List<String> variables;
+  
+  private Counter elementCounter;
+  
+  public List<String> initializeContext() {
+    List<String> _xblockexpression = null;
+    {
+      Counter _counter = new Counter();
+      this.elementCounter = _counter;
+      ArrayList<String> _arrayList = new ArrayList<String>();
+      _xblockexpression = this.variables = _arrayList;
+    }
+    return _xblockexpression;
+  }
+  
+  public List<String> destroyContext() {
+    List<String> _xblockexpression = null;
+    {
+      this.elementCounter = null;
+      _xblockexpression = this.variables = null;
+    }
+    return _xblockexpression;
+  }
   
   @Override
   public void doGenerate(final Resource resource, final IFileSystemAccess2 fsa, final IGeneratorContext context) {
+    this.initializeContext();
     EList<EObject> _contents = resource.getContents();
     Iterable<SeleniumTest> _filter = Iterables.<SeleniumTest>filter(_contents, SeleniumTest.class);
     SeleniumTest _head = IterableExtensions.<SeleniumTest>head(_filter);
     CharSequence _generateSeleniumTest = this.generateSeleniumTest(_head);
     fsa.generateFile(
       (("browserautomation" + File.separator) + "SeleniumTest.java"), _generateSeleniumTest);
+    this.destroyContext();
   }
   
   public CharSequence generateSeleniumTest(final SeleniumTest st) {
@@ -56,6 +85,8 @@ public class SeleniumDSLGenerator extends AbstractGenerator {
     _builder.append("import org.openqa.selenium.WebElement;");
     _builder.newLine();
     _builder.append("import org.openqa.selenium.chrome.ChromeDriver;");
+    _builder.newLine();
+    _builder.append("import org.openqa.selenium.support.ui.Select;");
     _builder.newLine();
     _builder.newLine();
     _builder.append("public class SeleniumTest {");
@@ -193,12 +224,99 @@ public class SeleniumDSLGenerator extends AbstractGenerator {
     _builder.append("\"));");
     _builder.newLineIfNotEmpty();
     _builder.append(eltName, "");
-    _builder.append(".sendKeys(\"");
-    String _value = f.getValue();
+    _builder.append(".sendKeys(");
+    {
+      String _value = f.getValue();
+      boolean _contains = this.variables.contains(_value);
+      if (_contains) {
+        String _value_1 = f.getValue();
+        _builder.append(_value_1, "");
+      } else {
+        _builder.append("\"");
+        String _value_2 = f.getValue();
+        _builder.append(_value_2, "");
+        _builder.append("\"");
+      }
+    }
+    _builder.append(");");
+    _builder.newLineIfNotEmpty();
+    return _builder;
+  }
+  
+  protected CharSequence _generateInstruction(final Tick t) {
+    StringConcatenation _builder = new StringConcatenation();
+    StringConcatenation _builder_1 = new StringConcatenation();
+    _builder_1.append("element");
+    int _nextCount = this.elementCounter.nextCount();
+    _builder_1.append(_nextCount, "");
+    final String eltName = _builder_1.toString();
+    _builder.newLineIfNotEmpty();
+    _builder.append("WebElement ");
+    _builder.append(eltName, "");
+    _builder.append(" = webDriver.findElement(By.name(\"");
+    String _name = t.getName();
+    _builder.append(_name, "");
+    _builder.append("\"));");
+    _builder.newLineIfNotEmpty();
+    _builder.append(eltName, "");
+    _builder.append(".click();");
+    _builder.newLineIfNotEmpty();
+    return _builder;
+  }
+  
+  protected CharSequence _generateInstruction(final Select s) {
+    StringConcatenation _builder = new StringConcatenation();
+    StringConcatenation _builder_1 = new StringConcatenation();
+    _builder_1.append("element");
+    int _nextCount = this.elementCounter.nextCount();
+    _builder_1.append(_nextCount, "");
+    final String eltName = _builder_1.toString();
+    _builder.newLineIfNotEmpty();
+    _builder.append("Select ");
+    _builder.append(eltName, "");
+    _builder.append(" = new Select(webDriver.findElement(By.name(\"");
+    String _name = s.getName();
+    _builder.append(_name, "");
+    _builder.append("\")));");
+    _builder.newLineIfNotEmpty();
+    _builder.append(eltName, "");
+    _builder.append(".selectByVisibleText(\"");
+    String _value = s.getValue();
     _builder.append(_value, "");
     _builder.append("\");");
     _builder.newLineIfNotEmpty();
     return _builder;
+  }
+  
+  protected CharSequence _generateInstruction(final Read r) {
+    CharSequence _xblockexpression = null;
+    {
+      String _variable = r.getVariable();
+      this.variables.add(_variable);
+      StringConcatenation _builder = new StringConcatenation();
+      StringConcatenation _builder_1 = new StringConcatenation();
+      _builder_1.append("element");
+      int _nextCount = this.elementCounter.nextCount();
+      _builder_1.append(_nextCount, "");
+      final String eltName = _builder_1.toString();
+      _builder.newLineIfNotEmpty();
+      _builder.append("WebElement ");
+      _builder.append(eltName, "");
+      _builder.append(" = webDriver.findElement(By.name(\"");
+      String _name = r.getName();
+      _builder.append(_name, "");
+      _builder.append("\"));");
+      _builder.newLineIfNotEmpty();
+      _builder.append("String ");
+      String _variable_1 = r.getVariable();
+      _builder.append(_variable_1, "");
+      _builder.append(" = ");
+      _builder.append(eltName, "");
+      _builder.append(".getAttribute(\"value\");");
+      _builder.newLineIfNotEmpty();
+      _xblockexpression = _builder;
+    }
+    return _xblockexpression;
   }
   
   protected CharSequence _generateInstruction(final Instruction i) {
@@ -215,6 +333,12 @@ public class SeleniumDSLGenerator extends AbstractGenerator {
       return _generateInstruction((Fill)c);
     } else if (c instanceof Navigate) {
       return _generateInstruction((Navigate)c);
+    } else if (c instanceof Read) {
+      return _generateInstruction((Read)c);
+    } else if (c instanceof Select) {
+      return _generateInstruction((Select)c);
+    } else if (c instanceof Tick) {
+      return _generateInstruction((Tick)c);
     } else if (c != null) {
       return _generateInstruction(c);
     } else {

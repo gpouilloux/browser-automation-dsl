@@ -234,6 +234,29 @@ public class SeleniumDSLItemProviderAdapterFactory extends SeleniumDSLAdapterFac
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link fr.minesnantes.browserautomation.seleniumDSL.Tick} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected TickItemProvider tickItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link fr.minesnantes.browserautomation.seleniumDSL.Tick}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createTickAdapter() {
+		if (tickItemProvider == null) {
+			tickItemProvider = new TickItemProvider(this);
+		}
+
+		return tickItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link fr.minesnantes.browserautomation.seleniumDSL.Navigate} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -431,6 +454,7 @@ public class SeleniumDSLItemProviderAdapterFactory extends SeleniumDSLAdapterFac
 		if (clickItemProvider != null) clickItemProvider.dispose();
 		if (fillItemProvider != null) fillItemProvider.dispose();
 		if (selectItemProvider != null) selectItemProvider.dispose();
+		if (tickItemProvider != null) tickItemProvider.dispose();
 		if (navigateItemProvider != null) navigateItemProvider.dispose();
 		if (readItemProvider != null) readItemProvider.dispose();
 		if (assertItemProvider != null) assertItemProvider.dispose();

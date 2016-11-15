@@ -100,6 +100,10 @@ public class SeleniumDSLAdapterFactory extends AdapterFactoryImpl
 				return createSelectAdapter();
 			}
 			@Override
+			public Adapter caseTick(Tick object) {
+				return createTickAdapter();
+			}
+			@Override
 			public Adapter caseNavigate(Navigate object) {
 				return createNavigateAdapter();
 			}
@@ -237,6 +241,21 @@ public class SeleniumDSLAdapterFactory extends AdapterFactoryImpl
 	 * @generated
 	 */
   public Adapter createSelectAdapter()
+  {
+		return null;
+	}
+
+  /**
+	 * Creates a new adapter for an object of class '{@link fr.minesnantes.browserautomation.seleniumDSL.Tick <em>Tick</em>}'.
+	 * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.minesnantes.browserautomation.seleniumDSL.Tick
+	 * @generated
+	 */
+  public Adapter createTickAdapter()
   {
 		return null;
 	}

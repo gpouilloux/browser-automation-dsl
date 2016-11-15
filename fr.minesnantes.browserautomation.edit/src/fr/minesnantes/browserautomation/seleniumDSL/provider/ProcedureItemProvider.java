@@ -227,6 +227,11 @@ public class ProcedureItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(SeleniumDSLPackage.Literals.PROCEDURE__INSTRUCTIONS,
+				 SeleniumDSLFactory.eINSTANCE.createTick()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SeleniumDSLPackage.Literals.PROCEDURE__INSTRUCTIONS,
 				 SeleniumDSLFactory.eINSTANCE.createNavigate()));
 
 		newChildDescriptors.add

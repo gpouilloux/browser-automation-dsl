@@ -16,14 +16,16 @@ MainProcedure:{MainProcedure} 'def' + 'main' + '{'
 
 //Instruction is abstract
 Instruction: 
-  (Click | Fill | Select | Navigate | Assert | Read | CallProcedure)
+  (Click | Fill | Select | Tick | Navigate | Assert | Read | CallProcedure)
 ;
 
 Click: 'click' Type=('input'|'link'|'name'|'xpath') Value=STRING;
 
 Fill: 'fill' Name=STRING Value=(STRING|IDENTIFIER);
 
-Select: 'select' Name=STRING;
+Select: 'select' Name=STRING Value=(STRING|IDENTIFIER);
+
+Tick: 'tick' Name=STRING;
 
 Navigate: 'navigate' url=(STRING|IDENTIFIER);
 

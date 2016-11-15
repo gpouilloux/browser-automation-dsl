@@ -348,38 +348,47 @@ ruleInstruction returns [EObject current=null]
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getInstructionAccess().getNavigateParserRuleCall_3());
+			newCompositeNode(grammarAccess.getInstructionAccess().getTickParserRuleCall_3());
 		}
-		this_Navigate_3=ruleNavigate
+		this_Tick_3=ruleTick
 		{
-			$current = $this_Navigate_3.current;
+			$current = $this_Tick_3.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getInstructionAccess().getAssertParserRuleCall_4());
+			newCompositeNode(grammarAccess.getInstructionAccess().getNavigateParserRuleCall_4());
 		}
-		this_Assert_4=ruleAssert
+		this_Navigate_4=ruleNavigate
 		{
-			$current = $this_Assert_4.current;
+			$current = $this_Navigate_4.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getInstructionAccess().getReadParserRuleCall_5());
+			newCompositeNode(grammarAccess.getInstructionAccess().getAssertParserRuleCall_5());
 		}
-		this_Read_5=ruleRead
+		this_Assert_5=ruleAssert
 		{
-			$current = $this_Read_5.current;
+			$current = $this_Assert_5.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getInstructionAccess().getCallProcedureParserRuleCall_6());
+			newCompositeNode(grammarAccess.getInstructionAccess().getReadParserRuleCall_6());
 		}
-		this_CallProcedure_6=ruleCallProcedure
+		this_Read_6=ruleRead
 		{
-			$current = $this_CallProcedure_6.current;
+			$current = $this_Read_6.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getInstructionAccess().getCallProcedureParserRuleCall_7());
+		}
+		this_CallProcedure_7=ruleCallProcedure
+		{
+			$current = $this_CallProcedure_7.current;
 			afterParserOrEnumRuleCall();
 		}
 	)
@@ -580,6 +589,82 @@ ruleSelect returns [EObject current=null]
 				{
 					if ($current==null) {
 						$current = createModelElement(grammarAccess.getSelectRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"Name",
+						lv_Name_1_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
+		(
+			(
+				(
+					lv_Value_2_1=RULE_STRING
+					{
+						newLeafNode(lv_Value_2_1, grammarAccess.getSelectAccess().getValueSTRINGTerminalRuleCall_2_0_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getSelectRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"Value",
+							lv_Value_2_1,
+							"org.eclipse.xtext.common.Terminals.STRING");
+					}
+					    |
+					lv_Value_2_2=RULE_IDENTIFIER
+					{
+						newLeafNode(lv_Value_2_2, grammarAccess.getSelectAccess().getValueIDENTIFIERTerminalRuleCall_2_0_1());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getSelectRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"Value",
+							lv_Value_2_2,
+							"fr.minesnantes.browserautomation.SeleniumDSL.IDENTIFIER");
+					}
+				)
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleTick
+entryRuleTick returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getTickRule()); }
+	iv_ruleTick=ruleTick
+	{ $current=$iv_ruleTick.current; }
+	EOF;
+
+// Rule Tick
+ruleTick returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='tick'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getTickAccess().getTickKeyword_0());
+		}
+		(
+			(
+				lv_Name_1_0=RULE_STRING
+				{
+					newLeafNode(lv_Name_1_0, grammarAccess.getTickAccess().getNameSTRINGTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getTickRule());
 					}
 					setWithLastConsumed(
 						$current,

@@ -87,6 +87,15 @@ public interface SeleniumDSLFactory extends EFactory
   Select createSelect();
 
   /**
+	 * Returns a new object of class '<em>Tick</em>'.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Tick</em>'.
+	 * @generated
+	 */
+  Tick createTick();
+
+  /**
 	 * Returns a new object of class '<em>Navigate</em>'.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

@@ -180,17 +180,18 @@ public class SeleniumDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cClickParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cFillParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		private final RuleCall cSelectParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
-		private final RuleCall cNavigateParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
-		private final RuleCall cAssertParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
-		private final RuleCall cReadParserRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
-		private final RuleCall cCallProcedureParserRuleCall_6 = (RuleCall)cAlternatives.eContents().get(6);
+		private final RuleCall cTickParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		private final RuleCall cNavigateParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
+		private final RuleCall cAssertParserRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
+		private final RuleCall cReadParserRuleCall_6 = (RuleCall)cAlternatives.eContents().get(6);
+		private final RuleCall cCallProcedureParserRuleCall_7 = (RuleCall)cAlternatives.eContents().get(7);
 		
 		////Instruction is abstract
 		//Instruction:
-		//	Click | Fill | Select | Navigate | Assert | Read | CallProcedure;
+		//	Click | Fill | Select | Tick | Navigate | Assert | Read | CallProcedure;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//Click | Fill | Select | Navigate | Assert | Read | CallProcedure
+		//Click | Fill | Select | Tick | Navigate | Assert | Read | CallProcedure
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//Click
@@ -202,17 +203,20 @@ public class SeleniumDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//Select
 		public RuleCall getSelectParserRuleCall_2() { return cSelectParserRuleCall_2; }
 		
+		//Tick
+		public RuleCall getTickParserRuleCall_3() { return cTickParserRuleCall_3; }
+		
 		//Navigate
-		public RuleCall getNavigateParserRuleCall_3() { return cNavigateParserRuleCall_3; }
+		public RuleCall getNavigateParserRuleCall_4() { return cNavigateParserRuleCall_4; }
 		
 		//Assert
-		public RuleCall getAssertParserRuleCall_4() { return cAssertParserRuleCall_4; }
+		public RuleCall getAssertParserRuleCall_5() { return cAssertParserRuleCall_5; }
 		
 		//Read
-		public RuleCall getReadParserRuleCall_5() { return cReadParserRuleCall_5; }
+		public RuleCall getReadParserRuleCall_6() { return cReadParserRuleCall_6; }
 		
 		//CallProcedure
-		public RuleCall getCallProcedureParserRuleCall_6() { return cCallProcedureParserRuleCall_6; }
+		public RuleCall getCallProcedureParserRuleCall_7() { return cCallProcedureParserRuleCall_7; }
 	}
 	public class ClickElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.minesnantes.browserautomation.SeleniumDSL.Click");
@@ -306,16 +310,55 @@ public class SeleniumDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cSelectKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameSTRINGTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Assignment cValueAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final Alternatives cValueAlternatives_2_0 = (Alternatives)cValueAssignment_2.eContents().get(0);
+		private final RuleCall cValueSTRINGTerminalRuleCall_2_0_0 = (RuleCall)cValueAlternatives_2_0.eContents().get(0);
+		private final RuleCall cValueIDENTIFIERTerminalRuleCall_2_0_1 = (RuleCall)cValueAlternatives_2_0.eContents().get(1);
 		
 		//Select:
-		//	'select' Name=STRING;
+		//	'select' Name=STRING Value=(STRING | IDENTIFIER);
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'select' Name=STRING
+		//'select' Name=STRING Value=(STRING | IDENTIFIER)
 		public Group getGroup() { return cGroup; }
 		
 		//'select'
 		public Keyword getSelectKeyword_0() { return cSelectKeyword_0; }
+		
+		//Name=STRING
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		
+		//STRING
+		public RuleCall getNameSTRINGTerminalRuleCall_1_0() { return cNameSTRINGTerminalRuleCall_1_0; }
+		
+		//Value=(STRING | IDENTIFIER)
+		public Assignment getValueAssignment_2() { return cValueAssignment_2; }
+		
+		//(STRING | IDENTIFIER)
+		public Alternatives getValueAlternatives_2_0() { return cValueAlternatives_2_0; }
+		
+		//STRING
+		public RuleCall getValueSTRINGTerminalRuleCall_2_0_0() { return cValueSTRINGTerminalRuleCall_2_0_0; }
+		
+		//IDENTIFIER
+		public RuleCall getValueIDENTIFIERTerminalRuleCall_2_0_1() { return cValueIDENTIFIERTerminalRuleCall_2_0_1; }
+	}
+	public class TickElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.minesnantes.browserautomation.SeleniumDSL.Tick");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cTickKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameSTRINGTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		
+		//Tick:
+		//	'tick' Name=STRING;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'tick' Name=STRING
+		public Group getGroup() { return cGroup; }
+		
+		//'tick'
+		public Keyword getTickKeyword_0() { return cTickKeyword_0; }
 		
 		//Name=STRING
 		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
@@ -575,6 +618,7 @@ public class SeleniumDSLGrammarAccess extends AbstractGrammarElementFinder {
 	private final ClickElements pClick;
 	private final FillElements pFill;
 	private final SelectElements pSelect;
+	private final TickElements pTick;
 	private final NavigateElements pNavigate;
 	private final ReadElements pRead;
 	private final AssertElements pAssert;
@@ -598,6 +642,7 @@ public class SeleniumDSLGrammarAccess extends AbstractGrammarElementFinder {
 		this.pClick = new ClickElements();
 		this.pFill = new FillElements();
 		this.pSelect = new SelectElements();
+		this.pTick = new TickElements();
 		this.pNavigate = new NavigateElements();
 		this.pRead = new ReadElements();
 		this.pAssert = new AssertElements();
@@ -670,7 +715,7 @@ public class SeleniumDSLGrammarAccess extends AbstractGrammarElementFinder {
 	
 	////Instruction is abstract
 	//Instruction:
-	//	Click | Fill | Select | Navigate | Assert | Read | CallProcedure;
+	//	Click | Fill | Select | Tick | Navigate | Assert | Read | CallProcedure;
 	public InstructionElements getInstructionAccess() {
 		return pInstruction;
 	}
@@ -700,13 +745,23 @@ public class SeleniumDSLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Select:
-	//	'select' Name=STRING;
+	//	'select' Name=STRING Value=(STRING | IDENTIFIER);
 	public SelectElements getSelectAccess() {
 		return pSelect;
 	}
 	
 	public ParserRule getSelectRule() {
 		return getSelectAccess().getRule();
+	}
+	
+	//Tick:
+	//	'tick' Name=STRING;
+	public TickElements getTickAccess() {
+		return pTick;
+	}
+	
+	public ParserRule getTickRule() {
+		return getTickAccess().getRule();
 	}
 	
 	//Navigate:

@@ -4,8 +4,8 @@
 package fr.minesnantes.browserautomation.seleniumDSL.provider;
 
 
-import fr.minesnantes.browserautomation.seleniumDSL.Select;
 import fr.minesnantes.browserautomation.seleniumDSL.SeleniumDSLPackage;
+import fr.minesnantes.browserautomation.seleniumDSL.Tick;
 
 import java.util.Collection;
 import java.util.List;
@@ -19,19 +19,19 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link fr.minesnantes.browserautomation.seleniumDSL.Select} object.
+ * This is the item provider adapter for a {@link fr.minesnantes.browserautomation.seleniumDSL.Tick} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class SelectItemProvider extends InstructionItemProvider {
+public class TickItemProvider extends InstructionItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SelectItemProvider(AdapterFactory adapterFactory) {
+	public TickItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -47,7 +47,6 @@ public class SelectItemProvider extends InstructionItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
-			addValuePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -63,9 +62,9 @@ public class SelectItemProvider extends InstructionItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Select_Name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Select_Name_feature", "_UI_Select_type"),
-				 SeleniumDSLPackage.Literals.SELECT__NAME,
+				 getString("_UI_Tick_Name_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Tick_Name_feature", "_UI_Tick_type"),
+				 SeleniumDSLPackage.Literals.TICK__NAME,
 				 true,
 				 false,
 				 false,
@@ -75,36 +74,14 @@ public class SelectItemProvider extends InstructionItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Value feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addValuePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Select_Value_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Select_Value_feature", "_UI_Select_type"),
-				 SeleniumDSLPackage.Literals.SELECT__VALUE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This returns Select.gif.
+	 * This returns Tick.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Select"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Tick"));
 	}
 
 	/**
@@ -115,10 +92,10 @@ public class SelectItemProvider extends InstructionItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Select)object).getName();
+		String label = ((Tick)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_Select_type") :
-			getString("_UI_Select_type") + " " + label;
+			getString("_UI_Tick_type") :
+			getString("_UI_Tick_type") + " " + label;
 	}
 	
 
@@ -133,9 +110,8 @@ public class SelectItemProvider extends InstructionItemProvider {
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Select.class)) {
-			case SeleniumDSLPackage.SELECT__NAME:
-			case SeleniumDSLPackage.SELECT__VALUE:
+		switch (notification.getFeatureID(Tick.class)) {
+			case SeleniumDSLPackage.TICK__NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

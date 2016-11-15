@@ -38,6 +38,7 @@ public class SeleniumDSLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getInstructionAccess().getAlternatives(), "rule__Instruction__Alternatives");
 					put(grammarAccess.getClickAccess().getTypeAlternatives_1_0(), "rule__Click__TypeAlternatives_1_0");
 					put(grammarAccess.getFillAccess().getValueAlternatives_2_0(), "rule__Fill__ValueAlternatives_2_0");
+					put(grammarAccess.getSelectAccess().getValueAlternatives_2_0(), "rule__Select__ValueAlternatives_2_0");
 					put(grammarAccess.getNavigateAccess().getUrlAlternatives_1_0(), "rule__Navigate__UrlAlternatives_1_0");
 					put(grammarAccess.getAssertAccess().getAlternatives_1(), "rule__Assert__Alternatives_1");
 					put(grammarAccess.getAssertAccess().getValueAlternatives_1_0_2_0(), "rule__Assert__ValueAlternatives_1_0_2_0");
@@ -53,6 +54,7 @@ public class SeleniumDSLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getClickAccess().getGroup(), "rule__Click__Group__0");
 					put(grammarAccess.getFillAccess().getGroup(), "rule__Fill__Group__0");
 					put(grammarAccess.getSelectAccess().getGroup(), "rule__Select__Group__0");
+					put(grammarAccess.getTickAccess().getGroup(), "rule__Tick__Group__0");
 					put(grammarAccess.getNavigateAccess().getGroup(), "rule__Navigate__Group__0");
 					put(grammarAccess.getReadAccess().getGroup(), "rule__Read__Group__0");
 					put(grammarAccess.getAssertAccess().getGroup(), "rule__Assert__Group__0");
@@ -75,6 +77,8 @@ public class SeleniumDSLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getFillAccess().getNameAssignment_1(), "rule__Fill__NameAssignment_1");
 					put(grammarAccess.getFillAccess().getValueAssignment_2(), "rule__Fill__ValueAssignment_2");
 					put(grammarAccess.getSelectAccess().getNameAssignment_1(), "rule__Select__NameAssignment_1");
+					put(grammarAccess.getSelectAccess().getValueAssignment_2(), "rule__Select__ValueAssignment_2");
+					put(grammarAccess.getTickAccess().getNameAssignment_1(), "rule__Tick__NameAssignment_1");
 					put(grammarAccess.getNavigateAccess().getUrlAssignment_1(), "rule__Navigate__UrlAssignment_1");
 					put(grammarAccess.getReadAccess().getVariableAssignment_0(), "rule__Read__VariableAssignment_0");
 					put(grammarAccess.getReadAccess().getNameAssignment_3(), "rule__Read__NameAssignment_3");

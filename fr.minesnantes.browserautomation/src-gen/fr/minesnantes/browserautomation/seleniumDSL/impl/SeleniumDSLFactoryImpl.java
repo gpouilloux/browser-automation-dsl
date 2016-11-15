@@ -68,6 +68,7 @@ public class SeleniumDSLFactoryImpl extends EFactoryImpl implements SeleniumDSLF
 			case SeleniumDSLPackage.CLICK: return createClick();
 			case SeleniumDSLPackage.FILL: return createFill();
 			case SeleniumDSLPackage.SELECT: return createSelect();
+			case SeleniumDSLPackage.TICK: return createTick();
 			case SeleniumDSLPackage.NAVIGATE: return createNavigate();
 			case SeleniumDSLPackage.READ: return createRead();
 			case SeleniumDSLPackage.ASSERT: return createAssert();
@@ -152,6 +153,17 @@ public class SeleniumDSLFactoryImpl extends EFactoryImpl implements SeleniumDSLF
   {
 		SelectImpl select = new SelectImpl();
 		return select;
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public Tick createTick()
+  {
+		TickImpl tick = new TickImpl();
+		return tick;
 	}
 
   /**

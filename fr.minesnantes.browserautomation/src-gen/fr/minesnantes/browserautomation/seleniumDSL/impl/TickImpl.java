@@ -3,8 +3,8 @@
  */
 package fr.minesnantes.browserautomation.seleniumDSL.impl;
 
-import fr.minesnantes.browserautomation.seleniumDSL.Select;
 import fr.minesnantes.browserautomation.seleniumDSL.SeleniumDSLPackage;
+import fr.minesnantes.browserautomation.seleniumDSL.Tick;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -14,19 +14,18 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Select</b></em>'.
+ * An implementation of the model object '<em><b>Tick</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link fr.minesnantes.browserautomation.seleniumDSL.impl.SelectImpl#getName <em>Name</em>}</li>
- *   <li>{@link fr.minesnantes.browserautomation.seleniumDSL.impl.SelectImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link fr.minesnantes.browserautomation.seleniumDSL.impl.TickImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class SelectImpl extends InstructionImpl implements Select
+public class TickImpl extends InstructionImpl implements Tick
 {
   /**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -49,31 +48,11 @@ public class SelectImpl extends InstructionImpl implements Select
   protected String name = NAME_EDEFAULT;
 
   /**
-	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @see #getValue()
-	 * @generated
-	 * @ordered
-	 */
-  protected static final String VALUE_EDEFAULT = null;
-
-  /**
-	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @see #getValue()
-	 * @generated
-	 * @ordered
-	 */
-  protected String value = VALUE_EDEFAULT;
-
-  /**
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  protected SelectImpl()
+  protected TickImpl()
   {
 		super();
 	}
@@ -86,7 +65,7 @@ public class SelectImpl extends InstructionImpl implements Select
   @Override
   protected EClass eStaticClass()
   {
-		return SeleniumDSLPackage.Literals.SELECT;
+		return SeleniumDSLPackage.Literals.TICK;
 	}
 
   /**
@@ -109,30 +88,7 @@ public class SelectImpl extends InstructionImpl implements Select
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SeleniumDSLPackage.SELECT__NAME, oldName, name));
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public String getValue()
-  {
-		return value;
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public void setValue(String newValue)
-  {
-		String oldValue = value;
-		value = newValue;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SeleniumDSLPackage.SELECT__VALUE, oldValue, value));
+			eNotify(new ENotificationImpl(this, Notification.SET, SeleniumDSLPackage.TICK__NAME, oldName, name));
 	}
 
   /**
@@ -144,10 +100,8 @@ public class SelectImpl extends InstructionImpl implements Select
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
 		switch (featureID) {
-			case SeleniumDSLPackage.SELECT__NAME:
+			case SeleniumDSLPackage.TICK__NAME:
 				return getName();
-			case SeleniumDSLPackage.SELECT__VALUE:
-				return getValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -161,11 +115,8 @@ public class SelectImpl extends InstructionImpl implements Select
   public void eSet(int featureID, Object newValue)
   {
 		switch (featureID) {
-			case SeleniumDSLPackage.SELECT__NAME:
+			case SeleniumDSLPackage.TICK__NAME:
 				setName((String)newValue);
-				return;
-			case SeleniumDSLPackage.SELECT__VALUE:
-				setValue((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -180,11 +131,8 @@ public class SelectImpl extends InstructionImpl implements Select
   public void eUnset(int featureID)
   {
 		switch (featureID) {
-			case SeleniumDSLPackage.SELECT__NAME:
+			case SeleniumDSLPackage.TICK__NAME:
 				setName(NAME_EDEFAULT);
-				return;
-			case SeleniumDSLPackage.SELECT__VALUE:
-				setValue(VALUE_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -199,10 +147,8 @@ public class SelectImpl extends InstructionImpl implements Select
   public boolean eIsSet(int featureID)
   {
 		switch (featureID) {
-			case SeleniumDSLPackage.SELECT__NAME:
+			case SeleniumDSLPackage.TICK__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case SeleniumDSLPackage.SELECT__VALUE:
-				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -220,10 +166,8 @@ public class SelectImpl extends InstructionImpl implements Select
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (Name: ");
 		result.append(name);
-		result.append(", Value: ");
-		result.append(value);
 		result.append(')');
 		return result.toString();
 	}
 
-} //SelectImpl
+} //TickImpl

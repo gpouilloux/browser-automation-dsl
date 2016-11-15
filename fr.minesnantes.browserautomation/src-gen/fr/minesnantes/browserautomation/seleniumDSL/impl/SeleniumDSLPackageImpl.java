@@ -16,6 +16,7 @@ import fr.minesnantes.browserautomation.seleniumDSL.Select;
 import fr.minesnantes.browserautomation.seleniumDSL.SeleniumDSLFactory;
 import fr.minesnantes.browserautomation.seleniumDSL.SeleniumDSLPackage;
 import fr.minesnantes.browserautomation.seleniumDSL.SeleniumTest;
+import fr.minesnantes.browserautomation.seleniumDSL.Tick;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -80,6 +81,13 @@ public class SeleniumDSLPackageImpl extends EPackageImpl implements SeleniumDSLP
 	 * @generated
 	 */
   private EClass selectEClass = null;
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  private EClass tickEClass = null;
 
   /**
 	 * <!-- begin-user-doc -->
@@ -357,6 +365,36 @@ public class SeleniumDSLPackageImpl extends EPackageImpl implements SeleniumDSLP
    * <!-- end-user-doc -->
 	 * @generated
 	 */
+  public EAttribute getSelect_Value()
+  {
+		return (EAttribute)selectEClass.getEStructuralFeatures().get(1);
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public EClass getTick()
+  {
+		return tickEClass;
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public EAttribute getTick_Name()
+  {
+		return (EAttribute)tickEClass.getEStructuralFeatures().get(0);
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
   public EClass getNavigate()
   {
 		return navigateEClass;
@@ -526,6 +564,10 @@ public class SeleniumDSLPackageImpl extends EPackageImpl implements SeleniumDSLP
 
 		selectEClass = createEClass(SELECT);
 		createEAttribute(selectEClass, SELECT__NAME);
+		createEAttribute(selectEClass, SELECT__VALUE);
+
+		tickEClass = createEClass(TICK);
+		createEAttribute(tickEClass, TICK__NAME);
 
 		navigateEClass = createEClass(NAVIGATE);
 		createEAttribute(navigateEClass, NAVIGATE__URL);
@@ -576,6 +618,7 @@ public class SeleniumDSLPackageImpl extends EPackageImpl implements SeleniumDSLP
 		clickEClass.getESuperTypes().add(this.getInstruction());
 		fillEClass.getESuperTypes().add(this.getInstruction());
 		selectEClass.getESuperTypes().add(this.getInstruction());
+		tickEClass.getESuperTypes().add(this.getInstruction());
 		navigateEClass.getESuperTypes().add(this.getInstruction());
 		readEClass.getESuperTypes().add(this.getInstruction());
 		assertEClass.getESuperTypes().add(this.getInstruction());
@@ -606,6 +649,10 @@ public class SeleniumDSLPackageImpl extends EPackageImpl implements SeleniumDSLP
 
 		initEClass(selectEClass, Select.class, "Select", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSelect_Name(), ecorePackage.getEString(), "Name", null, 0, 1, Select.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSelect_Value(), ecorePackage.getEString(), "Value", null, 0, 1, Select.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(tickEClass, Tick.class, "Tick", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getTick_Name(), ecorePackage.getEString(), "Name", null, 0, 1, Tick.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(navigateEClass, Navigate.class, "Navigate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getNavigate_Url(), ecorePackage.getEString(), "url", null, 0, 1, Navigate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

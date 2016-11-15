@@ -15,6 +15,12 @@ import fr.minesnantes.browserautomation.seleniumDSL.Navigate
 import fr.minesnantes.browserautomation.seleniumDSL.Click
 import fr.minesnantes.browserautomation.seleniumDSL.Instruction
 import fr.minesnantes.browserautomation.seleniumDSL.Fill
+import fr.minesnantes.browserautomation.seleniumDSL.Select
+import fr.minesnantes.browserautomation.seleniumDSL.Tick
+import java.util.HashMap
+import fr.minesnantes.browserautomation.seleniumDSL.Read
+import java.util.ArrayList
+import java.util.List
 
 class Counter {
     private int count;
@@ -36,15 +42,30 @@ class Counter {
 class SeleniumDSLGenerator extends AbstractGenerator {
 
     private EList<Procedure> procedures;
+    
+    private List<String> variables;
 
-    private Counter elementCounter = new Counter();
+    private Counter elementCounter;
+    
+    def initializeContext() {
+        this.elementCounter = new Counter();
+        this.variables = new ArrayList<String>();
+    }
+    
+    def destroyContext() {
+        this.elementCounter = null;
+        this.variables = null;
+    }
 
     override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
+        initializeContext
+        
         fsa.generateFile(
             'browserautomation' + File.separator + 'SeleniumTest.java',
-            // resource.allContents.toIterable.filter(Calendar).head.generateCalendar
             resource.contents.filter(SeleniumTest).head.generateSeleniumTest
         )
+        
+        destroyContext
     }
 
     def generateSeleniumTest(SeleniumTest st) '''
@@ -54,6 +75,7 @@ class SeleniumDSLGenerator extends AbstractGenerator {
         import org.openqa.selenium.WebDriver;
         import org.openqa.selenium.WebElement;
         import org.openqa.selenium.chrome.ChromeDriver;
+        import org.openqa.selenium.support.ui.Select;
         
         public class SeleniumTest {
             public static void main(String[] args) {
@@ -71,6 +93,7 @@ class SeleniumDSLGenerator extends AbstractGenerator {
         }
     '''
     
+    // Dispatch methods to handle defined instructions    
     def dispatch generateInstruction(Navigate n) '''
         webDriver.get("«n.url»");
     '''
@@ -91,8 +114,29 @@ class SeleniumDSLGenerator extends AbstractGenerator {
     def dispatch generateInstruction(Fill f) '''
         «val eltName = '''element«elementCounter.nextCount»'''»
         WebElement «eltName» = webDriver.findElement(By.name("«f.name»"));
-        «eltName».sendKeys("«f.value»");
+        «eltName».sendKeys(«IF variables.contains(f.value)»«f.value»«ELSE»"«f.value»"«ENDIF»);
     '''
+    
+    def dispatch generateInstruction(Tick t) '''
+        «val eltName = '''element«elementCounter.nextCount»'''»
+        WebElement «eltName» = webDriver.findElement(By.name("«t.name»"));
+        «eltName».click();
+    '''
+    
+    def dispatch generateInstruction(Select s) '''
+        «val eltName = '''element«elementCounter.nextCount»'''»
+        Select «eltName» = new Select(webDriver.findElement(By.name("«s.name»")));
+        «eltName».selectByVisibleText("«s.value»");
+    '''
+    
+    def dispatch generateInstruction(Read r) {
+        variables.add(r.variable)
+        '''
+            «val eltName = '''element«elementCounter.nextCount»'''»
+            WebElement «eltName» = webDriver.findElement(By.name("«r.name»"));
+            String «r.variable» = «eltName».getAttribute("value");
+        '''
+    }
     
         def dispatch generateInstruction(Instruction i) '''
         // FIXME wtf is this instruction?

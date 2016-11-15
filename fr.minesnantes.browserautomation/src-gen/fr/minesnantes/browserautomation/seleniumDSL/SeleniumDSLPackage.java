@@ -281,13 +281,50 @@ public interface SeleniumDSLPackage extends EPackage
   int SELECT__NAME = INSTRUCTION_FEATURE_COUNT + 0;
 
   /**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+  int SELECT__VALUE = INSTRUCTION_FEATURE_COUNT + 1;
+
+  /**
 	 * The number of structural features of the '<em>Select</em>' class.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-  int SELECT_FEATURE_COUNT = INSTRUCTION_FEATURE_COUNT + 1;
+  int SELECT_FEATURE_COUNT = INSTRUCTION_FEATURE_COUNT + 2;
+
+  /**
+	 * The meta object id for the '{@link fr.minesnantes.browserautomation.seleniumDSL.impl.TickImpl <em>Tick</em>}' class.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @see fr.minesnantes.browserautomation.seleniumDSL.impl.TickImpl
+	 * @see fr.minesnantes.browserautomation.seleniumDSL.impl.SeleniumDSLPackageImpl#getTick()
+	 * @generated
+	 */
+  int TICK = 7;
+
+  /**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+  int TICK__NAME = INSTRUCTION_FEATURE_COUNT + 0;
+
+  /**
+	 * The number of structural features of the '<em>Tick</em>' class.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+  int TICK_FEATURE_COUNT = INSTRUCTION_FEATURE_COUNT + 1;
 
   /**
 	 * The meta object id for the '{@link fr.minesnantes.browserautomation.seleniumDSL.impl.NavigateImpl <em>Navigate</em>}' class.
@@ -297,7 +334,7 @@ public interface SeleniumDSLPackage extends EPackage
 	 * @see fr.minesnantes.browserautomation.seleniumDSL.impl.SeleniumDSLPackageImpl#getNavigate()
 	 * @generated
 	 */
-  int NAVIGATE = 7;
+  int NAVIGATE = 8;
 
   /**
 	 * The feature id for the '<em><b>Url</b></em>' attribute.
@@ -325,7 +362,7 @@ public interface SeleniumDSLPackage extends EPackage
 	 * @see fr.minesnantes.browserautomation.seleniumDSL.impl.SeleniumDSLPackageImpl#getRead()
 	 * @generated
 	 */
-  int READ = 8;
+  int READ = 9;
 
   /**
 	 * The feature id for the '<em><b>Variable</b></em>' attribute.
@@ -362,7 +399,7 @@ public interface SeleniumDSLPackage extends EPackage
 	 * @see fr.minesnantes.browserautomation.seleniumDSL.impl.SeleniumDSLPackageImpl#getAssert()
 	 * @generated
 	 */
-  int ASSERT = 9;
+  int ASSERT = 10;
 
   /**
 	 * The feature id for the '<em><b>Search</b></em>' attribute.
@@ -408,7 +445,7 @@ public interface SeleniumDSLPackage extends EPackage
 	 * @see fr.minesnantes.browserautomation.seleniumDSL.impl.SeleniumDSLPackageImpl#getCallProcedure()
 	 * @generated
 	 */
-  int CALL_PROCEDURE = 10;
+  int CALL_PROCEDURE = 11;
 
   /**
 	 * The feature id for the '<em><b>Procedure Name</b></em>' attribute.
@@ -628,6 +665,38 @@ public interface SeleniumDSLPackage extends EPackage
 	 * @generated
 	 */
   EAttribute getSelect_Name();
+
+  /**
+	 * Returns the meta object for the attribute '{@link fr.minesnantes.browserautomation.seleniumDSL.Select#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see fr.minesnantes.browserautomation.seleniumDSL.Select#getValue()
+	 * @see #getSelect()
+	 * @generated
+	 */
+  EAttribute getSelect_Value();
+
+  /**
+	 * Returns the meta object for class '{@link fr.minesnantes.browserautomation.seleniumDSL.Tick <em>Tick</em>}'.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Tick</em>'.
+	 * @see fr.minesnantes.browserautomation.seleniumDSL.Tick
+	 * @generated
+	 */
+  EClass getTick();
+
+  /**
+	 * Returns the meta object for the attribute '{@link fr.minesnantes.browserautomation.seleniumDSL.Tick#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see fr.minesnantes.browserautomation.seleniumDSL.Tick#getName()
+	 * @see #getTick()
+	 * @generated
+	 */
+  EAttribute getTick_Name();
 
   /**
 	 * Returns the meta object for class '{@link fr.minesnantes.browserautomation.seleniumDSL.Navigate <em>Navigate</em>}'.
@@ -937,6 +1006,32 @@ public interface SeleniumDSLPackage extends EPackage
 		 * @generated
 		 */
     EAttribute SELECT__NAME = eINSTANCE.getSelect_Name();
+
+    /**
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+		 * @generated
+		 */
+    EAttribute SELECT__VALUE = eINSTANCE.getSelect_Value();
+
+    /**
+		 * The meta object literal for the '{@link fr.minesnantes.browserautomation.seleniumDSL.impl.TickImpl <em>Tick</em>}' class.
+		 * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+		 * @see fr.minesnantes.browserautomation.seleniumDSL.impl.TickImpl
+		 * @see fr.minesnantes.browserautomation.seleniumDSL.impl.SeleniumDSLPackageImpl#getTick()
+		 * @generated
+		 */
+    EClass TICK = eINSTANCE.getTick();
+
+    /**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+		 * @generated
+		 */
+    EAttribute TICK__NAME = eINSTANCE.getTick_Name();
 
     /**
 		 * The meta object literal for the '{@link fr.minesnantes.browserautomation.seleniumDSL.impl.NavigateImpl <em>Navigate</em>}' class.
