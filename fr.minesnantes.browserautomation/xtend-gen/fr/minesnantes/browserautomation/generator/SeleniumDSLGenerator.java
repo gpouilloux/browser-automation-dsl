@@ -6,6 +6,7 @@ package fr.minesnantes.browserautomation.generator;
 import com.google.common.collect.Iterables;
 import fr.minesnantes.browserautomation.generator.Counter;
 import fr.minesnantes.browserautomation.seleniumDSL.Assert;
+import fr.minesnantes.browserautomation.seleniumDSL.CallProcedure;
 import fr.minesnantes.browserautomation.seleniumDSL.Click;
 import fr.minesnantes.browserautomation.seleniumDSL.Fill;
 import fr.minesnantes.browserautomation.seleniumDSL.Instruction;
@@ -19,6 +20,7 @@ import fr.minesnantes.browserautomation.seleniumDSL.Tick;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
@@ -27,7 +29,9 @@ import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.generator.AbstractGenerator;
 import org.eclipse.xtext.generator.IFileSystemAccess2;
 import org.eclipse.xtext.generator.IGeneratorContext;
+import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
+import org.eclipse.xtext.xbase.lib.ListExtensions;
 
 /**
  * Generates code from your model files on save.
@@ -36,28 +40,26 @@ import org.eclipse.xtext.xbase.lib.IterableExtensions;
  */
 @SuppressWarnings("all")
 public class SeleniumDSLGenerator extends AbstractGenerator {
-  private EList<Procedure> procedures;
-  
-  private List<String> variables;
+  private HashMap<String, List<String>> proceduresContext;
   
   private Counter elementCounter;
   
-  public List<String> initializeContext() {
-    List<String> _xblockexpression = null;
+  public HashMap<String, List<String>> initializeContext() {
+    HashMap<String, List<String>> _xblockexpression = null;
     {
       Counter _counter = new Counter();
       this.elementCounter = _counter;
-      ArrayList<String> _arrayList = new ArrayList<String>();
-      _xblockexpression = this.variables = _arrayList;
+      HashMap<String, List<String>> _hashMap = new HashMap<String, List<String>>();
+      _xblockexpression = this.proceduresContext = _hashMap;
     }
     return _xblockexpression;
   }
   
-  public List<String> destroyContext() {
-    List<String> _xblockexpression = null;
+  public HashMap<String, List<String>> destroyContext() {
+    HashMap<String, List<String>> _xblockexpression = null;
     {
       this.elementCounter = null;
-      _xblockexpression = this.variables = null;
+      _xblockexpression = this.proceduresContext = null;
     }
     return _xblockexpression;
   }
@@ -93,6 +95,60 @@ public class SeleniumDSLGenerator extends AbstractGenerator {
     _builder.append("public class SeleniumTest {");
     _builder.newLine();
     _builder.append("    ");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("private static WebDriver webDriver;");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.newLine();
+    _builder.append("    ");
+    EList<Procedure> _procedures = st.getProcedures();
+    final Function1<Procedure, String> _function = (Procedure p) -> {
+      StringConcatenation _builder_1 = new StringConcatenation();
+      EList<String> _parameters = p.getParameters();
+      final Function1<String, String> _function_1 = (String par) -> {
+        StringConcatenation _builder_2 = new StringConcatenation();
+        _builder_2.append("String ");
+        _builder_2.append(par, "");
+        return _builder_2.toString();
+      };
+      List<String> _map = ListExtensions.<String, String>map(_parameters, _function_1);
+      final String params = IterableExtensions.join(_map, ", ");
+      _builder_1.newLineIfNotEmpty();
+      _builder_1.append("private static void ");
+      String _name = p.getName();
+      _builder_1.append(_name, "");
+      _builder_1.append(" (");
+      _builder_1.append(params, "");
+      _builder_1.append(") {");
+      _builder_1.newLineIfNotEmpty();
+      _builder_1.append("    ");
+      String _name_1 = p.getName();
+      EList<String> _parameters_1 = p.getParameters();
+      List<String> _put = this.proceduresContext.put(_name_1, _parameters_1);
+      _builder_1.append(_put, "    ");
+      _builder_1.newLineIfNotEmpty();
+      _builder_1.append("    ");
+      EList<Instruction> _instructions = p.getInstructions();
+      final Function1<Instruction, CharSequence> _function_2 = (Instruction i) -> {
+        String _name_2 = p.getName();
+        return this.generateInstruction(i, _name_2);
+      };
+      List<CharSequence> _map_1 = ListExtensions.<Instruction, CharSequence>map(_instructions, _function_2);
+      String _join = IterableExtensions.join(_map_1);
+      _builder_1.append(_join, "    ");
+      _builder_1.newLineIfNotEmpty();
+      _builder_1.append("}");
+      _builder_1.newLine();
+      return _builder_1.toString();
+    };
+    List<String> _map = ListExtensions.<Procedure, String>map(_procedures, _function);
+    String _join = IterableExtensions.join(_map);
+    _builder.append(_join, "    ");
+    _builder.newLineIfNotEmpty();
+    _builder.append("    ");
+    _builder.newLine();
+    _builder.append("    ");
     _builder.append("public static void main(String[] args) {");
     _builder.newLine();
     _builder.append("        ");
@@ -102,20 +158,25 @@ public class SeleniumDSLGenerator extends AbstractGenerator {
     _builder.append("System.setProperty(\"webdriver.chrome.driver\", \"lib/chromedriver\");");
     _builder.newLine();
     _builder.append("        ");
-    _builder.append("WebDriver webDriver = new ChromeDriver();");
+    _builder.append("webDriver = new ChromeDriver();");
     _builder.newLine();
     _builder.append("        ");
     _builder.newLine();
-    {
-      MainProcedure _main = st.getMain();
-      EList<Instruction> _instructions = _main.getInstructions();
-      for(final Instruction i : _instructions) {
-        _builder.append("        ");
-        CharSequence _generateInstruction = this.generateInstruction(i);
-        _builder.append(_generateInstruction, "        ");
-        _builder.newLineIfNotEmpty();
-      }
-    }
+    _builder.append("        ");
+    ArrayList<String> _arrayList = new ArrayList<String>();
+    List<String> _put = this.proceduresContext.put("main", _arrayList);
+    _builder.append(_put, "        ");
+    _builder.newLineIfNotEmpty();
+    _builder.append("        ");
+    MainProcedure _main = st.getMain();
+    EList<Instruction> _instructions = _main.getInstructions();
+    final Function1<Instruction, CharSequence> _function_1 = (Instruction i) -> {
+      return this.generateInstruction(i, "main");
+    };
+    List<CharSequence> _map_1 = ListExtensions.<Instruction, CharSequence>map(_instructions, _function_1);
+    String _join_1 = IterableExtensions.join(_map_1);
+    _builder.append(_join_1, "        ");
+    _builder.newLineIfNotEmpty();
     _builder.append("        ");
     _builder.newLine();
     _builder.append("        ");
@@ -132,7 +193,7 @@ public class SeleniumDSLGenerator extends AbstractGenerator {
     return _builder;
   }
   
-  protected CharSequence _generateInstruction(final Navigate n) {
+  protected CharSequence _generateInstruction(final Navigate n, final String methodName) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("webDriver.get(\"");
     String _url = n.getUrl();
@@ -142,7 +203,7 @@ public class SeleniumDSLGenerator extends AbstractGenerator {
     return _builder;
   }
   
-  protected CharSequence _generateInstruction(final Click c) {
+  protected CharSequence _generateInstruction(final Click c, final String methodName) {
     StringConcatenation _builder = new StringConcatenation();
     StringConcatenation _builder_1 = new StringConcatenation();
     _builder_1.append("element");
@@ -209,7 +270,7 @@ public class SeleniumDSLGenerator extends AbstractGenerator {
     return _builder;
   }
   
-  protected CharSequence _generateInstruction(final Fill f) {
+  protected CharSequence _generateInstruction(final Fill f, final String methodName) {
     StringConcatenation _builder = new StringConcatenation();
     StringConcatenation _builder_1 = new StringConcatenation();
     _builder_1.append("element");
@@ -227,8 +288,9 @@ public class SeleniumDSLGenerator extends AbstractGenerator {
     _builder.append(eltName, "");
     _builder.append(".sendKeys(");
     {
+      List<String> _get = this.proceduresContext.get(methodName);
       String _value = f.getValue();
-      boolean _contains = this.variables.contains(_value);
+      boolean _contains = _get.contains(_value);
       if (_contains) {
         String _value_1 = f.getValue();
         _builder.append(_value_1, "");
@@ -244,7 +306,7 @@ public class SeleniumDSLGenerator extends AbstractGenerator {
     return _builder;
   }
   
-  protected CharSequence _generateInstruction(final Tick t) {
+  protected CharSequence _generateInstruction(final Tick t, final String methodName) {
     StringConcatenation _builder = new StringConcatenation();
     StringConcatenation _builder_1 = new StringConcatenation();
     _builder_1.append("element");
@@ -265,7 +327,7 @@ public class SeleniumDSLGenerator extends AbstractGenerator {
     return _builder;
   }
   
-  protected CharSequence _generateInstruction(final Select s) {
+  protected CharSequence _generateInstruction(final Select s, final String methodName) {
     StringConcatenation _builder = new StringConcatenation();
     StringConcatenation _builder_1 = new StringConcatenation();
     _builder_1.append("element");
@@ -289,11 +351,12 @@ public class SeleniumDSLGenerator extends AbstractGenerator {
     return _builder;
   }
   
-  protected CharSequence _generateInstruction(final Read r) {
+  protected CharSequence _generateInstruction(final Read r, final String methodName) {
     CharSequence _xblockexpression = null;
     {
+      List<String> _get = this.proceduresContext.get(methodName);
       String _variable = r.getVariable();
-      this.variables.add(_variable);
+      _get.add(_variable);
       StringConcatenation _builder = new StringConcatenation();
       StringConcatenation _builder_1 = new StringConcatenation();
       _builder_1.append("element");
@@ -320,7 +383,7 @@ public class SeleniumDSLGenerator extends AbstractGenerator {
     return _xblockexpression;
   }
   
-  protected CharSequence _generateInstruction(final Assert a) {
+  protected CharSequence _generateInstruction(final Assert a, final String methodName) {
     StringConcatenation _builder = new StringConcatenation();
     StringConcatenation _builder_1 = new StringConcatenation();
     _builder_1.append("element");
@@ -346,7 +409,8 @@ public class SeleniumDSLGenerator extends AbstractGenerator {
         _builder_2.append(eltName, "");
         _builder_2.append(".getAttribute(\"value\").contains(");
         {
-          boolean _contains = this.variables.contains(assertValue);
+          List<String> _get = this.proceduresContext.get(methodName);
+          boolean _contains = _get.contains(assertValue);
           if (_contains) {
             _builder_2.append(assertValue, "");
           } else {
@@ -373,7 +437,8 @@ public class SeleniumDSLGenerator extends AbstractGenerator {
         _builder_3.append(eltName, "");
         _builder_3.append(".getAttribute(\"value\").equals(");
         {
-          boolean _contains_1 = this.variables.contains(assertValue);
+          List<String> _get_1 = this.proceduresContext.get(methodName);
+          boolean _contains_1 = _get_1.contains(assertValue);
           if (_contains_1) {
             _builder_3.append(assertValue, "");
           } else {
@@ -423,33 +488,56 @@ public class SeleniumDSLGenerator extends AbstractGenerator {
     return _builder;
   }
   
-  protected CharSequence _generateInstruction(final Instruction i) {
+  protected CharSequence _generateInstruction(final CallProcedure cp, final String method) {
+    StringConcatenation _builder = new StringConcatenation();
+    String _procedureName = cp.getProcedureName();
+    _builder.append(_procedureName, "");
+    _builder.append("(");
+    EList<String> _parameters = cp.getParameters();
+    final Function1<String, String> _function = (String param) -> {
+      StringConcatenation _builder_1 = new StringConcatenation();
+      _builder_1.append("\"");
+      _builder_1.append(param, "");
+      _builder_1.append("\"");
+      return _builder_1.toString();
+    };
+    List<String> _map = ListExtensions.<String, String>map(_parameters, _function);
+    String _join = IterableExtensions.join(_map, ", ");
+    _builder.append(_join, "");
+    _builder.append(");");
+    _builder.newLineIfNotEmpty();
+    return _builder;
+  }
+  
+  protected CharSequence _generateInstruction(final Instruction i, final String methodName) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("// FIXME wtf is this instruction?");
     _builder.newLine();
     return _builder;
   }
   
-  public CharSequence generateInstruction(final Instruction a) {
+  public CharSequence generateInstruction(final Instruction a, final String methodName) {
     if (a instanceof Assert) {
-      return _generateInstruction((Assert)a);
+      return _generateInstruction((Assert)a, methodName);
+    } else if (a instanceof CallProcedure) {
+      return _generateInstruction((CallProcedure)a, methodName);
     } else if (a instanceof Click) {
-      return _generateInstruction((Click)a);
+      return _generateInstruction((Click)a, methodName);
     } else if (a instanceof Fill) {
-      return _generateInstruction((Fill)a);
+      return _generateInstruction((Fill)a, methodName);
     } else if (a instanceof Navigate) {
-      return _generateInstruction((Navigate)a);
+      return _generateInstruction((Navigate)a, methodName);
     } else if (a instanceof Read) {
-      return _generateInstruction((Read)a);
+      return _generateInstruction((Read)a, methodName);
     } else if (a instanceof Select) {
-      return _generateInstruction((Select)a);
+      return _generateInstruction((Select)a, methodName);
     } else if (a instanceof Tick) {
-      return _generateInstruction((Tick)a);
+      return _generateInstruction((Tick)a, methodName);
     } else if (a != null) {
-      return _generateInstruction(a);
+      return _generateInstruction(a, methodName);
     } else {
       throw new IllegalArgumentException("Unhandled parameter types: " +
-        Arrays.<Object>asList(a).toString());
+        Arrays.<Object>asList(a, methodName).toString());
     }
   }
 }

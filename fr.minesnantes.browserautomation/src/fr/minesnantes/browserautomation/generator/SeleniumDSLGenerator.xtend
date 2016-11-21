@@ -21,6 +21,8 @@ import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
 import fr.minesnantes.browserautomation.seleniumDSL.Assert
+import java.util.HashMap
+import fr.minesnantes.browserautomation.seleniumDSL.CallProcedure
 
 class Counter {
     private int count;
@@ -40,21 +42,19 @@ class Counter {
  * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#code-generation
  */
 class SeleniumDSLGenerator extends AbstractGenerator {
-
-    private EList<Procedure> procedures;
     
-    private List<String> variables;
-
+    private HashMap<String, List<String>> proceduresContext;
+    
     private Counter elementCounter;
     
     def initializeContext() {
         this.elementCounter = new Counter();
-        this.variables = new ArrayList<String>();
+        this.proceduresContext = new HashMap<String, List<String>>();
     }
     
     def destroyContext() {
         this.elementCounter = null;
-        this.variables = null;
+        this.proceduresContext = null;
     }
 
     override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
@@ -78,14 +78,24 @@ class SeleniumDSLGenerator extends AbstractGenerator {
         import org.openqa.selenium.support.ui.Select;
         
         public class SeleniumTest {
+            
+            private static WebDriver webDriver;
+            
+            «st.procedures.map[p | '''
+               «val params = p.parameters.map([par | '''String «par»''']).join(", ")»
+               private static void «p.name» («params») {
+                   «this.proceduresContext.put(p.name, p.parameters)»
+                   «p.instructions.map[i | generateInstruction(i, p.name)].join»
+               }
+            '''].join»
+            
             public static void main(String[] args) {
                 // Initialize Selenium web driver for Google Chrome
                 System.setProperty("webdriver.chrome.driver", "lib/chromedriver");
-                WebDriver webDriver = new ChromeDriver();
+                webDriver = new ChromeDriver();
                 
-                «FOR i : st.main.instructions»
-                    «generateInstruction(i)»
-                «ENDFOR»
+                «this.proceduresContext.put("main", new ArrayList<String>())»
+                «st.main.instructions.map[i | generateInstruction(i, "main")].join»
                 
                 // Close the browser
                 webDriver.quit();
@@ -94,11 +104,11 @@ class SeleniumDSLGenerator extends AbstractGenerator {
     '''
     
     // Dispatch methods to handle defined instructions    
-    def dispatch generateInstruction(Navigate n) '''
+    def dispatch generateInstruction(Navigate n, String methodName) '''
         webDriver.get("«n.url»");
     '''
     
-    def dispatch generateInstruction(Click c) '''
+    def dispatch generateInstruction(Click c, String methodName) '''
         «val eltName = '''element«elementCounter.nextCount»'''»
         «val clickValue = c.value»
         «switch c.type {
@@ -111,26 +121,26 @@ class SeleniumDSLGenerator extends AbstractGenerator {
         «eltName».click();
     '''
     
-    def dispatch generateInstruction(Fill f) '''
+    def dispatch generateInstruction(Fill f, String methodName) '''
         «val eltName = '''element«elementCounter.nextCount»'''»
         WebElement «eltName» = webDriver.findElement(By.name("«f.name»"));
-        «eltName».sendKeys(«IF variables.contains(f.value)»«f.value»«ELSE»"«f.value»"«ENDIF»);
+        «eltName».sendKeys(«IF this.proceduresContext.get(methodName).contains(f.value)»«f.value»«ELSE»"«f.value»"«ENDIF»);
     '''
     
-    def dispatch generateInstruction(Tick t) '''
+    def dispatch generateInstruction(Tick t, String methodName) '''
         «val eltName = '''element«elementCounter.nextCount»'''»
         WebElement «eltName» = webDriver.findElement(By.name("«t.name»"));
         «eltName».click();
     '''
     
-    def dispatch generateInstruction(Select s) '''
+    def dispatch generateInstruction(Select s, String methodName) '''
         «val eltName = '''element«elementCounter.nextCount»'''»
         Select «eltName» = new Select(webDriver.findElement(By.name("«s.name»")));
         «eltName».selectByVisibleText("«s.value»");
     '''
     
-    def dispatch generateInstruction(Read r) {
-        variables.add(r.variable)
+    def dispatch generateInstruction(Read r, String methodName) {
+        this.proceduresContext.get(methodName).add(r.variable)
         '''
             «val eltName = '''element«elementCounter.nextCount»'''»
             WebElement «eltName» = webDriver.findElement(By.name("«r.name»"));
@@ -138,17 +148,17 @@ class SeleniumDSLGenerator extends AbstractGenerator {
         '''
     }
     
-    def dispatch generateInstruction(Assert a) '''
+    def dispatch generateInstruction(Assert a, String methodName) '''
         «val eltName = '''element«elementCounter.nextCount»'''»
         «val assertValue = a.value»
         WebElement «eltName» = webDriver.findElement(By.name("«a.name»"));
         «switch a.type {
                 case 'contains': '''
-                if(!«eltName».getAttribute("value").contains(«IF variables.contains(assertValue)»«assertValue»«ELSE»"«assertValue»"«ENDIF»)) {
+                if(!«eltName».getAttribute("value").contains(«IF this.proceduresContext.get(methodName).contains(assertValue)»«assertValue»«ELSE»"«assertValue»"«ENDIF»)) {
                     throw new AssertionError(«eltName».getAttribute("value") + " does not contain «assertValue»");
                 };'''
                 case 'equals': '''
-                if(!«eltName».getAttribute("value").equals(«IF variables.contains(assertValue)»«assertValue»«ELSE»"«assertValue»"«ENDIF»)) {
+                if(!«eltName».getAttribute("value").equals(«IF this.proceduresContext.get(methodName).contains(assertValue)»«assertValue»«ELSE»"«assertValue»"«ENDIF»)) {
                     throw new AssertionError(«eltName».getAttribute("value") + " is not equal to «assertValue»");
                 };'''
                 case 'exists': '''
@@ -158,8 +168,12 @@ class SeleniumDSLGenerator extends AbstractGenerator {
                 default: '''// FIXME unrecognized assert instruction: assert «a.type» «assertValue»''' 
             }»
     '''
+    
+    def dispatch generateInstruction(CallProcedure cp, String method) '''
+        «cp.procedureName»(«cp.parameters.map([param | '''"«param»"''']).join(", ")»);
+    ''' 
 
-        def dispatch generateInstruction(Instruction i) '''
+    def dispatch generateInstruction(Instruction i, String methodName) '''
         // FIXME wtf is this instruction?
     '''
 
