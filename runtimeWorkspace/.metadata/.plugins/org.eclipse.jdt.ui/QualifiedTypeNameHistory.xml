@@ -5,4 +5,6 @@
 <fullyQualifiedTypeName name="org.openqa.selenium.By"/>
 <fullyQualifiedTypeName name="org.openqa.selenium.support.ui.Select"/>
 <fullyQualifiedTypeName name="java.lang.AssertionError"/>
+<fullyQualifiedTypeName name="fr.minesnantes.browserautomation.seleniumDSL.Instruction"/>
+<fullyQualifiedTypeName name="fr.minesnantes.browserautomation.seleniumDSL.Procedure"/>
 </qualifiedTypeNameHistroy>
