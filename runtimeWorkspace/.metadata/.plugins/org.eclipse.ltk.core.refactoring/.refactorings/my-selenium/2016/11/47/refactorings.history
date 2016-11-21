@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move element &apos;campus.slnm&apos; to &apos;selenium&apos;&#x0A;- Original project: &apos;my-selenium&apos;&#x0A;- Destination element: &apos;selenium&apos;&#x0A;- Original element: &apos;campus.slnm&apos;&#x0A;- Update references to refactored element" description="Move file" destination="=selenium" element1="campus.slnm" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1479196989990" units="0" version="1.0"/>
+</session>

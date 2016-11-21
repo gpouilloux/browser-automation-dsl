@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;my-csv/My.csvdsl&apos; to &apos;Query.csvdsl&apos;" description="Rename resource &apos;My.csvdsl&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="My.csvdsl" name="Query.csvdsl" stamp="1475574189475" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;my-csv/Table.csvdsl&apos; to &apos;TableCustomer.csvdsl&apos;" description="Rename resource &apos;Table.csvdsl&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Table.csvdsl" name="TableCustomer.csvdsl" stamp="1475574252387" updateReferences="true"/>
+</session>

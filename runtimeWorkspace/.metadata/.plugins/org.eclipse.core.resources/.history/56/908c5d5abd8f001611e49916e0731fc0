@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flowchart:Flowchart xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:flowchart="flowchart">
+  <nodes xsi:type="flowchart:StartNode" name="Lamp doesn't work" outgoing="//@transitions.0"/>
+  <nodes xsi:type="flowchart:Decision" name="Lamp plugged in?" outgoing="//@transitions.1" incoming="//@transitions.0"/>
+  <nodes xsi:type="flowchart:Decision" name="Bulb burned out?"/>
+  <nodes xsi:type="flowchart:EndNode" name="Plug in lamp" incoming="//@transitions.1"/>
+  <nodes xsi:type="flowchart:EndNode" name="Replace bulb"/>
+  <nodes xsi:type="flowchart:EndNode" name="Repair lamp"/>
+  <transitions label="" source="//@nodes.0" target="//@nodes.1"/>
+  <transitions source="//@nodes.1" target="//@nodes.3"/>
+</flowchart:Flowchart>

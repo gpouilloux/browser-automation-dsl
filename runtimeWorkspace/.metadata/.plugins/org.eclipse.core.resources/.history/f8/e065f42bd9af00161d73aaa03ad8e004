@@ -1,0 +1,21 @@
+def login(username, password) {
+  click link 'Log in'
+  click input 'Cliquez ici ou sur le logo C\'zam pour vous identifier'
+  select "user_idp" "Ecole des Mines de Nantes"
+  click input "Select"
+  click input "Save and continue to your Home Organization "
+  fill 'username' username
+  fill 'password' password
+  tick 'warn'
+  click input 'Connexion'
+  assert 'Connecté sous le nom' contains 'Massimo Tisi'
+}
+
+def navigateToCampus {
+    navigate 'http://campus.mines-nantes.fr'
+}
+
+def main {
+  navigateToCampus
+  login('gpouil14', '123456')
+}

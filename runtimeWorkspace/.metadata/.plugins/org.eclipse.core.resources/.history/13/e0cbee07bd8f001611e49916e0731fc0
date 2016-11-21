@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flowchartdsl:Flowchart xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:flowchartdsl="http://www.mines-nantes.fr/gpo/2016/flowchartdsl">
+  <nodes xsi:type="flowchartdsl:StartNode" name="Lamp doesn't work"/>
+  <nodes xsi:type="flowchartdsl:DecisionNode" name="Lamp plugged in?"/>
+  <nodes xsi:type="flowchartdsl:DecisionNode" name="Bulb burned out?"/>
+  <nodes xsi:type="flowchartdsl:EndNode" name="Plug in lamp"/>
+  <nodes xsi:type="flowchartdsl:EndNode" name="Replace bulb"/>
+  <nodes xsi:type="flowchartdsl:EndNode" name="Repair lamp"/>
+</flowchartdsl:Flowchart>

@@ -1,0 +1,22 @@
+package browserautomation;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
+public class SeleniumTest {
+    
+    // Initialize Selenium web driver for Google Chrome
+    private static WebDriver webDriver = new ChromeDriver();
+    
+    
+    public static void main(String[] args) {
+        System.setProperty("webdriver.chrome.driver", "lib/chromedriver");
+        
+        
+        // Close the browser
+        webDriver.quit();
+    }
+}
