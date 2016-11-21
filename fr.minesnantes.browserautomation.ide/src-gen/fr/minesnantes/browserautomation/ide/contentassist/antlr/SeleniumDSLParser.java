@@ -41,8 +41,8 @@ public class SeleniumDSLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getSelectAccess().getValueAlternatives_2_0(), "rule__Select__ValueAlternatives_2_0");
 					put(grammarAccess.getNavigateAccess().getUrlAlternatives_1_0(), "rule__Navigate__UrlAlternatives_1_0");
 					put(grammarAccess.getAssertAccess().getAlternatives_1(), "rule__Assert__Alternatives_1");
+					put(grammarAccess.getAssertAccess().getTypeAlternatives_1_0_1_0(), "rule__Assert__TypeAlternatives_1_0_1_0");
 					put(grammarAccess.getAssertAccess().getValueAlternatives_1_0_2_0(), "rule__Assert__ValueAlternatives_1_0_2_0");
-					put(grammarAccess.getAssertAccess().getValueAlternatives_1_1_2_0(), "rule__Assert__ValueAlternatives_1_1_2_0");
 					put(grammarAccess.getCallProcedureAccess().getParametersAlternatives_1_1_0_0(), "rule__CallProcedure__ParametersAlternatives_1_1_0_0");
 					put(grammarAccess.getCallProcedureAccess().getParametersAlternatives_1_1_1_1_0(), "rule__CallProcedure__ParametersAlternatives_1_1_1_1_0");
 					put(grammarAccess.getSeleniumTestAccess().getGroup(), "rule__SeleniumTest__Group__0");
@@ -60,7 +60,6 @@ public class SeleniumDSLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getAssertAccess().getGroup(), "rule__Assert__Group__0");
 					put(grammarAccess.getAssertAccess().getGroup_1_0(), "rule__Assert__Group_1_0__0");
 					put(grammarAccess.getAssertAccess().getGroup_1_1(), "rule__Assert__Group_1_1__0");
-					put(grammarAccess.getAssertAccess().getGroup_1_2(), "rule__Assert__Group_1_2__0");
 					put(grammarAccess.getCallProcedureAccess().getGroup(), "rule__CallProcedure__Group__0");
 					put(grammarAccess.getCallProcedureAccess().getGroup_1(), "rule__CallProcedure__Group_1__0");
 					put(grammarAccess.getCallProcedureAccess().getGroup_1_1(), "rule__CallProcedure__Group_1_1__0");
@@ -82,11 +81,11 @@ public class SeleniumDSLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getNavigateAccess().getUrlAssignment_1(), "rule__Navigate__UrlAssignment_1");
 					put(grammarAccess.getReadAccess().getVariableAssignment_0(), "rule__Read__VariableAssignment_0");
 					put(grammarAccess.getReadAccess().getNameAssignment_3(), "rule__Read__NameAssignment_3");
-					put(grammarAccess.getAssertAccess().getSearchAssignment_1_0_0(), "rule__Assert__SearchAssignment_1_0_0");
+					put(grammarAccess.getAssertAccess().getNameAssignment_1_0_0(), "rule__Assert__NameAssignment_1_0_0");
+					put(grammarAccess.getAssertAccess().getTypeAssignment_1_0_1(), "rule__Assert__TypeAssignment_1_0_1");
 					put(grammarAccess.getAssertAccess().getValueAssignment_1_0_2(), "rule__Assert__ValueAssignment_1_0_2");
 					put(grammarAccess.getAssertAccess().getNameAssignment_1_1_0(), "rule__Assert__NameAssignment_1_1_0");
-					put(grammarAccess.getAssertAccess().getValueAssignment_1_1_2(), "rule__Assert__ValueAssignment_1_1_2");
-					put(grammarAccess.getAssertAccess().getNameAssignment_1_2_0(), "rule__Assert__NameAssignment_1_2_0");
+					put(grammarAccess.getAssertAccess().getTypeAssignment_1_1_1(), "rule__Assert__TypeAssignment_1_1_1");
 					put(grammarAccess.getCallProcedureAccess().getProcedureNameAssignment_0(), "rule__CallProcedure__ProcedureNameAssignment_0");
 					put(grammarAccess.getCallProcedureAccess().getParametersAssignment_1_1_0(), "rule__CallProcedure__ParametersAssignment_1_1_0");
 					put(grammarAccess.getCallProcedureAccess().getParametersAssignment_1_1_1_1(), "rule__CallProcedure__ParametersAssignment_1_1_1_1");

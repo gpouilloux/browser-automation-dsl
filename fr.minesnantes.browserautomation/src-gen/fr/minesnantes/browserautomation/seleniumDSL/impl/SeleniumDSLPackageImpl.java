@@ -455,7 +455,7 @@ public class SeleniumDSLPackageImpl extends EPackageImpl implements SeleniumDSLP
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public EAttribute getAssert_Search()
+  public EAttribute getAssert_Name()
   {
 		return (EAttribute)assertEClass.getEStructuralFeatures().get(0);
 	}
@@ -465,7 +465,7 @@ public class SeleniumDSLPackageImpl extends EPackageImpl implements SeleniumDSLP
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public EAttribute getAssert_Value()
+  public EAttribute getAssert_Type()
   {
 		return (EAttribute)assertEClass.getEStructuralFeatures().get(1);
 	}
@@ -475,7 +475,7 @@ public class SeleniumDSLPackageImpl extends EPackageImpl implements SeleniumDSLP
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public EAttribute getAssert_Name()
+  public EAttribute getAssert_Value()
   {
 		return (EAttribute)assertEClass.getEStructuralFeatures().get(2);
 	}
@@ -577,9 +577,9 @@ public class SeleniumDSLPackageImpl extends EPackageImpl implements SeleniumDSLP
 		createEAttribute(readEClass, READ__NAME);
 
 		assertEClass = createEClass(ASSERT);
-		createEAttribute(assertEClass, ASSERT__SEARCH);
-		createEAttribute(assertEClass, ASSERT__VALUE);
 		createEAttribute(assertEClass, ASSERT__NAME);
+		createEAttribute(assertEClass, ASSERT__TYPE);
+		createEAttribute(assertEClass, ASSERT__VALUE);
 
 		callProcedureEClass = createEClass(CALL_PROCEDURE);
 		createEAttribute(callProcedureEClass, CALL_PROCEDURE__PROCEDURE_NAME);
@@ -662,9 +662,9 @@ public class SeleniumDSLPackageImpl extends EPackageImpl implements SeleniumDSLP
 		initEAttribute(getRead_Name(), ecorePackage.getEString(), "Name", null, 0, 1, Read.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(assertEClass, Assert.class, "Assert", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getAssert_Search(), ecorePackage.getEString(), "Search", null, 0, 1, Assert.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAssert_Value(), ecorePackage.getEString(), "Value", null, 0, 1, Assert.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAssert_Name(), ecorePackage.getEString(), "Name", null, 0, 1, Assert.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAssert_Type(), ecorePackage.getEString(), "Type", null, 0, 1, Assert.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAssert_Value(), ecorePackage.getEString(), "Value", null, 0, 1, Assert.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(callProcedureEClass, CallProcedure.class, "CallProcedure", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCallProcedure_ProcedureName(), ecorePackage.getEString(), "ProcedureName", null, 0, 1, CallProcedure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

@@ -438,9 +438,12 @@ public class SeleniumDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cAssertKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Alternatives cAlternatives_1 = (Alternatives)cGroup.eContents().get(1);
 		private final Group cGroup_1_0 = (Group)cAlternatives_1.eContents().get(0);
-		private final Assignment cSearchAssignment_1_0_0 = (Assignment)cGroup_1_0.eContents().get(0);
-		private final RuleCall cSearchSTRINGTerminalRuleCall_1_0_0_0 = (RuleCall)cSearchAssignment_1_0_0.eContents().get(0);
-		private final Keyword cContainsKeyword_1_0_1 = (Keyword)cGroup_1_0.eContents().get(1);
+		private final Assignment cNameAssignment_1_0_0 = (Assignment)cGroup_1_0.eContents().get(0);
+		private final RuleCall cNameSTRINGTerminalRuleCall_1_0_0_0 = (RuleCall)cNameAssignment_1_0_0.eContents().get(0);
+		private final Assignment cTypeAssignment_1_0_1 = (Assignment)cGroup_1_0.eContents().get(1);
+		private final Alternatives cTypeAlternatives_1_0_1_0 = (Alternatives)cTypeAssignment_1_0_1.eContents().get(0);
+		private final Keyword cTypeContainsKeyword_1_0_1_0_0 = (Keyword)cTypeAlternatives_1_0_1_0.eContents().get(0);
+		private final Keyword cTypeEqualsKeyword_1_0_1_0_1 = (Keyword)cTypeAlternatives_1_0_1_0.eContents().get(1);
 		private final Assignment cValueAssignment_1_0_2 = (Assignment)cGroup_1_0.eContents().get(2);
 		private final Alternatives cValueAlternatives_1_0_2_0 = (Alternatives)cValueAssignment_1_0_2.eContents().get(0);
 		private final RuleCall cValueSTRINGTerminalRuleCall_1_0_2_0_0 = (RuleCall)cValueAlternatives_1_0_2_0.eContents().get(0);
@@ -448,43 +451,42 @@ public class SeleniumDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup_1_1 = (Group)cAlternatives_1.eContents().get(1);
 		private final Assignment cNameAssignment_1_1_0 = (Assignment)cGroup_1_1.eContents().get(0);
 		private final RuleCall cNameSTRINGTerminalRuleCall_1_1_0_0 = (RuleCall)cNameAssignment_1_1_0.eContents().get(0);
-		private final Keyword cEqualsKeyword_1_1_1 = (Keyword)cGroup_1_1.eContents().get(1);
-		private final Assignment cValueAssignment_1_1_2 = (Assignment)cGroup_1_1.eContents().get(2);
-		private final Alternatives cValueAlternatives_1_1_2_0 = (Alternatives)cValueAssignment_1_1_2.eContents().get(0);
-		private final RuleCall cValueSTRINGTerminalRuleCall_1_1_2_0_0 = (RuleCall)cValueAlternatives_1_1_2_0.eContents().get(0);
-		private final RuleCall cValueIDENTIFIERTerminalRuleCall_1_1_2_0_1 = (RuleCall)cValueAlternatives_1_1_2_0.eContents().get(1);
-		private final Group cGroup_1_2 = (Group)cAlternatives_1.eContents().get(2);
-		private final Assignment cNameAssignment_1_2_0 = (Assignment)cGroup_1_2.eContents().get(0);
-		private final RuleCall cNameSTRINGTerminalRuleCall_1_2_0_0 = (RuleCall)cNameAssignment_1_2_0.eContents().get(0);
-		private final Keyword cExistsKeyword_1_2_1 = (Keyword)cGroup_1_2.eContents().get(1);
+		private final Assignment cTypeAssignment_1_1_1 = (Assignment)cGroup_1_1.eContents().get(1);
+		private final Keyword cTypeExistsKeyword_1_1_1_0 = (Keyword)cTypeAssignment_1_1_1.eContents().get(0);
 		
 		//Assert:
-		//	'assert' (Search=STRING 'contains' Value=(STRING | IDENTIFIER) | Name=STRING 'equals' Value=(STRING | IDENTIFIER) |
-		//	Name=STRING 'exists');
+		//	'assert' (Name=STRING Type=('contains' | 'equals') Value=(STRING | IDENTIFIER) | Name=STRING Type='exists');
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'assert' (Search=STRING 'contains' Value=(STRING | IDENTIFIER) | Name=STRING 'equals' Value=(STRING | IDENTIFIER) |
-		//Name=STRING 'exists')
+		//'assert' (Name=STRING Type=('contains' | 'equals') Value=(STRING | IDENTIFIER) | Name=STRING Type='exists')
 		public Group getGroup() { return cGroup; }
 		
 		//'assert'
 		public Keyword getAssertKeyword_0() { return cAssertKeyword_0; }
 		
-		//(Search=STRING 'contains' Value=(STRING | IDENTIFIER) | Name=STRING 'equals' Value=(STRING | IDENTIFIER) | Name=STRING
-		//'exists')
+		//(Name=STRING Type=('contains' | 'equals') Value=(STRING | IDENTIFIER) | Name=STRING Type='exists')
 		public Alternatives getAlternatives_1() { return cAlternatives_1; }
 		
-		//Search=STRING 'contains' Value=(STRING | IDENTIFIER)
+		//Name=STRING Type=('contains' | 'equals') Value=(STRING | IDENTIFIER)
 		public Group getGroup_1_0() { return cGroup_1_0; }
 		
-		//Search=STRING
-		public Assignment getSearchAssignment_1_0_0() { return cSearchAssignment_1_0_0; }
+		//Name=STRING
+		public Assignment getNameAssignment_1_0_0() { return cNameAssignment_1_0_0; }
 		
 		//STRING
-		public RuleCall getSearchSTRINGTerminalRuleCall_1_0_0_0() { return cSearchSTRINGTerminalRuleCall_1_0_0_0; }
+		public RuleCall getNameSTRINGTerminalRuleCall_1_0_0_0() { return cNameSTRINGTerminalRuleCall_1_0_0_0; }
+		
+		//Type=('contains' | 'equals')
+		public Assignment getTypeAssignment_1_0_1() { return cTypeAssignment_1_0_1; }
+		
+		//('contains' | 'equals')
+		public Alternatives getTypeAlternatives_1_0_1_0() { return cTypeAlternatives_1_0_1_0; }
 		
 		//'contains'
-		public Keyword getContainsKeyword_1_0_1() { return cContainsKeyword_1_0_1; }
+		public Keyword getTypeContainsKeyword_1_0_1_0_0() { return cTypeContainsKeyword_1_0_1_0_0; }
+		
+		//'equals'
+		public Keyword getTypeEqualsKeyword_1_0_1_0_1() { return cTypeEqualsKeyword_1_0_1_0_1; }
 		
 		//Value=(STRING | IDENTIFIER)
 		public Assignment getValueAssignment_1_0_2() { return cValueAssignment_1_0_2; }
@@ -498,7 +500,7 @@ public class SeleniumDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//IDENTIFIER
 		public RuleCall getValueIDENTIFIERTerminalRuleCall_1_0_2_0_1() { return cValueIDENTIFIERTerminalRuleCall_1_0_2_0_1; }
 		
-		//Name=STRING 'equals' Value=(STRING | IDENTIFIER)
+		//Name=STRING Type='exists'
 		public Group getGroup_1_1() { return cGroup_1_1; }
 		
 		//Name=STRING
@@ -507,32 +509,11 @@ public class SeleniumDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getNameSTRINGTerminalRuleCall_1_1_0_0() { return cNameSTRINGTerminalRuleCall_1_1_0_0; }
 		
-		//'equals'
-		public Keyword getEqualsKeyword_1_1_1() { return cEqualsKeyword_1_1_1; }
-		
-		//Value=(STRING | IDENTIFIER)
-		public Assignment getValueAssignment_1_1_2() { return cValueAssignment_1_1_2; }
-		
-		//(STRING | IDENTIFIER)
-		public Alternatives getValueAlternatives_1_1_2_0() { return cValueAlternatives_1_1_2_0; }
-		
-		//STRING
-		public RuleCall getValueSTRINGTerminalRuleCall_1_1_2_0_0() { return cValueSTRINGTerminalRuleCall_1_1_2_0_0; }
-		
-		//IDENTIFIER
-		public RuleCall getValueIDENTIFIERTerminalRuleCall_1_1_2_0_1() { return cValueIDENTIFIERTerminalRuleCall_1_1_2_0_1; }
-		
-		//Name=STRING 'exists'
-		public Group getGroup_1_2() { return cGroup_1_2; }
-		
-		//Name=STRING
-		public Assignment getNameAssignment_1_2_0() { return cNameAssignment_1_2_0; }
-		
-		//STRING
-		public RuleCall getNameSTRINGTerminalRuleCall_1_2_0_0() { return cNameSTRINGTerminalRuleCall_1_2_0_0; }
+		//Type='exists'
+		public Assignment getTypeAssignment_1_1_1() { return cTypeAssignment_1_1_1; }
 		
 		//'exists'
-		public Keyword getExistsKeyword_1_2_1() { return cExistsKeyword_1_2_1; }
+		public Keyword getTypeExistsKeyword_1_1_1_0() { return cTypeExistsKeyword_1_1_1_0; }
 	}
 	public class CallProcedureElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.minesnantes.browserautomation.SeleniumDSL.CallProcedure");
@@ -785,8 +766,7 @@ public class SeleniumDSLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Assert:
-	//	'assert' (Search=STRING 'contains' Value=(STRING | IDENTIFIER) | Name=STRING 'equals' Value=(STRING | IDENTIFIER) |
-	//	Name=STRING 'exists');
+	//	'assert' (Name=STRING Type=('contains' | 'equals') Value=(STRING | IDENTIFIER) | Name=STRING Type='exists');
 	public AssertElements getAssertAccess() {
 		return pAssert;
 	}

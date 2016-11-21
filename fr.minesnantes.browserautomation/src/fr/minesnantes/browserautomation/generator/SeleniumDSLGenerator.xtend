@@ -3,24 +3,24 @@
  */
 package fr.minesnantes.browserautomation.generator
 
+import fr.minesnantes.browserautomation.seleniumDSL.Click
+import fr.minesnantes.browserautomation.seleniumDSL.Fill
+import fr.minesnantes.browserautomation.seleniumDSL.Instruction
+import fr.minesnantes.browserautomation.seleniumDSL.Navigate
 import fr.minesnantes.browserautomation.seleniumDSL.Procedure
+import fr.minesnantes.browserautomation.seleniumDSL.Read
+import fr.minesnantes.browserautomation.seleniumDSL.Select
 import fr.minesnantes.browserautomation.seleniumDSL.SeleniumTest
+import fr.minesnantes.browserautomation.seleniumDSL.Tick
 import java.io.File
+import java.util.ArrayList
+import java.util.List
 import org.eclipse.emf.common.util.EList
 import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
-import fr.minesnantes.browserautomation.seleniumDSL.Navigate
-import fr.minesnantes.browserautomation.seleniumDSL.Click
-import fr.minesnantes.browserautomation.seleniumDSL.Instruction
-import fr.minesnantes.browserautomation.seleniumDSL.Fill
-import fr.minesnantes.browserautomation.seleniumDSL.Select
-import fr.minesnantes.browserautomation.seleniumDSL.Tick
-import java.util.HashMap
-import fr.minesnantes.browserautomation.seleniumDSL.Read
-import java.util.ArrayList
-import java.util.List
+import fr.minesnantes.browserautomation.seleniumDSL.Assert
 
 class Counter {
     private int count;
@@ -138,6 +138,27 @@ class SeleniumDSLGenerator extends AbstractGenerator {
         '''
     }
     
+    def dispatch generateInstruction(Assert a) '''
+        «val eltName = '''element«elementCounter.nextCount»'''»
+        «val assertValue = a.value»
+        WebElement «eltName» = webDriver.findElement(By.name("«a.name»"));
+        «switch a.type {
+                case 'contains': '''
+                if(!«eltName».getAttribute("value").contains(«IF variables.contains(assertValue)»«assertValue»«ELSE»"«assertValue»"«ENDIF»)) {
+                    throw new AssertionError(«eltName».getAttribute("value") + " does not contain «assertValue»");
+                };'''
+                case 'equals': '''
+                if(!«eltName».getAttribute("value").equals(«IF variables.contains(assertValue)»«assertValue»«ELSE»"«assertValue»"«ENDIF»)) {
+                    throw new AssertionError(«eltName».getAttribute("value") + " is not equal to «assertValue»");
+                };'''
+                case 'exists': '''
+                if(!«eltName».isDisplayed()) {
+                    throw new AssertionError(«eltName».getAttribute("value") + " does not exist");
+                };'''
+                default: '''// FIXME unrecognized assert instruction: assert «a.type» «assertValue»''' 
+            }»
+    '''
+
         def dispatch generateInstruction(Instruction i) '''
         // FIXME wtf is this instruction?
     '''

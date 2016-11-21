@@ -13,9 +13,9 @@ package fr.minesnantes.browserautomation.seleniumDSL;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link fr.minesnantes.browserautomation.seleniumDSL.Assert#getSearch <em>Search</em>}</li>
- *   <li>{@link fr.minesnantes.browserautomation.seleniumDSL.Assert#getValue <em>Value</em>}</li>
  *   <li>{@link fr.minesnantes.browserautomation.seleniumDSL.Assert#getName <em>Name</em>}</li>
+ *   <li>{@link fr.minesnantes.browserautomation.seleniumDSL.Assert#getType <em>Type</em>}</li>
+ *   <li>{@link fr.minesnantes.browserautomation.seleniumDSL.Assert#getValue <em>Value</em>}</li>
  * </ul>
  *
  * @see fr.minesnantes.browserautomation.seleniumDSL.SeleniumDSLPackage#getAssert()
@@ -25,30 +25,56 @@ package fr.minesnantes.browserautomation.seleniumDSL;
 public interface Assert extends Instruction
 {
   /**
-	 * Returns the value of the '<em><b>Search</b></em>' attribute.
+	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Search</em>' attribute isn't clear,
+   * If the meaning of the '<em>Name</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-	 * @return the value of the '<em>Search</em>' attribute.
-	 * @see #setSearch(String)
-	 * @see fr.minesnantes.browserautomation.seleniumDSL.SeleniumDSLPackage#getAssert_Search()
+	 * @return the value of the '<em>Name</em>' attribute.
+	 * @see #setName(String)
+	 * @see fr.minesnantes.browserautomation.seleniumDSL.SeleniumDSLPackage#getAssert_Name()
 	 * @model
 	 * @generated
 	 */
-  String getSearch();
+  String getName();
 
   /**
-	 * Sets the value of the '{@link fr.minesnantes.browserautomation.seleniumDSL.Assert#getSearch <em>Search</em>}' attribute.
+	 * Sets the value of the '{@link fr.minesnantes.browserautomation.seleniumDSL.Assert#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Search</em>' attribute.
-	 * @see #getSearch()
+	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * @see #getName()
 	 * @generated
 	 */
-  void setSearch(String value);
+  void setName(String value);
+
+  /**
+	 * Returns the value of the '<em><b>Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Type</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+	 * @return the value of the '<em>Type</em>' attribute.
+	 * @see #setType(String)
+	 * @see fr.minesnantes.browserautomation.seleniumDSL.SeleniumDSLPackage#getAssert_Type()
+	 * @model
+	 * @generated
+	 */
+  String getType();
+
+  /**
+	 * Sets the value of the '{@link fr.minesnantes.browserautomation.seleniumDSL.Assert#getType <em>Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Type</em>' attribute.
+	 * @see #getType()
+	 * @generated
+	 */
+  void setType(String value);
 
   /**
 	 * Returns the value of the '<em><b>Value</b></em>' attribute.
@@ -75,31 +101,5 @@ public interface Assert extends Instruction
 	 * @generated
 	 */
   void setValue(String value);
-
-  /**
-	 * Returns the value of the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Name</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-	 * @return the value of the '<em>Name</em>' attribute.
-	 * @see #setName(String)
-	 * @see fr.minesnantes.browserautomation.seleniumDSL.SeleniumDSLPackage#getAssert_Name()
-	 * @model
-	 * @generated
-	 */
-  String getName();
-
-  /**
-	 * Sets the value of the '{@link fr.minesnantes.browserautomation.seleniumDSL.Assert#getName <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name</em>' attribute.
-	 * @see #getName()
-	 * @generated
-	 */
-  void setName(String value);
 
 } // Assert

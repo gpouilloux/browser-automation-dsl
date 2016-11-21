@@ -402,13 +402,22 @@ public interface SeleniumDSLPackage extends EPackage
   int ASSERT = 10;
 
   /**
-	 * The feature id for the '<em><b>Search</b></em>' attribute.
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-  int ASSERT__SEARCH = INSTRUCTION_FEATURE_COUNT + 0;
+  int ASSERT__NAME = INSTRUCTION_FEATURE_COUNT + 0;
+
+  /**
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+  int ASSERT__TYPE = INSTRUCTION_FEATURE_COUNT + 1;
 
   /**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -417,16 +426,7 @@ public interface SeleniumDSLPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-  int ASSERT__VALUE = INSTRUCTION_FEATURE_COUNT + 1;
-
-  /**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-  int ASSERT__NAME = INSTRUCTION_FEATURE_COUNT + 2;
+  int ASSERT__VALUE = INSTRUCTION_FEATURE_COUNT + 2;
 
   /**
 	 * The number of structural features of the '<em>Assert</em>' class.
@@ -762,15 +762,26 @@ public interface SeleniumDSLPackage extends EPackage
   EClass getAssert();
 
   /**
-	 * Returns the meta object for the attribute '{@link fr.minesnantes.browserautomation.seleniumDSL.Assert#getSearch <em>Search</em>}'.
+	 * Returns the meta object for the attribute '{@link fr.minesnantes.browserautomation.seleniumDSL.Assert#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Search</em>'.
-	 * @see fr.minesnantes.browserautomation.seleniumDSL.Assert#getSearch()
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see fr.minesnantes.browserautomation.seleniumDSL.Assert#getName()
 	 * @see #getAssert()
 	 * @generated
 	 */
-  EAttribute getAssert_Search();
+  EAttribute getAssert_Name();
+
+  /**
+	 * Returns the meta object for the attribute '{@link fr.minesnantes.browserautomation.seleniumDSL.Assert#getType <em>Type</em>}'.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Type</em>'.
+	 * @see fr.minesnantes.browserautomation.seleniumDSL.Assert#getType()
+	 * @see #getAssert()
+	 * @generated
+	 */
+  EAttribute getAssert_Type();
 
   /**
 	 * Returns the meta object for the attribute '{@link fr.minesnantes.browserautomation.seleniumDSL.Assert#getValue <em>Value</em>}'.
@@ -782,17 +793,6 @@ public interface SeleniumDSLPackage extends EPackage
 	 * @generated
 	 */
   EAttribute getAssert_Value();
-
-  /**
-	 * Returns the meta object for the attribute '{@link fr.minesnantes.browserautomation.seleniumDSL.Assert#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see fr.minesnantes.browserautomation.seleniumDSL.Assert#getName()
-	 * @see #getAssert()
-	 * @generated
-	 */
-  EAttribute getAssert_Name();
 
   /**
 	 * Returns the meta object for class '{@link fr.minesnantes.browserautomation.seleniumDSL.CallProcedure <em>Call Procedure</em>}'.
@@ -1088,12 +1088,20 @@ public interface SeleniumDSLPackage extends EPackage
     EClass ASSERT = eINSTANCE.getAssert();
 
     /**
-		 * The meta object literal for the '<em><b>Search</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
 		 * @generated
 		 */
-    EAttribute ASSERT__SEARCH = eINSTANCE.getAssert_Search();
+    EAttribute ASSERT__NAME = eINSTANCE.getAssert_Name();
+
+    /**
+		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+		 * @generated
+		 */
+    EAttribute ASSERT__TYPE = eINSTANCE.getAssert_Type();
 
     /**
 		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
@@ -1102,14 +1110,6 @@ public interface SeleniumDSLPackage extends EPackage
 		 * @generated
 		 */
     EAttribute ASSERT__VALUE = eINSTANCE.getAssert_Value();
-
-    /**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-		 * @generated
-		 */
-    EAttribute ASSERT__NAME = eINSTANCE.getAssert_Name();
 
     /**
 		 * The meta object literal for the '{@link fr.minesnantes.browserautomation.seleniumDSL.impl.CallProcedureImpl <em>Call Procedure</em>}' class.

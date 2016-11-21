@@ -518,11 +518,26 @@ rule__Assert__Alternatives_1
 		(rule__Assert__Group_1_1__0)
 		{ after(grammarAccess.getAssertAccess().getGroup_1_1()); }
 	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Assert__TypeAlternatives_1_0_1_0
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getAssertAccess().getTypeContainsKeyword_1_0_1_0_0()); }
+		'contains'
+		{ after(grammarAccess.getAssertAccess().getTypeContainsKeyword_1_0_1_0_0()); }
+	)
 	|
 	(
-		{ before(grammarAccess.getAssertAccess().getGroup_1_2()); }
-		(rule__Assert__Group_1_2__0)
-		{ after(grammarAccess.getAssertAccess().getGroup_1_2()); }
+		{ before(grammarAccess.getAssertAccess().getTypeEqualsKeyword_1_0_1_0_1()); }
+		'equals'
+		{ after(grammarAccess.getAssertAccess().getTypeEqualsKeyword_1_0_1_0_1()); }
 	)
 ;
 finally {
@@ -544,27 +559,6 @@ rule__Assert__ValueAlternatives_1_0_2_0
 		{ before(grammarAccess.getAssertAccess().getValueIDENTIFIERTerminalRuleCall_1_0_2_0_1()); }
 		RULE_IDENTIFIER
 		{ after(grammarAccess.getAssertAccess().getValueIDENTIFIERTerminalRuleCall_1_0_2_0_1()); }
-	)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__Assert__ValueAlternatives_1_1_2_0
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-	(
-		{ before(grammarAccess.getAssertAccess().getValueSTRINGTerminalRuleCall_1_1_2_0_0()); }
-		RULE_STRING
-		{ after(grammarAccess.getAssertAccess().getValueSTRINGTerminalRuleCall_1_1_2_0_0()); }
-	)
-	|
-	(
-		{ before(grammarAccess.getAssertAccess().getValueIDENTIFIERTerminalRuleCall_1_1_2_0_1()); }
-		RULE_IDENTIFIER
-		{ after(grammarAccess.getAssertAccess().getValueIDENTIFIERTerminalRuleCall_1_1_2_0_1()); }
 	)
 ;
 finally {
@@ -1725,9 +1719,9 @@ rule__Assert__Group_1_0__0__Impl
 	}
 :
 (
-	{ before(grammarAccess.getAssertAccess().getSearchAssignment_1_0_0()); }
-	(rule__Assert__SearchAssignment_1_0_0)
-	{ after(grammarAccess.getAssertAccess().getSearchAssignment_1_0_0()); }
+	{ before(grammarAccess.getAssertAccess().getNameAssignment_1_0_0()); }
+	(rule__Assert__NameAssignment_1_0_0)
+	{ after(grammarAccess.getAssertAccess().getNameAssignment_1_0_0()); }
 )
 ;
 finally {
@@ -1752,9 +1746,9 @@ rule__Assert__Group_1_0__1__Impl
 	}
 :
 (
-	{ before(grammarAccess.getAssertAccess().getContainsKeyword_1_0_1()); }
-	'contains'
-	{ after(grammarAccess.getAssertAccess().getContainsKeyword_1_0_1()); }
+	{ before(grammarAccess.getAssertAccess().getTypeAssignment_1_0_1()); }
+	(rule__Assert__TypeAssignment_1_0_1)
+	{ after(grammarAccess.getAssertAccess().getTypeAssignment_1_0_1()); }
 )
 ;
 finally {
@@ -1821,7 +1815,6 @@ rule__Assert__Group_1_1__1
 	}
 :
 	rule__Assert__Group_1_1__1__Impl
-	rule__Assert__Group_1_1__2
 ;
 finally {
 	restoreStackSize(stackSize);
@@ -1833,89 +1826,9 @@ rule__Assert__Group_1_1__1__Impl
 	}
 :
 (
-	{ before(grammarAccess.getAssertAccess().getEqualsKeyword_1_1_1()); }
-	'equals'
-	{ after(grammarAccess.getAssertAccess().getEqualsKeyword_1_1_1()); }
-)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__Assert__Group_1_1__2
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-	rule__Assert__Group_1_1__2__Impl
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__Assert__Group_1_1__2__Impl
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-(
-	{ before(grammarAccess.getAssertAccess().getValueAssignment_1_1_2()); }
-	(rule__Assert__ValueAssignment_1_1_2)
-	{ after(grammarAccess.getAssertAccess().getValueAssignment_1_1_2()); }
-)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
-rule__Assert__Group_1_2__0
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-	rule__Assert__Group_1_2__0__Impl
-	rule__Assert__Group_1_2__1
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__Assert__Group_1_2__0__Impl
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-(
-	{ before(grammarAccess.getAssertAccess().getNameAssignment_1_2_0()); }
-	(rule__Assert__NameAssignment_1_2_0)
-	{ after(grammarAccess.getAssertAccess().getNameAssignment_1_2_0()); }
-)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__Assert__Group_1_2__1
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-	rule__Assert__Group_1_2__1__Impl
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__Assert__Group_1_2__1__Impl
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-(
-	{ before(grammarAccess.getAssertAccess().getExistsKeyword_1_2_1()); }
-	'exists'
-	{ after(grammarAccess.getAssertAccess().getExistsKeyword_1_2_1()); }
+	{ before(grammarAccess.getAssertAccess().getTypeAssignment_1_1_1()); }
+	(rule__Assert__TypeAssignment_1_1_1)
+	{ after(grammarAccess.getAssertAccess().getTypeAssignment_1_1_1()); }
 )
 ;
 finally {
@@ -2421,15 +2334,30 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Assert__SearchAssignment_1_0_0
+rule__Assert__NameAssignment_1_0_0
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getAssertAccess().getSearchSTRINGTerminalRuleCall_1_0_0_0()); }
+		{ before(grammarAccess.getAssertAccess().getNameSTRINGTerminalRuleCall_1_0_0_0()); }
 		RULE_STRING
-		{ after(grammarAccess.getAssertAccess().getSearchSTRINGTerminalRuleCall_1_0_0_0()); }
+		{ after(grammarAccess.getAssertAccess().getNameSTRINGTerminalRuleCall_1_0_0_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Assert__TypeAssignment_1_0_1
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getAssertAccess().getTypeAlternatives_1_0_1_0()); }
+		(rule__Assert__TypeAlternatives_1_0_1_0)
+		{ after(grammarAccess.getAssertAccess().getTypeAlternatives_1_0_1_0()); }
 	)
 ;
 finally {
@@ -2466,30 +2394,19 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Assert__ValueAssignment_1_1_2
+rule__Assert__TypeAssignment_1_1_1
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getAssertAccess().getValueAlternatives_1_1_2_0()); }
-		(rule__Assert__ValueAlternatives_1_1_2_0)
-		{ after(grammarAccess.getAssertAccess().getValueAlternatives_1_1_2_0()); }
-	)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__Assert__NameAssignment_1_2_0
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-	(
-		{ before(grammarAccess.getAssertAccess().getNameSTRINGTerminalRuleCall_1_2_0_0()); }
-		RULE_STRING
-		{ after(grammarAccess.getAssertAccess().getNameSTRINGTerminalRuleCall_1_2_0_0()); }
+		{ before(grammarAccess.getAssertAccess().getTypeExistsKeyword_1_1_1_0()); }
+		(
+			{ before(grammarAccess.getAssertAccess().getTypeExistsKeyword_1_1_1_0()); }
+			'exists'
+			{ after(grammarAccess.getAssertAccess().getTypeExistsKeyword_1_1_1_0()); }
+		)
+		{ after(grammarAccess.getAssertAccess().getTypeExistsKeyword_1_1_1_0()); }
 	)
 ;
 finally {

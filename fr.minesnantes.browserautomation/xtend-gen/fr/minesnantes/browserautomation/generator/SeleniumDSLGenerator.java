@@ -5,6 +5,7 @@ package fr.minesnantes.browserautomation.generator;
 
 import com.google.common.collect.Iterables;
 import fr.minesnantes.browserautomation.generator.Counter;
+import fr.minesnantes.browserautomation.seleniumDSL.Assert;
 import fr.minesnantes.browserautomation.seleniumDSL.Click;
 import fr.minesnantes.browserautomation.seleniumDSL.Fill;
 import fr.minesnantes.browserautomation.seleniumDSL.Instruction;
@@ -319,6 +320,109 @@ public class SeleniumDSLGenerator extends AbstractGenerator {
     return _xblockexpression;
   }
   
+  protected CharSequence _generateInstruction(final Assert a) {
+    StringConcatenation _builder = new StringConcatenation();
+    StringConcatenation _builder_1 = new StringConcatenation();
+    _builder_1.append("element");
+    int _nextCount = this.elementCounter.nextCount();
+    _builder_1.append(_nextCount, "");
+    final String eltName = _builder_1.toString();
+    _builder.newLineIfNotEmpty();
+    final String assertValue = a.getValue();
+    _builder.newLineIfNotEmpty();
+    _builder.append("WebElement ");
+    _builder.append(eltName, "");
+    _builder.append(" = webDriver.findElement(By.name(\"");
+    String _name = a.getName();
+    _builder.append(_name, "");
+    _builder.append("\"));");
+    _builder.newLineIfNotEmpty();
+    CharSequence _switchResult = null;
+    String _type = a.getType();
+    switch (_type) {
+      case "contains":
+        StringConcatenation _builder_2 = new StringConcatenation();
+        _builder_2.append("if(!");
+        _builder_2.append(eltName, "");
+        _builder_2.append(".getAttribute(\"value\").contains(");
+        {
+          boolean _contains = this.variables.contains(assertValue);
+          if (_contains) {
+            _builder_2.append(assertValue, "");
+          } else {
+            _builder_2.append("\"");
+            _builder_2.append(assertValue, "");
+            _builder_2.append("\"");
+          }
+        }
+        _builder_2.append(")) {");
+        _builder_2.newLineIfNotEmpty();
+        _builder_2.append("    ");
+        _builder_2.append("throw new AssertionError(");
+        _builder_2.append(eltName, "    ");
+        _builder_2.append(".getAttribute(\"value\") + \" does not contain ");
+        _builder_2.append(assertValue, "    ");
+        _builder_2.append("\");");
+        _builder_2.newLineIfNotEmpty();
+        _builder_2.append("};");
+        _switchResult = _builder_2;
+        break;
+      case "equals":
+        StringConcatenation _builder_3 = new StringConcatenation();
+        _builder_3.append("if(!");
+        _builder_3.append(eltName, "");
+        _builder_3.append(".getAttribute(\"value\").equals(");
+        {
+          boolean _contains_1 = this.variables.contains(assertValue);
+          if (_contains_1) {
+            _builder_3.append(assertValue, "");
+          } else {
+            _builder_3.append("\"");
+            _builder_3.append(assertValue, "");
+            _builder_3.append("\"");
+          }
+        }
+        _builder_3.append(")) {");
+        _builder_3.newLineIfNotEmpty();
+        _builder_3.append("    ");
+        _builder_3.append("throw new AssertionError(");
+        _builder_3.append(eltName, "    ");
+        _builder_3.append(".getAttribute(\"value\") + \" is not equal to ");
+        _builder_3.append(assertValue, "    ");
+        _builder_3.append("\");");
+        _builder_3.newLineIfNotEmpty();
+        _builder_3.append("};");
+        _switchResult = _builder_3;
+        break;
+      case "exists":
+        StringConcatenation _builder_4 = new StringConcatenation();
+        _builder_4.append("if(!");
+        _builder_4.append(eltName, "");
+        _builder_4.append(".isDisplayed()) {");
+        _builder_4.newLineIfNotEmpty();
+        _builder_4.append("    ");
+        _builder_4.append("throw new AssertionError(");
+        _builder_4.append(eltName, "    ");
+        _builder_4.append(".getAttribute(\"value\") + \" does not exist\");");
+        _builder_4.newLineIfNotEmpty();
+        _builder_4.append("};");
+        _switchResult = _builder_4;
+        break;
+      default:
+        StringConcatenation _builder_5 = new StringConcatenation();
+        _builder_5.append("// FIXME unrecognized assert instruction: assert ");
+        String _type_1 = a.getType();
+        _builder_5.append(_type_1, "");
+        _builder_5.append(" ");
+        _builder_5.append(assertValue, "");
+        _switchResult = _builder_5;
+        break;
+    }
+    _builder.append(_switchResult, "");
+    _builder.newLineIfNotEmpty();
+    return _builder;
+  }
+  
   protected CharSequence _generateInstruction(final Instruction i) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("// FIXME wtf is this instruction?");
@@ -326,24 +430,26 @@ public class SeleniumDSLGenerator extends AbstractGenerator {
     return _builder;
   }
   
-  public CharSequence generateInstruction(final Instruction c) {
-    if (c instanceof Click) {
-      return _generateInstruction((Click)c);
-    } else if (c instanceof Fill) {
-      return _generateInstruction((Fill)c);
-    } else if (c instanceof Navigate) {
-      return _generateInstruction((Navigate)c);
-    } else if (c instanceof Read) {
-      return _generateInstruction((Read)c);
-    } else if (c instanceof Select) {
-      return _generateInstruction((Select)c);
-    } else if (c instanceof Tick) {
-      return _generateInstruction((Tick)c);
-    } else if (c != null) {
-      return _generateInstruction(c);
+  public CharSequence generateInstruction(final Instruction a) {
+    if (a instanceof Assert) {
+      return _generateInstruction((Assert)a);
+    } else if (a instanceof Click) {
+      return _generateInstruction((Click)a);
+    } else if (a instanceof Fill) {
+      return _generateInstruction((Fill)a);
+    } else if (a instanceof Navigate) {
+      return _generateInstruction((Navigate)a);
+    } else if (a instanceof Read) {
+      return _generateInstruction((Read)a);
+    } else if (a instanceof Select) {
+      return _generateInstruction((Select)a);
+    } else if (a instanceof Tick) {
+      return _generateInstruction((Tick)a);
+    } else if (a != null) {
+      return _generateInstruction(a);
     } else {
       throw new IllegalArgumentException("Unhandled parameter types: " +
-        Arrays.<Object>asList(c).toString());
+        Arrays.<Object>asList(a).toString());
     }
   }
 }

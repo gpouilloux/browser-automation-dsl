@@ -822,9 +822,9 @@ ruleAssert returns [EObject current=null]
 			(
 				(
 					(
-						lv_Search_1_0=RULE_STRING
+						lv_Name_1_0=RULE_STRING
 						{
-							newLeafNode(lv_Search_1_0, grammarAccess.getAssertAccess().getSearchSTRINGTerminalRuleCall_1_0_0_0());
+							newLeafNode(lv_Name_1_0, grammarAccess.getAssertAccess().getNameSTRINGTerminalRuleCall_1_0_0_0());
 						}
 						{
 							if ($current==null) {
@@ -832,16 +832,39 @@ ruleAssert returns [EObject current=null]
 							}
 							setWithLastConsumed(
 								$current,
-								"Search",
-								lv_Search_1_0,
+								"Name",
+								lv_Name_1_0,
 								"org.eclipse.xtext.common.Terminals.STRING");
 						}
 					)
 				)
-				otherlv_2='contains'
-				{
-					newLeafNode(otherlv_2, grammarAccess.getAssertAccess().getContainsKeyword_1_0_1());
-				}
+				(
+					(
+						(
+							lv_Type_2_1='contains'
+							{
+								newLeafNode(lv_Type_2_1, grammarAccess.getAssertAccess().getTypeContainsKeyword_1_0_1_0_0());
+							}
+							{
+								if ($current==null) {
+									$current = createModelElement(grammarAccess.getAssertRule());
+								}
+								setWithLastConsumed($current, "Type", lv_Type_2_1, null);
+							}
+							    |
+							lv_Type_2_2='equals'
+							{
+								newLeafNode(lv_Type_2_2, grammarAccess.getAssertAccess().getTypeEqualsKeyword_1_0_1_0_1());
+							}
+							{
+								if ($current==null) {
+									$current = createModelElement(grammarAccess.getAssertRule());
+								}
+								setWithLastConsumed($current, "Type", lv_Type_2_2, null);
+							}
+						)
+					)
+				)
 				(
 					(
 						(
@@ -898,70 +921,20 @@ ruleAssert returns [EObject current=null]
 						}
 					)
 				)
-				otherlv_5='equals'
-				{
-					newLeafNode(otherlv_5, grammarAccess.getAssertAccess().getEqualsKeyword_1_1_1());
-				}
 				(
 					(
-						(
-							lv_Value_6_1=RULE_STRING
-							{
-								newLeafNode(lv_Value_6_1, grammarAccess.getAssertAccess().getValueSTRINGTerminalRuleCall_1_1_2_0_0());
-							}
-							{
-								if ($current==null) {
-									$current = createModelElement(grammarAccess.getAssertRule());
-								}
-								setWithLastConsumed(
-									$current,
-									"Value",
-									lv_Value_6_1,
-									"org.eclipse.xtext.common.Terminals.STRING");
-							}
-							    |
-							lv_Value_6_2=RULE_IDENTIFIER
-							{
-								newLeafNode(lv_Value_6_2, grammarAccess.getAssertAccess().getValueIDENTIFIERTerminalRuleCall_1_1_2_0_1());
-							}
-							{
-								if ($current==null) {
-									$current = createModelElement(grammarAccess.getAssertRule());
-								}
-								setWithLastConsumed(
-									$current,
-									"Value",
-									lv_Value_6_2,
-									"fr.minesnantes.browserautomation.SeleniumDSL.IDENTIFIER");
-							}
-						)
-					)
-				)
-			)
-			    |
-			(
-				(
-					(
-						lv_Name_7_0=RULE_STRING
+						lv_Type_5_0='exists'
 						{
-							newLeafNode(lv_Name_7_0, grammarAccess.getAssertAccess().getNameSTRINGTerminalRuleCall_1_2_0_0());
+							newLeafNode(lv_Type_5_0, grammarAccess.getAssertAccess().getTypeExistsKeyword_1_1_1_0());
 						}
 						{
 							if ($current==null) {
 								$current = createModelElement(grammarAccess.getAssertRule());
 							}
-							setWithLastConsumed(
-								$current,
-								"Name",
-								lv_Name_7_0,
-								"org.eclipse.xtext.common.Terminals.STRING");
+							setWithLastConsumed($current, "Type", lv_Type_5_0, "exists");
 						}
 					)
 				)
-				otherlv_8='exists'
-				{
-					newLeafNode(otherlv_8, grammarAccess.getAssertAccess().getExistsKeyword_1_2_1());
-				}
 			)
 		)
 	)
