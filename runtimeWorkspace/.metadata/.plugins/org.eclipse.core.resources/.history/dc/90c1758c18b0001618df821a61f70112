@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<viewpoint:DAnalysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:seleniumDSL="http://www.minesnantes.fr/browserautomation/SeleniumDSL" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description" xmi:id="_r77yAK_KEeal6MVeRxWzwg" selectedViews="_-1I4YK_lEeaebv6TJWYO6g" version="11.0.1.201608181000">
+  <semanticResources>campus.slnm</semanticResources>
+  <ownedViews xmi:type="viewpoint:DView" xmi:id="_-1I4YK_lEeaebv6TJWYO6g">
+    <viewpoint xmi:type="description:Viewpoint" href="platform:/resource/selenium.design/description/selenium.odesign#//@ownedViewpoints[name='Selenium']"/>
+    <ownedRepresentations xmi:type="diagram:DSemanticDiagram" xmi:id="_DAYwALAWEea7W96yWThb2A" name="new Selenium Diagram">
+      <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_DAbzULAWEea7W96yWThb2A" source="DANNOTATION_CUSTOMIZATION_KEY">
+        <data xmi:type="diagram:ComputedStyleDescriptionRegistry" xmi:id="_DAbzUbAWEea7W96yWThb2A"/>
+      </ownedAnnotationEntries>
+      <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_DB7oILAWEea7W96yWThb2A" source="GMF_DIAGRAMS">
+        <data xmi:type="notation:Diagram" xmi:id="_DB7oIbAWEea7W96yWThb2A" type="Sirius" element="_DAYwALAWEea7W96yWThb2A" measurementUnit="Pixel">
+          <children xmi:type="notation:Node" xmi:id="_HPI9gLAYEea7W96yWThb2A" type="2001" element="_HO1bgLAYEea7W96yWThb2A">
+            <children xmi:type="notation:Node" xmi:id="_HPN2ALAYEea7W96yWThb2A" type="5002">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_HPN2AbAYEea7W96yWThb2A" y="5"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_HPI9gbAYEea7W96yWThb2A" fontName="Roboto"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HPI9grAYEea7W96yWThb2A" width="20" height="20"/>
+          </children>
+          <styles xmi:type="notation:DiagramStyle" xmi:id="_DB7oIrAWEea7W96yWThb2A"/>
+        </data>
+      </ownedAnnotationEntries>
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_HO1bgLAYEea7W96yWThb2A">
+        <target xmi:type="seleniumDSL:MainProcedure" href="campus.slnm#//@main"/>
+        <semanticElements xmi:type="seleniumDSL:MainProcedure" href="campus.slnm#//@main"/>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/selenium.design/description/selenium.odesign#//@ownedViewpoints[name='Selenium']/@ownedRepresentations[name='Selenium%20Diagram']/@defaultLayer/@nodeMappings[name='SD_MainProc']"/>
+      </ownedDiagramElements>
+      <description xmi:type="description_1:DiagramDescription" href="platform:/resource/selenium.design/description/selenium.odesign#//@ownedViewpoints[name='Selenium']/@ownedRepresentations[name='Selenium%20Diagram']"/>
+      <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_DAbzUrAWEea7W96yWThb2A"/>
+      <activatedLayers xmi:type="description_1:Layer" href="platform:/resource/selenium.design/description/selenium.odesign#//@ownedViewpoints[name='Selenium']/@ownedRepresentations[name='Selenium%20Diagram']/@defaultLayer"/>
+      <target xmi:type="seleniumDSL:SeleniumTest" href="campus.slnm#/"/>
+    </ownedRepresentations>
+  </ownedViews>
+</viewpoint:DAnalysis>

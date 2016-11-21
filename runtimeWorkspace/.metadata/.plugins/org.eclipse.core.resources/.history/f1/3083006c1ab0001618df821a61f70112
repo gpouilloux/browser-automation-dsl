@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" name="selenium" version="11.0.0.201601261200">
+  <ownedViewpoints name="Selenium" modelFileExtension="slnm">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Selenium Diagram" domainClass="seleniumDSL.SeleniumTest" enablePopupBars="true">
+      <metamodel href="http://www.minesnantes.fr/browserautomation/SeleniumDSL#/"/>
+      <layout xsi:type="description_1:CompositeLayout" direction="LeftToRight"/>
+      <defaultLayer name="Default">
+        <nodeMappings name="SD_Start" semanticCandidatesExpression="var:self" domainClass="seleniumDSL.SeleniumTest">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="Start" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/selenium.design/icons/Start.svg">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelFormat>bold</labelFormat>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="SD_MainProc" domainClass="seleniumDSL.MainProcedure">
+          <style xsi:type="style:SquareDescription" labelExpression="Main procedure" tooltipExpression="Main procedure" labelPosition="node" resizeKind="NSEW" width="20" height="20">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_blue']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="SD_Instruction" domainClass="seleniumDSL.Instruction"/>
+        <edgeMappings name="SD_First" sourceMapping="//@ownedViewpoints[name='Selenium']/@ownedRepresentations[name='Selenium%20Diagram']/@defaultLayer/@nodeMappings[name='SD_Start']" targetMapping="//@ownedViewpoints[name='Selenium']/@ownedRepresentations[name='Selenium%20Diagram']/@defaultLayer/@nodeMappings[name='SD_MainProc']" targetFinderExpression="aql:self.main">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="SD_Next" sourceMapping="//@ownedViewpoints[name='Selenium']/@ownedRepresentations[name='Selenium%20Diagram']/@defaultLayer/@nodeMappings[name='SD_Instruction']" targetMapping="//@ownedViewpoints[name='Selenium']/@ownedRepresentations[name='Selenium%20Diagram']/@defaultLayer/@nodeMappings[name='SD_Instruction']" targetFinderExpression="service:getNextInstruction()">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <containerMappings name="SD_CallProc" semanticCandidatesExpression="feature:procedures" domainClass="seleniumDSL.CallProcedure" childrenPresentation="List"/>
+        <containerMappings name="SD_Procedure" semanticCandidatesExpression="feature:procedures" domainClass="seleniumDSL.Procedure">
+          <subNodeMappings name="SD_Instruction" semanticCandidatesExpression="feature:instructions" domainClass="seleniumDSL.Instruction">
+            <style xsi:type="style:SquareDescription" labelSize="20" labelExpression="" labelPosition="node" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            </style>
+          </subNodeMappings>
+        </containerMappings>
+      </defaultLayer>
+    </ownedRepresentations>
+  </ownedViewpoints>
+</description:Group>
