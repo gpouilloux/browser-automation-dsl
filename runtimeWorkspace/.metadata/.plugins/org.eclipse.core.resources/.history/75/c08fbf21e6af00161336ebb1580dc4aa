@@ -1,0 +1,19 @@
+def testWordReference(mot, motAttendu) {
+  fill 'w' mot
+  click input 'submit-button'
+  assert 'ToWrd' exists
+  assert 'ToWrd' equals motAttendu
+  a = read 'ToWrd'
+  assert 'ToWord' equals a
+}
+
+def main {
+  navigate 'http://www.wordreference.com/'
+  testWordReference('bonjour', 'hello')
+  fill 'w' 'a'
+  click input 'submit-button'
+  assert 'ToWrd' exists
+  assert 'ToWrd' equals ''b
+  a = read 'ToWrd'
+  assert 'ToWord' equals a
+}

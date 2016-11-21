@@ -1,0 +1,64 @@
+package browserautomation;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
+public class SeleniumTest {
+    
+    private static WebDriver webDriver;
+    
+    private static void testWordReference (String mot, String motAttendu) {
+        WebElement element0 = webDriver.findElement(By.name("w"));
+        element0.sendKeys(mot);
+        WebElement element1 = webDriver.findElement(By.xpath("//input[@value=\"submit-button\"]"));
+        element1.click();
+        WebElement element2 = webDriver.findElement(By.name("ToWrd"));
+        if(!element2.isDisplayed()) {
+            throw new AssertionError(element2.getAttribute("value") + " does not exist");
+        };
+        WebElement element3 = webDriver.findElement(By.name("ToWrd"));
+        if(!element3.getAttribute("value").equals(motAttendu)) {
+            throw new AssertionError(element3.getAttribute("value") + " is not equal to motAttendu");
+        };
+        WebElement element4 = webDriver.findElement(By.name("ToWrd"));
+        String a = element4.getAttribute("value");
+        WebElement element5 = webDriver.findElement(By.name("ToWord"));
+        if(!element5.getAttribute("value").equals(a)) {
+            throw new AssertionError(element5.getAttribute("value") + " is not equal to a");
+        };
+    }
+    
+    public static void main(String[] args) {
+        // Initialize Selenium web driver for Google Chrome
+        System.setProperty("webdriver.chrome.driver", "lib/chromedriver");
+        webDriver = new ChromeDriver();
+        
+        webDriver.get("http://www.wordreference.com/");
+        testWordReference("bonjour", "hello");
+        WebElement element6 = webDriver.findElement(By.name("w"));
+        element6.sendKeys("a");
+        WebElement element7 = webDriver.findElement(By.xpath("//input[@value=\"submit-button\"]"));
+        element7.click();
+        WebElement element8 = webDriver.findElement(By.name("ToWrd"));
+        if(!element8.isDisplayed()) {
+            throw new AssertionError(element8.getAttribute("value") + " does not exist");
+        };
+        WebElement element9 = webDriver.findElement(By.name("ToWrd"));
+        if(!element9.getAttribute("value").equals("")) {
+            throw new AssertionError(element9.getAttribute("value") + " is not equal to ");
+        };
+        b();
+        WebElement element10 = webDriver.findElement(By.name("ToWrd"));
+        String a = element10.getAttribute("value");
+        WebElement element11 = webDriver.findElement(By.name("ToWord"));
+        if(!element11.getAttribute("value").equals(a)) {
+            throw new AssertionError(element11.getAttribute("value") + " is not equal to a");
+        };
+        
+        // Close the browser
+        webDriver.quit();
+    }
+}

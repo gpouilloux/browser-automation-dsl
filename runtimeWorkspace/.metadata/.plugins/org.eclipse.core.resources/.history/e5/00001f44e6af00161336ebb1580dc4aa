@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<viewpoint:DAnalysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description" xmi:id="_r77yAK_KEeal6MVeRxWzwg" selectedViews="_-1I4YK_lEeaebv6TJWYO6g" version="11.0.1.201608181000">
+  <ownedViews xmi:type="viewpoint:DView" xmi:id="_-1I4YK_lEeaebv6TJWYO6g">
+    <viewpoint xmi:type="description:Viewpoint" href="platform:/resource/selenium.design/description/selenium.odesign#//@ownedViewpoints[name='Selenium']"/>
+  </ownedViews>
+</viewpoint:DAnalysis>
