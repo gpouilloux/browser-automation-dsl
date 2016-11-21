@@ -3,26 +3,24 @@
  */
 package fr.minesnantes.browserautomation.generator
 
+import fr.minesnantes.browserautomation.seleniumDSL.Assert
+import fr.minesnantes.browserautomation.seleniumDSL.CallProcedure
 import fr.minesnantes.browserautomation.seleniumDSL.Click
 import fr.minesnantes.browserautomation.seleniumDSL.Fill
 import fr.minesnantes.browserautomation.seleniumDSL.Instruction
 import fr.minesnantes.browserautomation.seleniumDSL.Navigate
-import fr.minesnantes.browserautomation.seleniumDSL.Procedure
 import fr.minesnantes.browserautomation.seleniumDSL.Read
 import fr.minesnantes.browserautomation.seleniumDSL.Select
 import fr.minesnantes.browserautomation.seleniumDSL.SeleniumTest
 import fr.minesnantes.browserautomation.seleniumDSL.Tick
 import java.io.File
 import java.util.ArrayList
+import java.util.HashMap
 import java.util.List
-import org.eclipse.emf.common.util.EList
 import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
-import fr.minesnantes.browserautomation.seleniumDSL.Assert
-import java.util.HashMap
-import fr.minesnantes.browserautomation.seleniumDSL.CallProcedure
 
 class Counter {
     private int count;
