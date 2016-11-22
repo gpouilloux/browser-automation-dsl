@@ -26,817 +26,837 @@ import org.eclipse.emf.ecore.EReference;
 public interface SeleniumDSLPackage extends EPackage
 {
   /**
-	 * The package name.
-	 * <!-- begin-user-doc -->
+   * The package name.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   String eNAME = "seleniumDSL";
 
   /**
-	 * The package namespace URI.
-	 * <!-- begin-user-doc -->
+   * The package namespace URI.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   String eNS_URI = "http://www.minesnantes.fr/browserautomation/SeleniumDSL";
 
   /**
-	 * The package namespace name.
-	 * <!-- begin-user-doc -->
+   * The package namespace name.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   String eNS_PREFIX = "seleniumDSL";
 
   /**
-	 * The singleton instance of the package.
-	 * <!-- begin-user-doc -->
+   * The singleton instance of the package.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   SeleniumDSLPackage eINSTANCE = fr.minesnantes.browserautomation.seleniumDSL.impl.SeleniumDSLPackageImpl.init();
 
   /**
-	 * The meta object id for the '{@link fr.minesnantes.browserautomation.seleniumDSL.impl.SeleniumTestImpl <em>Selenium Test</em>}' class.
-	 * <!-- begin-user-doc -->
+   * The meta object id for the '{@link fr.minesnantes.browserautomation.seleniumDSL.impl.SeleniumTestImpl <em>Selenium Test</em>}' class.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see fr.minesnantes.browserautomation.seleniumDSL.impl.SeleniumTestImpl
-	 * @see fr.minesnantes.browserautomation.seleniumDSL.impl.SeleniumDSLPackageImpl#getSeleniumTest()
-	 * @generated
-	 */
+   * @see fr.minesnantes.browserautomation.seleniumDSL.impl.SeleniumTestImpl
+   * @see fr.minesnantes.browserautomation.seleniumDSL.impl.SeleniumDSLPackageImpl#getSeleniumTest()
+   * @generated
+   */
   int SELENIUM_TEST = 0;
 
   /**
-	 * The feature id for the '<em><b>Procedures</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
+   * The feature id for the '<em><b>Procedures</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int SELENIUM_TEST__PROCEDURES = 0;
 
   /**
-	 * The feature id for the '<em><b>Main</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
+   * The feature id for the '<em><b>Main</b></em>' containment reference.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int SELENIUM_TEST__MAIN = 1;
 
   /**
-	 * The number of structural features of the '<em>Selenium Test</em>' class.
-	 * <!-- begin-user-doc -->
+   * The number of structural features of the '<em>Selenium Test</em>' class.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int SELENIUM_TEST_FEATURE_COUNT = 2;
 
   /**
-	 * The meta object id for the '{@link fr.minesnantes.browserautomation.seleniumDSL.impl.ProcedureImpl <em>Procedure</em>}' class.
-	 * <!-- begin-user-doc -->
+   * The meta object id for the '{@link fr.minesnantes.browserautomation.seleniumDSL.impl.ProcedureImpl <em>Procedure</em>}' class.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see fr.minesnantes.browserautomation.seleniumDSL.impl.ProcedureImpl
-	 * @see fr.minesnantes.browserautomation.seleniumDSL.impl.SeleniumDSLPackageImpl#getProcedure()
-	 * @generated
-	 */
+   * @see fr.minesnantes.browserautomation.seleniumDSL.impl.ProcedureImpl
+   * @see fr.minesnantes.browserautomation.seleniumDSL.impl.SeleniumDSLPackageImpl#getProcedure()
+   * @generated
+   */
   int PROCEDURE = 1;
 
   /**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int PROCEDURE__NAME = 0;
 
   /**
-	 * The feature id for the '<em><b>Parameters</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
+   * The feature id for the '<em><b>Parameters</b></em>' attribute list.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int PROCEDURE__PARAMETERS = 1;
 
   /**
-	 * The feature id for the '<em><b>Instructions</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
+   * The feature id for the '<em><b>Instructions</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int PROCEDURE__INSTRUCTIONS = 2;
 
   /**
-	 * The number of structural features of the '<em>Procedure</em>' class.
-	 * <!-- begin-user-doc -->
+   * The number of structural features of the '<em>Procedure</em>' class.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int PROCEDURE_FEATURE_COUNT = 3;
 
   /**
-	 * The meta object id for the '{@link fr.minesnantes.browserautomation.seleniumDSL.impl.MainProcedureImpl <em>Main Procedure</em>}' class.
-	 * <!-- begin-user-doc -->
+   * The meta object id for the '{@link fr.minesnantes.browserautomation.seleniumDSL.impl.MainProcedureImpl <em>Main Procedure</em>}' class.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see fr.minesnantes.browserautomation.seleniumDSL.impl.MainProcedureImpl
-	 * @see fr.minesnantes.browserautomation.seleniumDSL.impl.SeleniumDSLPackageImpl#getMainProcedure()
-	 * @generated
-	 */
+   * @see fr.minesnantes.browserautomation.seleniumDSL.impl.MainProcedureImpl
+   * @see fr.minesnantes.browserautomation.seleniumDSL.impl.SeleniumDSLPackageImpl#getMainProcedure()
+   * @generated
+   */
   int MAIN_PROCEDURE = 2;
 
   /**
-	 * The feature id for the '<em><b>Instructions</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
+   * The feature id for the '<em><b>Instructions</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int MAIN_PROCEDURE__INSTRUCTIONS = 0;
 
   /**
-	 * The number of structural features of the '<em>Main Procedure</em>' class.
-	 * <!-- begin-user-doc -->
+   * The number of structural features of the '<em>Main Procedure</em>' class.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int MAIN_PROCEDURE_FEATURE_COUNT = 1;
 
   /**
-	 * The meta object id for the '{@link fr.minesnantes.browserautomation.seleniumDSL.impl.InstructionImpl <em>Instruction</em>}' class.
-	 * <!-- begin-user-doc -->
+   * The meta object id for the '{@link fr.minesnantes.browserautomation.seleniumDSL.impl.InstructionImpl <em>Instruction</em>}' class.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see fr.minesnantes.browserautomation.seleniumDSL.impl.InstructionImpl
-	 * @see fr.minesnantes.browserautomation.seleniumDSL.impl.SeleniumDSLPackageImpl#getInstruction()
-	 * @generated
-	 */
+   * @see fr.minesnantes.browserautomation.seleniumDSL.impl.InstructionImpl
+   * @see fr.minesnantes.browserautomation.seleniumDSL.impl.SeleniumDSLPackageImpl#getInstruction()
+   * @generated
+   */
   int INSTRUCTION = 3;
 
   /**
-	 * The number of structural features of the '<em>Instruction</em>' class.
-	 * <!-- begin-user-doc -->
+   * The number of structural features of the '<em>Instruction</em>' class.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int INSTRUCTION_FEATURE_COUNT = 0;
 
   /**
-	 * The meta object id for the '{@link fr.minesnantes.browserautomation.seleniumDSL.impl.ClickImpl <em>Click</em>}' class.
-	 * <!-- begin-user-doc -->
+   * The meta object id for the '{@link fr.minesnantes.browserautomation.seleniumDSL.impl.ClickImpl <em>Click</em>}' class.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see fr.minesnantes.browserautomation.seleniumDSL.impl.ClickImpl
-	 * @see fr.minesnantes.browserautomation.seleniumDSL.impl.SeleniumDSLPackageImpl#getClick()
-	 * @generated
-	 */
+   * @see fr.minesnantes.browserautomation.seleniumDSL.impl.ClickImpl
+   * @see fr.minesnantes.browserautomation.seleniumDSL.impl.SeleniumDSLPackageImpl#getClick()
+   * @generated
+   */
   int CLICK = 4;
 
   /**
-	 * The feature id for the '<em><b>Type</b></em>' attribute.
-	 * <!-- begin-user-doc -->
+   * The feature id for the '<em><b>Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int CLICK__TYPE = INSTRUCTION_FEATURE_COUNT + 0;
 
   /**
-	 * The feature id for the '<em><b>Value</b></em>' attribute.
-	 * <!-- begin-user-doc -->
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int CLICK__VALUE = INSTRUCTION_FEATURE_COUNT + 1;
 
   /**
-	 * The number of structural features of the '<em>Click</em>' class.
-	 * <!-- begin-user-doc -->
+   * The number of structural features of the '<em>Click</em>' class.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int CLICK_FEATURE_COUNT = INSTRUCTION_FEATURE_COUNT + 2;
 
   /**
-	 * The meta object id for the '{@link fr.minesnantes.browserautomation.seleniumDSL.impl.FillImpl <em>Fill</em>}' class.
-	 * <!-- begin-user-doc -->
+   * The meta object id for the '{@link fr.minesnantes.browserautomation.seleniumDSL.impl.FillImpl <em>Fill</em>}' class.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see fr.minesnantes.browserautomation.seleniumDSL.impl.FillImpl
-	 * @see fr.minesnantes.browserautomation.seleniumDSL.impl.SeleniumDSLPackageImpl#getFill()
-	 * @generated
-	 */
+   * @see fr.minesnantes.browserautomation.seleniumDSL.impl.FillImpl
+   * @see fr.minesnantes.browserautomation.seleniumDSL.impl.SeleniumDSLPackageImpl#getFill()
+   * @generated
+   */
   int FILL = 5;
 
   /**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int FILL__NAME = INSTRUCTION_FEATURE_COUNT + 0;
 
   /**
-	 * The feature id for the '<em><b>Value</b></em>' attribute.
-	 * <!-- begin-user-doc -->
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int FILL__VALUE = INSTRUCTION_FEATURE_COUNT + 1;
 
   /**
-	 * The number of structural features of the '<em>Fill</em>' class.
-	 * <!-- begin-user-doc -->
+   * The number of structural features of the '<em>Fill</em>' class.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int FILL_FEATURE_COUNT = INSTRUCTION_FEATURE_COUNT + 2;
 
   /**
-	 * The meta object id for the '{@link fr.minesnantes.browserautomation.seleniumDSL.impl.SelectImpl <em>Select</em>}' class.
-	 * <!-- begin-user-doc -->
+   * The meta object id for the '{@link fr.minesnantes.browserautomation.seleniumDSL.impl.SelectImpl <em>Select</em>}' class.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see fr.minesnantes.browserautomation.seleniumDSL.impl.SelectImpl
-	 * @see fr.minesnantes.browserautomation.seleniumDSL.impl.SeleniumDSLPackageImpl#getSelect()
-	 * @generated
-	 */
+   * @see fr.minesnantes.browserautomation.seleniumDSL.impl.SelectImpl
+   * @see fr.minesnantes.browserautomation.seleniumDSL.impl.SeleniumDSLPackageImpl#getSelect()
+   * @generated
+   */
   int SELECT = 6;
 
   /**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int SELECT__NAME = INSTRUCTION_FEATURE_COUNT + 0;
 
   /**
-	 * The feature id for the '<em><b>Value</b></em>' attribute.
-	 * <!-- begin-user-doc -->
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int SELECT__VALUE = INSTRUCTION_FEATURE_COUNT + 1;
 
   /**
-	 * The number of structural features of the '<em>Select</em>' class.
-	 * <!-- begin-user-doc -->
+   * The number of structural features of the '<em>Select</em>' class.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int SELECT_FEATURE_COUNT = INSTRUCTION_FEATURE_COUNT + 2;
 
   /**
-	 * The meta object id for the '{@link fr.minesnantes.browserautomation.seleniumDSL.impl.TickImpl <em>Tick</em>}' class.
-	 * <!-- begin-user-doc -->
+   * The meta object id for the '{@link fr.minesnantes.browserautomation.seleniumDSL.impl.TickImpl <em>Tick</em>}' class.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see fr.minesnantes.browserautomation.seleniumDSL.impl.TickImpl
-	 * @see fr.minesnantes.browserautomation.seleniumDSL.impl.SeleniumDSLPackageImpl#getTick()
-	 * @generated
-	 */
+   * @see fr.minesnantes.browserautomation.seleniumDSL.impl.TickImpl
+   * @see fr.minesnantes.browserautomation.seleniumDSL.impl.SeleniumDSLPackageImpl#getTick()
+   * @generated
+   */
   int TICK = 7;
 
   /**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int TICK__NAME = INSTRUCTION_FEATURE_COUNT + 0;
 
   /**
-	 * The number of structural features of the '<em>Tick</em>' class.
-	 * <!-- begin-user-doc -->
+   * The number of structural features of the '<em>Tick</em>' class.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int TICK_FEATURE_COUNT = INSTRUCTION_FEATURE_COUNT + 1;
 
   /**
-	 * The meta object id for the '{@link fr.minesnantes.browserautomation.seleniumDSL.impl.NavigateImpl <em>Navigate</em>}' class.
-	 * <!-- begin-user-doc -->
+   * The meta object id for the '{@link fr.minesnantes.browserautomation.seleniumDSL.impl.NavigateImpl <em>Navigate</em>}' class.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see fr.minesnantes.browserautomation.seleniumDSL.impl.NavigateImpl
-	 * @see fr.minesnantes.browserautomation.seleniumDSL.impl.SeleniumDSLPackageImpl#getNavigate()
-	 * @generated
-	 */
+   * @see fr.minesnantes.browserautomation.seleniumDSL.impl.NavigateImpl
+   * @see fr.minesnantes.browserautomation.seleniumDSL.impl.SeleniumDSLPackageImpl#getNavigate()
+   * @generated
+   */
   int NAVIGATE = 8;
 
   /**
-	 * The feature id for the '<em><b>Url</b></em>' attribute.
-	 * <!-- begin-user-doc -->
+   * The feature id for the '<em><b>Url</b></em>' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int NAVIGATE__URL = INSTRUCTION_FEATURE_COUNT + 0;
 
   /**
-	 * The number of structural features of the '<em>Navigate</em>' class.
-	 * <!-- begin-user-doc -->
+   * The number of structural features of the '<em>Navigate</em>' class.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int NAVIGATE_FEATURE_COUNT = INSTRUCTION_FEATURE_COUNT + 1;
 
   /**
-	 * The meta object id for the '{@link fr.minesnantes.browserautomation.seleniumDSL.impl.ReadImpl <em>Read</em>}' class.
-	 * <!-- begin-user-doc -->
+   * The meta object id for the '{@link fr.minesnantes.browserautomation.seleniumDSL.impl.ReadImpl <em>Read</em>}' class.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see fr.minesnantes.browserautomation.seleniumDSL.impl.ReadImpl
-	 * @see fr.minesnantes.browserautomation.seleniumDSL.impl.SeleniumDSLPackageImpl#getRead()
-	 * @generated
-	 */
+   * @see fr.minesnantes.browserautomation.seleniumDSL.impl.ReadImpl
+   * @see fr.minesnantes.browserautomation.seleniumDSL.impl.SeleniumDSLPackageImpl#getRead()
+   * @generated
+   */
   int READ = 9;
 
   /**
-	 * The feature id for the '<em><b>Variable</b></em>' attribute.
-	 * <!-- begin-user-doc -->
+   * The feature id for the '<em><b>Variable</b></em>' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int READ__VARIABLE = INSTRUCTION_FEATURE_COUNT + 0;
 
   /**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int READ__NAME = INSTRUCTION_FEATURE_COUNT + 1;
 
   /**
-	 * The number of structural features of the '<em>Read</em>' class.
-	 * <!-- begin-user-doc -->
+   * The number of structural features of the '<em>Read</em>' class.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int READ_FEATURE_COUNT = INSTRUCTION_FEATURE_COUNT + 2;
 
   /**
-	 * The meta object id for the '{@link fr.minesnantes.browserautomation.seleniumDSL.impl.AssertImpl <em>Assert</em>}' class.
-	 * <!-- begin-user-doc -->
+   * The meta object id for the '{@link fr.minesnantes.browserautomation.seleniumDSL.impl.AssertImpl <em>Assert</em>}' class.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see fr.minesnantes.browserautomation.seleniumDSL.impl.AssertImpl
-	 * @see fr.minesnantes.browserautomation.seleniumDSL.impl.SeleniumDSLPackageImpl#getAssert()
-	 * @generated
-	 */
+   * @see fr.minesnantes.browserautomation.seleniumDSL.impl.AssertImpl
+   * @see fr.minesnantes.browserautomation.seleniumDSL.impl.SeleniumDSLPackageImpl#getAssert()
+   * @generated
+   */
   int ASSERT = 10;
 
   /**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
+   * The feature id for the '<em><b>Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-  int ASSERT__NAME = INSTRUCTION_FEATURE_COUNT + 0;
+   * @generated
+   * @ordered
+   */
+  int ASSERT__TYPE = INSTRUCTION_FEATURE_COUNT + 0;
 
   /**
-	 * The feature id for the '<em><b>Type</b></em>' attribute.
-	 * <!-- begin-user-doc -->
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-  int ASSERT__TYPE = INSTRUCTION_FEATURE_COUNT + 1;
+   * @generated
+   * @ordered
+   */
+  int ASSERT__NAME = INSTRUCTION_FEATURE_COUNT + 1;
 
   /**
-	 * The feature id for the '<em><b>Value</b></em>' attribute.
-	 * <!-- begin-user-doc -->
+   * The feature id for the '<em><b>Method</b></em>' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-  int ASSERT__VALUE = INSTRUCTION_FEATURE_COUNT + 2;
+   * @generated
+   * @ordered
+   */
+  int ASSERT__METHOD = INSTRUCTION_FEATURE_COUNT + 2;
 
   /**
-	 * The number of structural features of the '<em>Assert</em>' class.
-	 * <!-- begin-user-doc -->
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-  int ASSERT_FEATURE_COUNT = INSTRUCTION_FEATURE_COUNT + 3;
+   * @generated
+   * @ordered
+   */
+  int ASSERT__VALUE = INSTRUCTION_FEATURE_COUNT + 3;
 
   /**
-	 * The meta object id for the '{@link fr.minesnantes.browserautomation.seleniumDSL.impl.CallProcedureImpl <em>Call Procedure</em>}' class.
-	 * <!-- begin-user-doc -->
+   * The number of structural features of the '<em>Assert</em>' class.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see fr.minesnantes.browserautomation.seleniumDSL.impl.CallProcedureImpl
-	 * @see fr.minesnantes.browserautomation.seleniumDSL.impl.SeleniumDSLPackageImpl#getCallProcedure()
-	 * @generated
-	 */
+   * @generated
+   * @ordered
+   */
+  int ASSERT_FEATURE_COUNT = INSTRUCTION_FEATURE_COUNT + 4;
+
+  /**
+   * The meta object id for the '{@link fr.minesnantes.browserautomation.seleniumDSL.impl.CallProcedureImpl <em>Call Procedure</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see fr.minesnantes.browserautomation.seleniumDSL.impl.CallProcedureImpl
+   * @see fr.minesnantes.browserautomation.seleniumDSL.impl.SeleniumDSLPackageImpl#getCallProcedure()
+   * @generated
+   */
   int CALL_PROCEDURE = 11;
 
   /**
-	 * The feature id for the '<em><b>Procedure Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
+   * The feature id for the '<em><b>Procedure Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int CALL_PROCEDURE__PROCEDURE_NAME = INSTRUCTION_FEATURE_COUNT + 0;
 
   /**
-	 * The feature id for the '<em><b>Parameters</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
+   * The feature id for the '<em><b>Parameters</b></em>' attribute list.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int CALL_PROCEDURE__PARAMETERS = INSTRUCTION_FEATURE_COUNT + 1;
 
   /**
-	 * The number of structural features of the '<em>Call Procedure</em>' class.
-	 * <!-- begin-user-doc -->
+   * The number of structural features of the '<em>Call Procedure</em>' class.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int CALL_PROCEDURE_FEATURE_COUNT = INSTRUCTION_FEATURE_COUNT + 2;
 
 
   /**
-	 * Returns the meta object for class '{@link fr.minesnantes.browserautomation.seleniumDSL.SeleniumTest <em>Selenium Test</em>}'.
-	 * <!-- begin-user-doc -->
+   * Returns the meta object for class '{@link fr.minesnantes.browserautomation.seleniumDSL.SeleniumTest <em>Selenium Test</em>}'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Selenium Test</em>'.
-	 * @see fr.minesnantes.browserautomation.seleniumDSL.SeleniumTest
-	 * @generated
-	 */
+   * @return the meta object for class '<em>Selenium Test</em>'.
+   * @see fr.minesnantes.browserautomation.seleniumDSL.SeleniumTest
+   * @generated
+   */
   EClass getSeleniumTest();
 
   /**
-	 * Returns the meta object for the containment reference list '{@link fr.minesnantes.browserautomation.seleniumDSL.SeleniumTest#getProcedures <em>Procedures</em>}'.
-	 * <!-- begin-user-doc -->
+   * Returns the meta object for the containment reference list '{@link fr.minesnantes.browserautomation.seleniumDSL.SeleniumTest#getProcedures <em>Procedures</em>}'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Procedures</em>'.
-	 * @see fr.minesnantes.browserautomation.seleniumDSL.SeleniumTest#getProcedures()
-	 * @see #getSeleniumTest()
-	 * @generated
-	 */
+   * @return the meta object for the containment reference list '<em>Procedures</em>'.
+   * @see fr.minesnantes.browserautomation.seleniumDSL.SeleniumTest#getProcedures()
+   * @see #getSeleniumTest()
+   * @generated
+   */
   EReference getSeleniumTest_Procedures();
 
   /**
-	 * Returns the meta object for the containment reference '{@link fr.minesnantes.browserautomation.seleniumDSL.SeleniumTest#getMain <em>Main</em>}'.
-	 * <!-- begin-user-doc -->
+   * Returns the meta object for the containment reference '{@link fr.minesnantes.browserautomation.seleniumDSL.SeleniumTest#getMain <em>Main</em>}'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Main</em>'.
-	 * @see fr.minesnantes.browserautomation.seleniumDSL.SeleniumTest#getMain()
-	 * @see #getSeleniumTest()
-	 * @generated
-	 */
+   * @return the meta object for the containment reference '<em>Main</em>'.
+   * @see fr.minesnantes.browserautomation.seleniumDSL.SeleniumTest#getMain()
+   * @see #getSeleniumTest()
+   * @generated
+   */
   EReference getSeleniumTest_Main();
 
   /**
-	 * Returns the meta object for class '{@link fr.minesnantes.browserautomation.seleniumDSL.Procedure <em>Procedure</em>}'.
-	 * <!-- begin-user-doc -->
+   * Returns the meta object for class '{@link fr.minesnantes.browserautomation.seleniumDSL.Procedure <em>Procedure</em>}'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Procedure</em>'.
-	 * @see fr.minesnantes.browserautomation.seleniumDSL.Procedure
-	 * @generated
-	 */
+   * @return the meta object for class '<em>Procedure</em>'.
+   * @see fr.minesnantes.browserautomation.seleniumDSL.Procedure
+   * @generated
+   */
   EClass getProcedure();
 
   /**
-	 * Returns the meta object for the attribute '{@link fr.minesnantes.browserautomation.seleniumDSL.Procedure#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
+   * Returns the meta object for the attribute '{@link fr.minesnantes.browserautomation.seleniumDSL.Procedure#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see fr.minesnantes.browserautomation.seleniumDSL.Procedure#getName()
-	 * @see #getProcedure()
-	 * @generated
-	 */
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see fr.minesnantes.browserautomation.seleniumDSL.Procedure#getName()
+   * @see #getProcedure()
+   * @generated
+   */
   EAttribute getProcedure_Name();
 
   /**
-	 * Returns the meta object for the attribute list '{@link fr.minesnantes.browserautomation.seleniumDSL.Procedure#getParameters <em>Parameters</em>}'.
-	 * <!-- begin-user-doc -->
+   * Returns the meta object for the attribute list '{@link fr.minesnantes.browserautomation.seleniumDSL.Procedure#getParameters <em>Parameters</em>}'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Parameters</em>'.
-	 * @see fr.minesnantes.browserautomation.seleniumDSL.Procedure#getParameters()
-	 * @see #getProcedure()
-	 * @generated
-	 */
+   * @return the meta object for the attribute list '<em>Parameters</em>'.
+   * @see fr.minesnantes.browserautomation.seleniumDSL.Procedure#getParameters()
+   * @see #getProcedure()
+   * @generated
+   */
   EAttribute getProcedure_Parameters();
 
   /**
-	 * Returns the meta object for the containment reference list '{@link fr.minesnantes.browserautomation.seleniumDSL.Procedure#getInstructions <em>Instructions</em>}'.
-	 * <!-- begin-user-doc -->
+   * Returns the meta object for the containment reference list '{@link fr.minesnantes.browserautomation.seleniumDSL.Procedure#getInstructions <em>Instructions</em>}'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Instructions</em>'.
-	 * @see fr.minesnantes.browserautomation.seleniumDSL.Procedure#getInstructions()
-	 * @see #getProcedure()
-	 * @generated
-	 */
+   * @return the meta object for the containment reference list '<em>Instructions</em>'.
+   * @see fr.minesnantes.browserautomation.seleniumDSL.Procedure#getInstructions()
+   * @see #getProcedure()
+   * @generated
+   */
   EReference getProcedure_Instructions();
 
   /**
-	 * Returns the meta object for class '{@link fr.minesnantes.browserautomation.seleniumDSL.MainProcedure <em>Main Procedure</em>}'.
-	 * <!-- begin-user-doc -->
+   * Returns the meta object for class '{@link fr.minesnantes.browserautomation.seleniumDSL.MainProcedure <em>Main Procedure</em>}'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Main Procedure</em>'.
-	 * @see fr.minesnantes.browserautomation.seleniumDSL.MainProcedure
-	 * @generated
-	 */
+   * @return the meta object for class '<em>Main Procedure</em>'.
+   * @see fr.minesnantes.browserautomation.seleniumDSL.MainProcedure
+   * @generated
+   */
   EClass getMainProcedure();
 
   /**
-	 * Returns the meta object for the containment reference list '{@link fr.minesnantes.browserautomation.seleniumDSL.MainProcedure#getInstructions <em>Instructions</em>}'.
-	 * <!-- begin-user-doc -->
+   * Returns the meta object for the containment reference list '{@link fr.minesnantes.browserautomation.seleniumDSL.MainProcedure#getInstructions <em>Instructions</em>}'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Instructions</em>'.
-	 * @see fr.minesnantes.browserautomation.seleniumDSL.MainProcedure#getInstructions()
-	 * @see #getMainProcedure()
-	 * @generated
-	 */
+   * @return the meta object for the containment reference list '<em>Instructions</em>'.
+   * @see fr.minesnantes.browserautomation.seleniumDSL.MainProcedure#getInstructions()
+   * @see #getMainProcedure()
+   * @generated
+   */
   EReference getMainProcedure_Instructions();
 
   /**
-	 * Returns the meta object for class '{@link fr.minesnantes.browserautomation.seleniumDSL.Instruction <em>Instruction</em>}'.
-	 * <!-- begin-user-doc -->
+   * Returns the meta object for class '{@link fr.minesnantes.browserautomation.seleniumDSL.Instruction <em>Instruction</em>}'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Instruction</em>'.
-	 * @see fr.minesnantes.browserautomation.seleniumDSL.Instruction
-	 * @generated
-	 */
+   * @return the meta object for class '<em>Instruction</em>'.
+   * @see fr.minesnantes.browserautomation.seleniumDSL.Instruction
+   * @generated
+   */
   EClass getInstruction();
 
   /**
-	 * Returns the meta object for class '{@link fr.minesnantes.browserautomation.seleniumDSL.Click <em>Click</em>}'.
-	 * <!-- begin-user-doc -->
+   * Returns the meta object for class '{@link fr.minesnantes.browserautomation.seleniumDSL.Click <em>Click</em>}'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Click</em>'.
-	 * @see fr.minesnantes.browserautomation.seleniumDSL.Click
-	 * @generated
-	 */
+   * @return the meta object for class '<em>Click</em>'.
+   * @see fr.minesnantes.browserautomation.seleniumDSL.Click
+   * @generated
+   */
   EClass getClick();
 
   /**
-	 * Returns the meta object for the attribute '{@link fr.minesnantes.browserautomation.seleniumDSL.Click#getType <em>Type</em>}'.
-	 * <!-- begin-user-doc -->
+   * Returns the meta object for the attribute '{@link fr.minesnantes.browserautomation.seleniumDSL.Click#getType <em>Type</em>}'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Type</em>'.
-	 * @see fr.minesnantes.browserautomation.seleniumDSL.Click#getType()
-	 * @see #getClick()
-	 * @generated
-	 */
+   * @return the meta object for the attribute '<em>Type</em>'.
+   * @see fr.minesnantes.browserautomation.seleniumDSL.Click#getType()
+   * @see #getClick()
+   * @generated
+   */
   EAttribute getClick_Type();
 
   /**
-	 * Returns the meta object for the attribute '{@link fr.minesnantes.browserautomation.seleniumDSL.Click#getValue <em>Value</em>}'.
-	 * <!-- begin-user-doc -->
+   * Returns the meta object for the attribute '{@link fr.minesnantes.browserautomation.seleniumDSL.Click#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Value</em>'.
-	 * @see fr.minesnantes.browserautomation.seleniumDSL.Click#getValue()
-	 * @see #getClick()
-	 * @generated
-	 */
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see fr.minesnantes.browserautomation.seleniumDSL.Click#getValue()
+   * @see #getClick()
+   * @generated
+   */
   EAttribute getClick_Value();
 
   /**
-	 * Returns the meta object for class '{@link fr.minesnantes.browserautomation.seleniumDSL.Fill <em>Fill</em>}'.
-	 * <!-- begin-user-doc -->
+   * Returns the meta object for class '{@link fr.minesnantes.browserautomation.seleniumDSL.Fill <em>Fill</em>}'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Fill</em>'.
-	 * @see fr.minesnantes.browserautomation.seleniumDSL.Fill
-	 * @generated
-	 */
+   * @return the meta object for class '<em>Fill</em>'.
+   * @see fr.minesnantes.browserautomation.seleniumDSL.Fill
+   * @generated
+   */
   EClass getFill();
 
   /**
-	 * Returns the meta object for the attribute '{@link fr.minesnantes.browserautomation.seleniumDSL.Fill#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
+   * Returns the meta object for the attribute '{@link fr.minesnantes.browserautomation.seleniumDSL.Fill#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see fr.minesnantes.browserautomation.seleniumDSL.Fill#getName()
-	 * @see #getFill()
-	 * @generated
-	 */
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see fr.minesnantes.browserautomation.seleniumDSL.Fill#getName()
+   * @see #getFill()
+   * @generated
+   */
   EAttribute getFill_Name();
 
   /**
-	 * Returns the meta object for the attribute '{@link fr.minesnantes.browserautomation.seleniumDSL.Fill#getValue <em>Value</em>}'.
-	 * <!-- begin-user-doc -->
+   * Returns the meta object for the attribute '{@link fr.minesnantes.browserautomation.seleniumDSL.Fill#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Value</em>'.
-	 * @see fr.minesnantes.browserautomation.seleniumDSL.Fill#getValue()
-	 * @see #getFill()
-	 * @generated
-	 */
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see fr.minesnantes.browserautomation.seleniumDSL.Fill#getValue()
+   * @see #getFill()
+   * @generated
+   */
   EAttribute getFill_Value();
 
   /**
-	 * Returns the meta object for class '{@link fr.minesnantes.browserautomation.seleniumDSL.Select <em>Select</em>}'.
-	 * <!-- begin-user-doc -->
+   * Returns the meta object for class '{@link fr.minesnantes.browserautomation.seleniumDSL.Select <em>Select</em>}'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Select</em>'.
-	 * @see fr.minesnantes.browserautomation.seleniumDSL.Select
-	 * @generated
-	 */
+   * @return the meta object for class '<em>Select</em>'.
+   * @see fr.minesnantes.browserautomation.seleniumDSL.Select
+   * @generated
+   */
   EClass getSelect();
 
   /**
-	 * Returns the meta object for the attribute '{@link fr.minesnantes.browserautomation.seleniumDSL.Select#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
+   * Returns the meta object for the attribute '{@link fr.minesnantes.browserautomation.seleniumDSL.Select#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see fr.minesnantes.browserautomation.seleniumDSL.Select#getName()
-	 * @see #getSelect()
-	 * @generated
-	 */
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see fr.minesnantes.browserautomation.seleniumDSL.Select#getName()
+   * @see #getSelect()
+   * @generated
+   */
   EAttribute getSelect_Name();
 
   /**
-	 * Returns the meta object for the attribute '{@link fr.minesnantes.browserautomation.seleniumDSL.Select#getValue <em>Value</em>}'.
-	 * <!-- begin-user-doc -->
+   * Returns the meta object for the attribute '{@link fr.minesnantes.browserautomation.seleniumDSL.Select#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Value</em>'.
-	 * @see fr.minesnantes.browserautomation.seleniumDSL.Select#getValue()
-	 * @see #getSelect()
-	 * @generated
-	 */
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see fr.minesnantes.browserautomation.seleniumDSL.Select#getValue()
+   * @see #getSelect()
+   * @generated
+   */
   EAttribute getSelect_Value();
 
   /**
-	 * Returns the meta object for class '{@link fr.minesnantes.browserautomation.seleniumDSL.Tick <em>Tick</em>}'.
-	 * <!-- begin-user-doc -->
+   * Returns the meta object for class '{@link fr.minesnantes.browserautomation.seleniumDSL.Tick <em>Tick</em>}'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Tick</em>'.
-	 * @see fr.minesnantes.browserautomation.seleniumDSL.Tick
-	 * @generated
-	 */
+   * @return the meta object for class '<em>Tick</em>'.
+   * @see fr.minesnantes.browserautomation.seleniumDSL.Tick
+   * @generated
+   */
   EClass getTick();
 
   /**
-	 * Returns the meta object for the attribute '{@link fr.minesnantes.browserautomation.seleniumDSL.Tick#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
+   * Returns the meta object for the attribute '{@link fr.minesnantes.browserautomation.seleniumDSL.Tick#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see fr.minesnantes.browserautomation.seleniumDSL.Tick#getName()
-	 * @see #getTick()
-	 * @generated
-	 */
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see fr.minesnantes.browserautomation.seleniumDSL.Tick#getName()
+   * @see #getTick()
+   * @generated
+   */
   EAttribute getTick_Name();
 
   /**
-	 * Returns the meta object for class '{@link fr.minesnantes.browserautomation.seleniumDSL.Navigate <em>Navigate</em>}'.
-	 * <!-- begin-user-doc -->
+   * Returns the meta object for class '{@link fr.minesnantes.browserautomation.seleniumDSL.Navigate <em>Navigate</em>}'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Navigate</em>'.
-	 * @see fr.minesnantes.browserautomation.seleniumDSL.Navigate
-	 * @generated
-	 */
+   * @return the meta object for class '<em>Navigate</em>'.
+   * @see fr.minesnantes.browserautomation.seleniumDSL.Navigate
+   * @generated
+   */
   EClass getNavigate();
 
   /**
-	 * Returns the meta object for the attribute '{@link fr.minesnantes.browserautomation.seleniumDSL.Navigate#getUrl <em>Url</em>}'.
-	 * <!-- begin-user-doc -->
+   * Returns the meta object for the attribute '{@link fr.minesnantes.browserautomation.seleniumDSL.Navigate#getUrl <em>Url</em>}'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Url</em>'.
-	 * @see fr.minesnantes.browserautomation.seleniumDSL.Navigate#getUrl()
-	 * @see #getNavigate()
-	 * @generated
-	 */
+   * @return the meta object for the attribute '<em>Url</em>'.
+   * @see fr.minesnantes.browserautomation.seleniumDSL.Navigate#getUrl()
+   * @see #getNavigate()
+   * @generated
+   */
   EAttribute getNavigate_Url();
 
   /**
-	 * Returns the meta object for class '{@link fr.minesnantes.browserautomation.seleniumDSL.Read <em>Read</em>}'.
-	 * <!-- begin-user-doc -->
+   * Returns the meta object for class '{@link fr.minesnantes.browserautomation.seleniumDSL.Read <em>Read</em>}'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Read</em>'.
-	 * @see fr.minesnantes.browserautomation.seleniumDSL.Read
-	 * @generated
-	 */
+   * @return the meta object for class '<em>Read</em>'.
+   * @see fr.minesnantes.browserautomation.seleniumDSL.Read
+   * @generated
+   */
   EClass getRead();
 
   /**
-	 * Returns the meta object for the attribute '{@link fr.minesnantes.browserautomation.seleniumDSL.Read#getVariable <em>Variable</em>}'.
-	 * <!-- begin-user-doc -->
+   * Returns the meta object for the attribute '{@link fr.minesnantes.browserautomation.seleniumDSL.Read#getVariable <em>Variable</em>}'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Variable</em>'.
-	 * @see fr.minesnantes.browserautomation.seleniumDSL.Read#getVariable()
-	 * @see #getRead()
-	 * @generated
-	 */
+   * @return the meta object for the attribute '<em>Variable</em>'.
+   * @see fr.minesnantes.browserautomation.seleniumDSL.Read#getVariable()
+   * @see #getRead()
+   * @generated
+   */
   EAttribute getRead_Variable();
 
   /**
-	 * Returns the meta object for the attribute '{@link fr.minesnantes.browserautomation.seleniumDSL.Read#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
+   * Returns the meta object for the attribute '{@link fr.minesnantes.browserautomation.seleniumDSL.Read#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see fr.minesnantes.browserautomation.seleniumDSL.Read#getName()
-	 * @see #getRead()
-	 * @generated
-	 */
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see fr.minesnantes.browserautomation.seleniumDSL.Read#getName()
+   * @see #getRead()
+   * @generated
+   */
   EAttribute getRead_Name();
 
   /**
-	 * Returns the meta object for class '{@link fr.minesnantes.browserautomation.seleniumDSL.Assert <em>Assert</em>}'.
-	 * <!-- begin-user-doc -->
+   * Returns the meta object for class '{@link fr.minesnantes.browserautomation.seleniumDSL.Assert <em>Assert</em>}'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Assert</em>'.
-	 * @see fr.minesnantes.browserautomation.seleniumDSL.Assert
-	 * @generated
-	 */
+   * @return the meta object for class '<em>Assert</em>'.
+   * @see fr.minesnantes.browserautomation.seleniumDSL.Assert
+   * @generated
+   */
   EClass getAssert();
 
   /**
-	 * Returns the meta object for the attribute '{@link fr.minesnantes.browserautomation.seleniumDSL.Assert#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
+   * Returns the meta object for the attribute '{@link fr.minesnantes.browserautomation.seleniumDSL.Assert#getType <em>Type</em>}'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see fr.minesnantes.browserautomation.seleniumDSL.Assert#getName()
-	 * @see #getAssert()
-	 * @generated
-	 */
-  EAttribute getAssert_Name();
-
-  /**
-	 * Returns the meta object for the attribute '{@link fr.minesnantes.browserautomation.seleniumDSL.Assert#getType <em>Type</em>}'.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Type</em>'.
-	 * @see fr.minesnantes.browserautomation.seleniumDSL.Assert#getType()
-	 * @see #getAssert()
-	 * @generated
-	 */
+   * @return the meta object for the attribute '<em>Type</em>'.
+   * @see fr.minesnantes.browserautomation.seleniumDSL.Assert#getType()
+   * @see #getAssert()
+   * @generated
+   */
   EAttribute getAssert_Type();
 
   /**
-	 * Returns the meta object for the attribute '{@link fr.minesnantes.browserautomation.seleniumDSL.Assert#getValue <em>Value</em>}'.
-	 * <!-- begin-user-doc -->
+   * Returns the meta object for the attribute '{@link fr.minesnantes.browserautomation.seleniumDSL.Assert#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Value</em>'.
-	 * @see fr.minesnantes.browserautomation.seleniumDSL.Assert#getValue()
-	 * @see #getAssert()
-	 * @generated
-	 */
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see fr.minesnantes.browserautomation.seleniumDSL.Assert#getName()
+   * @see #getAssert()
+   * @generated
+   */
+  EAttribute getAssert_Name();
+
+  /**
+   * Returns the meta object for the attribute '{@link fr.minesnantes.browserautomation.seleniumDSL.Assert#getMethod <em>Method</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Method</em>'.
+   * @see fr.minesnantes.browserautomation.seleniumDSL.Assert#getMethod()
+   * @see #getAssert()
+   * @generated
+   */
+  EAttribute getAssert_Method();
+
+  /**
+   * Returns the meta object for the attribute '{@link fr.minesnantes.browserautomation.seleniumDSL.Assert#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see fr.minesnantes.browserautomation.seleniumDSL.Assert#getValue()
+   * @see #getAssert()
+   * @generated
+   */
   EAttribute getAssert_Value();
 
   /**
-	 * Returns the meta object for class '{@link fr.minesnantes.browserautomation.seleniumDSL.CallProcedure <em>Call Procedure</em>}'.
-	 * <!-- begin-user-doc -->
+   * Returns the meta object for class '{@link fr.minesnantes.browserautomation.seleniumDSL.CallProcedure <em>Call Procedure</em>}'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Call Procedure</em>'.
-	 * @see fr.minesnantes.browserautomation.seleniumDSL.CallProcedure
-	 * @generated
-	 */
+   * @return the meta object for class '<em>Call Procedure</em>'.
+   * @see fr.minesnantes.browserautomation.seleniumDSL.CallProcedure
+   * @generated
+   */
   EClass getCallProcedure();
 
   /**
-	 * Returns the meta object for the attribute '{@link fr.minesnantes.browserautomation.seleniumDSL.CallProcedure#getProcedureName <em>Procedure Name</em>}'.
-	 * <!-- begin-user-doc -->
+   * Returns the meta object for the attribute '{@link fr.minesnantes.browserautomation.seleniumDSL.CallProcedure#getProcedureName <em>Procedure Name</em>}'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Procedure Name</em>'.
-	 * @see fr.minesnantes.browserautomation.seleniumDSL.CallProcedure#getProcedureName()
-	 * @see #getCallProcedure()
-	 * @generated
-	 */
+   * @return the meta object for the attribute '<em>Procedure Name</em>'.
+   * @see fr.minesnantes.browserautomation.seleniumDSL.CallProcedure#getProcedureName()
+   * @see #getCallProcedure()
+   * @generated
+   */
   EAttribute getCallProcedure_ProcedureName();
 
   /**
-	 * Returns the meta object for the attribute list '{@link fr.minesnantes.browserautomation.seleniumDSL.CallProcedure#getParameters <em>Parameters</em>}'.
-	 * <!-- begin-user-doc -->
+   * Returns the meta object for the attribute list '{@link fr.minesnantes.browserautomation.seleniumDSL.CallProcedure#getParameters <em>Parameters</em>}'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Parameters</em>'.
-	 * @see fr.minesnantes.browserautomation.seleniumDSL.CallProcedure#getParameters()
-	 * @see #getCallProcedure()
-	 * @generated
-	 */
+   * @return the meta object for the attribute list '<em>Parameters</em>'.
+   * @see fr.minesnantes.browserautomation.seleniumDSL.CallProcedure#getParameters()
+   * @see #getCallProcedure()
+   * @generated
+   */
   EAttribute getCallProcedure_Parameters();
 
   /**
-	 * Returns the factory that creates the instances of the model.
-	 * <!-- begin-user-doc -->
+   * Returns the factory that creates the instances of the model.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the factory that creates the instances of the model.
-	 * @generated
-	 */
+   * @return the factory that creates the instances of the model.
+   * @generated
+   */
   SeleniumDSLFactory getSeleniumDSLFactory();
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * Defines literals for the meta objects that represent
    * <ul>
    *   <li>each class,</li>
@@ -845,296 +865,304 @@ public interface SeleniumDSLPackage extends EPackage
    *   <li>and each data type</li>
    * </ul>
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   interface Literals
   {
     /**
-		 * The meta object literal for the '{@link fr.minesnantes.browserautomation.seleniumDSL.impl.SeleniumTestImpl <em>Selenium Test</em>}' class.
-		 * <!-- begin-user-doc -->
+     * The meta object literal for the '{@link fr.minesnantes.browserautomation.seleniumDSL.impl.SeleniumTestImpl <em>Selenium Test</em>}' class.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-		 * @see fr.minesnantes.browserautomation.seleniumDSL.impl.SeleniumTestImpl
-		 * @see fr.minesnantes.browserautomation.seleniumDSL.impl.SeleniumDSLPackageImpl#getSeleniumTest()
-		 * @generated
-		 */
+     * @see fr.minesnantes.browserautomation.seleniumDSL.impl.SeleniumTestImpl
+     * @see fr.minesnantes.browserautomation.seleniumDSL.impl.SeleniumDSLPackageImpl#getSeleniumTest()
+     * @generated
+     */
     EClass SELENIUM_TEST = eINSTANCE.getSeleniumTest();
 
     /**
-		 * The meta object literal for the '<em><b>Procedures</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
+     * The meta object literal for the '<em><b>Procedures</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-		 * @generated
-		 */
+     * @generated
+     */
     EReference SELENIUM_TEST__PROCEDURES = eINSTANCE.getSeleniumTest_Procedures();
 
     /**
-		 * The meta object literal for the '<em><b>Main</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
+     * The meta object literal for the '<em><b>Main</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-		 * @generated
-		 */
+     * @generated
+     */
     EReference SELENIUM_TEST__MAIN = eINSTANCE.getSeleniumTest_Main();
 
     /**
-		 * The meta object literal for the '{@link fr.minesnantes.browserautomation.seleniumDSL.impl.ProcedureImpl <em>Procedure</em>}' class.
-		 * <!-- begin-user-doc -->
+     * The meta object literal for the '{@link fr.minesnantes.browserautomation.seleniumDSL.impl.ProcedureImpl <em>Procedure</em>}' class.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-		 * @see fr.minesnantes.browserautomation.seleniumDSL.impl.ProcedureImpl
-		 * @see fr.minesnantes.browserautomation.seleniumDSL.impl.SeleniumDSLPackageImpl#getProcedure()
-		 * @generated
-		 */
+     * @see fr.minesnantes.browserautomation.seleniumDSL.impl.ProcedureImpl
+     * @see fr.minesnantes.browserautomation.seleniumDSL.impl.SeleniumDSLPackageImpl#getProcedure()
+     * @generated
+     */
     EClass PROCEDURE = eINSTANCE.getProcedure();
 
     /**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-		 * @generated
-		 */
+     * @generated
+     */
     EAttribute PROCEDURE__NAME = eINSTANCE.getProcedure_Name();
 
     /**
-		 * The meta object literal for the '<em><b>Parameters</b></em>' attribute list feature.
-		 * <!-- begin-user-doc -->
+     * The meta object literal for the '<em><b>Parameters</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-		 * @generated
-		 */
+     * @generated
+     */
     EAttribute PROCEDURE__PARAMETERS = eINSTANCE.getProcedure_Parameters();
 
     /**
-		 * The meta object literal for the '<em><b>Instructions</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
+     * The meta object literal for the '<em><b>Instructions</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-		 * @generated
-		 */
+     * @generated
+     */
     EReference PROCEDURE__INSTRUCTIONS = eINSTANCE.getProcedure_Instructions();
 
     /**
-		 * The meta object literal for the '{@link fr.minesnantes.browserautomation.seleniumDSL.impl.MainProcedureImpl <em>Main Procedure</em>}' class.
-		 * <!-- begin-user-doc -->
+     * The meta object literal for the '{@link fr.minesnantes.browserautomation.seleniumDSL.impl.MainProcedureImpl <em>Main Procedure</em>}' class.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-		 * @see fr.minesnantes.browserautomation.seleniumDSL.impl.MainProcedureImpl
-		 * @see fr.minesnantes.browserautomation.seleniumDSL.impl.SeleniumDSLPackageImpl#getMainProcedure()
-		 * @generated
-		 */
+     * @see fr.minesnantes.browserautomation.seleniumDSL.impl.MainProcedureImpl
+     * @see fr.minesnantes.browserautomation.seleniumDSL.impl.SeleniumDSLPackageImpl#getMainProcedure()
+     * @generated
+     */
     EClass MAIN_PROCEDURE = eINSTANCE.getMainProcedure();
 
     /**
-		 * The meta object literal for the '<em><b>Instructions</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
+     * The meta object literal for the '<em><b>Instructions</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-		 * @generated
-		 */
+     * @generated
+     */
     EReference MAIN_PROCEDURE__INSTRUCTIONS = eINSTANCE.getMainProcedure_Instructions();
 
     /**
-		 * The meta object literal for the '{@link fr.minesnantes.browserautomation.seleniumDSL.impl.InstructionImpl <em>Instruction</em>}' class.
-		 * <!-- begin-user-doc -->
+     * The meta object literal for the '{@link fr.minesnantes.browserautomation.seleniumDSL.impl.InstructionImpl <em>Instruction</em>}' class.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-		 * @see fr.minesnantes.browserautomation.seleniumDSL.impl.InstructionImpl
-		 * @see fr.minesnantes.browserautomation.seleniumDSL.impl.SeleniumDSLPackageImpl#getInstruction()
-		 * @generated
-		 */
+     * @see fr.minesnantes.browserautomation.seleniumDSL.impl.InstructionImpl
+     * @see fr.minesnantes.browserautomation.seleniumDSL.impl.SeleniumDSLPackageImpl#getInstruction()
+     * @generated
+     */
     EClass INSTRUCTION = eINSTANCE.getInstruction();
 
     /**
-		 * The meta object literal for the '{@link fr.minesnantes.browserautomation.seleniumDSL.impl.ClickImpl <em>Click</em>}' class.
-		 * <!-- begin-user-doc -->
+     * The meta object literal for the '{@link fr.minesnantes.browserautomation.seleniumDSL.impl.ClickImpl <em>Click</em>}' class.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-		 * @see fr.minesnantes.browserautomation.seleniumDSL.impl.ClickImpl
-		 * @see fr.minesnantes.browserautomation.seleniumDSL.impl.SeleniumDSLPackageImpl#getClick()
-		 * @generated
-		 */
+     * @see fr.minesnantes.browserautomation.seleniumDSL.impl.ClickImpl
+     * @see fr.minesnantes.browserautomation.seleniumDSL.impl.SeleniumDSLPackageImpl#getClick()
+     * @generated
+     */
     EClass CLICK = eINSTANCE.getClick();
 
     /**
-		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
+     * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-		 * @generated
-		 */
+     * @generated
+     */
     EAttribute CLICK__TYPE = eINSTANCE.getClick_Type();
 
     /**
-		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-		 * @generated
-		 */
+     * @generated
+     */
     EAttribute CLICK__VALUE = eINSTANCE.getClick_Value();
 
     /**
-		 * The meta object literal for the '{@link fr.minesnantes.browserautomation.seleniumDSL.impl.FillImpl <em>Fill</em>}' class.
-		 * <!-- begin-user-doc -->
+     * The meta object literal for the '{@link fr.minesnantes.browserautomation.seleniumDSL.impl.FillImpl <em>Fill</em>}' class.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-		 * @see fr.minesnantes.browserautomation.seleniumDSL.impl.FillImpl
-		 * @see fr.minesnantes.browserautomation.seleniumDSL.impl.SeleniumDSLPackageImpl#getFill()
-		 * @generated
-		 */
+     * @see fr.minesnantes.browserautomation.seleniumDSL.impl.FillImpl
+     * @see fr.minesnantes.browserautomation.seleniumDSL.impl.SeleniumDSLPackageImpl#getFill()
+     * @generated
+     */
     EClass FILL = eINSTANCE.getFill();
 
     /**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-		 * @generated
-		 */
+     * @generated
+     */
     EAttribute FILL__NAME = eINSTANCE.getFill_Name();
 
     /**
-		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-		 * @generated
-		 */
+     * @generated
+     */
     EAttribute FILL__VALUE = eINSTANCE.getFill_Value();
 
     /**
-		 * The meta object literal for the '{@link fr.minesnantes.browserautomation.seleniumDSL.impl.SelectImpl <em>Select</em>}' class.
-		 * <!-- begin-user-doc -->
+     * The meta object literal for the '{@link fr.minesnantes.browserautomation.seleniumDSL.impl.SelectImpl <em>Select</em>}' class.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-		 * @see fr.minesnantes.browserautomation.seleniumDSL.impl.SelectImpl
-		 * @see fr.minesnantes.browserautomation.seleniumDSL.impl.SeleniumDSLPackageImpl#getSelect()
-		 * @generated
-		 */
+     * @see fr.minesnantes.browserautomation.seleniumDSL.impl.SelectImpl
+     * @see fr.minesnantes.browserautomation.seleniumDSL.impl.SeleniumDSLPackageImpl#getSelect()
+     * @generated
+     */
     EClass SELECT = eINSTANCE.getSelect();
 
     /**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-		 * @generated
-		 */
+     * @generated
+     */
     EAttribute SELECT__NAME = eINSTANCE.getSelect_Name();
 
     /**
-		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-		 * @generated
-		 */
+     * @generated
+     */
     EAttribute SELECT__VALUE = eINSTANCE.getSelect_Value();
 
     /**
-		 * The meta object literal for the '{@link fr.minesnantes.browserautomation.seleniumDSL.impl.TickImpl <em>Tick</em>}' class.
-		 * <!-- begin-user-doc -->
+     * The meta object literal for the '{@link fr.minesnantes.browserautomation.seleniumDSL.impl.TickImpl <em>Tick</em>}' class.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-		 * @see fr.minesnantes.browserautomation.seleniumDSL.impl.TickImpl
-		 * @see fr.minesnantes.browserautomation.seleniumDSL.impl.SeleniumDSLPackageImpl#getTick()
-		 * @generated
-		 */
+     * @see fr.minesnantes.browserautomation.seleniumDSL.impl.TickImpl
+     * @see fr.minesnantes.browserautomation.seleniumDSL.impl.SeleniumDSLPackageImpl#getTick()
+     * @generated
+     */
     EClass TICK = eINSTANCE.getTick();
 
     /**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-		 * @generated
-		 */
+     * @generated
+     */
     EAttribute TICK__NAME = eINSTANCE.getTick_Name();
 
     /**
-		 * The meta object literal for the '{@link fr.minesnantes.browserautomation.seleniumDSL.impl.NavigateImpl <em>Navigate</em>}' class.
-		 * <!-- begin-user-doc -->
+     * The meta object literal for the '{@link fr.minesnantes.browserautomation.seleniumDSL.impl.NavigateImpl <em>Navigate</em>}' class.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-		 * @see fr.minesnantes.browserautomation.seleniumDSL.impl.NavigateImpl
-		 * @see fr.minesnantes.browserautomation.seleniumDSL.impl.SeleniumDSLPackageImpl#getNavigate()
-		 * @generated
-		 */
+     * @see fr.minesnantes.browserautomation.seleniumDSL.impl.NavigateImpl
+     * @see fr.minesnantes.browserautomation.seleniumDSL.impl.SeleniumDSLPackageImpl#getNavigate()
+     * @generated
+     */
     EClass NAVIGATE = eINSTANCE.getNavigate();
 
     /**
-		 * The meta object literal for the '<em><b>Url</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
+     * The meta object literal for the '<em><b>Url</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-		 * @generated
-		 */
+     * @generated
+     */
     EAttribute NAVIGATE__URL = eINSTANCE.getNavigate_Url();
 
     /**
-		 * The meta object literal for the '{@link fr.minesnantes.browserautomation.seleniumDSL.impl.ReadImpl <em>Read</em>}' class.
-		 * <!-- begin-user-doc -->
+     * The meta object literal for the '{@link fr.minesnantes.browserautomation.seleniumDSL.impl.ReadImpl <em>Read</em>}' class.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-		 * @see fr.minesnantes.browserautomation.seleniumDSL.impl.ReadImpl
-		 * @see fr.minesnantes.browserautomation.seleniumDSL.impl.SeleniumDSLPackageImpl#getRead()
-		 * @generated
-		 */
+     * @see fr.minesnantes.browserautomation.seleniumDSL.impl.ReadImpl
+     * @see fr.minesnantes.browserautomation.seleniumDSL.impl.SeleniumDSLPackageImpl#getRead()
+     * @generated
+     */
     EClass READ = eINSTANCE.getRead();
 
     /**
-		 * The meta object literal for the '<em><b>Variable</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
+     * The meta object literal for the '<em><b>Variable</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-		 * @generated
-		 */
+     * @generated
+     */
     EAttribute READ__VARIABLE = eINSTANCE.getRead_Variable();
 
     /**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-		 * @generated
-		 */
+     * @generated
+     */
     EAttribute READ__NAME = eINSTANCE.getRead_Name();
 
     /**
-		 * The meta object literal for the '{@link fr.minesnantes.browserautomation.seleniumDSL.impl.AssertImpl <em>Assert</em>}' class.
-		 * <!-- begin-user-doc -->
+     * The meta object literal for the '{@link fr.minesnantes.browserautomation.seleniumDSL.impl.AssertImpl <em>Assert</em>}' class.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-		 * @see fr.minesnantes.browserautomation.seleniumDSL.impl.AssertImpl
-		 * @see fr.minesnantes.browserautomation.seleniumDSL.impl.SeleniumDSLPackageImpl#getAssert()
-		 * @generated
-		 */
+     * @see fr.minesnantes.browserautomation.seleniumDSL.impl.AssertImpl
+     * @see fr.minesnantes.browserautomation.seleniumDSL.impl.SeleniumDSLPackageImpl#getAssert()
+     * @generated
+     */
     EClass ASSERT = eINSTANCE.getAssert();
 
     /**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
+     * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-		 * @generated
-		 */
-    EAttribute ASSERT__NAME = eINSTANCE.getAssert_Name();
-
-    /**
-		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-		 * @generated
-		 */
+     * @generated
+     */
     EAttribute ASSERT__TYPE = eINSTANCE.getAssert_Type();
 
     /**
-		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-		 * @generated
-		 */
+     * @generated
+     */
+    EAttribute ASSERT__NAME = eINSTANCE.getAssert_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Method</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ASSERT__METHOD = eINSTANCE.getAssert_Method();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     EAttribute ASSERT__VALUE = eINSTANCE.getAssert_Value();
 
     /**
-		 * The meta object literal for the '{@link fr.minesnantes.browserautomation.seleniumDSL.impl.CallProcedureImpl <em>Call Procedure</em>}' class.
-		 * <!-- begin-user-doc -->
+     * The meta object literal for the '{@link fr.minesnantes.browserautomation.seleniumDSL.impl.CallProcedureImpl <em>Call Procedure</em>}' class.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-		 * @see fr.minesnantes.browserautomation.seleniumDSL.impl.CallProcedureImpl
-		 * @see fr.minesnantes.browserautomation.seleniumDSL.impl.SeleniumDSLPackageImpl#getCallProcedure()
-		 * @generated
-		 */
+     * @see fr.minesnantes.browserautomation.seleniumDSL.impl.CallProcedureImpl
+     * @see fr.minesnantes.browserautomation.seleniumDSL.impl.SeleniumDSLPackageImpl#getCallProcedure()
+     * @generated
+     */
     EClass CALL_PROCEDURE = eINSTANCE.getCallProcedure();
 
     /**
-		 * The meta object literal for the '<em><b>Procedure Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
+     * The meta object literal for the '<em><b>Procedure Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-		 * @generated
-		 */
+     * @generated
+     */
     EAttribute CALL_PROCEDURE__PROCEDURE_NAME = eINSTANCE.getCallProcedure_ProcedureName();
 
     /**
-		 * The meta object literal for the '<em><b>Parameters</b></em>' attribute list feature.
-		 * <!-- begin-user-doc -->
+     * The meta object literal for the '<em><b>Parameters</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-		 * @generated
-		 */
+     * @generated
+     */
     EAttribute CALL_PROCEDURE__PARAMETERS = eINSTANCE.getCallProcedure_Parameters();
 
   }

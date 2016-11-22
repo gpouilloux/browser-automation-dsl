@@ -1,0 +1,5 @@
+def main {
+	navigate "http://www.mines-nantes.fr"
+	click link "English" 
+	click link "Study"
+}

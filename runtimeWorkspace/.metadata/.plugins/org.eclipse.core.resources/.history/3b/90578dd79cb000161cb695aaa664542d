@@ -1,0 +1,28 @@
+package browserautomation;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
+public class SeleniumTest {
+    
+    private static WebDriver webDriver;
+    
+    
+    public static void main(String[] args) {
+        // Initialize Selenium web driver for Google Chrome
+        System.setProperty("webdriver.chrome.driver", "lib/chromedriver");
+        webDriver = new ChromeDriver();
+        
+        webDriver.get("http://www.mines-nantes.fr/fr/content/advancedsearch");
+        WebElement element0 = webDriver.findElement(By.name("SearchText"));
+        element0.sendKeys("Donald Trump");
+        WebElement element1 = webDriver.findElement(By.xpath("//input[@value=\"RECHERCHER\"]"));
+        element1.click();
+        
+        // Close the browser
+        webDriver.quit();
+    }
+}

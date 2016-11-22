@@ -2004,143 +2004,267 @@ public class InternalSeleniumDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAssert"
-    // InternalSeleniumDSL.g:809:1: ruleAssert returns [EObject current=null] : (otherlv_0= 'assert' ( ( ( (lv_Name_1_0= RULE_STRING ) ) ( ( (lv_Type_2_1= 'contains' | lv_Type_2_2= 'equals' ) ) ) ( ( (lv_Value_3_1= RULE_STRING | lv_Value_3_2= RULE_IDENTIFIER ) ) ) ) | ( ( (lv_Name_4_0= RULE_STRING ) ) ( (lv_Type_5_0= 'exists' ) ) ) ) ) ;
+    // InternalSeleniumDSL.g:809:1: ruleAssert returns [EObject current=null] : (otherlv_0= 'assert' ( ( ( ( (lv_Type_1_1= 'input' | lv_Type_1_2= 'link' | lv_Type_1_3= 'name' | lv_Type_1_4= 'xpath' ) ) ) ( ( (lv_Name_2_0= RULE_STRING ) ) ( ( (lv_Method_3_1= 'contains' | lv_Method_3_2= 'equals' ) ) ) ( ( (lv_Value_4_1= RULE_STRING | lv_Value_4_2= RULE_IDENTIFIER ) ) ) ) ) | ( ( ( (lv_Type_5_1= 'input' | lv_Type_5_2= 'link' | lv_Type_5_3= 'name' | lv_Type_5_4= 'xpath' ) ) ) ( (lv_Name_6_0= RULE_STRING ) ) ( (lv_Method_7_0= 'exists' ) ) ) ) ) ;
     public final EObject ruleAssert() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
-        Token lv_Name_1_0=null;
-        Token lv_Type_2_1=null;
-        Token lv_Type_2_2=null;
-        Token lv_Value_3_1=null;
-        Token lv_Value_3_2=null;
-        Token lv_Name_4_0=null;
-        Token lv_Type_5_0=null;
+        Token lv_Type_1_1=null;
+        Token lv_Type_1_2=null;
+        Token lv_Type_1_3=null;
+        Token lv_Type_1_4=null;
+        Token lv_Name_2_0=null;
+        Token lv_Method_3_1=null;
+        Token lv_Method_3_2=null;
+        Token lv_Value_4_1=null;
+        Token lv_Value_4_2=null;
+        Token lv_Type_5_1=null;
+        Token lv_Type_5_2=null;
+        Token lv_Type_5_3=null;
+        Token lv_Type_5_4=null;
+        Token lv_Name_6_0=null;
+        Token lv_Method_7_0=null;
 
 
         	enterRule();
 
         try {
-            // InternalSeleniumDSL.g:815:2: ( (otherlv_0= 'assert' ( ( ( (lv_Name_1_0= RULE_STRING ) ) ( ( (lv_Type_2_1= 'contains' | lv_Type_2_2= 'equals' ) ) ) ( ( (lv_Value_3_1= RULE_STRING | lv_Value_3_2= RULE_IDENTIFIER ) ) ) ) | ( ( (lv_Name_4_0= RULE_STRING ) ) ( (lv_Type_5_0= 'exists' ) ) ) ) ) )
-            // InternalSeleniumDSL.g:816:2: (otherlv_0= 'assert' ( ( ( (lv_Name_1_0= RULE_STRING ) ) ( ( (lv_Type_2_1= 'contains' | lv_Type_2_2= 'equals' ) ) ) ( ( (lv_Value_3_1= RULE_STRING | lv_Value_3_2= RULE_IDENTIFIER ) ) ) ) | ( ( (lv_Name_4_0= RULE_STRING ) ) ( (lv_Type_5_0= 'exists' ) ) ) ) )
+            // InternalSeleniumDSL.g:815:2: ( (otherlv_0= 'assert' ( ( ( ( (lv_Type_1_1= 'input' | lv_Type_1_2= 'link' | lv_Type_1_3= 'name' | lv_Type_1_4= 'xpath' ) ) ) ( ( (lv_Name_2_0= RULE_STRING ) ) ( ( (lv_Method_3_1= 'contains' | lv_Method_3_2= 'equals' ) ) ) ( ( (lv_Value_4_1= RULE_STRING | lv_Value_4_2= RULE_IDENTIFIER ) ) ) ) ) | ( ( ( (lv_Type_5_1= 'input' | lv_Type_5_2= 'link' | lv_Type_5_3= 'name' | lv_Type_5_4= 'xpath' ) ) ) ( (lv_Name_6_0= RULE_STRING ) ) ( (lv_Method_7_0= 'exists' ) ) ) ) ) )
+            // InternalSeleniumDSL.g:816:2: (otherlv_0= 'assert' ( ( ( ( (lv_Type_1_1= 'input' | lv_Type_1_2= 'link' | lv_Type_1_3= 'name' | lv_Type_1_4= 'xpath' ) ) ) ( ( (lv_Name_2_0= RULE_STRING ) ) ( ( (lv_Method_3_1= 'contains' | lv_Method_3_2= 'equals' ) ) ) ( ( (lv_Value_4_1= RULE_STRING | lv_Value_4_2= RULE_IDENTIFIER ) ) ) ) ) | ( ( ( (lv_Type_5_1= 'input' | lv_Type_5_2= 'link' | lv_Type_5_3= 'name' | lv_Type_5_4= 'xpath' ) ) ) ( (lv_Name_6_0= RULE_STRING ) ) ( (lv_Method_7_0= 'exists' ) ) ) ) )
             {
-            // InternalSeleniumDSL.g:816:2: (otherlv_0= 'assert' ( ( ( (lv_Name_1_0= RULE_STRING ) ) ( ( (lv_Type_2_1= 'contains' | lv_Type_2_2= 'equals' ) ) ) ( ( (lv_Value_3_1= RULE_STRING | lv_Value_3_2= RULE_IDENTIFIER ) ) ) ) | ( ( (lv_Name_4_0= RULE_STRING ) ) ( (lv_Type_5_0= 'exists' ) ) ) ) )
-            // InternalSeleniumDSL.g:817:3: otherlv_0= 'assert' ( ( ( (lv_Name_1_0= RULE_STRING ) ) ( ( (lv_Type_2_1= 'contains' | lv_Type_2_2= 'equals' ) ) ) ( ( (lv_Value_3_1= RULE_STRING | lv_Value_3_2= RULE_IDENTIFIER ) ) ) ) | ( ( (lv_Name_4_0= RULE_STRING ) ) ( (lv_Type_5_0= 'exists' ) ) ) )
+            // InternalSeleniumDSL.g:816:2: (otherlv_0= 'assert' ( ( ( ( (lv_Type_1_1= 'input' | lv_Type_1_2= 'link' | lv_Type_1_3= 'name' | lv_Type_1_4= 'xpath' ) ) ) ( ( (lv_Name_2_0= RULE_STRING ) ) ( ( (lv_Method_3_1= 'contains' | lv_Method_3_2= 'equals' ) ) ) ( ( (lv_Value_4_1= RULE_STRING | lv_Value_4_2= RULE_IDENTIFIER ) ) ) ) ) | ( ( ( (lv_Type_5_1= 'input' | lv_Type_5_2= 'link' | lv_Type_5_3= 'name' | lv_Type_5_4= 'xpath' ) ) ) ( (lv_Name_6_0= RULE_STRING ) ) ( (lv_Method_7_0= 'exists' ) ) ) ) )
+            // InternalSeleniumDSL.g:817:3: otherlv_0= 'assert' ( ( ( ( (lv_Type_1_1= 'input' | lv_Type_1_2= 'link' | lv_Type_1_3= 'name' | lv_Type_1_4= 'xpath' ) ) ) ( ( (lv_Name_2_0= RULE_STRING ) ) ( ( (lv_Method_3_1= 'contains' | lv_Method_3_2= 'equals' ) ) ) ( ( (lv_Value_4_1= RULE_STRING | lv_Value_4_2= RULE_IDENTIFIER ) ) ) ) ) | ( ( ( (lv_Type_5_1= 'input' | lv_Type_5_2= 'link' | lv_Type_5_3= 'name' | lv_Type_5_4= 'xpath' ) ) ) ( (lv_Name_6_0= RULE_STRING ) ) ( (lv_Method_7_0= 'exists' ) ) ) )
             {
-            otherlv_0=(Token)match(input,30,FOLLOW_12); 
+            otherlv_0=(Token)match(input,30,FOLLOW_11); 
 
             			newLeafNode(otherlv_0, grammarAccess.getAssertAccess().getAssertKeyword_0());
             		
-            // InternalSeleniumDSL.g:821:3: ( ( ( (lv_Name_1_0= RULE_STRING ) ) ( ( (lv_Type_2_1= 'contains' | lv_Type_2_2= 'equals' ) ) ) ( ( (lv_Value_3_1= RULE_STRING | lv_Value_3_2= RULE_IDENTIFIER ) ) ) ) | ( ( (lv_Name_4_0= RULE_STRING ) ) ( (lv_Type_5_0= 'exists' ) ) ) )
-            int alt15=2;
-            int LA15_0 = input.LA(1);
+            // InternalSeleniumDSL.g:821:3: ( ( ( ( (lv_Type_1_1= 'input' | lv_Type_1_2= 'link' | lv_Type_1_3= 'name' | lv_Type_1_4= 'xpath' ) ) ) ( ( (lv_Name_2_0= RULE_STRING ) ) ( ( (lv_Method_3_1= 'contains' | lv_Method_3_2= 'equals' ) ) ) ( ( (lv_Value_4_1= RULE_STRING | lv_Value_4_2= RULE_IDENTIFIER ) ) ) ) ) | ( ( ( (lv_Type_5_1= 'input' | lv_Type_5_2= 'link' | lv_Type_5_3= 'name' | lv_Type_5_4= 'xpath' ) ) ) ( (lv_Name_6_0= RULE_STRING ) ) ( (lv_Method_7_0= 'exists' ) ) ) )
+            int alt17=2;
+            switch ( input.LA(1) ) {
+            case 20:
+                {
+                int LA17_1 = input.LA(2);
 
-            if ( (LA15_0==RULE_STRING) ) {
-                int LA15_1 = input.LA(2);
+                if ( (LA17_1==RULE_STRING) ) {
+                    int LA17_5 = input.LA(3);
 
-                if ( (LA15_1==33) ) {
-                    alt15=2;
-                }
-                else if ( ((LA15_1>=31 && LA15_1<=32)) ) {
-                    alt15=1;
+                    if ( (LA17_5==33) ) {
+                        alt17=2;
+                    }
+                    else if ( ((LA17_5>=31 && LA17_5<=32)) ) {
+                        alt17=1;
+                    }
+                    else {
+                        NoViableAltException nvae =
+                            new NoViableAltException("", 17, 5, input);
+
+                        throw nvae;
+                    }
                 }
                 else {
                     NoViableAltException nvae =
-                        new NoViableAltException("", 15, 1, input);
+                        new NoViableAltException("", 17, 1, input);
 
                     throw nvae;
                 }
-            }
-            else {
+                }
+                break;
+            case 21:
+                {
+                int LA17_2 = input.LA(2);
+
+                if ( (LA17_2==RULE_STRING) ) {
+                    int LA17_5 = input.LA(3);
+
+                    if ( (LA17_5==33) ) {
+                        alt17=2;
+                    }
+                    else if ( ((LA17_5>=31 && LA17_5<=32)) ) {
+                        alt17=1;
+                    }
+                    else {
+                        NoViableAltException nvae =
+                            new NoViableAltException("", 17, 5, input);
+
+                        throw nvae;
+                    }
+                }
+                else {
+                    NoViableAltException nvae =
+                        new NoViableAltException("", 17, 2, input);
+
+                    throw nvae;
+                }
+                }
+                break;
+            case 22:
+                {
+                int LA17_3 = input.LA(2);
+
+                if ( (LA17_3==RULE_STRING) ) {
+                    int LA17_5 = input.LA(3);
+
+                    if ( (LA17_5==33) ) {
+                        alt17=2;
+                    }
+                    else if ( ((LA17_5>=31 && LA17_5<=32)) ) {
+                        alt17=1;
+                    }
+                    else {
+                        NoViableAltException nvae =
+                            new NoViableAltException("", 17, 5, input);
+
+                        throw nvae;
+                    }
+                }
+                else {
+                    NoViableAltException nvae =
+                        new NoViableAltException("", 17, 3, input);
+
+                    throw nvae;
+                }
+                }
+                break;
+            case 23:
+                {
+                int LA17_4 = input.LA(2);
+
+                if ( (LA17_4==RULE_STRING) ) {
+                    int LA17_5 = input.LA(3);
+
+                    if ( (LA17_5==33) ) {
+                        alt17=2;
+                    }
+                    else if ( ((LA17_5>=31 && LA17_5<=32)) ) {
+                        alt17=1;
+                    }
+                    else {
+                        NoViableAltException nvae =
+                            new NoViableAltException("", 17, 5, input);
+
+                        throw nvae;
+                    }
+                }
+                else {
+                    NoViableAltException nvae =
+                        new NoViableAltException("", 17, 4, input);
+
+                    throw nvae;
+                }
+                }
+                break;
+            default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 15, 0, input);
+                    new NoViableAltException("", 17, 0, input);
 
                 throw nvae;
             }
-            switch (alt15) {
+
+            switch (alt17) {
                 case 1 :
-                    // InternalSeleniumDSL.g:822:4: ( ( (lv_Name_1_0= RULE_STRING ) ) ( ( (lv_Type_2_1= 'contains' | lv_Type_2_2= 'equals' ) ) ) ( ( (lv_Value_3_1= RULE_STRING | lv_Value_3_2= RULE_IDENTIFIER ) ) ) )
+                    // InternalSeleniumDSL.g:822:4: ( ( ( (lv_Type_1_1= 'input' | lv_Type_1_2= 'link' | lv_Type_1_3= 'name' | lv_Type_1_4= 'xpath' ) ) ) ( ( (lv_Name_2_0= RULE_STRING ) ) ( ( (lv_Method_3_1= 'contains' | lv_Method_3_2= 'equals' ) ) ) ( ( (lv_Value_4_1= RULE_STRING | lv_Value_4_2= RULE_IDENTIFIER ) ) ) ) )
                     {
-                    // InternalSeleniumDSL.g:822:4: ( ( (lv_Name_1_0= RULE_STRING ) ) ( ( (lv_Type_2_1= 'contains' | lv_Type_2_2= 'equals' ) ) ) ( ( (lv_Value_3_1= RULE_STRING | lv_Value_3_2= RULE_IDENTIFIER ) ) ) )
-                    // InternalSeleniumDSL.g:823:5: ( (lv_Name_1_0= RULE_STRING ) ) ( ( (lv_Type_2_1= 'contains' | lv_Type_2_2= 'equals' ) ) ) ( ( (lv_Value_3_1= RULE_STRING | lv_Value_3_2= RULE_IDENTIFIER ) ) )
+                    // InternalSeleniumDSL.g:822:4: ( ( ( (lv_Type_1_1= 'input' | lv_Type_1_2= 'link' | lv_Type_1_3= 'name' | lv_Type_1_4= 'xpath' ) ) ) ( ( (lv_Name_2_0= RULE_STRING ) ) ( ( (lv_Method_3_1= 'contains' | lv_Method_3_2= 'equals' ) ) ) ( ( (lv_Value_4_1= RULE_STRING | lv_Value_4_2= RULE_IDENTIFIER ) ) ) ) )
+                    // InternalSeleniumDSL.g:823:5: ( ( (lv_Type_1_1= 'input' | lv_Type_1_2= 'link' | lv_Type_1_3= 'name' | lv_Type_1_4= 'xpath' ) ) ) ( ( (lv_Name_2_0= RULE_STRING ) ) ( ( (lv_Method_3_1= 'contains' | lv_Method_3_2= 'equals' ) ) ) ( ( (lv_Value_4_1= RULE_STRING | lv_Value_4_2= RULE_IDENTIFIER ) ) ) )
                     {
-                    // InternalSeleniumDSL.g:823:5: ( (lv_Name_1_0= RULE_STRING ) )
-                    // InternalSeleniumDSL.g:824:6: (lv_Name_1_0= RULE_STRING )
+                    // InternalSeleniumDSL.g:823:5: ( ( (lv_Type_1_1= 'input' | lv_Type_1_2= 'link' | lv_Type_1_3= 'name' | lv_Type_1_4= 'xpath' ) ) )
+                    // InternalSeleniumDSL.g:824:6: ( (lv_Type_1_1= 'input' | lv_Type_1_2= 'link' | lv_Type_1_3= 'name' | lv_Type_1_4= 'xpath' ) )
                     {
-                    // InternalSeleniumDSL.g:824:6: (lv_Name_1_0= RULE_STRING )
-                    // InternalSeleniumDSL.g:825:7: lv_Name_1_0= RULE_STRING
+                    // InternalSeleniumDSL.g:824:6: ( (lv_Type_1_1= 'input' | lv_Type_1_2= 'link' | lv_Type_1_3= 'name' | lv_Type_1_4= 'xpath' ) )
+                    // InternalSeleniumDSL.g:825:7: (lv_Type_1_1= 'input' | lv_Type_1_2= 'link' | lv_Type_1_3= 'name' | lv_Type_1_4= 'xpath' )
                     {
-                    lv_Name_1_0=(Token)match(input,RULE_STRING,FOLLOW_16); 
-
-                    							newLeafNode(lv_Name_1_0, grammarAccess.getAssertAccess().getNameSTRINGTerminalRuleCall_1_0_0_0());
-                    						
-
-                    							if (current==null) {
-                    								current = createModelElement(grammarAccess.getAssertRule());
-                    							}
-                    							setWithLastConsumed(
-                    								current,
-                    								"Name",
-                    								lv_Name_1_0,
-                    								"org.eclipse.xtext.common.Terminals.STRING");
-                    						
-
-                    }
-
-
-                    }
-
-                    // InternalSeleniumDSL.g:841:5: ( ( (lv_Type_2_1= 'contains' | lv_Type_2_2= 'equals' ) ) )
-                    // InternalSeleniumDSL.g:842:6: ( (lv_Type_2_1= 'contains' | lv_Type_2_2= 'equals' ) )
-                    {
-                    // InternalSeleniumDSL.g:842:6: ( (lv_Type_2_1= 'contains' | lv_Type_2_2= 'equals' ) )
-                    // InternalSeleniumDSL.g:843:7: (lv_Type_2_1= 'contains' | lv_Type_2_2= 'equals' )
-                    {
-                    // InternalSeleniumDSL.g:843:7: (lv_Type_2_1= 'contains' | lv_Type_2_2= 'equals' )
-                    int alt13=2;
-                    int LA13_0 = input.LA(1);
-
-                    if ( (LA13_0==31) ) {
+                    // InternalSeleniumDSL.g:825:7: (lv_Type_1_1= 'input' | lv_Type_1_2= 'link' | lv_Type_1_3= 'name' | lv_Type_1_4= 'xpath' )
+                    int alt13=4;
+                    switch ( input.LA(1) ) {
+                    case 20:
+                        {
                         alt13=1;
-                    }
-                    else if ( (LA13_0==32) ) {
+                        }
+                        break;
+                    case 21:
+                        {
                         alt13=2;
-                    }
-                    else {
+                        }
+                        break;
+                    case 22:
+                        {
+                        alt13=3;
+                        }
+                        break;
+                    case 23:
+                        {
+                        alt13=4;
+                        }
+                        break;
+                    default:
                         NoViableAltException nvae =
                             new NoViableAltException("", 13, 0, input);
 
                         throw nvae;
                     }
+
                     switch (alt13) {
                         case 1 :
-                            // InternalSeleniumDSL.g:844:8: lv_Type_2_1= 'contains'
+                            // InternalSeleniumDSL.g:826:8: lv_Type_1_1= 'input'
                             {
-                            lv_Type_2_1=(Token)match(input,31,FOLLOW_13); 
+                            lv_Type_1_1=(Token)match(input,20,FOLLOW_12); 
 
-                            								newLeafNode(lv_Type_2_1, grammarAccess.getAssertAccess().getTypeContainsKeyword_1_0_1_0_0());
+                            								newLeafNode(lv_Type_1_1, grammarAccess.getAssertAccess().getTypeInputKeyword_1_0_0_0_0());
                             							
 
                             								if (current==null) {
                             									current = createModelElement(grammarAccess.getAssertRule());
                             								}
-                            								setWithLastConsumed(current, "Type", lv_Type_2_1, null);
+                            								setWithLastConsumed(current, "Type", lv_Type_1_1, null);
                             							
 
                             }
                             break;
                         case 2 :
-                            // InternalSeleniumDSL.g:855:8: lv_Type_2_2= 'equals'
+                            // InternalSeleniumDSL.g:837:8: lv_Type_1_2= 'link'
                             {
-                            lv_Type_2_2=(Token)match(input,32,FOLLOW_13); 
+                            lv_Type_1_2=(Token)match(input,21,FOLLOW_12); 
 
-                            								newLeafNode(lv_Type_2_2, grammarAccess.getAssertAccess().getTypeEqualsKeyword_1_0_1_0_1());
+                            								newLeafNode(lv_Type_1_2, grammarAccess.getAssertAccess().getTypeLinkKeyword_1_0_0_0_1());
                             							
 
                             								if (current==null) {
                             									current = createModelElement(grammarAccess.getAssertRule());
                             								}
-                            								setWithLastConsumed(current, "Type", lv_Type_2_2, null);
+                            								setWithLastConsumed(current, "Type", lv_Type_1_2, null);
+                            							
+
+                            }
+                            break;
+                        case 3 :
+                            // InternalSeleniumDSL.g:848:8: lv_Type_1_3= 'name'
+                            {
+                            lv_Type_1_3=(Token)match(input,22,FOLLOW_12); 
+
+                            								newLeafNode(lv_Type_1_3, grammarAccess.getAssertAccess().getTypeNameKeyword_1_0_0_0_2());
+                            							
+
+                            								if (current==null) {
+                            									current = createModelElement(grammarAccess.getAssertRule());
+                            								}
+                            								setWithLastConsumed(current, "Type", lv_Type_1_3, null);
+                            							
+
+                            }
+                            break;
+                        case 4 :
+                            // InternalSeleniumDSL.g:859:8: lv_Type_1_4= 'xpath'
+                            {
+                            lv_Type_1_4=(Token)match(input,23,FOLLOW_12); 
+
+                            								newLeafNode(lv_Type_1_4, grammarAccess.getAssertAccess().getTypeXpathKeyword_1_0_0_0_3());
+                            							
+
+                            								if (current==null) {
+                            									current = createModelElement(grammarAccess.getAssertRule());
+                            								}
+                            								setWithLastConsumed(current, "Type", lv_Type_1_4, null);
                             							
 
                             }
@@ -2154,20 +2278,49 @@ public class InternalSeleniumDSLParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalSeleniumDSL.g:868:5: ( ( (lv_Value_3_1= RULE_STRING | lv_Value_3_2= RULE_IDENTIFIER ) ) )
-                    // InternalSeleniumDSL.g:869:6: ( (lv_Value_3_1= RULE_STRING | lv_Value_3_2= RULE_IDENTIFIER ) )
+                    // InternalSeleniumDSL.g:872:5: ( ( (lv_Name_2_0= RULE_STRING ) ) ( ( (lv_Method_3_1= 'contains' | lv_Method_3_2= 'equals' ) ) ) ( ( (lv_Value_4_1= RULE_STRING | lv_Value_4_2= RULE_IDENTIFIER ) ) ) )
+                    // InternalSeleniumDSL.g:873:6: ( (lv_Name_2_0= RULE_STRING ) ) ( ( (lv_Method_3_1= 'contains' | lv_Method_3_2= 'equals' ) ) ) ( ( (lv_Value_4_1= RULE_STRING | lv_Value_4_2= RULE_IDENTIFIER ) ) )
                     {
-                    // InternalSeleniumDSL.g:869:6: ( (lv_Value_3_1= RULE_STRING | lv_Value_3_2= RULE_IDENTIFIER ) )
-                    // InternalSeleniumDSL.g:870:7: (lv_Value_3_1= RULE_STRING | lv_Value_3_2= RULE_IDENTIFIER )
+                    // InternalSeleniumDSL.g:873:6: ( (lv_Name_2_0= RULE_STRING ) )
+                    // InternalSeleniumDSL.g:874:7: (lv_Name_2_0= RULE_STRING )
                     {
-                    // InternalSeleniumDSL.g:870:7: (lv_Value_3_1= RULE_STRING | lv_Value_3_2= RULE_IDENTIFIER )
+                    // InternalSeleniumDSL.g:874:7: (lv_Name_2_0= RULE_STRING )
+                    // InternalSeleniumDSL.g:875:8: lv_Name_2_0= RULE_STRING
+                    {
+                    lv_Name_2_0=(Token)match(input,RULE_STRING,FOLLOW_16); 
+
+                    								newLeafNode(lv_Name_2_0, grammarAccess.getAssertAccess().getNameSTRINGTerminalRuleCall_1_0_1_0_0());
+                    							
+
+                    								if (current==null) {
+                    									current = createModelElement(grammarAccess.getAssertRule());
+                    								}
+                    								setWithLastConsumed(
+                    									current,
+                    									"Name",
+                    									lv_Name_2_0,
+                    									"org.eclipse.xtext.common.Terminals.STRING");
+                    							
+
+                    }
+
+
+                    }
+
+                    // InternalSeleniumDSL.g:891:6: ( ( (lv_Method_3_1= 'contains' | lv_Method_3_2= 'equals' ) ) )
+                    // InternalSeleniumDSL.g:892:7: ( (lv_Method_3_1= 'contains' | lv_Method_3_2= 'equals' ) )
+                    {
+                    // InternalSeleniumDSL.g:892:7: ( (lv_Method_3_1= 'contains' | lv_Method_3_2= 'equals' ) )
+                    // InternalSeleniumDSL.g:893:8: (lv_Method_3_1= 'contains' | lv_Method_3_2= 'equals' )
+                    {
+                    // InternalSeleniumDSL.g:893:8: (lv_Method_3_1= 'contains' | lv_Method_3_2= 'equals' )
                     int alt14=2;
                     int LA14_0 = input.LA(1);
 
-                    if ( (LA14_0==RULE_STRING) ) {
+                    if ( (LA14_0==31) ) {
                         alt14=1;
                     }
-                    else if ( (LA14_0==RULE_IDENTIFIER) ) {
+                    else if ( (LA14_0==32) ) {
                         alt14=2;
                     }
                     else {
@@ -2178,45 +2331,112 @@ public class InternalSeleniumDSLParser extends AbstractInternalAntlrParser {
                     }
                     switch (alt14) {
                         case 1 :
-                            // InternalSeleniumDSL.g:871:8: lv_Value_3_1= RULE_STRING
+                            // InternalSeleniumDSL.g:894:9: lv_Method_3_1= 'contains'
                             {
-                            lv_Value_3_1=(Token)match(input,RULE_STRING,FOLLOW_2); 
+                            lv_Method_3_1=(Token)match(input,31,FOLLOW_13); 
 
-                            								newLeafNode(lv_Value_3_1, grammarAccess.getAssertAccess().getValueSTRINGTerminalRuleCall_1_0_2_0_0());
-                            							
+                            									newLeafNode(lv_Method_3_1, grammarAccess.getAssertAccess().getMethodContainsKeyword_1_0_1_1_0_0());
+                            								
 
-                            								if (current==null) {
-                            									current = createModelElement(grammarAccess.getAssertRule());
-                            								}
-                            								setWithLastConsumed(
-                            									current,
-                            									"Value",
-                            									lv_Value_3_1,
-                            									"org.eclipse.xtext.common.Terminals.STRING");
-                            							
+                            									if (current==null) {
+                            										current = createModelElement(grammarAccess.getAssertRule());
+                            									}
+                            									setWithLastConsumed(current, "Method", lv_Method_3_1, null);
+                            								
 
                             }
                             break;
                         case 2 :
-                            // InternalSeleniumDSL.g:886:8: lv_Value_3_2= RULE_IDENTIFIER
+                            // InternalSeleniumDSL.g:905:9: lv_Method_3_2= 'equals'
                             {
-                            lv_Value_3_2=(Token)match(input,RULE_IDENTIFIER,FOLLOW_2); 
+                            lv_Method_3_2=(Token)match(input,32,FOLLOW_13); 
 
-                            								newLeafNode(lv_Value_3_2, grammarAccess.getAssertAccess().getValueIDENTIFIERTerminalRuleCall_1_0_2_0_1());
-                            							
+                            									newLeafNode(lv_Method_3_2, grammarAccess.getAssertAccess().getMethodEqualsKeyword_1_0_1_1_0_1());
+                            								
 
-                            								if (current==null) {
-                            									current = createModelElement(grammarAccess.getAssertRule());
-                            								}
-                            								setWithLastConsumed(
-                            									current,
-                            									"Value",
-                            									lv_Value_3_2,
-                            									"fr.minesnantes.browserautomation.SeleniumDSL.IDENTIFIER");
-                            							
+                            									if (current==null) {
+                            										current = createModelElement(grammarAccess.getAssertRule());
+                            									}
+                            									setWithLastConsumed(current, "Method", lv_Method_3_2, null);
+                            								
 
                             }
                             break;
+
+                    }
+
+
+                    }
+
+
+                    }
+
+                    // InternalSeleniumDSL.g:918:6: ( ( (lv_Value_4_1= RULE_STRING | lv_Value_4_2= RULE_IDENTIFIER ) ) )
+                    // InternalSeleniumDSL.g:919:7: ( (lv_Value_4_1= RULE_STRING | lv_Value_4_2= RULE_IDENTIFIER ) )
+                    {
+                    // InternalSeleniumDSL.g:919:7: ( (lv_Value_4_1= RULE_STRING | lv_Value_4_2= RULE_IDENTIFIER ) )
+                    // InternalSeleniumDSL.g:920:8: (lv_Value_4_1= RULE_STRING | lv_Value_4_2= RULE_IDENTIFIER )
+                    {
+                    // InternalSeleniumDSL.g:920:8: (lv_Value_4_1= RULE_STRING | lv_Value_4_2= RULE_IDENTIFIER )
+                    int alt15=2;
+                    int LA15_0 = input.LA(1);
+
+                    if ( (LA15_0==RULE_STRING) ) {
+                        alt15=1;
+                    }
+                    else if ( (LA15_0==RULE_IDENTIFIER) ) {
+                        alt15=2;
+                    }
+                    else {
+                        NoViableAltException nvae =
+                            new NoViableAltException("", 15, 0, input);
+
+                        throw nvae;
+                    }
+                    switch (alt15) {
+                        case 1 :
+                            // InternalSeleniumDSL.g:921:9: lv_Value_4_1= RULE_STRING
+                            {
+                            lv_Value_4_1=(Token)match(input,RULE_STRING,FOLLOW_2); 
+
+                            									newLeafNode(lv_Value_4_1, grammarAccess.getAssertAccess().getValueSTRINGTerminalRuleCall_1_0_1_2_0_0());
+                            								
+
+                            									if (current==null) {
+                            										current = createModelElement(grammarAccess.getAssertRule());
+                            									}
+                            									setWithLastConsumed(
+                            										current,
+                            										"Value",
+                            										lv_Value_4_1,
+                            										"org.eclipse.xtext.common.Terminals.STRING");
+                            								
+
+                            }
+                            break;
+                        case 2 :
+                            // InternalSeleniumDSL.g:936:9: lv_Value_4_2= RULE_IDENTIFIER
+                            {
+                            lv_Value_4_2=(Token)match(input,RULE_IDENTIFIER,FOLLOW_2); 
+
+                            									newLeafNode(lv_Value_4_2, grammarAccess.getAssertAccess().getValueIDENTIFIERTerminalRuleCall_1_0_1_2_0_1());
+                            								
+
+                            									if (current==null) {
+                            										current = createModelElement(grammarAccess.getAssertRule());
+                            									}
+                            									setWithLastConsumed(
+                            										current,
+                            										"Value",
+                            										lv_Value_4_2,
+                            										"fr.minesnantes.browserautomation.SeleniumDSL.IDENTIFIER");
+                            								
+
+                            }
+                            break;
+
+                    }
+
 
                     }
 
@@ -2233,20 +2453,130 @@ public class InternalSeleniumDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalSeleniumDSL.g:905:4: ( ( (lv_Name_4_0= RULE_STRING ) ) ( (lv_Type_5_0= 'exists' ) ) )
+                    // InternalSeleniumDSL.g:956:4: ( ( ( (lv_Type_5_1= 'input' | lv_Type_5_2= 'link' | lv_Type_5_3= 'name' | lv_Type_5_4= 'xpath' ) ) ) ( (lv_Name_6_0= RULE_STRING ) ) ( (lv_Method_7_0= 'exists' ) ) )
                     {
-                    // InternalSeleniumDSL.g:905:4: ( ( (lv_Name_4_0= RULE_STRING ) ) ( (lv_Type_5_0= 'exists' ) ) )
-                    // InternalSeleniumDSL.g:906:5: ( (lv_Name_4_0= RULE_STRING ) ) ( (lv_Type_5_0= 'exists' ) )
+                    // InternalSeleniumDSL.g:956:4: ( ( ( (lv_Type_5_1= 'input' | lv_Type_5_2= 'link' | lv_Type_5_3= 'name' | lv_Type_5_4= 'xpath' ) ) ) ( (lv_Name_6_0= RULE_STRING ) ) ( (lv_Method_7_0= 'exists' ) ) )
+                    // InternalSeleniumDSL.g:957:5: ( ( (lv_Type_5_1= 'input' | lv_Type_5_2= 'link' | lv_Type_5_3= 'name' | lv_Type_5_4= 'xpath' ) ) ) ( (lv_Name_6_0= RULE_STRING ) ) ( (lv_Method_7_0= 'exists' ) )
                     {
-                    // InternalSeleniumDSL.g:906:5: ( (lv_Name_4_0= RULE_STRING ) )
-                    // InternalSeleniumDSL.g:907:6: (lv_Name_4_0= RULE_STRING )
+                    // InternalSeleniumDSL.g:957:5: ( ( (lv_Type_5_1= 'input' | lv_Type_5_2= 'link' | lv_Type_5_3= 'name' | lv_Type_5_4= 'xpath' ) ) )
+                    // InternalSeleniumDSL.g:958:6: ( (lv_Type_5_1= 'input' | lv_Type_5_2= 'link' | lv_Type_5_3= 'name' | lv_Type_5_4= 'xpath' ) )
                     {
-                    // InternalSeleniumDSL.g:907:6: (lv_Name_4_0= RULE_STRING )
-                    // InternalSeleniumDSL.g:908:7: lv_Name_4_0= RULE_STRING
+                    // InternalSeleniumDSL.g:958:6: ( (lv_Type_5_1= 'input' | lv_Type_5_2= 'link' | lv_Type_5_3= 'name' | lv_Type_5_4= 'xpath' ) )
+                    // InternalSeleniumDSL.g:959:7: (lv_Type_5_1= 'input' | lv_Type_5_2= 'link' | lv_Type_5_3= 'name' | lv_Type_5_4= 'xpath' )
                     {
-                    lv_Name_4_0=(Token)match(input,RULE_STRING,FOLLOW_17); 
+                    // InternalSeleniumDSL.g:959:7: (lv_Type_5_1= 'input' | lv_Type_5_2= 'link' | lv_Type_5_3= 'name' | lv_Type_5_4= 'xpath' )
+                    int alt16=4;
+                    switch ( input.LA(1) ) {
+                    case 20:
+                        {
+                        alt16=1;
+                        }
+                        break;
+                    case 21:
+                        {
+                        alt16=2;
+                        }
+                        break;
+                    case 22:
+                        {
+                        alt16=3;
+                        }
+                        break;
+                    case 23:
+                        {
+                        alt16=4;
+                        }
+                        break;
+                    default:
+                        NoViableAltException nvae =
+                            new NoViableAltException("", 16, 0, input);
 
-                    							newLeafNode(lv_Name_4_0, grammarAccess.getAssertAccess().getNameSTRINGTerminalRuleCall_1_1_0_0());
+                        throw nvae;
+                    }
+
+                    switch (alt16) {
+                        case 1 :
+                            // InternalSeleniumDSL.g:960:8: lv_Type_5_1= 'input'
+                            {
+                            lv_Type_5_1=(Token)match(input,20,FOLLOW_12); 
+
+                            								newLeafNode(lv_Type_5_1, grammarAccess.getAssertAccess().getTypeInputKeyword_1_1_0_0_0());
+                            							
+
+                            								if (current==null) {
+                            									current = createModelElement(grammarAccess.getAssertRule());
+                            								}
+                            								setWithLastConsumed(current, "Type", lv_Type_5_1, null);
+                            							
+
+                            }
+                            break;
+                        case 2 :
+                            // InternalSeleniumDSL.g:971:8: lv_Type_5_2= 'link'
+                            {
+                            lv_Type_5_2=(Token)match(input,21,FOLLOW_12); 
+
+                            								newLeafNode(lv_Type_5_2, grammarAccess.getAssertAccess().getTypeLinkKeyword_1_1_0_0_1());
+                            							
+
+                            								if (current==null) {
+                            									current = createModelElement(grammarAccess.getAssertRule());
+                            								}
+                            								setWithLastConsumed(current, "Type", lv_Type_5_2, null);
+                            							
+
+                            }
+                            break;
+                        case 3 :
+                            // InternalSeleniumDSL.g:982:8: lv_Type_5_3= 'name'
+                            {
+                            lv_Type_5_3=(Token)match(input,22,FOLLOW_12); 
+
+                            								newLeafNode(lv_Type_5_3, grammarAccess.getAssertAccess().getTypeNameKeyword_1_1_0_0_2());
+                            							
+
+                            								if (current==null) {
+                            									current = createModelElement(grammarAccess.getAssertRule());
+                            								}
+                            								setWithLastConsumed(current, "Type", lv_Type_5_3, null);
+                            							
+
+                            }
+                            break;
+                        case 4 :
+                            // InternalSeleniumDSL.g:993:8: lv_Type_5_4= 'xpath'
+                            {
+                            lv_Type_5_4=(Token)match(input,23,FOLLOW_12); 
+
+                            								newLeafNode(lv_Type_5_4, grammarAccess.getAssertAccess().getTypeXpathKeyword_1_1_0_0_3());
+                            							
+
+                            								if (current==null) {
+                            									current = createModelElement(grammarAccess.getAssertRule());
+                            								}
+                            								setWithLastConsumed(current, "Type", lv_Type_5_4, null);
+                            							
+
+                            }
+                            break;
+
+                    }
+
+
+                    }
+
+
+                    }
+
+                    // InternalSeleniumDSL.g:1006:5: ( (lv_Name_6_0= RULE_STRING ) )
+                    // InternalSeleniumDSL.g:1007:6: (lv_Name_6_0= RULE_STRING )
+                    {
+                    // InternalSeleniumDSL.g:1007:6: (lv_Name_6_0= RULE_STRING )
+                    // InternalSeleniumDSL.g:1008:7: lv_Name_6_0= RULE_STRING
+                    {
+                    lv_Name_6_0=(Token)match(input,RULE_STRING,FOLLOW_17); 
+
+                    							newLeafNode(lv_Name_6_0, grammarAccess.getAssertAccess().getNameSTRINGTerminalRuleCall_1_1_1_0());
                     						
 
                     							if (current==null) {
@@ -2255,7 +2585,7 @@ public class InternalSeleniumDSLParser extends AbstractInternalAntlrParser {
                     							setWithLastConsumed(
                     								current,
                     								"Name",
-                    								lv_Name_4_0,
+                    								lv_Name_6_0,
                     								"org.eclipse.xtext.common.Terminals.STRING");
                     						
 
@@ -2264,21 +2594,21 @@ public class InternalSeleniumDSLParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalSeleniumDSL.g:924:5: ( (lv_Type_5_0= 'exists' ) )
-                    // InternalSeleniumDSL.g:925:6: (lv_Type_5_0= 'exists' )
+                    // InternalSeleniumDSL.g:1024:5: ( (lv_Method_7_0= 'exists' ) )
+                    // InternalSeleniumDSL.g:1025:6: (lv_Method_7_0= 'exists' )
                     {
-                    // InternalSeleniumDSL.g:925:6: (lv_Type_5_0= 'exists' )
-                    // InternalSeleniumDSL.g:926:7: lv_Type_5_0= 'exists'
+                    // InternalSeleniumDSL.g:1025:6: (lv_Method_7_0= 'exists' )
+                    // InternalSeleniumDSL.g:1026:7: lv_Method_7_0= 'exists'
                     {
-                    lv_Type_5_0=(Token)match(input,33,FOLLOW_2); 
+                    lv_Method_7_0=(Token)match(input,33,FOLLOW_2); 
 
-                    							newLeafNode(lv_Type_5_0, grammarAccess.getAssertAccess().getTypeExistsKeyword_1_1_1_0());
+                    							newLeafNode(lv_Method_7_0, grammarAccess.getAssertAccess().getMethodExistsKeyword_1_1_2_0());
                     						
 
                     							if (current==null) {
                     								current = createModelElement(grammarAccess.getAssertRule());
                     							}
-                    							setWithLastConsumed(current, "Type", lv_Type_5_0, "exists");
+                    							setWithLastConsumed(current, "Method", lv_Method_7_0, "exists");
                     						
 
                     }
@@ -2318,7 +2648,7 @@ public class InternalSeleniumDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleCallProcedure"
-    // InternalSeleniumDSL.g:944:1: entryRuleCallProcedure returns [EObject current=null] : iv_ruleCallProcedure= ruleCallProcedure EOF ;
+    // InternalSeleniumDSL.g:1044:1: entryRuleCallProcedure returns [EObject current=null] : iv_ruleCallProcedure= ruleCallProcedure EOF ;
     public final EObject entryRuleCallProcedure() throws RecognitionException {
         EObject current = null;
 
@@ -2326,8 +2656,8 @@ public class InternalSeleniumDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSeleniumDSL.g:944:54: (iv_ruleCallProcedure= ruleCallProcedure EOF )
-            // InternalSeleniumDSL.g:945:2: iv_ruleCallProcedure= ruleCallProcedure EOF
+            // InternalSeleniumDSL.g:1044:54: (iv_ruleCallProcedure= ruleCallProcedure EOF )
+            // InternalSeleniumDSL.g:1045:2: iv_ruleCallProcedure= ruleCallProcedure EOF
             {
              newCompositeNode(grammarAccess.getCallProcedureRule()); 
             pushFollow(FOLLOW_1);
@@ -2354,7 +2684,7 @@ public class InternalSeleniumDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCallProcedure"
-    // InternalSeleniumDSL.g:951:1: ruleCallProcedure returns [EObject current=null] : ( ( (lv_ProcedureName_0_0= RULE_IDENTIFIER ) ) (otherlv_1= '(' ( ( ( (lv_Parameters_2_1= RULE_IDENTIFIER | lv_Parameters_2_2= RULE_STRING ) ) ) (this_COMMA_3= RULE_COMMA ( ( (lv_Parameters_4_1= RULE_IDENTIFIER | lv_Parameters_4_2= RULE_STRING ) ) ) )* ) otherlv_5= ')' )? ) ;
+    // InternalSeleniumDSL.g:1051:1: ruleCallProcedure returns [EObject current=null] : ( ( (lv_ProcedureName_0_0= RULE_IDENTIFIER ) ) (otherlv_1= '(' ( ( ( (lv_Parameters_2_1= RULE_IDENTIFIER | lv_Parameters_2_2= RULE_STRING ) ) ) (this_COMMA_3= RULE_COMMA ( ( (lv_Parameters_4_1= RULE_IDENTIFIER | lv_Parameters_4_2= RULE_STRING ) ) ) )* ) otherlv_5= ')' )? ) ;
     public final EObject ruleCallProcedure() throws RecognitionException {
         EObject current = null;
 
@@ -2371,17 +2701,17 @@ public class InternalSeleniumDSLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSeleniumDSL.g:957:2: ( ( ( (lv_ProcedureName_0_0= RULE_IDENTIFIER ) ) (otherlv_1= '(' ( ( ( (lv_Parameters_2_1= RULE_IDENTIFIER | lv_Parameters_2_2= RULE_STRING ) ) ) (this_COMMA_3= RULE_COMMA ( ( (lv_Parameters_4_1= RULE_IDENTIFIER | lv_Parameters_4_2= RULE_STRING ) ) ) )* ) otherlv_5= ')' )? ) )
-            // InternalSeleniumDSL.g:958:2: ( ( (lv_ProcedureName_0_0= RULE_IDENTIFIER ) ) (otherlv_1= '(' ( ( ( (lv_Parameters_2_1= RULE_IDENTIFIER | lv_Parameters_2_2= RULE_STRING ) ) ) (this_COMMA_3= RULE_COMMA ( ( (lv_Parameters_4_1= RULE_IDENTIFIER | lv_Parameters_4_2= RULE_STRING ) ) ) )* ) otherlv_5= ')' )? )
+            // InternalSeleniumDSL.g:1057:2: ( ( ( (lv_ProcedureName_0_0= RULE_IDENTIFIER ) ) (otherlv_1= '(' ( ( ( (lv_Parameters_2_1= RULE_IDENTIFIER | lv_Parameters_2_2= RULE_STRING ) ) ) (this_COMMA_3= RULE_COMMA ( ( (lv_Parameters_4_1= RULE_IDENTIFIER | lv_Parameters_4_2= RULE_STRING ) ) ) )* ) otherlv_5= ')' )? ) )
+            // InternalSeleniumDSL.g:1058:2: ( ( (lv_ProcedureName_0_0= RULE_IDENTIFIER ) ) (otherlv_1= '(' ( ( ( (lv_Parameters_2_1= RULE_IDENTIFIER | lv_Parameters_2_2= RULE_STRING ) ) ) (this_COMMA_3= RULE_COMMA ( ( (lv_Parameters_4_1= RULE_IDENTIFIER | lv_Parameters_4_2= RULE_STRING ) ) ) )* ) otherlv_5= ')' )? )
             {
-            // InternalSeleniumDSL.g:958:2: ( ( (lv_ProcedureName_0_0= RULE_IDENTIFIER ) ) (otherlv_1= '(' ( ( ( (lv_Parameters_2_1= RULE_IDENTIFIER | lv_Parameters_2_2= RULE_STRING ) ) ) (this_COMMA_3= RULE_COMMA ( ( (lv_Parameters_4_1= RULE_IDENTIFIER | lv_Parameters_4_2= RULE_STRING ) ) ) )* ) otherlv_5= ')' )? )
-            // InternalSeleniumDSL.g:959:3: ( (lv_ProcedureName_0_0= RULE_IDENTIFIER ) ) (otherlv_1= '(' ( ( ( (lv_Parameters_2_1= RULE_IDENTIFIER | lv_Parameters_2_2= RULE_STRING ) ) ) (this_COMMA_3= RULE_COMMA ( ( (lv_Parameters_4_1= RULE_IDENTIFIER | lv_Parameters_4_2= RULE_STRING ) ) ) )* ) otherlv_5= ')' )?
+            // InternalSeleniumDSL.g:1058:2: ( ( (lv_ProcedureName_0_0= RULE_IDENTIFIER ) ) (otherlv_1= '(' ( ( ( (lv_Parameters_2_1= RULE_IDENTIFIER | lv_Parameters_2_2= RULE_STRING ) ) ) (this_COMMA_3= RULE_COMMA ( ( (lv_Parameters_4_1= RULE_IDENTIFIER | lv_Parameters_4_2= RULE_STRING ) ) ) )* ) otherlv_5= ')' )? )
+            // InternalSeleniumDSL.g:1059:3: ( (lv_ProcedureName_0_0= RULE_IDENTIFIER ) ) (otherlv_1= '(' ( ( ( (lv_Parameters_2_1= RULE_IDENTIFIER | lv_Parameters_2_2= RULE_STRING ) ) ) (this_COMMA_3= RULE_COMMA ( ( (lv_Parameters_4_1= RULE_IDENTIFIER | lv_Parameters_4_2= RULE_STRING ) ) ) )* ) otherlv_5= ')' )?
             {
-            // InternalSeleniumDSL.g:959:3: ( (lv_ProcedureName_0_0= RULE_IDENTIFIER ) )
-            // InternalSeleniumDSL.g:960:4: (lv_ProcedureName_0_0= RULE_IDENTIFIER )
+            // InternalSeleniumDSL.g:1059:3: ( (lv_ProcedureName_0_0= RULE_IDENTIFIER ) )
+            // InternalSeleniumDSL.g:1060:4: (lv_ProcedureName_0_0= RULE_IDENTIFIER )
             {
-            // InternalSeleniumDSL.g:960:4: (lv_ProcedureName_0_0= RULE_IDENTIFIER )
-            // InternalSeleniumDSL.g:961:5: lv_ProcedureName_0_0= RULE_IDENTIFIER
+            // InternalSeleniumDSL.g:1060:4: (lv_ProcedureName_0_0= RULE_IDENTIFIER )
+            // InternalSeleniumDSL.g:1061:5: lv_ProcedureName_0_0= RULE_IDENTIFIER
             {
             lv_ProcedureName_0_0=(Token)match(input,RULE_IDENTIFIER,FOLLOW_18); 
 
@@ -2403,49 +2733,49 @@ public class InternalSeleniumDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalSeleniumDSL.g:977:3: (otherlv_1= '(' ( ( ( (lv_Parameters_2_1= RULE_IDENTIFIER | lv_Parameters_2_2= RULE_STRING ) ) ) (this_COMMA_3= RULE_COMMA ( ( (lv_Parameters_4_1= RULE_IDENTIFIER | lv_Parameters_4_2= RULE_STRING ) ) ) )* ) otherlv_5= ')' )?
-            int alt19=2;
-            int LA19_0 = input.LA(1);
+            // InternalSeleniumDSL.g:1077:3: (otherlv_1= '(' ( ( ( (lv_Parameters_2_1= RULE_IDENTIFIER | lv_Parameters_2_2= RULE_STRING ) ) ) (this_COMMA_3= RULE_COMMA ( ( (lv_Parameters_4_1= RULE_IDENTIFIER | lv_Parameters_4_2= RULE_STRING ) ) ) )* ) otherlv_5= ')' )?
+            int alt21=2;
+            int LA21_0 = input.LA(1);
 
-            if ( (LA19_0==14) ) {
-                alt19=1;
+            if ( (LA21_0==14) ) {
+                alt21=1;
             }
-            switch (alt19) {
+            switch (alt21) {
                 case 1 :
-                    // InternalSeleniumDSL.g:978:4: otherlv_1= '(' ( ( ( (lv_Parameters_2_1= RULE_IDENTIFIER | lv_Parameters_2_2= RULE_STRING ) ) ) (this_COMMA_3= RULE_COMMA ( ( (lv_Parameters_4_1= RULE_IDENTIFIER | lv_Parameters_4_2= RULE_STRING ) ) ) )* ) otherlv_5= ')'
+                    // InternalSeleniumDSL.g:1078:4: otherlv_1= '(' ( ( ( (lv_Parameters_2_1= RULE_IDENTIFIER | lv_Parameters_2_2= RULE_STRING ) ) ) (this_COMMA_3= RULE_COMMA ( ( (lv_Parameters_4_1= RULE_IDENTIFIER | lv_Parameters_4_2= RULE_STRING ) ) ) )* ) otherlv_5= ')'
                     {
                     otherlv_1=(Token)match(input,14,FOLLOW_13); 
 
                     				newLeafNode(otherlv_1, grammarAccess.getCallProcedureAccess().getLeftParenthesisKeyword_1_0());
                     			
-                    // InternalSeleniumDSL.g:982:4: ( ( ( (lv_Parameters_2_1= RULE_IDENTIFIER | lv_Parameters_2_2= RULE_STRING ) ) ) (this_COMMA_3= RULE_COMMA ( ( (lv_Parameters_4_1= RULE_IDENTIFIER | lv_Parameters_4_2= RULE_STRING ) ) ) )* )
-                    // InternalSeleniumDSL.g:983:5: ( ( (lv_Parameters_2_1= RULE_IDENTIFIER | lv_Parameters_2_2= RULE_STRING ) ) ) (this_COMMA_3= RULE_COMMA ( ( (lv_Parameters_4_1= RULE_IDENTIFIER | lv_Parameters_4_2= RULE_STRING ) ) ) )*
+                    // InternalSeleniumDSL.g:1082:4: ( ( ( (lv_Parameters_2_1= RULE_IDENTIFIER | lv_Parameters_2_2= RULE_STRING ) ) ) (this_COMMA_3= RULE_COMMA ( ( (lv_Parameters_4_1= RULE_IDENTIFIER | lv_Parameters_4_2= RULE_STRING ) ) ) )* )
+                    // InternalSeleniumDSL.g:1083:5: ( ( (lv_Parameters_2_1= RULE_IDENTIFIER | lv_Parameters_2_2= RULE_STRING ) ) ) (this_COMMA_3= RULE_COMMA ( ( (lv_Parameters_4_1= RULE_IDENTIFIER | lv_Parameters_4_2= RULE_STRING ) ) ) )*
                     {
-                    // InternalSeleniumDSL.g:983:5: ( ( (lv_Parameters_2_1= RULE_IDENTIFIER | lv_Parameters_2_2= RULE_STRING ) ) )
-                    // InternalSeleniumDSL.g:984:6: ( (lv_Parameters_2_1= RULE_IDENTIFIER | lv_Parameters_2_2= RULE_STRING ) )
+                    // InternalSeleniumDSL.g:1083:5: ( ( (lv_Parameters_2_1= RULE_IDENTIFIER | lv_Parameters_2_2= RULE_STRING ) ) )
+                    // InternalSeleniumDSL.g:1084:6: ( (lv_Parameters_2_1= RULE_IDENTIFIER | lv_Parameters_2_2= RULE_STRING ) )
                     {
-                    // InternalSeleniumDSL.g:984:6: ( (lv_Parameters_2_1= RULE_IDENTIFIER | lv_Parameters_2_2= RULE_STRING ) )
-                    // InternalSeleniumDSL.g:985:7: (lv_Parameters_2_1= RULE_IDENTIFIER | lv_Parameters_2_2= RULE_STRING )
+                    // InternalSeleniumDSL.g:1084:6: ( (lv_Parameters_2_1= RULE_IDENTIFIER | lv_Parameters_2_2= RULE_STRING ) )
+                    // InternalSeleniumDSL.g:1085:7: (lv_Parameters_2_1= RULE_IDENTIFIER | lv_Parameters_2_2= RULE_STRING )
                     {
-                    // InternalSeleniumDSL.g:985:7: (lv_Parameters_2_1= RULE_IDENTIFIER | lv_Parameters_2_2= RULE_STRING )
-                    int alt16=2;
-                    int LA16_0 = input.LA(1);
+                    // InternalSeleniumDSL.g:1085:7: (lv_Parameters_2_1= RULE_IDENTIFIER | lv_Parameters_2_2= RULE_STRING )
+                    int alt18=2;
+                    int LA18_0 = input.LA(1);
 
-                    if ( (LA16_0==RULE_IDENTIFIER) ) {
-                        alt16=1;
+                    if ( (LA18_0==RULE_IDENTIFIER) ) {
+                        alt18=1;
                     }
-                    else if ( (LA16_0==RULE_STRING) ) {
-                        alt16=2;
+                    else if ( (LA18_0==RULE_STRING) ) {
+                        alt18=2;
                     }
                     else {
                         NoViableAltException nvae =
-                            new NoViableAltException("", 16, 0, input);
+                            new NoViableAltException("", 18, 0, input);
 
                         throw nvae;
                     }
-                    switch (alt16) {
+                    switch (alt18) {
                         case 1 :
-                            // InternalSeleniumDSL.g:986:8: lv_Parameters_2_1= RULE_IDENTIFIER
+                            // InternalSeleniumDSL.g:1086:8: lv_Parameters_2_1= RULE_IDENTIFIER
                             {
                             lv_Parameters_2_1=(Token)match(input,RULE_IDENTIFIER,FOLLOW_6); 
 
@@ -2465,7 +2795,7 @@ public class InternalSeleniumDSLParser extends AbstractInternalAntlrParser {
                             }
                             break;
                         case 2 :
-                            // InternalSeleniumDSL.g:1001:8: lv_Parameters_2_2= RULE_STRING
+                            // InternalSeleniumDSL.g:1101:8: lv_Parameters_2_2= RULE_STRING
                             {
                             lv_Parameters_2_2=(Token)match(input,RULE_STRING,FOLLOW_6); 
 
@@ -2493,50 +2823,50 @@ public class InternalSeleniumDSLParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalSeleniumDSL.g:1018:5: (this_COMMA_3= RULE_COMMA ( ( (lv_Parameters_4_1= RULE_IDENTIFIER | lv_Parameters_4_2= RULE_STRING ) ) ) )*
-                    loop18:
+                    // InternalSeleniumDSL.g:1118:5: (this_COMMA_3= RULE_COMMA ( ( (lv_Parameters_4_1= RULE_IDENTIFIER | lv_Parameters_4_2= RULE_STRING ) ) ) )*
+                    loop20:
                     do {
-                        int alt18=2;
-                        int LA18_0 = input.LA(1);
+                        int alt20=2;
+                        int LA20_0 = input.LA(1);
 
-                        if ( (LA18_0==RULE_COMMA) ) {
-                            alt18=1;
+                        if ( (LA20_0==RULE_COMMA) ) {
+                            alt20=1;
                         }
 
 
-                        switch (alt18) {
+                        switch (alt20) {
                     	case 1 :
-                    	    // InternalSeleniumDSL.g:1019:6: this_COMMA_3= RULE_COMMA ( ( (lv_Parameters_4_1= RULE_IDENTIFIER | lv_Parameters_4_2= RULE_STRING ) ) )
+                    	    // InternalSeleniumDSL.g:1119:6: this_COMMA_3= RULE_COMMA ( ( (lv_Parameters_4_1= RULE_IDENTIFIER | lv_Parameters_4_2= RULE_STRING ) ) )
                     	    {
                     	    this_COMMA_3=(Token)match(input,RULE_COMMA,FOLLOW_13); 
 
                     	    						newLeafNode(this_COMMA_3, grammarAccess.getCallProcedureAccess().getCOMMATerminalRuleCall_1_1_1_0());
                     	    					
-                    	    // InternalSeleniumDSL.g:1023:6: ( ( (lv_Parameters_4_1= RULE_IDENTIFIER | lv_Parameters_4_2= RULE_STRING ) ) )
-                    	    // InternalSeleniumDSL.g:1024:7: ( (lv_Parameters_4_1= RULE_IDENTIFIER | lv_Parameters_4_2= RULE_STRING ) )
+                    	    // InternalSeleniumDSL.g:1123:6: ( ( (lv_Parameters_4_1= RULE_IDENTIFIER | lv_Parameters_4_2= RULE_STRING ) ) )
+                    	    // InternalSeleniumDSL.g:1124:7: ( (lv_Parameters_4_1= RULE_IDENTIFIER | lv_Parameters_4_2= RULE_STRING ) )
                     	    {
-                    	    // InternalSeleniumDSL.g:1024:7: ( (lv_Parameters_4_1= RULE_IDENTIFIER | lv_Parameters_4_2= RULE_STRING ) )
-                    	    // InternalSeleniumDSL.g:1025:8: (lv_Parameters_4_1= RULE_IDENTIFIER | lv_Parameters_4_2= RULE_STRING )
+                    	    // InternalSeleniumDSL.g:1124:7: ( (lv_Parameters_4_1= RULE_IDENTIFIER | lv_Parameters_4_2= RULE_STRING ) )
+                    	    // InternalSeleniumDSL.g:1125:8: (lv_Parameters_4_1= RULE_IDENTIFIER | lv_Parameters_4_2= RULE_STRING )
                     	    {
-                    	    // InternalSeleniumDSL.g:1025:8: (lv_Parameters_4_1= RULE_IDENTIFIER | lv_Parameters_4_2= RULE_STRING )
-                    	    int alt17=2;
-                    	    int LA17_0 = input.LA(1);
+                    	    // InternalSeleniumDSL.g:1125:8: (lv_Parameters_4_1= RULE_IDENTIFIER | lv_Parameters_4_2= RULE_STRING )
+                    	    int alt19=2;
+                    	    int LA19_0 = input.LA(1);
 
-                    	    if ( (LA17_0==RULE_IDENTIFIER) ) {
-                    	        alt17=1;
+                    	    if ( (LA19_0==RULE_IDENTIFIER) ) {
+                    	        alt19=1;
                     	    }
-                    	    else if ( (LA17_0==RULE_STRING) ) {
-                    	        alt17=2;
+                    	    else if ( (LA19_0==RULE_STRING) ) {
+                    	        alt19=2;
                     	    }
                     	    else {
                     	        NoViableAltException nvae =
-                    	            new NoViableAltException("", 17, 0, input);
+                    	            new NoViableAltException("", 19, 0, input);
 
                     	        throw nvae;
                     	    }
-                    	    switch (alt17) {
+                    	    switch (alt19) {
                     	        case 1 :
-                    	            // InternalSeleniumDSL.g:1026:9: lv_Parameters_4_1= RULE_IDENTIFIER
+                    	            // InternalSeleniumDSL.g:1126:9: lv_Parameters_4_1= RULE_IDENTIFIER
                     	            {
                     	            lv_Parameters_4_1=(Token)match(input,RULE_IDENTIFIER,FOLLOW_6); 
 
@@ -2556,7 +2886,7 @@ public class InternalSeleniumDSLParser extends AbstractInternalAntlrParser {
                     	            }
                     	            break;
                     	        case 2 :
-                    	            // InternalSeleniumDSL.g:1041:9: lv_Parameters_4_2= RULE_STRING
+                    	            // InternalSeleniumDSL.g:1141:9: lv_Parameters_4_2= RULE_STRING
                     	            {
                     	            lv_Parameters_4_2=(Token)match(input,RULE_STRING,FOLLOW_6); 
 
@@ -2589,7 +2919,7 @@ public class InternalSeleniumDSLParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop18;
+                    	    break loop20;
                         }
                     } while (true);
 

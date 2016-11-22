@@ -23,314 +23,331 @@ import org.eclipse.emf.ecore.EObject;
 public class SeleniumDSLAdapterFactory extends AdapterFactoryImpl
 {
   /**
-	 * The cached model package.
-	 * <!-- begin-user-doc -->
+   * The cached model package.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   protected static SeleniumDSLPackage modelPackage;
 
   /**
-	 * Creates an instance of the adapter factory.
-	 * <!-- begin-user-doc -->
+   * Creates an instance of the adapter factory.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public SeleniumDSLAdapterFactory()
   {
-		if (modelPackage == null) {
-			modelPackage = SeleniumDSLPackage.eINSTANCE;
-		}
-	}
+    if (modelPackage == null)
+    {
+      modelPackage = SeleniumDSLPackage.eINSTANCE;
+    }
+  }
 
   /**
-	 * Returns whether this factory is applicable for the type of the object.
-	 * <!-- begin-user-doc -->
+   * Returns whether this factory is applicable for the type of the object.
+   * <!-- begin-user-doc -->
    * This implementation returns <code>true</code> if the object is either the model's package or is an instance object of the model.
    * <!-- end-user-doc -->
-	 * @return whether this factory is applicable for the type of the object.
-	 * @generated
-	 */
+   * @return whether this factory is applicable for the type of the object.
+   * @generated
+   */
   @Override
   public boolean isFactoryForType(Object object)
   {
-		if (object == modelPackage) {
-			return true;
-		}
-		if (object instanceof EObject) {
-			return ((EObject)object).eClass().getEPackage() == modelPackage;
-		}
-		return false;
-	}
+    if (object == modelPackage)
+    {
+      return true;
+    }
+    if (object instanceof EObject)
+    {
+      return ((EObject)object).eClass().getEPackage() == modelPackage;
+    }
+    return false;
+  }
 
   /**
-	 * The switch that delegates to the <code>createXXX</code> methods.
-	 * <!-- begin-user-doc -->
+   * The switch that delegates to the <code>createXXX</code> methods.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   protected SeleniumDSLSwitch<Adapter> modelSwitch =
-    new SeleniumDSLSwitch<Adapter>() {
-			@Override
-			public Adapter caseSeleniumTest(SeleniumTest object) {
-				return createSeleniumTestAdapter();
-			}
-			@Override
-			public Adapter caseProcedure(Procedure object) {
-				return createProcedureAdapter();
-			}
-			@Override
-			public Adapter caseMainProcedure(MainProcedure object) {
-				return createMainProcedureAdapter();
-			}
-			@Override
-			public Adapter caseInstruction(Instruction object) {
-				return createInstructionAdapter();
-			}
-			@Override
-			public Adapter caseClick(Click object) {
-				return createClickAdapter();
-			}
-			@Override
-			public Adapter caseFill(Fill object) {
-				return createFillAdapter();
-			}
-			@Override
-			public Adapter caseSelect(Select object) {
-				return createSelectAdapter();
-			}
-			@Override
-			public Adapter caseTick(Tick object) {
-				return createTickAdapter();
-			}
-			@Override
-			public Adapter caseNavigate(Navigate object) {
-				return createNavigateAdapter();
-			}
-			@Override
-			public Adapter caseRead(Read object) {
-				return createReadAdapter();
-			}
-			@Override
-			public Adapter caseAssert(Assert object) {
-				return createAssertAdapter();
-			}
-			@Override
-			public Adapter caseCallProcedure(CallProcedure object) {
-				return createCallProcedureAdapter();
-			}
-			@Override
-			public Adapter defaultCase(EObject object) {
-				return createEObjectAdapter();
-			}
-		};
+    new SeleniumDSLSwitch<Adapter>()
+    {
+      @Override
+      public Adapter caseSeleniumTest(SeleniumTest object)
+      {
+        return createSeleniumTestAdapter();
+      }
+      @Override
+      public Adapter caseProcedure(Procedure object)
+      {
+        return createProcedureAdapter();
+      }
+      @Override
+      public Adapter caseMainProcedure(MainProcedure object)
+      {
+        return createMainProcedureAdapter();
+      }
+      @Override
+      public Adapter caseInstruction(Instruction object)
+      {
+        return createInstructionAdapter();
+      }
+      @Override
+      public Adapter caseClick(Click object)
+      {
+        return createClickAdapter();
+      }
+      @Override
+      public Adapter caseFill(Fill object)
+      {
+        return createFillAdapter();
+      }
+      @Override
+      public Adapter caseSelect(Select object)
+      {
+        return createSelectAdapter();
+      }
+      @Override
+      public Adapter caseTick(Tick object)
+      {
+        return createTickAdapter();
+      }
+      @Override
+      public Adapter caseNavigate(Navigate object)
+      {
+        return createNavigateAdapter();
+      }
+      @Override
+      public Adapter caseRead(Read object)
+      {
+        return createReadAdapter();
+      }
+      @Override
+      public Adapter caseAssert(Assert object)
+      {
+        return createAssertAdapter();
+      }
+      @Override
+      public Adapter caseCallProcedure(CallProcedure object)
+      {
+        return createCallProcedureAdapter();
+      }
+      @Override
+      public Adapter defaultCase(EObject object)
+      {
+        return createEObjectAdapter();
+      }
+    };
 
   /**
-	 * Creates an adapter for the <code>target</code>.
-	 * <!-- begin-user-doc -->
+   * Creates an adapter for the <code>target</code>.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @param target the object to adapt.
-	 * @return the adapter for the <code>target</code>.
-	 * @generated
-	 */
+   * @param target the object to adapt.
+   * @return the adapter for the <code>target</code>.
+   * @generated
+   */
   @Override
   public Adapter createAdapter(Notifier target)
   {
-		return modelSwitch.doSwitch((EObject)target);
-	}
+    return modelSwitch.doSwitch((EObject)target);
+  }
 
 
   /**
-	 * Creates a new adapter for an object of class '{@link fr.minesnantes.browserautomation.seleniumDSL.SeleniumTest <em>Selenium Test</em>}'.
-	 * <!-- begin-user-doc -->
+   * Creates a new adapter for an object of class '{@link fr.minesnantes.browserautomation.seleniumDSL.SeleniumTest <em>Selenium Test</em>}'.
+   * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see fr.minesnantes.browserautomation.seleniumDSL.SeleniumTest
-	 * @generated
-	 */
+   * @return the new adapter.
+   * @see fr.minesnantes.browserautomation.seleniumDSL.SeleniumTest
+   * @generated
+   */
   public Adapter createSeleniumTestAdapter()
   {
-		return null;
-	}
+    return null;
+  }
 
   /**
-	 * Creates a new adapter for an object of class '{@link fr.minesnantes.browserautomation.seleniumDSL.Procedure <em>Procedure</em>}'.
-	 * <!-- begin-user-doc -->
+   * Creates a new adapter for an object of class '{@link fr.minesnantes.browserautomation.seleniumDSL.Procedure <em>Procedure</em>}'.
+   * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see fr.minesnantes.browserautomation.seleniumDSL.Procedure
-	 * @generated
-	 */
+   * @return the new adapter.
+   * @see fr.minesnantes.browserautomation.seleniumDSL.Procedure
+   * @generated
+   */
   public Adapter createProcedureAdapter()
   {
-		return null;
-	}
+    return null;
+  }
 
   /**
-	 * Creates a new adapter for an object of class '{@link fr.minesnantes.browserautomation.seleniumDSL.MainProcedure <em>Main Procedure</em>}'.
-	 * <!-- begin-user-doc -->
+   * Creates a new adapter for an object of class '{@link fr.minesnantes.browserautomation.seleniumDSL.MainProcedure <em>Main Procedure</em>}'.
+   * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see fr.minesnantes.browserautomation.seleniumDSL.MainProcedure
-	 * @generated
-	 */
+   * @return the new adapter.
+   * @see fr.minesnantes.browserautomation.seleniumDSL.MainProcedure
+   * @generated
+   */
   public Adapter createMainProcedureAdapter()
   {
-		return null;
-	}
+    return null;
+  }
 
   /**
-	 * Creates a new adapter for an object of class '{@link fr.minesnantes.browserautomation.seleniumDSL.Instruction <em>Instruction</em>}'.
-	 * <!-- begin-user-doc -->
+   * Creates a new adapter for an object of class '{@link fr.minesnantes.browserautomation.seleniumDSL.Instruction <em>Instruction</em>}'.
+   * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see fr.minesnantes.browserautomation.seleniumDSL.Instruction
-	 * @generated
-	 */
+   * @return the new adapter.
+   * @see fr.minesnantes.browserautomation.seleniumDSL.Instruction
+   * @generated
+   */
   public Adapter createInstructionAdapter()
   {
-		return null;
-	}
+    return null;
+  }
 
   /**
-	 * Creates a new adapter for an object of class '{@link fr.minesnantes.browserautomation.seleniumDSL.Click <em>Click</em>}'.
-	 * <!-- begin-user-doc -->
+   * Creates a new adapter for an object of class '{@link fr.minesnantes.browserautomation.seleniumDSL.Click <em>Click</em>}'.
+   * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see fr.minesnantes.browserautomation.seleniumDSL.Click
-	 * @generated
-	 */
+   * @return the new adapter.
+   * @see fr.minesnantes.browserautomation.seleniumDSL.Click
+   * @generated
+   */
   public Adapter createClickAdapter()
   {
-		return null;
-	}
+    return null;
+  }
 
   /**
-	 * Creates a new adapter for an object of class '{@link fr.minesnantes.browserautomation.seleniumDSL.Fill <em>Fill</em>}'.
-	 * <!-- begin-user-doc -->
+   * Creates a new adapter for an object of class '{@link fr.minesnantes.browserautomation.seleniumDSL.Fill <em>Fill</em>}'.
+   * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see fr.minesnantes.browserautomation.seleniumDSL.Fill
-	 * @generated
-	 */
+   * @return the new adapter.
+   * @see fr.minesnantes.browserautomation.seleniumDSL.Fill
+   * @generated
+   */
   public Adapter createFillAdapter()
   {
-		return null;
-	}
+    return null;
+  }
 
   /**
-	 * Creates a new adapter for an object of class '{@link fr.minesnantes.browserautomation.seleniumDSL.Select <em>Select</em>}'.
-	 * <!-- begin-user-doc -->
+   * Creates a new adapter for an object of class '{@link fr.minesnantes.browserautomation.seleniumDSL.Select <em>Select</em>}'.
+   * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see fr.minesnantes.browserautomation.seleniumDSL.Select
-	 * @generated
-	 */
+   * @return the new adapter.
+   * @see fr.minesnantes.browserautomation.seleniumDSL.Select
+   * @generated
+   */
   public Adapter createSelectAdapter()
   {
-		return null;
-	}
+    return null;
+  }
 
   /**
-	 * Creates a new adapter for an object of class '{@link fr.minesnantes.browserautomation.seleniumDSL.Tick <em>Tick</em>}'.
-	 * <!-- begin-user-doc -->
+   * Creates a new adapter for an object of class '{@link fr.minesnantes.browserautomation.seleniumDSL.Tick <em>Tick</em>}'.
+   * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see fr.minesnantes.browserautomation.seleniumDSL.Tick
-	 * @generated
-	 */
+   * @return the new adapter.
+   * @see fr.minesnantes.browserautomation.seleniumDSL.Tick
+   * @generated
+   */
   public Adapter createTickAdapter()
   {
-		return null;
-	}
+    return null;
+  }
 
   /**
-	 * Creates a new adapter for an object of class '{@link fr.minesnantes.browserautomation.seleniumDSL.Navigate <em>Navigate</em>}'.
-	 * <!-- begin-user-doc -->
+   * Creates a new adapter for an object of class '{@link fr.minesnantes.browserautomation.seleniumDSL.Navigate <em>Navigate</em>}'.
+   * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see fr.minesnantes.browserautomation.seleniumDSL.Navigate
-	 * @generated
-	 */
+   * @return the new adapter.
+   * @see fr.minesnantes.browserautomation.seleniumDSL.Navigate
+   * @generated
+   */
   public Adapter createNavigateAdapter()
   {
-		return null;
-	}
+    return null;
+  }
 
   /**
-	 * Creates a new adapter for an object of class '{@link fr.minesnantes.browserautomation.seleniumDSL.Read <em>Read</em>}'.
-	 * <!-- begin-user-doc -->
+   * Creates a new adapter for an object of class '{@link fr.minesnantes.browserautomation.seleniumDSL.Read <em>Read</em>}'.
+   * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see fr.minesnantes.browserautomation.seleniumDSL.Read
-	 * @generated
-	 */
+   * @return the new adapter.
+   * @see fr.minesnantes.browserautomation.seleniumDSL.Read
+   * @generated
+   */
   public Adapter createReadAdapter()
   {
-		return null;
-	}
+    return null;
+  }
 
   /**
-	 * Creates a new adapter for an object of class '{@link fr.minesnantes.browserautomation.seleniumDSL.Assert <em>Assert</em>}'.
-	 * <!-- begin-user-doc -->
+   * Creates a new adapter for an object of class '{@link fr.minesnantes.browserautomation.seleniumDSL.Assert <em>Assert</em>}'.
+   * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see fr.minesnantes.browserautomation.seleniumDSL.Assert
-	 * @generated
-	 */
+   * @return the new adapter.
+   * @see fr.minesnantes.browserautomation.seleniumDSL.Assert
+   * @generated
+   */
   public Adapter createAssertAdapter()
   {
-		return null;
-	}
+    return null;
+  }
 
   /**
-	 * Creates a new adapter for an object of class '{@link fr.minesnantes.browserautomation.seleniumDSL.CallProcedure <em>Call Procedure</em>}'.
-	 * <!-- begin-user-doc -->
+   * Creates a new adapter for an object of class '{@link fr.minesnantes.browserautomation.seleniumDSL.CallProcedure <em>Call Procedure</em>}'.
+   * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see fr.minesnantes.browserautomation.seleniumDSL.CallProcedure
-	 * @generated
-	 */
+   * @return the new adapter.
+   * @see fr.minesnantes.browserautomation.seleniumDSL.CallProcedure
+   * @generated
+   */
   public Adapter createCallProcedureAdapter()
   {
-		return null;
-	}
+    return null;
+  }
 
   /**
-	 * Creates a new adapter for the default case.
-	 * <!-- begin-user-doc -->
+   * Creates a new adapter for the default case.
+   * <!-- begin-user-doc -->
    * This default implementation returns null.
    * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @generated
-	 */
+   * @return the new adapter.
+   * @generated
+   */
   public Adapter createEObjectAdapter()
   {
-		return null;
-	}
+    return null;
+  }
 
 } //SeleniumDSLAdapterFactory

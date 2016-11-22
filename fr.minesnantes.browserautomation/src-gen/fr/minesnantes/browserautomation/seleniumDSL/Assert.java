@@ -13,8 +13,9 @@ package fr.minesnantes.browserautomation.seleniumDSL;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link fr.minesnantes.browserautomation.seleniumDSL.Assert#getName <em>Name</em>}</li>
  *   <li>{@link fr.minesnantes.browserautomation.seleniumDSL.Assert#getType <em>Type</em>}</li>
+ *   <li>{@link fr.minesnantes.browserautomation.seleniumDSL.Assert#getName <em>Name</em>}</li>
+ *   <li>{@link fr.minesnantes.browserautomation.seleniumDSL.Assert#getMethod <em>Method</em>}</li>
  *   <li>{@link fr.minesnantes.browserautomation.seleniumDSL.Assert#getValue <em>Value</em>}</li>
  * </ul>
  *
@@ -25,81 +26,107 @@ package fr.minesnantes.browserautomation.seleniumDSL;
 public interface Assert extends Instruction
 {
   /**
-	 * Returns the value of the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Name</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-	 * @return the value of the '<em>Name</em>' attribute.
-	 * @see #setName(String)
-	 * @see fr.minesnantes.browserautomation.seleniumDSL.SeleniumDSLPackage#getAssert_Name()
-	 * @model
-	 * @generated
-	 */
-  String getName();
-
-  /**
-	 * Sets the value of the '{@link fr.minesnantes.browserautomation.seleniumDSL.Assert#getName <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name</em>' attribute.
-	 * @see #getName()
-	 * @generated
-	 */
-  void setName(String value);
-
-  /**
-	 * Returns the value of the '<em><b>Type</b></em>' attribute.
-	 * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Type</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-	 * @return the value of the '<em>Type</em>' attribute.
-	 * @see #setType(String)
-	 * @see fr.minesnantes.browserautomation.seleniumDSL.SeleniumDSLPackage#getAssert_Type()
-	 * @model
-	 * @generated
-	 */
+   * @return the value of the '<em>Type</em>' attribute.
+   * @see #setType(String)
+   * @see fr.minesnantes.browserautomation.seleniumDSL.SeleniumDSLPackage#getAssert_Type()
+   * @model
+   * @generated
+   */
   String getType();
 
   /**
-	 * Sets the value of the '{@link fr.minesnantes.browserautomation.seleniumDSL.Assert#getType <em>Type</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * Sets the value of the '{@link fr.minesnantes.browserautomation.seleniumDSL.Assert#getType <em>Type</em>}' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Type</em>' attribute.
-	 * @see #getType()
-	 * @generated
-	 */
+   * @param value the new value of the '<em>Type</em>' attribute.
+   * @see #getType()
+   * @generated
+   */
   void setType(String value);
 
   /**
-	 * Returns the value of the '<em><b>Value</b></em>' attribute.
-	 * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Name</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Name</em>' attribute.
+   * @see #setName(String)
+   * @see fr.minesnantes.browserautomation.seleniumDSL.SeleniumDSLPackage#getAssert_Name()
+   * @model
+   * @generated
+   */
+  String getName();
+
+  /**
+   * Sets the value of the '{@link fr.minesnantes.browserautomation.seleniumDSL.Assert#getName <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Name</em>' attribute.
+   * @see #getName()
+   * @generated
+   */
+  void setName(String value);
+
+  /**
+   * Returns the value of the '<em><b>Method</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Method</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Method</em>' attribute.
+   * @see #setMethod(String)
+   * @see fr.minesnantes.browserautomation.seleniumDSL.SeleniumDSLPackage#getAssert_Method()
+   * @model
+   * @generated
+   */
+  String getMethod();
+
+  /**
+   * Sets the value of the '{@link fr.minesnantes.browserautomation.seleniumDSL.Assert#getMethod <em>Method</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Method</em>' attribute.
+   * @see #getMethod()
+   * @generated
+   */
+  void setMethod(String value);
+
+  /**
+   * Returns the value of the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Value</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-	 * @return the value of the '<em>Value</em>' attribute.
-	 * @see #setValue(String)
-	 * @see fr.minesnantes.browserautomation.seleniumDSL.SeleniumDSLPackage#getAssert_Value()
-	 * @model
-	 * @generated
-	 */
+   * @return the value of the '<em>Value</em>' attribute.
+   * @see #setValue(String)
+   * @see fr.minesnantes.browserautomation.seleniumDSL.SeleniumDSLPackage#getAssert_Value()
+   * @model
+   * @generated
+   */
   String getValue();
 
   /**
-	 * Sets the value of the '{@link fr.minesnantes.browserautomation.seleniumDSL.Assert#getValue <em>Value</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * Sets the value of the '{@link fr.minesnantes.browserautomation.seleniumDSL.Assert#getValue <em>Value</em>}' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Value</em>' attribute.
-	 * @see #getValue()
-	 * @generated
-	 */
+   * @param value the new value of the '<em>Value</em>' attribute.
+   * @see #getValue()
+   * @generated
+   */
   void setValue(String value);
 
 } // Assert

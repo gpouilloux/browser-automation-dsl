@@ -286,6 +286,9 @@ public class SeleniumDSLGenerator extends AbstractGenerator {
     _builder.append("\"));");
     _builder.newLineIfNotEmpty();
     _builder.append(eltName, "");
+    _builder.append(".clear();");
+    _builder.newLineIfNotEmpty();
+    _builder.append(eltName, "");
     _builder.append(".sendKeys(");
     {
       List<String> _get = this.proceduresContext.get(methodName);
@@ -391,99 +394,162 @@ public class SeleniumDSLGenerator extends AbstractGenerator {
     _builder_1.append(_nextCount, "");
     final String eltName = _builder_1.toString();
     _builder.newLineIfNotEmpty();
-    final String assertValue = a.getValue();
+    final String assertName = a.getName();
     _builder.newLineIfNotEmpty();
-    _builder.append("WebElement ");
-    _builder.append(eltName, "");
-    _builder.append(" = webDriver.findElement(By.name(\"");
-    String _name = a.getName();
-    _builder.append(_name, "");
-    _builder.append("\"));");
+    final String assertValue = a.getValue();
     _builder.newLineIfNotEmpty();
     CharSequence _switchResult = null;
     String _type = a.getType();
     switch (_type) {
-      case "contains":
+      case "input":
         StringConcatenation _builder_2 = new StringConcatenation();
-        _builder_2.append("if(!");
+        _builder_2.append("WebElement ");
         _builder_2.append(eltName, "");
-        _builder_2.append(".getAttribute(\"value\").contains(");
+        _builder_2.append(" = webDriver.findElement(By.xpath(\"//input[@value=\\\"");
+        _builder_2.append(assertName, "");
+        _builder_2.append("\\\"]\"));");
+        _switchResult = _builder_2;
+        break;
+      case "link":
+        StringConcatenation _builder_3 = new StringConcatenation();
+        _builder_3.append("WebElement ");
+        _builder_3.append(eltName, "");
+        _builder_3.append(" = webDriver.findElement(By.linkText(\"");
+        _builder_3.append(assertName, "");
+        _builder_3.append("\"));");
+        _switchResult = _builder_3;
+        break;
+      case "xpath":
+        StringConcatenation _builder_4 = new StringConcatenation();
+        _builder_4.append("WebElement ");
+        _builder_4.append(eltName, "");
+        _builder_4.append(" = webDriver.findElement(By.xpath(\"");
+        _builder_4.append(assertName, "");
+        _builder_4.append("\"));");
+        _switchResult = _builder_4;
+        break;
+      case "name":
+        StringConcatenation _builder_5 = new StringConcatenation();
+        _builder_5.append("WebElement ");
+        _builder_5.append(eltName, "");
+        _builder_5.append(" = webDriver.findElement(By.name(\"");
+        _builder_5.append(assertName, "");
+        _builder_5.append("\"));");
+        _switchResult = _builder_5;
+        break;
+      default:
+        StringConcatenation _builder_6 = new StringConcatenation();
+        _builder_6.append("// FIXME unrecognized assert instruction: assert ");
+        String _type_1 = a.getType();
+        _builder_6.append(_type_1, "");
+        _builder_6.append(" ");
+        _builder_6.append(assertName, "");
+        _switchResult = _builder_6;
+        break;
+    }
+    _builder.append(_switchResult, "");
+    _builder.newLineIfNotEmpty();
+    CharSequence _switchResult_1 = null;
+    String _method = a.getMethod();
+    switch (_method) {
+      case "contains":
+        StringConcatenation _builder_6 = new StringConcatenation();
+        _builder_6.append("if(!");
+        _builder_6.append(eltName, "");
+        _builder_6.append(".getText().contains(");
         {
           List<String> _get = this.proceduresContext.get(methodName);
           boolean _contains = _get.contains(assertValue);
           if (_contains) {
-            _builder_2.append(assertValue, "");
+            _builder_6.append(assertValue, "");
           } else {
-            _builder_2.append("\"");
-            _builder_2.append(assertValue, "");
-            _builder_2.append("\"");
+            _builder_6.append("\"");
+            _builder_6.append(assertValue, "");
+            _builder_6.append("\"");
           }
         }
-        _builder_2.append(")) {");
-        _builder_2.newLineIfNotEmpty();
-        _builder_2.append("    ");
-        _builder_2.append("throw new AssertionError(");
-        _builder_2.append(eltName, "    ");
-        _builder_2.append(".getAttribute(\"value\") + \" does not contain ");
-        _builder_2.append(assertValue, "    ");
-        _builder_2.append("\");");
-        _builder_2.newLineIfNotEmpty();
-        _builder_2.append("};");
-        _switchResult = _builder_2;
-        break;
-      case "equals":
-        StringConcatenation _builder_3 = new StringConcatenation();
-        _builder_3.append("if(!");
-        _builder_3.append(eltName, "");
-        _builder_3.append(".getAttribute(\"value\").equals(");
+        _builder_6.append(")");
+        _builder_6.newLineIfNotEmpty();
+        _builder_6.append(" ");
+        _builder_6.append("&& !(");
+        _builder_6.append(eltName, " ");
+        _builder_6.append(".getAttribute(\"value\").contains(");
         {
           List<String> _get_1 = this.proceduresContext.get(methodName);
           boolean _contains_1 = _get_1.contains(assertValue);
           if (_contains_1) {
-            _builder_3.append(assertValue, "");
+            _builder_6.append(assertValue, " ");
           } else {
-            _builder_3.append("\"");
-            _builder_3.append(assertValue, "");
-            _builder_3.append("\"");
+            _builder_6.append("\"");
+            _builder_6.append(assertValue, " ");
+            _builder_6.append("\"");
           }
         }
-        _builder_3.append(")) {");
-        _builder_3.newLineIfNotEmpty();
-        _builder_3.append("    ");
-        _builder_3.append("throw new AssertionError(");
-        _builder_3.append(eltName, "    ");
-        _builder_3.append(".getAttribute(\"value\") + \" is not equal to ");
-        _builder_3.append(assertValue, "    ");
-        _builder_3.append("\");");
-        _builder_3.newLineIfNotEmpty();
-        _builder_3.append("};");
-        _switchResult = _builder_3;
+        _builder_6.append("))) {");
+        _builder_6.newLineIfNotEmpty();
+        _builder_6.append("    ");
+        _builder_6.append("throw new AssertionError(");
+        _builder_6.append(eltName, "    ");
+        _builder_6.append(".getAttribute(\"value\") + \" does not contain ");
+        _builder_6.append(assertValue, "    ");
+        _builder_6.append("\");");
+        _builder_6.newLineIfNotEmpty();
+        _builder_6.append("};");
+        _switchResult_1 = _builder_6;
+        break;
+      case "equals":
+        StringConcatenation _builder_7 = new StringConcatenation();
+        _builder_7.append("if(!");
+        _builder_7.append(eltName, "");
+        _builder_7.append(".getAttribute(\"value\").equals(");
+        {
+          List<String> _get_2 = this.proceduresContext.get(methodName);
+          boolean _contains_2 = _get_2.contains(assertValue);
+          if (_contains_2) {
+            _builder_7.append(assertValue, "");
+          } else {
+            _builder_7.append("\"");
+            _builder_7.append(assertValue, "");
+            _builder_7.append("\"");
+          }
+        }
+        _builder_7.append(")) {");
+        _builder_7.newLineIfNotEmpty();
+        _builder_7.append("    ");
+        _builder_7.append("throw new AssertionError(");
+        _builder_7.append(eltName, "    ");
+        _builder_7.append(".getAttribute(\"value\") + \" is not equal to ");
+        _builder_7.append(assertValue, "    ");
+        _builder_7.append("\");");
+        _builder_7.newLineIfNotEmpty();
+        _builder_7.append("};");
+        _switchResult_1 = _builder_7;
         break;
       case "exists":
-        StringConcatenation _builder_4 = new StringConcatenation();
-        _builder_4.append("if(!");
-        _builder_4.append(eltName, "");
-        _builder_4.append(".isDisplayed()) {");
-        _builder_4.newLineIfNotEmpty();
-        _builder_4.append("    ");
-        _builder_4.append("throw new AssertionError(");
-        _builder_4.append(eltName, "    ");
-        _builder_4.append(".getAttribute(\"value\") + \" does not exist\");");
-        _builder_4.newLineIfNotEmpty();
-        _builder_4.append("};");
-        _switchResult = _builder_4;
+        StringConcatenation _builder_8 = new StringConcatenation();
+        _builder_8.append("if(!");
+        _builder_8.append(eltName, "");
+        _builder_8.append(".isDisplayed()) {");
+        _builder_8.newLineIfNotEmpty();
+        _builder_8.append("    ");
+        _builder_8.append("throw new AssertionError(");
+        _builder_8.append(eltName, "    ");
+        _builder_8.append(".getAttribute(\"value\") + \" does not exist\");");
+        _builder_8.newLineIfNotEmpty();
+        _builder_8.append("};");
+        _switchResult_1 = _builder_8;
         break;
       default:
-        StringConcatenation _builder_5 = new StringConcatenation();
-        _builder_5.append("// FIXME unrecognized assert instruction: assert ");
+        StringConcatenation _builder_9 = new StringConcatenation();
+        _builder_9.append("// FIXME unrecognized assert instruction: assert ");
         String _type_1 = a.getType();
-        _builder_5.append(_type_1, "");
-        _builder_5.append(" ");
-        _builder_5.append(assertValue, "");
-        _switchResult = _builder_5;
+        _builder_9.append(_type_1, "");
+        _builder_9.append(" ");
+        _builder_9.append(assertValue, "");
+        _switchResult_1 = _builder_9;
         break;
     }
-    _builder.append(_switchResult, "");
+    _builder.append(_switchResult_1, "");
     _builder.newLineIfNotEmpty();
     return _builder;
   }

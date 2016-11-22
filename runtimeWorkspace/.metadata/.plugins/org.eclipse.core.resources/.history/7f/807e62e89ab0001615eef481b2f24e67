@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<viewpoint:DAnalysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:seleniumDSL="http://www.minesnantes.fr/browserautomation/SeleniumDSL" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style" xmi:id="_r77yAK_KEeal6MVeRxWzwg" selectedViews="_-1I4YK_lEeaebv6TJWYO6g" version="11.0.1.201608181000">
+  <semanticResources>campus.slnm</semanticResources>
+  <ownedViews xmi:type="viewpoint:DView" xmi:id="_-1I4YK_lEeaebv6TJWYO6g">
+    <viewpoint xmi:type="description:Viewpoint" href="platform:/resource/selenium.design/description/selenium.odesign#//@ownedViewpoints[name='Selenium']"/>
+    <ownedRepresentations xmi:type="diagram:DSemanticDiagram" xmi:id="_DAYwALAWEea7W96yWThb2A" name="new Selenium Diagram">
+      <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_DAbzULAWEea7W96yWThb2A" source="DANNOTATION_CUSTOMIZATION_KEY">
+        <data xmi:type="diagram:ComputedStyleDescriptionRegistry" xmi:id="_DAbzUbAWEea7W96yWThb2A"/>
+      </ownedAnnotationEntries>
+      <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_DB7oILAWEea7W96yWThb2A" source="GMF_DIAGRAMS">
+        <data xmi:type="notation:Diagram" xmi:id="_DB7oIbAWEea7W96yWThb2A" type="Sirius" element="_DAYwALAWEea7W96yWThb2A" measurementUnit="Pixel">
+          <children xmi:type="notation:Node" xmi:id="_HPI9gLAYEea7W96yWThb2A" type="2001" element="_HO1bgLAYEea7W96yWThb2A">
+            <children xmi:type="notation:Node" xmi:id="_HPN2ALAYEea7W96yWThb2A" type="5002">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_HPN2AbAYEea7W96yWThb2A" y="5"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_xJqesLAYEea7W96yWThb2A" type="3003" element="_xJpQkLAYEea7W96yWThb2A">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_xJqesbAYEea7W96yWThb2A" fontName="Roboto"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xJqesrAYEea7W96yWThb2A"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_HPI9gbAYEea7W96yWThb2A" fontName="Roboto"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HPI9grAYEea7W96yWThb2A" x="109" y="12" width="120" height="121"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_h8fJ4LAYEea7W96yWThb2A" type="2001" element="_h8V_8LAYEea7W96yWThb2A">
+            <children xmi:type="notation:Node" xmi:id="_h8fw8LAYEea7W96yWThb2A" type="5002">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_h8fw8bAYEea7W96yWThb2A" y="-21"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_h8g_ELAYEea7W96yWThb2A" type="3005" element="_h8WnALAYEea7W96yWThb2A">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_h8g_EbAYEea7W96yWThb2A" fontName="Roboto"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_h8g_ErAYEea7W96yWThb2A"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_h8fJ4bAYEea7W96yWThb2A" fontName="Roboto" fontHeight="12" bold="true"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_h8fJ4rAYEea7W96yWThb2A" width="50" height="50"/>
+          </children>
+          <styles xmi:type="notation:DiagramStyle" xmi:id="_DB7oIrAWEea7W96yWThb2A"/>
+          <edges xmi:type="notation:Edge" xmi:id="_h8meoLAYEea7W96yWThb2A" type="4001" element="_h8cGkLAYEea7W96yWThb2A" source="_h8fJ4LAYEea7W96yWThb2A" target="_HPI9gLAYEea7W96yWThb2A">
+            <children xmi:type="notation:Node" xmi:id="_h8nswLAYEea7W96yWThb2A" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_h8nswbAYEea7W96yWThb2A" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_h8oT0LAYEea7W96yWThb2A" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_h8oT0bAYEea7W96yWThb2A" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_h8oT0rAYEea7W96yWThb2A" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_h8oT07AYEea7W96yWThb2A" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_h8meobAYEea7W96yWThb2A"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_h8meorAYEea7W96yWThb2A" fontName="Roboto" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_h8meo7AYEea7W96yWThb2A" points="[0, 0, -60, 0]$[60, 0, 0, 0]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_h9OwwLAYEea7W96yWThb2A" id="(1.0,0.5)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_h9PX0LAYEea7W96yWThb2A" id="(0.0,0.08264462809917356)"/>
+          </edges>
+        </data>
+      </ownedAnnotationEntries>
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_HO1bgLAYEea7W96yWThb2A" name="Main procedure" tooltipText="Main procedure" incomingEdges="_h8cGkLAYEea7W96yWThb2A" width="20" height="20" resizeKind="NSEW">
+        <target xmi:type="seleniumDSL:MainProcedure" href="campus.slnm#//@main"/>
+        <semanticElements xmi:type="seleniumDSL:MainProcedure" href="campus.slnm#//@main"/>
+        <ownedStyle xmi:type="diagram:Square" xmi:id="_xJpQkLAYEea7W96yWThb2A" labelPosition="node" width="20" height="20" color="194,239,255">
+          <description xmi:type="style:SquareDescription" href="platform:/resource/selenium.design/description/selenium.odesign#//@ownedViewpoints[name='Selenium']/@ownedRepresentations[name='Selenium%20Diagram']/@defaultLayer/@nodeMappings[name='SD_MainProc']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/selenium.design/description/selenium.odesign#//@ownedViewpoints[name='Selenium']/@ownedRepresentations[name='Selenium%20Diagram']/@defaultLayer/@nodeMappings[name='SD_MainProc']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_h8V_8LAYEea7W96yWThb2A" name="Start" outgoingEdges="_h8cGkLAYEea7W96yWThb2A" width="-1" height="-1" resizeKind="NSEW">
+        <target xmi:type="seleniumDSL:SeleniumTest" href="campus.slnm#/"/>
+        <semanticElements xmi:type="seleniumDSL:SeleniumTest" href="campus.slnm#/"/>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_h8WnALAYEea7W96yWThb2A" labelSize="12" showIcon="false" workspacePath="/selenium.design/icons/Start.svg">
+          <labelFormat>bold</labelFormat>
+          <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/selenium.design/description/selenium.odesign#//@ownedViewpoints[name='Selenium']/@ownedRepresentations[name='Selenium%20Diagram']/@defaultLayer/@nodeMappings[name='SD_Start']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/selenium.design/description/selenium.odesign#//@ownedViewpoints[name='Selenium']/@ownedRepresentations[name='Selenium%20Diagram']/@defaultLayer/@nodeMappings[name='SD_Start']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_h8cGkLAYEea7W96yWThb2A" sourceNode="_h8V_8LAYEea7W96yWThb2A" targetNode="_HO1bgLAYEea7W96yWThb2A">
+        <target xmi:type="seleniumDSL:SeleniumTest" href="campus.slnm#/"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_h8d7wLAYEea7W96yWThb2A" size="2">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/selenium.design/description/selenium.odesign#//@ownedViewpoints[name='Selenium']/@ownedRepresentations[name='Selenium%20Diagram']/@defaultLayer/@edgeMappings[name='SD_First']/@style"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_h8ei0LAYEea7W96yWThb2A"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/selenium.design/description/selenium.odesign#//@ownedViewpoints[name='Selenium']/@ownedRepresentations[name='Selenium%20Diagram']/@defaultLayer/@edgeMappings[name='SD_First']"/>
+      </ownedDiagramElements>
+      <description xmi:type="description_1:DiagramDescription" href="platform:/resource/selenium.design/description/selenium.odesign#//@ownedViewpoints[name='Selenium']/@ownedRepresentations[name='Selenium%20Diagram']"/>
+      <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_DAbzUrAWEea7W96yWThb2A"/>
+      <activatedLayers xmi:type="description_1:Layer" href="platform:/resource/selenium.design/description/selenium.odesign#//@ownedViewpoints[name='Selenium']/@ownedRepresentations[name='Selenium%20Diagram']/@defaultLayer"/>
+      <target xmi:type="seleniumDSL:SeleniumTest" href="campus.slnm#/"/>
+    </ownedRepresentations>
+  </ownedViews>
+</viewpoint:DAnalysis>

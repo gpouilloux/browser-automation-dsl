@@ -438,82 +438,137 @@ public class SeleniumDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cAssertKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Alternatives cAlternatives_1 = (Alternatives)cGroup.eContents().get(1);
 		private final Group cGroup_1_0 = (Group)cAlternatives_1.eContents().get(0);
-		private final Assignment cNameAssignment_1_0_0 = (Assignment)cGroup_1_0.eContents().get(0);
-		private final RuleCall cNameSTRINGTerminalRuleCall_1_0_0_0 = (RuleCall)cNameAssignment_1_0_0.eContents().get(0);
-		private final Assignment cTypeAssignment_1_0_1 = (Assignment)cGroup_1_0.eContents().get(1);
-		private final Alternatives cTypeAlternatives_1_0_1_0 = (Alternatives)cTypeAssignment_1_0_1.eContents().get(0);
-		private final Keyword cTypeContainsKeyword_1_0_1_0_0 = (Keyword)cTypeAlternatives_1_0_1_0.eContents().get(0);
-		private final Keyword cTypeEqualsKeyword_1_0_1_0_1 = (Keyword)cTypeAlternatives_1_0_1_0.eContents().get(1);
-		private final Assignment cValueAssignment_1_0_2 = (Assignment)cGroup_1_0.eContents().get(2);
-		private final Alternatives cValueAlternatives_1_0_2_0 = (Alternatives)cValueAssignment_1_0_2.eContents().get(0);
-		private final RuleCall cValueSTRINGTerminalRuleCall_1_0_2_0_0 = (RuleCall)cValueAlternatives_1_0_2_0.eContents().get(0);
-		private final RuleCall cValueIDENTIFIERTerminalRuleCall_1_0_2_0_1 = (RuleCall)cValueAlternatives_1_0_2_0.eContents().get(1);
+		private final Assignment cTypeAssignment_1_0_0 = (Assignment)cGroup_1_0.eContents().get(0);
+		private final Alternatives cTypeAlternatives_1_0_0_0 = (Alternatives)cTypeAssignment_1_0_0.eContents().get(0);
+		private final Keyword cTypeInputKeyword_1_0_0_0_0 = (Keyword)cTypeAlternatives_1_0_0_0.eContents().get(0);
+		private final Keyword cTypeLinkKeyword_1_0_0_0_1 = (Keyword)cTypeAlternatives_1_0_0_0.eContents().get(1);
+		private final Keyword cTypeNameKeyword_1_0_0_0_2 = (Keyword)cTypeAlternatives_1_0_0_0.eContents().get(2);
+		private final Keyword cTypeXpathKeyword_1_0_0_0_3 = (Keyword)cTypeAlternatives_1_0_0_0.eContents().get(3);
+		private final Group cGroup_1_0_1 = (Group)cGroup_1_0.eContents().get(1);
+		private final Assignment cNameAssignment_1_0_1_0 = (Assignment)cGroup_1_0_1.eContents().get(0);
+		private final RuleCall cNameSTRINGTerminalRuleCall_1_0_1_0_0 = (RuleCall)cNameAssignment_1_0_1_0.eContents().get(0);
+		private final Assignment cMethodAssignment_1_0_1_1 = (Assignment)cGroup_1_0_1.eContents().get(1);
+		private final Alternatives cMethodAlternatives_1_0_1_1_0 = (Alternatives)cMethodAssignment_1_0_1_1.eContents().get(0);
+		private final Keyword cMethodContainsKeyword_1_0_1_1_0_0 = (Keyword)cMethodAlternatives_1_0_1_1_0.eContents().get(0);
+		private final Keyword cMethodEqualsKeyword_1_0_1_1_0_1 = (Keyword)cMethodAlternatives_1_0_1_1_0.eContents().get(1);
+		private final Assignment cValueAssignment_1_0_1_2 = (Assignment)cGroup_1_0_1.eContents().get(2);
+		private final Alternatives cValueAlternatives_1_0_1_2_0 = (Alternatives)cValueAssignment_1_0_1_2.eContents().get(0);
+		private final RuleCall cValueSTRINGTerminalRuleCall_1_0_1_2_0_0 = (RuleCall)cValueAlternatives_1_0_1_2_0.eContents().get(0);
+		private final RuleCall cValueIDENTIFIERTerminalRuleCall_1_0_1_2_0_1 = (RuleCall)cValueAlternatives_1_0_1_2_0.eContents().get(1);
 		private final Group cGroup_1_1 = (Group)cAlternatives_1.eContents().get(1);
-		private final Assignment cNameAssignment_1_1_0 = (Assignment)cGroup_1_1.eContents().get(0);
-		private final RuleCall cNameSTRINGTerminalRuleCall_1_1_0_0 = (RuleCall)cNameAssignment_1_1_0.eContents().get(0);
-		private final Assignment cTypeAssignment_1_1_1 = (Assignment)cGroup_1_1.eContents().get(1);
-		private final Keyword cTypeExistsKeyword_1_1_1_0 = (Keyword)cTypeAssignment_1_1_1.eContents().get(0);
+		private final Assignment cTypeAssignment_1_1_0 = (Assignment)cGroup_1_1.eContents().get(0);
+		private final Alternatives cTypeAlternatives_1_1_0_0 = (Alternatives)cTypeAssignment_1_1_0.eContents().get(0);
+		private final Keyword cTypeInputKeyword_1_1_0_0_0 = (Keyword)cTypeAlternatives_1_1_0_0.eContents().get(0);
+		private final Keyword cTypeLinkKeyword_1_1_0_0_1 = (Keyword)cTypeAlternatives_1_1_0_0.eContents().get(1);
+		private final Keyword cTypeNameKeyword_1_1_0_0_2 = (Keyword)cTypeAlternatives_1_1_0_0.eContents().get(2);
+		private final Keyword cTypeXpathKeyword_1_1_0_0_3 = (Keyword)cTypeAlternatives_1_1_0_0.eContents().get(3);
+		private final Assignment cNameAssignment_1_1_1 = (Assignment)cGroup_1_1.eContents().get(1);
+		private final RuleCall cNameSTRINGTerminalRuleCall_1_1_1_0 = (RuleCall)cNameAssignment_1_1_1.eContents().get(0);
+		private final Assignment cMethodAssignment_1_1_2 = (Assignment)cGroup_1_1.eContents().get(2);
+		private final Keyword cMethodExistsKeyword_1_1_2_0 = (Keyword)cMethodAssignment_1_1_2.eContents().get(0);
 		
 		//Assert:
-		//	'assert' (Name=STRING Type=('contains' | 'equals') Value=(STRING | IDENTIFIER) | Name=STRING Type='exists');
+		//	'assert' (Type=('input' | 'link' | 'name' | 'xpath') (Name=STRING Method=('contains' | 'equals') Value=(STRING |
+		//	IDENTIFIER)) | Type=('input' | 'link' | 'name' | 'xpath') Name=STRING Method='exists');
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'assert' (Name=STRING Type=('contains' | 'equals') Value=(STRING | IDENTIFIER) | Name=STRING Type='exists')
+		//'assert' (Type=('input' | 'link' | 'name' | 'xpath') (Name=STRING Method=('contains' | 'equals') Value=(STRING |
+		//IDENTIFIER)) | Type=('input' | 'link' | 'name' | 'xpath') Name=STRING Method='exists')
 		public Group getGroup() { return cGroup; }
 		
 		//'assert'
 		public Keyword getAssertKeyword_0() { return cAssertKeyword_0; }
 		
-		//(Name=STRING Type=('contains' | 'equals') Value=(STRING | IDENTIFIER) | Name=STRING Type='exists')
+		//(Type=('input' | 'link' | 'name' | 'xpath') (Name=STRING Method=('contains' | 'equals') Value=(STRING | IDENTIFIER)) |
+		//Type=('input' | 'link' | 'name' | 'xpath') Name=STRING Method='exists')
 		public Alternatives getAlternatives_1() { return cAlternatives_1; }
 		
-		//Name=STRING Type=('contains' | 'equals') Value=(STRING | IDENTIFIER)
+		//Type=('input' | 'link' | 'name' | 'xpath') (Name=STRING Method=('contains' | 'equals') Value=(STRING | IDENTIFIER))
 		public Group getGroup_1_0() { return cGroup_1_0; }
 		
+		//Type=('input' | 'link' | 'name' | 'xpath')
+		public Assignment getTypeAssignment_1_0_0() { return cTypeAssignment_1_0_0; }
+		
+		//('input' | 'link' | 'name' | 'xpath')
+		public Alternatives getTypeAlternatives_1_0_0_0() { return cTypeAlternatives_1_0_0_0; }
+		
+		//'input'
+		public Keyword getTypeInputKeyword_1_0_0_0_0() { return cTypeInputKeyword_1_0_0_0_0; }
+		
+		//'link'
+		public Keyword getTypeLinkKeyword_1_0_0_0_1() { return cTypeLinkKeyword_1_0_0_0_1; }
+		
+		//'name'
+		public Keyword getTypeNameKeyword_1_0_0_0_2() { return cTypeNameKeyword_1_0_0_0_2; }
+		
+		//'xpath'
+		public Keyword getTypeXpathKeyword_1_0_0_0_3() { return cTypeXpathKeyword_1_0_0_0_3; }
+		
+		//(Name=STRING Method=('contains' | 'equals') Value=(STRING | IDENTIFIER))
+		public Group getGroup_1_0_1() { return cGroup_1_0_1; }
+		
 		//Name=STRING
-		public Assignment getNameAssignment_1_0_0() { return cNameAssignment_1_0_0; }
+		public Assignment getNameAssignment_1_0_1_0() { return cNameAssignment_1_0_1_0; }
 		
 		//STRING
-		public RuleCall getNameSTRINGTerminalRuleCall_1_0_0_0() { return cNameSTRINGTerminalRuleCall_1_0_0_0; }
+		public RuleCall getNameSTRINGTerminalRuleCall_1_0_1_0_0() { return cNameSTRINGTerminalRuleCall_1_0_1_0_0; }
 		
-		//Type=('contains' | 'equals')
-		public Assignment getTypeAssignment_1_0_1() { return cTypeAssignment_1_0_1; }
+		//Method=('contains' | 'equals')
+		public Assignment getMethodAssignment_1_0_1_1() { return cMethodAssignment_1_0_1_1; }
 		
 		//('contains' | 'equals')
-		public Alternatives getTypeAlternatives_1_0_1_0() { return cTypeAlternatives_1_0_1_0; }
+		public Alternatives getMethodAlternatives_1_0_1_1_0() { return cMethodAlternatives_1_0_1_1_0; }
 		
 		//'contains'
-		public Keyword getTypeContainsKeyword_1_0_1_0_0() { return cTypeContainsKeyword_1_0_1_0_0; }
+		public Keyword getMethodContainsKeyword_1_0_1_1_0_0() { return cMethodContainsKeyword_1_0_1_1_0_0; }
 		
 		//'equals'
-		public Keyword getTypeEqualsKeyword_1_0_1_0_1() { return cTypeEqualsKeyword_1_0_1_0_1; }
+		public Keyword getMethodEqualsKeyword_1_0_1_1_0_1() { return cMethodEqualsKeyword_1_0_1_1_0_1; }
 		
 		//Value=(STRING | IDENTIFIER)
-		public Assignment getValueAssignment_1_0_2() { return cValueAssignment_1_0_2; }
+		public Assignment getValueAssignment_1_0_1_2() { return cValueAssignment_1_0_1_2; }
 		
 		//(STRING | IDENTIFIER)
-		public Alternatives getValueAlternatives_1_0_2_0() { return cValueAlternatives_1_0_2_0; }
+		public Alternatives getValueAlternatives_1_0_1_2_0() { return cValueAlternatives_1_0_1_2_0; }
 		
 		//STRING
-		public RuleCall getValueSTRINGTerminalRuleCall_1_0_2_0_0() { return cValueSTRINGTerminalRuleCall_1_0_2_0_0; }
+		public RuleCall getValueSTRINGTerminalRuleCall_1_0_1_2_0_0() { return cValueSTRINGTerminalRuleCall_1_0_1_2_0_0; }
 		
 		//IDENTIFIER
-		public RuleCall getValueIDENTIFIERTerminalRuleCall_1_0_2_0_1() { return cValueIDENTIFIERTerminalRuleCall_1_0_2_0_1; }
+		public RuleCall getValueIDENTIFIERTerminalRuleCall_1_0_1_2_0_1() { return cValueIDENTIFIERTerminalRuleCall_1_0_1_2_0_1; }
 		
-		//Name=STRING Type='exists'
+		//Type=('input' | 'link' | 'name' | 'xpath') Name=STRING Method='exists'
 		public Group getGroup_1_1() { return cGroup_1_1; }
 		
+		//Type=('input' | 'link' | 'name' | 'xpath')
+		public Assignment getTypeAssignment_1_1_0() { return cTypeAssignment_1_1_0; }
+		
+		//('input' | 'link' | 'name' | 'xpath')
+		public Alternatives getTypeAlternatives_1_1_0_0() { return cTypeAlternatives_1_1_0_0; }
+		
+		//'input'
+		public Keyword getTypeInputKeyword_1_1_0_0_0() { return cTypeInputKeyword_1_1_0_0_0; }
+		
+		//'link'
+		public Keyword getTypeLinkKeyword_1_1_0_0_1() { return cTypeLinkKeyword_1_1_0_0_1; }
+		
+		//'name'
+		public Keyword getTypeNameKeyword_1_1_0_0_2() { return cTypeNameKeyword_1_1_0_0_2; }
+		
+		//'xpath'
+		public Keyword getTypeXpathKeyword_1_1_0_0_3() { return cTypeXpathKeyword_1_1_0_0_3; }
+		
 		//Name=STRING
-		public Assignment getNameAssignment_1_1_0() { return cNameAssignment_1_1_0; }
+		public Assignment getNameAssignment_1_1_1() { return cNameAssignment_1_1_1; }
 		
 		//STRING
-		public RuleCall getNameSTRINGTerminalRuleCall_1_1_0_0() { return cNameSTRINGTerminalRuleCall_1_1_0_0; }
+		public RuleCall getNameSTRINGTerminalRuleCall_1_1_1_0() { return cNameSTRINGTerminalRuleCall_1_1_1_0; }
 		
-		//Type='exists'
-		public Assignment getTypeAssignment_1_1_1() { return cTypeAssignment_1_1_1; }
+		//Method='exists'
+		public Assignment getMethodAssignment_1_1_2() { return cMethodAssignment_1_1_2; }
 		
 		//'exists'
-		public Keyword getTypeExistsKeyword_1_1_1_0() { return cTypeExistsKeyword_1_1_1_0; }
+		public Keyword getMethodExistsKeyword_1_1_2_0() { return cMethodExistsKeyword_1_1_2_0; }
 	}
 	public class CallProcedureElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.minesnantes.browserautomation.SeleniumDSL.CallProcedure");
@@ -766,7 +821,8 @@ public class SeleniumDSLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Assert:
-	//	'assert' (Name=STRING Type=('contains' | 'equals') Value=(STRING | IDENTIFIER) | Name=STRING Type='exists');
+	//	'assert' (Type=('input' | 'link' | 'name' | 'xpath') (Name=STRING Method=('contains' | 'equals') Value=(STRING |
+	//	IDENTIFIER)) | Type=('input' | 'link' | 'name' | 'xpath') Name=STRING Method='exists');
 	public AssertElements getAssertAccess() {
 		return pAssert;
 	}

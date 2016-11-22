@@ -1,0 +1,4 @@
+def main {
+	navigate "http://www.mines-nantes.fr"
+	assert "English" exists
+}

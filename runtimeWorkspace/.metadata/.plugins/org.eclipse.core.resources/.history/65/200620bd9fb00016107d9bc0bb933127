@@ -1,0 +1,6 @@
+def main {
+	navigate "http://www.mines-nantes.fr/fr/content/advancedsearch"
+	fill "SearchText" "2007"
+	click input "RECHERCHER"
+	assert xpath "//*[@id=\\\"content\\\"]/div[2]/div/h2" contains "Aucun résultat n'a été trouvé pour"
+}

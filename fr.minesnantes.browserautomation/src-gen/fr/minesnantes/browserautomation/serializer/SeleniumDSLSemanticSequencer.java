@@ -86,7 +86,10 @@ public class SeleniumDSLSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *     Assert returns Assert
 	 *
 	 * Constraint:
-	 *     ((Name=STRING (Type='contains' | Type='equals') (Value=STRING | Value=IDENTIFIER)) | (Name=STRING Type='exists'))
+	 *     (
+	 *         ((Type='input' | Type='link' | Type='name' | Type='xpath') Name=STRING (Method='contains' | Method='equals') (Value=STRING | Value=IDENTIFIER)) | 
+	 *         ((Type='input' | Type='link' | Type='name' | Type='xpath') Name=STRING Method='exists')
+	 *     )
 	 */
 	protected void sequence_Assert(ISerializationContext context, Assert semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

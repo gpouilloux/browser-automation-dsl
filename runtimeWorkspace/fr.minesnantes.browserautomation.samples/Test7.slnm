@@ -1,0 +1,6 @@
+def main {
+	navigate "http://www.mines-nantes.fr/fr/content/advancedsearch"
+	fill "SearchText" "2007"
+	select "SearchDate" "Dernier jour"
+	click input "RECHERCHER"
+}

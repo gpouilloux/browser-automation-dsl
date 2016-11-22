@@ -42,8 +42,9 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SeleniumDSL.ecore#//Read/Name"/>
     </genClasses>
     <genClasses ecoreClass="SeleniumDSL.ecore#//Assert">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SeleniumDSL.ecore#//Assert/Name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SeleniumDSL.ecore#//Assert/Type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SeleniumDSL.ecore#//Assert/Name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SeleniumDSL.ecore#//Assert/Method"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SeleniumDSL.ecore#//Assert/Value"/>
     </genClasses>
     <genClasses ecoreClass="SeleniumDSL.ecore#//CallProcedure">

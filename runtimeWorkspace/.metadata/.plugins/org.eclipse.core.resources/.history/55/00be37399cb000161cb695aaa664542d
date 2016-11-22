@@ -1,0 +1,7 @@
+def main {
+	navigate "http://www.mines-nantes.fr"
+	click link "English" 
+	click link "Study"
+	click xpath "//img[@title='Logo Mines Nantes']"
+	assert link "French" exists
+}

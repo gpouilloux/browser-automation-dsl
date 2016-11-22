@@ -1,0 +1,7 @@
+def main {
+	navigate "http://www.mines-nantes.fr/fr/content/advancedsearch"
+	fill "SearchText" "Donald Trump"
+	click input "RECHERCHER"
+	assert xpath "//div[@class=\\"result\\"]/h2" contains "Aucun résultat n'a été trouvé pour "
+	
+}

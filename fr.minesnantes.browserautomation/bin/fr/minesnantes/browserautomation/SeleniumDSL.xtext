@@ -31,8 +31,8 @@ Navigate: 'navigate' url=(STRING|IDENTIFIER);
 
 Read: Variable=IDENTIFIER '=' 'read' Name=STRING;
 
-Assert:  'assert' (Name=STRING Type=('contains'|'equals') Value=(STRING|IDENTIFIER) |
-                   Name=STRING Type='exists');
+Assert:  'assert' (Type=('input'|'link'|'name'|'xpath') (Name=STRING Method=('contains'|'equals') Value=(STRING|IDENTIFIER)) |
+                  (Type=('input'|'link'|'name'|'xpath') Name=STRING Method='exists'));
 
 CallProcedure: ProcedureName=IDENTIFIER ('(' (Parameters+=(IDENTIFIER|STRING) (COMMA Parameters+=(IDENTIFIER|STRING))*) ')')?;
 

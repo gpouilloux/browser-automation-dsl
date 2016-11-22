@@ -1,0 +1,6 @@
+def main {
+	navigate "http://www.mines-nantes.fr/fr/content/advancedsearch"
+	fill "Recherche" "Donald Trump"
+	click input "RECHERCHER"
+	
+}

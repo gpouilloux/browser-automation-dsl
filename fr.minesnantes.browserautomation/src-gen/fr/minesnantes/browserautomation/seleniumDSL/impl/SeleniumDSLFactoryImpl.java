@@ -22,214 +22,218 @@ import org.eclipse.emf.ecore.plugin.EcorePlugin;
 public class SeleniumDSLFactoryImpl extends EFactoryImpl implements SeleniumDSLFactory
 {
   /**
-	 * Creates the default factory implementation.
-	 * <!-- begin-user-doc -->
+   * Creates the default factory implementation.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public static SeleniumDSLFactory init()
   {
-		try {
-			SeleniumDSLFactory theSeleniumDSLFactory = (SeleniumDSLFactory)EPackage.Registry.INSTANCE.getEFactory(SeleniumDSLPackage.eNS_URI);
-			if (theSeleniumDSLFactory != null) {
-				return theSeleniumDSLFactory;
-			}
-		}
-		catch (Exception exception) {
-			EcorePlugin.INSTANCE.log(exception);
-		}
-		return new SeleniumDSLFactoryImpl();
-	}
+    try
+    {
+      SeleniumDSLFactory theSeleniumDSLFactory = (SeleniumDSLFactory)EPackage.Registry.INSTANCE.getEFactory(SeleniumDSLPackage.eNS_URI);
+      if (theSeleniumDSLFactory != null)
+      {
+        return theSeleniumDSLFactory;
+      }
+    }
+    catch (Exception exception)
+    {
+      EcorePlugin.INSTANCE.log(exception);
+    }
+    return new SeleniumDSLFactoryImpl();
+  }
 
   /**
-	 * Creates an instance of the factory.
-	 * <!-- begin-user-doc -->
+   * Creates an instance of the factory.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public SeleniumDSLFactoryImpl()
   {
-		super();
-	}
+    super();
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public EObject create(EClass eClass)
   {
-		switch (eClass.getClassifierID()) {
-			case SeleniumDSLPackage.SELENIUM_TEST: return createSeleniumTest();
-			case SeleniumDSLPackage.PROCEDURE: return createProcedure();
-			case SeleniumDSLPackage.MAIN_PROCEDURE: return createMainProcedure();
-			case SeleniumDSLPackage.INSTRUCTION: return createInstruction();
-			case SeleniumDSLPackage.CLICK: return createClick();
-			case SeleniumDSLPackage.FILL: return createFill();
-			case SeleniumDSLPackage.SELECT: return createSelect();
-			case SeleniumDSLPackage.TICK: return createTick();
-			case SeleniumDSLPackage.NAVIGATE: return createNavigate();
-			case SeleniumDSLPackage.READ: return createRead();
-			case SeleniumDSLPackage.ASSERT: return createAssert();
-			case SeleniumDSLPackage.CALL_PROCEDURE: return createCallProcedure();
-			default:
-				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
-		}
-	}
+    switch (eClass.getClassifierID())
+    {
+      case SeleniumDSLPackage.SELENIUM_TEST: return createSeleniumTest();
+      case SeleniumDSLPackage.PROCEDURE: return createProcedure();
+      case SeleniumDSLPackage.MAIN_PROCEDURE: return createMainProcedure();
+      case SeleniumDSLPackage.INSTRUCTION: return createInstruction();
+      case SeleniumDSLPackage.CLICK: return createClick();
+      case SeleniumDSLPackage.FILL: return createFill();
+      case SeleniumDSLPackage.SELECT: return createSelect();
+      case SeleniumDSLPackage.TICK: return createTick();
+      case SeleniumDSLPackage.NAVIGATE: return createNavigate();
+      case SeleniumDSLPackage.READ: return createRead();
+      case SeleniumDSLPackage.ASSERT: return createAssert();
+      case SeleniumDSLPackage.CALL_PROCEDURE: return createCallProcedure();
+      default:
+        throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+    }
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public SeleniumTest createSeleniumTest()
   {
-		SeleniumTestImpl seleniumTest = new SeleniumTestImpl();
-		return seleniumTest;
-	}
+    SeleniumTestImpl seleniumTest = new SeleniumTestImpl();
+    return seleniumTest;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public Procedure createProcedure()
   {
-		ProcedureImpl procedure = new ProcedureImpl();
-		return procedure;
-	}
+    ProcedureImpl procedure = new ProcedureImpl();
+    return procedure;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public MainProcedure createMainProcedure()
   {
-		MainProcedureImpl mainProcedure = new MainProcedureImpl();
-		return mainProcedure;
-	}
+    MainProcedureImpl mainProcedure = new MainProcedureImpl();
+    return mainProcedure;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public Instruction createInstruction()
   {
-		InstructionImpl instruction = new InstructionImpl();
-		return instruction;
-	}
+    InstructionImpl instruction = new InstructionImpl();
+    return instruction;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public Click createClick()
   {
-		ClickImpl click = new ClickImpl();
-		return click;
-	}
+    ClickImpl click = new ClickImpl();
+    return click;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public Fill createFill()
   {
-		FillImpl fill = new FillImpl();
-		return fill;
-	}
+    FillImpl fill = new FillImpl();
+    return fill;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public Select createSelect()
   {
-		SelectImpl select = new SelectImpl();
-		return select;
-	}
+    SelectImpl select = new SelectImpl();
+    return select;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public Tick createTick()
   {
-		TickImpl tick = new TickImpl();
-		return tick;
-	}
+    TickImpl tick = new TickImpl();
+    return tick;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public Navigate createNavigate()
   {
-		NavigateImpl navigate = new NavigateImpl();
-		return navigate;
-	}
+    NavigateImpl navigate = new NavigateImpl();
+    return navigate;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public Read createRead()
   {
-		ReadImpl read = new ReadImpl();
-		return read;
-	}
+    ReadImpl read = new ReadImpl();
+    return read;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public Assert createAssert()
   {
-		AssertImpl assert_ = new AssertImpl();
-		return assert_;
-	}
+    AssertImpl assert_ = new AssertImpl();
+    return assert_;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public CallProcedure createCallProcedure()
   {
-		CallProcedureImpl callProcedure = new CallProcedureImpl();
-		return callProcedure;
-	}
+    CallProcedureImpl callProcedure = new CallProcedureImpl();
+    return callProcedure;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public SeleniumDSLPackage getSeleniumDSLPackage()
   {
-		return (SeleniumDSLPackage)getEPackage();
-	}
+    return (SeleniumDSLPackage)getEPackage();
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @deprecated
-	 * @generated
-	 */
+   * @deprecated
+   * @generated
+   */
   @Deprecated
   public static SeleniumDSLPackage getPackage()
   {
-		return SeleniumDSLPackage.eINSTANCE;
-	}
+    return SeleniumDSLPackage.eINSTANCE;
+  }
 
 } //SeleniumDSLFactoryImpl

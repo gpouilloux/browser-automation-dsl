@@ -122,6 +122,7 @@ class SeleniumDSLGenerator extends AbstractGenerator {
     def dispatch generateInstruction(Fill f, String methodName) '''
         «val eltName = '''element«elementCounter.nextCount»'''»
         WebElement «eltName» = webDriver.findElement(By.name("«f.name»"));
+        «eltName».clear();
         «eltName».sendKeys(«IF this.proceduresContext.get(methodName).contains(f.value)»«f.value»«ELSE»"«f.value»"«ENDIF»);
     '''
     
@@ -148,11 +149,19 @@ class SeleniumDSLGenerator extends AbstractGenerator {
     
     def dispatch generateInstruction(Assert a, String methodName) '''
         «val eltName = '''element«elementCounter.nextCount»'''»
+        «val assertName = a.name»
         «val assertValue = a.value»
-        WebElement «eltName» = webDriver.findElement(By.name("«a.name»"));
         «switch a.type {
+            case 'input': '''WebElement «eltName» = webDriver.findElement(By.xpath("//input[@value=\"«assertName»\"]"));'''
+            case 'link': '''WebElement «eltName» = webDriver.findElement(By.linkText("«assertName»"));'''
+            case 'xpath': '''WebElement «eltName» = webDriver.findElement(By.xpath("«assertName»"));'''
+            case 'name' : '''WebElement «eltName» = webDriver.findElement(By.name("«assertName»"));'''
+            default: '''// FIXME unrecognized assert instruction: assert «a.type» «assertName»''' 
+        }»
+        «switch a.method {
                 case 'contains': '''
-                if(!«eltName».getAttribute("value").contains(«IF this.proceduresContext.get(methodName).contains(assertValue)»«assertValue»«ELSE»"«assertValue»"«ENDIF»)) {
+                if(!«eltName».getText().contains(«IF this.proceduresContext.get(methodName).contains(assertValue)»«assertValue»«ELSE»"«assertValue»"«ENDIF»)
+                 && !(«eltName».getAttribute("value").contains(«IF this.proceduresContext.get(methodName).contains(assertValue)»«assertValue»«ELSE»"«assertValue»"«ENDIF»))) {
                     throw new AssertionError(«eltName».getAttribute("value") + " does not contain «assertValue»");
                 };'''
                 case 'equals': '''
